@@ -1,0 +1,467 @@
+---
+// src/pages/blog/pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA: Menyelaraskan Keterampilan dengan Kebutuhan Dunia Kerja";
+const pageDesc = "Panduan pelatihan kejuruan terpadu dan sinkronisasi industri SKARIGA di Malang: dua jalur pelatihan, alur belajar, dan cara memilih program.";
+const publishDate = "2026-11-03";
+const pageUrl = "https://infomagangmalang.web.id/blog/pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/pelatihan-smk3pgri.webp";
+
+// Data Schema JSON-LD (Article & FAQPage)
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "mainEntityOfPage": pageUrl,
+      "datePublished": publishDate,
+      "dateModified": publishDate,
+      "author": {
+        "@type": "Organization",
+        "name": "Tim Redaksi & Pembimbing Gemilang Training"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/logo.webp"
+        }
+      },
+      "image": ogImageUrl
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa yang dimaksud dengan pelatihan kejuruan terpadu SKARIGA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Program pelatihan yang memadukan materi kejuruan, praktik, bimbingan mentor, dan penilaian dalam satu alur, dengan isi yang diselaraskan terhadap kebutuhan industri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa arti sinkronisasi industri?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Proses menyelaraskan materi dan standar hasil pelatihan dengan kebutuhan dunia usaha dan industri agar keterampilan peserta tetap relevan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja jalur pelatihannya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dua jalur: pelatihan materi dan pembuatan portofolio, serta pelatihan AI dan prompt untuk bisnis, marketing, dan pemasaran."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Siapa yang bisa mengikuti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Siswa SMK dan mahasiswa dari bidang teknologi, desain, bisnis, dan pemasaran. Materi disesuaikan dengan jurusan dan kemampuan awal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa hasil yang didapat peserta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keterampilan yang meningkat, portofolio yang dapat ditunjukkan kepada pemberi kerja, serta penilaian dan arahan tindak lanjut dari mentor."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pelatihan ini bisa dilanjutkan dengan magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, hasil pelatihan dapat menjadi bekal untuk mengikuti magang berbasis proyek agar keterampilan diterapkan pada pekerjaan nyata."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} isHome={false}>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishDate} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <main class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Panduan Utama</span>
+            <time datetime={publishDate}>3 November 2026</time>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 (Hero) -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/artikel2b.webp" 
+            alt="Peserta mengikuti pelatihan kejuruan terpadu bersama mentor industri SKARIGA" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2 bg-tc-bg/80 border-t border-tc-border">
+            Pemateri dan Peserta SKARIGA Malang berfoot bersama.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm">
+            <span>📋 Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#apa-itu" class="hover:text-tc-accent transition-colors">1. Apa Itu Pelatihan Kejuruan Terpadu SKARIGA?</a></li>
+              <li><a href="#maksud-sinkronisasi" class="hover:text-tc-accent transition-colors">2. Apa Maksud Sinkronisasi Industri?</a></li>
+              <li><a href="#dua-jalur" class="hover:text-tc-accent transition-colors">3. Dua Jalur Pelatihan dalam Program Ini</a></li>
+              <li><a href="#alur-pelatihan" class="hover:text-tc-accent transition-colors">4. Alur Pelatihan dari Awal sampai Akhir</a></li>
+              <li><a href="#siapa-cocok" class="hover:text-tc-accent transition-colors">5. Siapa yang Cocok Mengikuti Pelatihan Ini?</a></li>
+              <li><a href="#metode-belajar" class="hover:text-tc-accent transition-colors">6. Metode Belajar yang Digunakan</a></li>
+              <li><a href="#penilaian" class="hover:text-tc-accent transition-colors">7. Penilaian dan Hasil Akhir</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">8. Pertanyaan Sering Diajukan (FAQ)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA</strong> adalah program pelatihan yang menggabungkan penguatan keterampilan kejuruan dengan penyelarasan materi terhadap kebutuhan industri, sehingga peserta belajar hal yang benar-benar dipakai di dunia kerja dan menghasilkan karya yang dapat dibuktikan.
+          </p>
+
+          <section id="apa-itu" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu Pelatihan Kejuruan Terpadu SKARIGA?</h2>
+            <p>
+              Banyak pelajar sudah memahami teori, tetapi merasa bingung ketika diminta mengerjakan tugas nyata di tempat kerja. Pelatihan kejuruan terpadu SKARIGA hadir untuk menjembatani kesenjangan itu. Kata "terpadu" berarti materi tidak diberikan terpisah-pisah. Teori, praktik, bimbingan mentor, dan penilaian hasil dirangkai dalam satu alur belajar yang konsisten, sehingga setiap pertemuan berkontribusi pada keterampilan dan karya yang dapat dipakai.
+            </p>
+            <p>
+              Program ini ditujukan bagi siswa SMK dan mahasiswa dari bidang teknologi, desain, bisnis, dan pemasaran. Peserta tidak hanya mendengarkan penjelasan, melainkan langsung mengerjakan tugas yang mendekati situasi kerja sesungguhnya, mulai dari menyusun karya sampai mempresentasikannya.
+            </p>
+          </section>
+
+          <section id="maksud-sinkronisasi" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Maksud Sinkronisasi Industri?</h2>
+            <p>
+              Sinkronisasi industri adalah proses menyelaraskan isi pelatihan dengan kebutuhan dunia usaha dan dunia industri. Teknologi, alat, dan cara kerja berubah cepat. Materi yang relevan dua tahun lalu bisa saja sudah tertinggal. Karena itu, isi pelatihan ditinjau secara berkala berdasarkan masukan praktisi, tren kebutuhan keterampilan, dan hasil evaluasi peserta sebelumnya.
+            </p>
+            <p>
+              Dalam praktiknya, sinkronisasi dilakukan dengan beberapa cara: melibatkan mentor dari industri dalam merancang tugas, memakai contoh kasus yang berasal dari praktik bisnis, memperbarui alat yang diajarkan, serta menyesuaikan standar hasil kerja dengan yang diharapkan perekrut. Dengan begitu, peserta tidak belajar untuk sekadar lulus pelatihan, tetapi untuk siap menghadapi pekerjaan.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/peserta.webp" 
+              alt="Mentor industri dan peserta menyelaraskan materi pelatihan dengan kebutuhan kerja" 
+              class="w-full h-auto max-h-[380px] object-cover"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2 bg-tc-bg/80 border-t border-tc-border">
+              Peserta mengikuti materi dari pemateri 
+            </figcaption>
+          </figure>
+
+          <section id="dua-jalur" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Dua Jalur Pelatihan dalam Program Ini</h2>
+            <p>
+              Pelatihan terbagi menjadi dua jalur yang saling melengkapi. Peserta dapat mengikuti keduanya atau memilih yang paling dibutuhkan:
+            </p>
+
+            <div class="overflow-x-auto my-6 border border-tc-border rounded-2xl bg-tc-bg">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-tc-card text-white font-bold border-b border-tc-border">
+                  <tr>
+                    <th class="p-3">Jalur Pelatihan</th>
+                    <th class="p-3">Isi Materi Utama</th>
+                    <th class="p-3 text-tc-accent">Hasil Bagi Peserta</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Pelatihan Materi & Pembuatan Portofolio</td>
+                    <td class="p-3">Dasar keterampilan sesuai jurusan, penyusunan karya, studi kasus, CV, dan presentasi</td>
+                    <td class="p-3 text-tc-accent">Portofolio siap pakai untuk melamar kerja atau magang</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Pelatihan AI & Prompt untuk Bisnis, Marketing, Pemasaran</td>
+                    <td class="p-3">Cara menyusun prompt, memanfaatkan AI untuk riset, konten, analisis, dan etika penggunaannya</td>
+                    <td class="p-3 text-tc-accent">Kemampuan bekerja lebih cepat dan terarah dengan bantuan AI</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              Jalur pertama dibahas rinci pada <a href="/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja" class="text-tc-accent font-bold hover:underline">artikel pelatihan portofolio: materi dan praktik</a>, sedangkan jalur kedua pada <a href="/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran" class="text-tc-accent font-bold hover:underline">artikel pelatihan AI dan prompt untuk bisnis, marketing, dan pemasaran</a>.
+            </p>
+          </section>
+
+          <section id="alur-pelatihan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Alur Pelatihan dari Awal sampai Akhir</h2>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li><strong>Pemetaan kebutuhan:</strong> Peserta menyampaikan jurusan, minat, dan target, lalu ditentukan jalur serta tingkat materi yang sesuai.</li>
+              <li><strong>Penguatan materi dasar:</strong> Peserta menyegarkan konsep penting dan mengenal alat yang dipakai di industri.</li>
+              <li><strong>Praktik terarah:</strong> Peserta mengerjakan tugas bertahap dengan contoh kasus yang realistis.</li>
+              <li><strong>Bimbingan dan umpan balik:</strong> Mentor meninjau hasil, memberi masukan, dan membantu peserta memperbaiki karya.</li>
+              <li><strong>Penyusunan hasil akhir:</strong> Karya dirapikan menjadi portofolio dan dipresentasikan.</li>
+              <li><strong>Evaluasi dan tindak lanjut:</strong> Peserta menerima penilaian dan arahan langkah berikutnya, seperti magang atau melamar kerja.</li>
+            </ol>
+          </section>
+
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">📌 BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Pelatihan Portofolio: Materi dan Praktik Menyusun Karya agar Siap Kerja &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="siapa-cocok" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Siapa yang Cocok Mengikuti Pelatihan Ini?</h2>
+            
+            <div class="overflow-x-auto my-6 border border-tc-border rounded-2xl bg-tc-bg">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-tc-card text-white font-bold border-b border-tc-border">
+                  <tr>
+                    <th class="p-3">Kelompok Peserta</th>
+                    <th class="p-3">Fokus yang Bisa Diambil</th>
+                    <th class="p-3 text-tc-accent">Contoh Keluaran</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Siswa SMK RPL dan TKJ</td>
+                    <td class="p-3">Dokumentasi teknis, studi kasus proyek, dan dasar AI untuk produktivitas</td>
+                    <td class="p-3 text-tc-accent">Portofolio teknis dan dokumentasi proyek</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Siswa SMK Multimedia dan DKV</td>
+                    <td class="p-3">Portofolio visual dan pemanfaatan AI untuk ide kreatif</td>
+                    <td class="p-3 text-tc-accent">Kumpulan karya dan studi kasus desain</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Mahasiswa Informatika</td>
+                    <td class="p-3">Portofolio proyek dan pemanfaatan AI dalam alur kerja</td>
+                    <td class="p-3 text-tc-accent">Repositori proyek dan demo aplikasi live</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Mahasiswa Digital Marketing & Bisnis Digital</td>
+                    <td class="p-3">Prompt untuk riset, konten, dan analisis, serta studi kasus kampanye</td>
+                    <td class="p-3 text-tc-accent">Rencana kampanye dan laporan hasil</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="metode-belajar" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Metode Belajar yang Digunakan</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Belajar sambil praktik:</strong> Setiap konsep langsung dicoba lewat tugas, bukan hanya dibahas.</li>
+              <li><strong>Berbasis kasus nyata:</strong> Studi kasus diambil dari situasi bisnis yang umum ditemui.</li>
+              <li><strong>Bimbingan mentor:</strong> Peserta mendapat arahan dan umpan balik yang spesifik atas karyanya.</li>
+              <li><strong>Kerja tim:</strong> Sebagian tugas dikerjakan berkelompok untuk melatih komunikasi dan pembagian peran.</li>
+              <li><strong>Refleksi:</strong> Peserta menuliskan apa yang dipelajari agar pengalaman tidak hilang begitu saja.</li>
+            </ul>
+          </section>
+
+          <section id="penilaian" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Penilaian dan Hasil Akhir</h2>
+            <p>
+              Keberhasilan pelatihan diukur dari karya dan kemampuan, bukan hanya kehadiran. Mentor menilai kualitas hasil, ketepatan waktu, kemampuan menjelaskan proses, dan perkembangan peserta dari awal hingga akhir. Hasil penilaian membantu peserta mengetahui kekuatan yang bisa dijual kepada pemberi kerja serta area yang masih perlu diasah.
+            </p>
+            <p>
+              Setelah pelatihan, peserta dapat melanjutkan ke tahap berikutnya, misalnya program magang berbasis proyek industri riil, untuk menerapkan keterampilan dalam proyek yang lebih besar.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">Tim Redaksi & Pembimbing Gemilang Training</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim mentor praktisi industri dan penyusun kurikulum pelatihan kejuruan terpadu di Gemilang Training Malang. Berfokus membantu siswa SMK & mahasiswa siap kerja.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Ingin Mengikuti Pelatihan Sesuai Jurusan Anda?</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Hubungi tim Gemilang Training melalui WhatsApp resmi untuk konsultasi dan informasi pendaftaran program pelatihan kejuruan.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Pelatihan%20Kejuruan%20Terpadu." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">Pertanyaan Sering Diajukan (FAQ)</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa yang dimaksud dengan pelatihan kejuruan terpadu SKARIGA?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Program pelatihan yang memadukan materi kejuruan, praktik, bimbingan mentor, dan penilaian dalam satu alur, dengan isi yang diselaraskan terhadap kebutuhan industri.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa arti sinkronisasi industri?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Proses menyelaraskan materi dan standar hasil pelatihan dengan kebutuhan dunia usaha dan industri agar keterampilan peserta tetap relevan.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa saja jalur pelatihannya?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Dua jalur: pelatihan materi dan pembuatan portofolio, serta pelatihan AI dan prompt untuk bisnis, marketing, dan pemasaran.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Konsultasi Pelatihan</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tanyakan rincian materi pelatihan dan jadwal sinkronisasi industri di Kota Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Pelatihan%20Kejuruan%20Terpadu." 
+              target="_blank" 
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Terkait Sidebar -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/artikel2c.webp" alt="Pelatihan Portofolio" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Portofolio</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja">
+                    Pelatihan Portofolio: Materi & Praktik Siap Kerja
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/artikel3a.webp" alt="Pelatihan AI & Prompt" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">AI & Prompt</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran">
+                    Pelatihan AI & Prompt untuk Marketing & Bisnis
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) tocIcon.textContent = '▼';
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) tocIcon.textContent = '▶';
+      }
+    });
+  }
+</script>

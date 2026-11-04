@@ -1,0 +1,138 @@
+---
+// src/layouts/BaseLayout.astro
+import '../global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  isHome?: boolean;
+}
+
+const { 
+  title, 
+  description = "Program magang berbasis proyek industri untuk siswa SMK dan Mahasiswa (Tech, Marketing, Design) di Malang.", 
+  isHome = false 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://infomagangmalang.web.id");
+---
+
+<!DOCTYPE html>
+<html lang="id" class="bg-tc-bg text-tc-text scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title} | Gemilang Training</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- GEO Tagging (Kota Malang, Jawa Timur) -->
+  <meta name="geo.region" content="ID-JI" />
+  <meta name="geo.placename" content="Malang" />
+  <meta name="geo.position" content="-7.9427;112.6190" />
+  <meta name="ICBM" content="-7.9427, 112.6190" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={`${title} | Gemilang Training`} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content="/images/og-cover.jpg" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Schema Org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Gemilang Training",
+    "url": "https://infomagangmalang.web.id",
+    "description": "Platform magang industri berbasis proyek riil untuk siswa SMK dan mahasiswa di Malang."
+  }
+  </script>
+</head>
+<body class="min-h-screen flex flex-col justify-between font-sans antialiased bg-tc-bg text-tc-text relative">
+  <slot name="header" />
+  
+  <!-- Breadcrumb (Aktif untuk SEMUA halaman KECUALI Beranda) -->
+  {!isHome && (
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-4 text-sm text-tc-muted">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="hover:text-tc-accent transition-colors">Beranda</a></li>
+        <li><span>/</span></li>
+        <li class="text-tc-text capitalize">{Astro.url.pathname.replace('/', '').replace('-', ' ')}</li>
+      </ol>
+    </nav>
+  )}
+
+  <main class={isHome ? "pt-16" : ""}>
+    <slot />
+  </main>
+
+  <slot name="footer" />
+
+  <!-- ======================================================= -->
+  <!-- FLOATING BUTTONS (PANAH SCROLL TOP & WHATSAPP LIVE)      -->
+  <!-- ======================================================= -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 items-center">
+    
+    <!-- 1. Tombol Scroll To Top (Panah ke Atas) -->
+    <button 
+      id="scroll-to-top-btn" 
+      aria-label="Scroll to top"
+      class="opacity-0 invisible transition-all duration-300 bg-tc-card hover:bg-tc-bg border border-tc-border text-tc-accent p-3 rounded-full shadow-2xl hover:scale-110 flex items-center justify-center cursor-pointer"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path>
+      </svg>
+    </button>
+
+    <!-- 2. Tombol WhatsApp Live Melayang -->
+    <a 
+      href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20Program%20Magang." 
+      target="_blank" 
+      rel="noopener noreferrer"
+      aria-label="Chat WhatsApp"
+      class="bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 rounded-full shadow-2xl transition-transform hover:scale-110 flex items-center justify-center group relative"
+    >
+      <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 0C5.396 0 .015 5.38.015 12.015c0 2.12.552 4.19 1.6 6.012L0 24l6.145-1.61c1.76.96 3.75 1.467 5.886 1.467 6.634 0 12.016-5.38 12.016-12.015C24.047 5.38 18.666 0 12.03 0h.001zm0 22.014c-1.805 0-3.577-.485-5.13-1.405l-.367-.218-3.81 1 .998-3.712-.238-.38a9.983 9.983 0 0 1-1.536-5.284c0-5.518 4.49-10.009 10.01-10.009 5.517 0 10.008 4.491 10.008 10.009 0 5.517-4.49 10.009-10.008 10.009z"/>
+      </svg>
+
+      <!-- Tooltip Hover Pesan Singkat -->
+      <span class="absolute right-full mr-3 bg-tc-card border border-tc-border text-white text-xs font-semibold px-3 py-1.5 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+        Chat Live WA
+      </span>
+    </a>
+
+  </div>
+
+  <!-- Script Logika Scroll ke Atas -->
+  <script>
+    function setupScrollToTop() {
+      const scrollBtn = document.getElementById('scroll-to-top-btn');
+      if (!scrollBtn) return;
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.remove('opacity-0', 'invisible');
+          scrollBtn.classList.add('opacity-100', 'visible');
+        } else {
+          scrollBtn.classList.add('opacity-0', 'invisible');
+          scrollBtn.classList.remove('opacity-100', 'visible');
+        }
+      });
+
+      scrollBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    setupScrollToTop();
+    document.addEventListener('astro:page-load', setupScrollToTop);
+  </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+---
+// src/pages/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Pelatihan Portofolio: Materi dan Praktik Menyusun Karya agar Siap Kerja";
+const pageDesc = "Panduan pelatihan pembuatan portofolio untuk siswa SMK dan mahasiswa di Malang: materi, isi portofolio tiap jurusan, langkah menyusun, dan kesalahan umum.";
+const publishDate = "2026-11-03";
+const pageUrl = "https://infomagangmalang.web.id/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/kka-radar-kediri.webp";
+
+// Data Schema JSON-LD
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "mainEntityOfPage": pageUrl,
+      "datePublished": publishDate,
+      "dateModified": publishDate,
+      "author": {
+        "@type": "Organization",
+        "name": "Tim Redaksi & Pembimbing Gemilang Training"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/logo.webp"
+        }
+      },
+      "image": ogImageUrl
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu pelatihan pembuatan portofolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pelatihan yang membimbing peserta memilih, mengolah, dan menyajikan karya menjadi portofolio profesional, lengkap dengan materi keterampilan, studi kasus, dan latihan presentasi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah saya perlu sudah punya karya sebelum ikut?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak harus banyak. Tugas sekolah atau kuliah, proyek kecil, dan kegiatan organisasi bisa menjadi bahan awal, lalu dikembangkan selama pelatihan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa karya yang ideal dalam portofolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Umumnya tiga sampai lima karya terbaik yang paling relevan dengan tujuan Anda, masing-masing disertai penjelasan singkat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah portofolio hanya untuk jurusan kreatif?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak. Jurusan teknologi, jaringan, bisnis, dan pemasaran juga perlu portofolio berupa proyek, dokumentasi, atau studi kasus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana sebaiknya portofolio ditampilkan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa dalam dokumen PDF, halaman situs pribadi, atau platform profesional. Pilih yang mudah dibuka dan sesuai kebiasaan bidang Anda."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana jika karya berasal dari proyek klien?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mintalah izin terlebih dahulu dan patuhi ketentuan kerahasiaan. Bila perlu, tampilkan versi yang disamarkan."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} isHome={false}>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishDate} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <main class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Pelatihan Portofolio</span>
+            <time datetime={publishDate}>3 November 2026</time>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 (Hero) -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/artikel2c.webp" 
+            alt="Peserta menyusun portofolio karya dalam pelatihan" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2 bg-tc-bg/80 border-t border-tc-border">
+            sesi foto peserta dengan pemateri 
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm">
+            <span>📋 Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#mengapa-penting" class="hover:text-tc-accent transition-colors">1. Mengapa Portofolio Sangat Penting?</a></li>
+              <li><a href="#materi-pelatihan" class="hover:text-tc-accent transition-colors">2. Materi yang Dipelajari dalam Pelatihan</a></li>
+              <li><a href="#isi-portofolio" class="hover:text-tc-accent transition-colors">3. Isi Portofolio yang Baik untuk Tiap Jurusan</a></li>
+              <li><a href="#langkah-menyusun" class="hover:text-tc-accent transition-colors">4. Langkah Menyusun Portofolio dari Awal</a></li>
+              <li><a href="#latihan-presentasi" class="hover:text-tc-accent transition-colors">5. Latihan Presentasi: Menjelaskan Karya dengan Percaya Diri</a></li>
+              <li><a href="#studi-kasus" class="hover:text-tc-accent transition-colors">6. Contoh Studi Kasus Singkat dalam Portofolio</a></li>
+              <li><a href="#kesalahan-umum" class="hover:text-tc-accent transition-colors">7. Kesalahan Umum dalam Menyusun Portofolio</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">8. Pertanyaan Sering Diajukan (FAQ)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Pelatihan pembuatan portofolio</strong> adalah pelatihan yang membimbing peserta mengumpulkan, memilih, dan menyajikan karya terbaiknya menjadi portofolio profesional, lengkap dengan materi keterampilan sesuai jurusan, studi kasus, dan latihan presentasi.
+          </p>
+
+          <section id="mengapa-penting" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Mengapa Portofolio Sangat Penting?</h2>
+            <p>
+              Ketika seorang perekrut membuka puluhan lamaran, daftar nilai dan sertifikat sering terlihat serupa. Portofolio menjadi pembeda karena memperlihatkan langsung apa yang bisa dikerjakan pelamar. Bagi siswa SMK dan mahasiswa yang belum punya pengalaman kerja panjang, portofolio adalah cara terbaik membuktikan kemampuan lewat tugas, proyek kelas, kegiatan organisasi, atau pekerjaan lepas.
+            </p>
+            <p>
+              Masalahnya, banyak pelajar punya karya bagus tetapi tidak tahu cara menyajikannya. Karya tersimpan terpencar, tanpa penjelasan, sehingga nilainya tidak terlihat. Di sinilah pelatihan pembuatan portofolio berperan. Pelatihan ini merupakan salah satu jalur dari pelatihan kejuruan terpadu dan sinkronisasi industri SKARIGA di Gemilang Training Malang.
+            </p>
+          </section>
+
+          <section id="materi-pelatihan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Materi yang Dipelajari dalam Pelatihan</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Penguatan keterampilan inti:</strong> Peserta menyegarkan dan memperdalam kemampuan sesuai jurusan agar karya yang dihasilkan berkualitas.</li>
+              <li><strong>Kurasi karya:</strong> Peserta belajar memilih karya yang paling relevan dengan posisi atau bidang yang dituju.</li>
+              <li><strong>Penulisan studi kasus:</strong> Peserta berlatih menjelaskan masalah, langkah yang diambil, alat yang dipakai, dan hasil yang dicapai.</li>
+              <li><strong>Penyusunan CV dan profil:</strong> Peserta merapikan CV serta profil singkat yang selaras dengan portofolio.</li>
+              <li><strong>Tata letak dan penyajian:</strong> Peserta mempelajari cara menampilkan karya secara rapi, baik dalam dokumen maupun halaman daring.</li>
+              <li><strong>Presentasi dan wawancara:</strong> Peserta berlatih menjelaskan karya dengan percaya diri dan ringkas.</li>
+            </ul>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/peserta.webp" 
+              alt="Contoh halaman portofolio siswa dan mahasiswa" 
+              class="w-full h-auto max-h-[380px] object-cover"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2 bg-tc-bg/80 border-t border-tc-border">
+             peserta mendengarkan materi dari pemateri yang sedang menjelaskan materi 
+            </figcaption>
+          </figure>
+
+          <section id="isi-portofolio" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Isi Portofolio yang Baik untuk Tiap Jurusan</h2>
+            <p>
+              Setiap bidang memiliki bentuk bukti kerja yang berbeda. Tabel berikut memberi gambaran isi portofolio yang umum dan efektif:
+            </p>
+
+            <div class="overflow-x-auto my-6 border border-tc-border rounded-2xl bg-tc-bg">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-tc-card text-white font-bold border-b border-tc-border">
+                  <tr>
+                    <th class="p-3">Jurusan</th>
+                    <th class="p-3">Karya yang Ditampilkan</th>
+                    <th class="p-3 text-tc-accent">Hal yang Perlu Dijelaskan</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">RPL dan Informatika</td>
+                    <td class="p-3">Aplikasi atau situs, repositori kode, dan demo singkat</td>
+                    <td class="p-3 text-tc-accent">Masalah yang diselesaikan, teknologi yang dipakai, dan peran Anda</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">TKJ</td>
+                    <td class="p-3">Topologi jaringan, dokumentasi konfigurasi, dan laporan perbaikan</td>
+                    <td class="p-3 text-tc-accent">Kendala yang dihadapi dan cara mengatasinya</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Multimedia</td>
+                    <td class="p-3">Video, animasi, dan hasil penyuntingan</td>
+                    <td class="p-3 text-tc-accent">Tujuan konten, alat, dan proses produksi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">DKV</td>
+                    <td class="p-3">Identitas visual, poster, dan materi promosi</td>
+                    <td class="p-3 text-tc-accent">Konsep desain dan alasan pemilihan visual</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Digital Marketing & Pemasaran</td>
+                    <td class="p-3">Rencana kampanye, laporan riset, dan studi kasus performa</td>
+                    <td class="p-3 text-tc-accent">Target, strategi, hasil, dan pelajaran yang didapat</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="langkah-menyusun" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Langkah Menyusun Portofolio dari Awal</h2>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li><strong>Tentukan tujuan:</strong> Apakah portofolio dipakai untuk melamar magang, kerja, atau beasiswa? Tujuan menentukan karya yang dipilih.</li>
+              <li><strong>Kumpulkan semua karya:</strong> Daftar seluruh tugas, proyek, dan kegiatan yang pernah dikerjakan.</li>
+              <li><strong>Pilih 3-5 karya terbaik:</strong> Utamakan yang paling relevan dan paling menunjukkan kemampuan.</li>
+              <li><strong>Tulis studi kasus singkat:</strong> Untuk setiap karya, jelaskan masalah, proses, dan hasil dalam beberapa paragraf.</li>
+              <li><strong>Rapikan tampilan:</strong> Gunakan tata letak yang bersih, konsisten, dan mudah dibaca.</li>
+              <li><strong>Minta tinjauan:</strong> Mentor atau teman dapat menunjukkan bagian yang kurang jelas.</li>
+              <li><strong>Perbarui berkala:</strong> Tambahkan karya baru dan buang yang sudah tidak relevan.</li>
+            </ol>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">📌 BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA: Panduan Utama &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="latihan-presentasi" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Latihan Presentasi: Menjelaskan Karya dengan Percaya Diri</h2>
+            <p>
+              Portofolio yang bagus belum cukup bila pemiliknya kesulitan menjelaskannya. Dalam wawancara, perekrut biasanya meminta Anda menceritakan salah satu karya. Gunakan pola sederhana: <em>apa masalahnya, apa yang Anda lakukan, apa hasilnya, dan apa yang Anda pelajari</em>. Pola ini menjaga penjelasan tetap runtut dan menunjukkan kemampuan berpikir, bukan hanya hasil akhir.
+            </p>
+          </section>
+
+          <section id="studi-kasus" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Contoh Studi Kasus Singkat dalam Portofolio</h2>
+            <p>
+              Studi kasus adalah bagian yang paling sering dilewatkan, padahal justru paling dicari perekrut. Contohnya, seorang siswa DKV merancang ulang logo dan kemasan untuk usaha keripik rumahan. Dalam studi kasusnya ia menulis masalah awal, yaitu kemasan lama kurang menarik dan sulit dikenali. Ia lalu menjelaskan riset kecil terhadap pesaing, tiga pilihan konsep, alasan memilih satu konsep, serta hasil akhirnya berupa desain yang dipakai pemilik usaha.
+            </p>
+          </section>
+
+          <section id="kesalahan-umum" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesalahan Umum dalam Menyusun Portofolio</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Memasukkan terlalu banyak karya, sehingga karya terbaik tertutup.</li>
+              <li>Tidak ada penjelasan, sehingga pembaca tidak tahu peran dan proses Anda.</li>
+              <li>Tampilan berantakan yang mengurangi kesan profesional.</li>
+              <li>Mengklaim karya orang lain atau tidak menyebut kontribusi tim secara jujur.</li>
+              <li>Tidak pernah diperbarui, padahal kemampuan terus berkembang.</li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">Tim Redaksi & Pembimbing Gemilang Training</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim mentor praktisi industri Gemilang Training Malang. Berfokus mendampingi siswa SMK & mahasiswa menyusun portofolio profesional siap kerja.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Ingin Mengikuti Pelatihan Portofolio Sesuai Jurusan Anda?</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Hubungi tim Gemilang Training melalui WhatsApp resmi untuk konsultasi dan informasi pendaftaran.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Pelatihan%20Pembuatan%20Portofolio." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">Pertanyaan Sering Diajukan (FAQ)</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa itu pelatihan pembuatan portofolio?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Pelatihan yang membimbing peserta memilih, mengolah, dan menyajikan karya menjadi portofolio profesional, lengkap dengan materi keterampilan, studi kasus, dan latihan presentasi.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah saya perlu sudah punya karya sebelum ikut?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak harus banyak. Tugas sekolah atau kuliah, proyek kecil, dan kegiatan organisasi bisa menjadi bahan awal, lalu dikembangkan selama pelatihan.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Konsultasi Portofolio</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Konsultasikan draf portofoliomu bersama tim mentor Gemilang Training Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Pelatihan%20Pembuatan%20Portofolio." 
+              target="_blank" 
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Terkait Sidebar -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/artikel2b.webp" alt="Pelatihan Kejuruan Terpadu" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Panduan Utama</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga">
+                    Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/artikel3a.webp" alt="Pelatihan AI & Prompt" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">AI & Prompt</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran">
+                    Pelatihan AI & Prompt untuk Marketing & Bisnis
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) tocIcon.textContent = '▼';
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) tocIcon.textContent = '▶';
+      }
+    });
+  }
+</script>

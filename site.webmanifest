@@ -1,0 +1,25 @@
+{
+"name": "TalentaCraft - Platform Magang Industri Mahasiswa & SMK",
+"short_name": "TalentaCraft",
+"description": "Wadah pengembangan bakat digital berbasis proyek industri riil untuk mahasiswa dan siswa SMK.",
+"icons": [
+{
+"src": "/assets/img/logo.webp",
+"sizes": "192x192",
+"type": "image/webp",
+"purpose": "any maskable"
+},
+{
+"src": "/assets/img/logo.webp",
+"sizes": "512x512",
+"type": "image/webp",
+"purpose": "any maskable"
+}
+],
+"theme_color": "#0A192F",
+"background_color": "#0A192F",
+"start_url": "/",
+"display": "standalone",
+"orientation": "portrait",
+"categories": ["education", "business", "productivity"]
+}

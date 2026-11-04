@@ -1,16 +1,598 @@
 ---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Platform Magang Industri Mahasiswa & SMK - Gemilang Training Malang" isHome={true}>
+  <Navbar slot="header" />
+
+  <!-- 1. HERO SECTION -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-tc-card border border-tc-border text-tc-accent text-xs font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-tc-accent animate-pulse"></span>
+        Pendaftaran Gelombang Aktif 2026 - Malang
+      </div>
+      
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+        Cetak Portofolio Industri Bersama <span class="text-tc-accent">Gemilang Training</span>
+      </h1>
+      
+      <p class="text-base md:text-xl text-tc-muted leading-relaxed mb-8">
+        Program magang berbasis proyek industri nyata untuk <strong class="text-white">Mahasiswa Informatika, Digital Marketing, Bisnis Digital, Pemasaran</strong>, serta siswa SMK jurusan <strong class="text-white">RPL, TKJ, Multimedia, dan DKV</strong> untuk mengasah keterampilan hingga siap kerja.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mendaftar%20Program%20Magang." target="_blank" rel="noopener noreferrer" class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105">
+          Daftar Magang Sekarang
+        </a>
+        <a href="#program" class="bg-tc-card hover:border-tc-accent border border-tc-border text-white font-semibold px-8 py-4 rounded-xl transition-all">
+          Eksplorasi Program
+        </a>
+      </div>
+    </div>
+
+    <!-- Foto Hero Representative -->
+    <div class="relative max-w-5xl mx-auto rounded-2xl overflow-hidden border border-tc-border shadow-2xl bg-tc-card">
+      <img 
+        src="/assets/img/beranda1.webp" 
+        alt="Kolaborasi Peserta Magang Gemilang Training Malang" 
+        class="w-full h-auto object-cover max-h-[480px] opacity-90 hover:opacity-100 transition-opacity duration-300"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-tc-bg via-transparent to-transparent opacity-80"></div>
+    </div>
+  </section>
+
+  <!-- 2. RINGKASAN TENTANG -->
+  <section class="py-16 bg-tc-card/50 border-y border-tc-border">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-white mb-4">Mengapa Gemilang Training Ada?</h2>
+      <p class="text-tc-muted leading-relaxed">
+        Gemilang Training menjembatani dunia pendidikan dengan standar industri. Kami memastikan setiap peserta magang tidak hanya mendapatkan jam kerja, tetapi menghasilkan karya nyata yang siap dipamerkan di portofolio profesional.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. KEUNGGULAN PROGRAM -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-white text-center mb-12">Keunggulan Magang di Gemilang Training</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+        <div class="text-tc-accent text-2xl font-bold mb-3">01</div>
+        <h3 class="text-lg font-bold text-white mb-2">Project-Based</h3>
+        <p class="text-tc-muted text-sm">Mengerjakan proyek nyata industri, bukan sekadar tugas teori atau administratif.</p>
+      </div>
+      <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+        <div class="text-tc-accent text-2xl font-bold mb-3">02</div>
+        <h3 class="text-lg font-bold text-white mb-2">Direct Mentorship</h3>
+        <p class="text-tc-muted text-sm">Dibimbing langsung oleh mentor praktisi yang berpengalaman di bidangnya.</p>
+      </div>
+      <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+        <div class="text-tc-accent text-2xl font-bold mb-3">03</div>
+        <h3 class="text-lg font-bold text-white mb-2">Ready Portfolio</h3>
+        <p class="text-tc-muted text-sm">Setiap lulusan membawa bukti karya otentik dan sertifikat resmi kelulusan.</p>
+      </div>
+      <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+        <div class="text-tc-accent text-2xl font-bold mb-3">04</div>
+        <h3 class="text-lg font-bold text-white mb-2">Cross-Collaboration</h3>
+        <p class="text-tc-muted text-sm">Kolaborasi tim nyata antara anak Tech, Digital Marketing, dan Creative Design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PERWAKILAN PROGRAM SPESIALISASI LENGKAP -->
+  <section id="program" class="py-20 bg-tc-card/30 border-y border-tc-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-4">Program Magang Spesialisasi</h2>
+        <p class="text-tc-muted">Pilihan jurusan industri yang disesuaikan secara presisi dengan latar belakang pendidikanmu.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 1. Informatika -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/informatika.webp" alt="Informatika" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                Informatika / SI
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Tech & Dev</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">Web Engineering & Architecture</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Pengembangan web modern berkecepatan tinggi, integrasi REST API, dan deployment cloud.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=informatika" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. RPL -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/rpl.webp" alt="Rekayasa Perangkat Lunak" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                SMK / Mahasiswa RPL
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Tech & Dev</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">Frontend & Fullstack Web Dev</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Penguasaan komponen antarmuka modern, Clean Code, dan arsitektur Clean URL dinamis.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=rpl" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. TKJ -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/tkj.webp" alt="Teknik Komputer & Jaringan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                TKJ
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Tech & Dev</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">Network & Cloud Infrastructure</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Konfigurasi DNS Record, keamanan SSL/TLS, CDN, dan deployment otomatis platform cloud.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=tkj" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. Digital Marketing -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/digitalmarketing.webp" alt="Digital Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                Digital Marketing
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Digital Business</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">SEO & Answer Engine Optimization</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Riset keyword high-intent, strategi artikel pillar SEO, dan optimasi rekomendasi AI Search.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=digital-marketing" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 5. Bisnis Digital -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/bisnisdigital.webp" alt="Bisnis Digital" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                Bisnis Digital
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Digital Business</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">Data-Driven Growth & Strategy</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Optimalisasi Sales Funnel, riset kompetitor, dan pengelolaan operasional TikTok Shop Seller.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=bisnis-digital" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 6. Pemasaran -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/pemasaran.webp" alt="Pemasaran / Sales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                Pemasaran / Sales
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Digital Business</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">Local GEO Tagging & Campaign</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Pemasaran lokal berdasar GEO Tagging, Google Business Profile, dan komunikasi outbound.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=pemasaran" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 7. DKV -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/uiux.webp" alt="Desain Komunikasi Visual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                DKV
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Creative Arts</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">UI/UX Design & Brand Identity</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Pembuatan Design System UI/UX di Figma, antarmuka interaktif, dan panduan identitas brand.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=dkv" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- 8. Multimedia -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/multimedia.webp" alt="Multimedia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-2.5 left-2.5 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-2.5 py-0.5 rounded-full backdrop-blur-md">
+                Multimedia
+              </span>
+            </div>
+            <div class="p-5">
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-1">Creative Arts</span>
+              <h3 class="text-base font-bold text-white mb-2 leading-snug">Video Production & Motion Graphic</h3>
+              <p class="text-tc-muted text-xs leading-relaxed">
+                Produksi video pendek sinematik, animasi motion graphics 2D, audio mixing, dan thumbnail.
+              </p>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-2 border-t border-tc-border/60">
+            <a href="/program-detail?id=multimedia" class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent text-xs font-semibold py-2 rounded-xl transition-all">
+              Detail Program &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SHOWCASE PORTOFOLIO BERFOTO -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white mb-2">Portofolio Karya Alumni</h2>
+      <p class="text-tc-muted text-sm max-w-xl mx-auto mb-4">Bukti otentik proyek yang telah berhasil diselesaikan oleh para peserta magang.</p>
+      <a href="/portofolio" class="text-tc-accent text-sm font-semibold hover:underline inline-flex items-center gap-1">
+        Lihat Semua Portofolio &rarr;
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Item Portofolio 1 -->
+      <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="h-52 overflow-hidden relative border-b border-tc-border/60">
+            <img src="/assets/img/kka-radar-kediri.webp" alt="Media Digital Radar Kediri" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Media Digital</span>
+          </div>
+          <div class="p-6 space-y-2">
+            <div class="text-xs text-tc-accent font-semibold">📍 Jawa Pos Radar Kediri</div>
+            <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+              Kemitraan Jurnalistik & Portal Media Digital
+            </h3>
+            <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+              Pengembangan strategi komunikasi media digital & portal berita komersial bersama Radar Kediri.
+            </p>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
+          <a href="/portofolio" class="text-tc-accent text-xs font-bold hover:underline">Lihat Case Study &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item Portofolio 2 -->
+      <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="h-52 overflow-hidden relative border-b border-tc-border/60">
+            <img src="/assets/img/pelatihan-smk3pgri.webp" alt="Pelatihan SKARIGA Malang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Vokasi & Pelatihan</span>
+          </div>
+          <div class="p-6 space-y-2">
+            <div class="text-xs text-tc-accent font-semibold">📍 SMK PGRI 1 Malang (SKARIGA)</div>
+            <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+              Pelatihan Kejuruan Terpadu & Sinkronisasi
+            </h3>
+            <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+              Program peningkatan kompetensi siswa SMK melalui sertifikasi keahlian terpadu lintas jurusan.
+            </p>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
+          <a href="/portofolio" class="text-tc-accent text-xs font-bold hover:underline">Lihat Case Study &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Item Portofolio 3 -->
+      <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl">
+        <div>
+          <div class="h-52 overflow-hidden relative border-b border-tc-border/60">
+            <img src="/assets/img/qris-run.webp" alt="QRIS Run System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+            <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Web & Fintech</span>
+          </div>
+          <div class="p-6 space-y-2">
+            <div class="text-xs text-tc-accent font-semibold">📍 Panitia QRIS Run</div>
+            <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+              Sistem Registrasi Digital & Event Management
+            </h3>
+            <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+              Implementasi ticketing smart-presence dan lokasi live tracking untuk kegiatan event QRIS Run.
+            </p>
+          </div>
+        </div>
+        <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
+          <a href="/portofolio" class="text-tc-accent text-xs font-bold hover:underline">Lihat Case Study &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PERWAKILAN BLOG / EDUKASI -->
+  <section class="py-20 bg-tc-card/30 border-y border-tc-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-white mb-2">Edukasi & Tips Magang</h2>
+        <p class="text-tc-muted text-sm max-w-xl mx-auto mb-4">Artikel terbaru untuk membantu persiapan karier digitalmu.</p>
+        <a href="/blog" class="text-tc-accent text-sm font-semibold hover:underline inline-flex items-center gap-1">
+          Lihat Semua Blog &rarr;
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Artikel 1 (Pelatihan Kejuruan Terpadu SKARIGA) -->
+        <article class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="h-48 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/artikel2b.webp" alt="Pelatihan Kejuruan Terpadu SKARIGA" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Panduan Utama</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">Pillar Page</span>
+              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                <a href="/blog/pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga">
+                  Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA
+                </a>
+              </h3>
+              <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+                Panduan pelatihan kejuruan terpadu dan sinkronisasi industri SKARIGA di Malang: alur belajar dan cara memilih program.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between">
+            <span class="text-xs font-mono text-tc-muted">03 Nov 2026</span>
+            <a href="/blog/pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga" class="text-xs font-bold text-tc-accent hover:text-white transition-colors">
+              Baca Selengkapnya &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Artikel 2 (Pelatihan Portofolio) -->
+        <article class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="h-48 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/artikel2c.webp" alt="Pelatihan Pembuatan Portofolio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Portofolio</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">Karir & Vokasi</span>
+              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                <a href="/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja">
+                  Pelatihan Portofolio: Materi dan Praktik Menyusun Karya agar Siap Kerja
+                </a>
+              </h3>
+              <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+                Panduan pelatihan pembuatan portofolio untuk siswa SMK dan mahasiswa: isi portofolio tiap jurusan & langkah menyusunnya.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between">
+            <span class="text-xs font-mono text-tc-muted">03 Nov 2026</span>
+            <a href="/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja" class="text-xs font-bold text-tc-accent hover:text-white transition-colors">
+              Baca Selengkapnya &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Artikel 3 (Pelatihan AI & Prompt) -->
+        <article class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group shadow-xl">
+          <div>
+            <div class="h-48 overflow-hidden relative border-b border-tc-border/60">
+              <img src="/assets/img/artikel3a.webp" alt="Pelatihan AI dan Prompt Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">AI & Prompt</span>
+            </div>
+            <div class="p-6 space-y-3">
+              <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">Tech & Growth</span>
+              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                <a href="/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran">
+                  Pelatihan AI dan Prompt untuk Bisnis, Marketing, dan Pemasaran
+                </a>
+              </h3>
+              <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+                Panduan pelatihan AI dan prompt engineering untuk bisnis dan marketing: struktur prompt yang terarah & etika penggunaannya.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between">
+            <span class="text-xs font-mono text-tc-muted">03 Nov 2026</span>
+            <a href="/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran" class="text-xs font-bold text-tc-accent hover:text-white transition-colors">
+              Baca Selengkapnya &rarr;
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. TESTIMONI ALUMNI -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-white mb-4">Apa Kata Alumni Magang?</h2>
+      <p class="text-tc-muted">Pengalaman nyata dari para siswa dan mahasiswa yang telah menyelesaikan program di Gemilang Training.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimoni 1 -->
+      <div class="bg-tc-card p-6 rounded-2xl border border-tc-border flex flex-col justify-between">
+        <p class="text-tc-muted text-sm italic mb-6">
+          "Magang di sini beneran ngerjain proyek nyata. Saya yang dari jurusan Informatika jadi paham cara bangun website cepat dengan Astro dan Tailwind."
+        </p>
+        <div class="flex items-center gap-3 border-t border-tc-border pt-4">
+          <div class="w-10 h-10 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center font-bold text-tc-accent">F</div>
+          <div>
+            <h4 class="text-white font-bold text-sm">Fajar Ramadhan</h4>
+            <p class="text-tc-muted text-xs">Mahasiswa Informatika</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimoni 2 -->
+      <div class="bg-tc-card p-6 rounded-2xl border border-tc-border flex flex-col justify-between">
+        <p class="text-tc-muted text-sm italic mb-6">
+          "Praktik Digital Marketing-nya langsung ke kasus nyata. Riset keyword SEO dan AEO beneran kepakai dan bikin portofolio saya makin berbobot!"
+        </p>
+        <div class="flex items-center gap-3 border-t border-tc-border pt-4">
+          <div class="w-10 h-10 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center font-bold text-tc-accent">S</div>
+          <div>
+            <h4 class="text-white font-bold text-sm">Siti Nurhaliza</h4>
+            <p class="text-tc-muted text-xs">Siswa Bisnis Digital & Pemasaran</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimoni 3 -->
+      <div class="bg-tc-card p-6 rounded-2xl border border-tc-border flex flex-col justify-between">
+        <p class="text-tc-muted text-sm italic mb-6">
+          "Bimbingannya intensif banget. Hasil desain UI/UX dan aset visual DKV saya benar-benar di-review langsung oleh mentor praktisi."
+        </p>
+        <div class="flex items-center gap-3 border-t border-tc-border pt-4">
+          <div class="w-10 h-10 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center font-bold text-tc-accent">D</div>
+          <div>
+            <h4 class="text-white font-bold text-sm">Dion Arisandi</h4>
+            <p class="text-tc-muted text-xs">Siswa DKV & Multimedia</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ INTERAKTIF -->
+  <section class="py-20 bg-tc-card/30 border-t border-tc-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl font-bold text-white text-center mb-12">Pertanyaan Umum (FAQ)</h2>
+      <div class="space-y-4">
+        
+        <details class="bg-tc-card p-6 rounded-2xl border border-tc-border group cursor-pointer transition-all">
+          <summary class="text-lg font-semibold text-white flex justify-between items-center list-none select-none">
+            <span>Siapa saja yang bisa mendaftar di Gemilang Training?</span>
+            <span class="text-tc-accent text-sm group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          <p class="text-tc-muted text-sm mt-4 leading-relaxed border-t border-tc-border pt-4">
+            Mahasiswa perguruan tinggi dari jurusan Informatika dan Siswa RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia.
+          </p>
+        </details>
+
+        <details class="bg-tc-card p-6 rounded-2xl border border-tc-border group cursor-pointer transition-all">
+          <summary class="text-lg font-semibold text-white flex justify-between items-center list-none select-none">
+            <span>Bagaimana sistem pelaksanaan magangnya?</span>
+            <span class="text-tc-accent text-sm group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          <p class="text-tc-muted text-sm mt-4 leading-relaxed border-t border-tc-border pt-4">
+            Sistem magang fleksibel (WFH / Hybrid / Onsite Malang) disesuaikan dengan kesepakatan dan kebutuhan proyek yang dikerjakan bersama mentor.
+          </p>
+        </details>
+
+        <details class="bg-tc-card p-6 rounded-2xl border border-tc-border group cursor-pointer transition-all">
+          <summary class="text-lg font-semibold text-white flex justify-between items-center list-none select-none">
+            <span>Berapa lama durasi magang yang tersedia?</span>
+            <span class="text-tc-accent text-sm group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          <p class="text-tc-muted text-sm mt-4 leading-relaxed border-t border-tc-border pt-4">
+            Durasi standar magang berkisar antara 3 hingga 6 bulan sesuai dengan ketentuan program resmi dari pihak sekolah atau kampus masing-masing.
+          </p>
+        </details>
+
+        <details class="bg-tc-card p-6 rounded-2xl border border-tc-border group cursor-pointer transition-all">
+          <summary class="text-lg font-semibold text-white flex justify-between items-center list-none select-none">
+            <span>Apakah peserta akan mendapatkan sertifikat resmi?</span>
+            <span class="text-tc-accent text-sm group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          <p class="text-tc-muted text-sm mt-4 leading-relaxed border-t border-tc-border pt-4">
+            Ya, seluruh peserta yang menyelesaikan program dengan baik akan menerima sertifikat resmi kelulusan magang serta hasil kelayakan portofolio karya.
+          </p>
+        </details>
+
+        <details class="bg-tc-card p-6 rounded-2xl border border-tc-border group cursor-pointer transition-all">
+          <summary class="text-lg font-semibold text-white flex justify-between items-center list-none select-none">
+            <span>Bagaimana alur dan cara pendaftarannya?</span>
+            <span class="text-tc-accent text-sm group-open:rotate-180 transition-transform duration-300">▼</span>
+          </summary>
+          <p class="text-tc-muted text-sm mt-4 leading-relaxed border-t border-tc-border pt-4">
+            Kamu cukup mengklik tombol "Daftar Magang Sekarang", lalu kamu akan langsung terhubung dengan tim seleksi via WhatsApp untuk informasi pendaftaran selanjutnya.
+          </p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CTA BANNER -->
+  <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-tc-card border border-tc-border rounded-3xl p-8 md:p-12 text-center relative overflow-hidden shadow-2xl">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4">Ready to Shine with Gemilang Training?</h2>
+      <p class="text-tc-muted max-w-2xl mx-auto text-base md:text-lg mb-8">
+        Bergabunglah bersama peserta magang lainnya dan bangun portofolio industri terdepan sekarang juga.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mendaftar%20Program%20Magang." target="_blank" rel="noopener noreferrer" class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105">
+          Daftar Magang Sekarang
+        </a>
+        <a href="/program" class="bg-tc-bg hover:border-tc-accent border border-tc-border text-white font-semibold px-8 py-4 rounded-xl transition-all">
+          Pelajari Semua Program
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -1,0 +1,63 @@
+---
+// src/pages/kontak.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import RegistrationForm from '../components/RegistrationForm.astro';
+---
+
+<BaseLayout title="Hubungi Kami - Surat Kerjasama & Informasi Gemilang Training" isHome={false}>
+  <Navbar slot="header" />
+
+  <section class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+        Hubungi Tim Gemilang Training
+      </h1>
+      <p class="text-tc-muted text-base md:text-lg">
+        Informasi pendaftaran peserta magang, penawaran kerjasama instansi sekolah/kampus, atau pertanyaan umum.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Informasi Kontak & Alamat -->
+      <div class="bg-tc-card p-8 rounded-3xl border border-tc-border space-y-6">
+        <h2 class="text-2xl font-bold text-white">Informasi Resmi</h2>
+        
+        <div>
+          <h3 class="text-sm font-semibold text-tc-accent uppercase">Lokasi Operasional</h3>
+          <p class="text-tc-text text-base mt-1">Jl. Soekarno Hatta No. 45, Kota Malang, 65141</p>
+          <p class="text-tc-muted text-xs mt-0.5">Senin – Jumat, 08.00 – 17.00 WIB</p>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-tc-accent uppercase">WhatsApp Resmi</h3>
+          <a href="https://wa.me/6281943431484" target="_blank" class="text-white hover:text-tc-accent font-semibold text-lg inline-block mt-1">
+            +62 819-4343-1484
+          </a>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-tc-accent uppercase">Instagram Resmi</h3>
+          <a href="https://instagram.com/gemilangtraining.id" target="_blank" rel="noopener noreferrer" class="text-tc-muted hover:text-white text-sm block mt-1">
+            @gemilangtraining.id
+          </a>
+        </div>
+
+        <div>
+          <h3 class="text-sm font-semibold text-tc-accent uppercase">Layanan Instansi / Pembimbing</h3>
+          <p class="text-tc-muted text-sm mt-1">
+            Menerima pengajuan surat pengantar magang formal dari Dosen Pembimbing / Guru SMK.
+          </p>
+        </div>
+      </div>
+
+      <!-- Form Pendaftaran / Pertanyaan Direct WA -->
+      <div>
+        <RegistrationForm />
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

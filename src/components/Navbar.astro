@@ -1,0 +1,238 @@
+---
+// src/components/Navbar.astro
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, ""); 
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0A192F]/90 backdrop-blur-md border-b border-tc-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    
+    <!-- Brand Logo dengan Gambar & Teks -->
+    <a href="/" class="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center gap-3 group">
+      <img 
+        src="/public/logo.webp" 
+        alt="Logo Gemilang Training" 
+        class="w-9 h-9 md:w-10 md:h-10 object-contain transition-transform duration-300 group-hover:scale-105"
+        onerror="this.src='/logo.webp'"
+      />
+      <span class="font-extrabold mb-0">
+        <span class="text-tc-accent">Gemilang</span> Training
+      </span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-2 text-sm font-medium">
+      <!-- 1. Beranda -->
+      <a 
+        href="/" 
+        class={`px-4 py-2 rounded-xl transition-all ${
+          currentPath === "" || currentPath === "/" 
+            ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" 
+            : "text-tc-muted hover:text-white"
+        }`}
+      >
+        Beranda
+      </a>
+
+      <!-- 2. Tentang Kami -->
+      <a 
+        href="/tentang" 
+        class={`px-4 py-2 rounded-xl transition-all ${
+          currentPath.startsWith("/tentang") 
+            ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" 
+            : "text-tc-muted hover:text-white"
+        }`}
+      >
+        Tentang Kami
+      </a>
+      
+      <!-- 3. Dropdown Program Magang Desktop -->
+      <div class="relative group py-2">
+        <a 
+          href="/program"
+          class={`flex items-center gap-1.5 px-4 py-2 rounded-xl transition-all focus:outline-none ${
+            currentPath.startsWith("/program") 
+              ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" 
+              : "text-tc-muted hover:text-white"
+          }`}
+        >
+          <span>Program Magang</span>
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+
+        <!-- Menu Dropdown -->
+        <div class="absolute left-0 top-full hidden group-hover:block w-72 bg-tc-card border border-tc-border rounded-2xl shadow-2xl p-4 space-y-3 mt-2 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']">
+          
+          <!-- Item 1: Tech & Dev -->
+          <a href="/program?cat=tech" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item">
+            <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+              </svg>
+              <span>TECH & DEV</span>
+            </div>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Informatika, RPL, TKJ</span>
+          </a>
+
+          <!-- Item 2: Digital Business -->
+          <a href="/program?cat=business" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
+            <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+              <span>DIGITAL BUSINESS</span>
+            </div>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Digital Marketing, Pemasaran</span>
+          </a>
+
+          <!-- Item 3: Creative Arts -->
+          <a href="/program?cat=design" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
+            <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              <span>CREATIVE ARTS</span>
+            </div>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">DKV, Multimedia</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- 4. Portofolio -->
+      <a 
+        href="/portofolio" 
+        class={`px-4 py-2 rounded-xl transition-all ${
+          currentPath.startsWith("/portofolio") 
+            ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" 
+            : "text-tc-muted hover:text-white"
+        }`}
+      >
+        Portofolio
+      </a>
+
+      <!-- 5. Blog -->
+      <a 
+        href="/blog" 
+        class={`px-4 py-2 rounded-xl transition-all ${
+          currentPath.startsWith("/blog") 
+            ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" 
+            : "text-tc-muted hover:text-white"
+        }`}
+      >
+        Blog
+      </a>
+
+      <!-- 6. Kontak -->
+      <a 
+        href="/kontak" 
+        class={`px-4 py-2 rounded-xl transition-all ${
+          currentPath.startsWith("/kontak") 
+            ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" 
+            : "text-tc-muted hover:text-white"
+        }`}
+      >
+        Kontak
+      </a>
+    </nav>
+
+    <!-- Header CTA Button -->
+    <div class="hidden md:block">
+      <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mendaftar%20Program%20Magang." target="_blank" rel="noopener noreferrer" class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all inline-block shadow-md hover:scale-105">
+        Daftar Magang
+      </a>
+    </div>
+
+    <!-- Hamburger Button (Mobile Trigger) -->
+    <button id="menu-btn" aria-label="Open Menu" class="md:hidden text-white focus:outline-none p-2">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </button>
+  </div>
+
+  <!-- Offcanvas Mobile Drawer -->
+  <div 
+    id="mobile-drawer" 
+    class="fixed inset-0 w-screen h-screen z-[9999] flex flex-col p-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-y-auto"
+    style="background-color: #0A192F !important;"
+  >
+    <div class="flex items-center justify-between pb-6 border-b border-tc-border">
+      <!-- Logo pada Drawer Mobile -->
+      <a href="/" class="flex items-center gap-2.5 text-xl font-bold text-white">
+        <img src="/assets/img/logo.webp" alt="Logo Gemilang Training" class="w-8 h-8 object-contain" onerror="this.src='/logo.webp'" />
+        <span><span class="text-tc-accent">Gemilang</span> Training</span>
+      </a>
+      <button id="close-btn" class="text-tc-muted hover:text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-2 mt-6 font-medium">
+      <a href="/" class={`px-4 py-3 rounded-xl transition-all ${currentPath === "" || currentPath === "/" ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" : "text-tc-muted hover:text-white"}`}>
+        Beranda
+      </a>
+
+      <a href="/tentang" class={`px-4 py-3 rounded-xl transition-all ${currentPath.startsWith("/tentang") ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" : "text-tc-muted hover:text-white"}`}>
+        Tentang Kami
+      </a>
+
+      <!-- Accordion Mobile -->
+      <details class="group rounded-xl border border-transparent [&[open]]:border-tc-border [&[open]]:bg-tc-card/40 transition-all">
+        <summary class={`flex items-center justify-between px-4 py-3 cursor-pointer list-none select-none rounded-xl ${currentPath.startsWith("/program") ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" : "text-tc-muted hover:text-white"}`}>
+          <span>Program Magang</span>
+          <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </summary>
+
+        <div class="px-4 pb-4 pt-2 space-y-3">
+          <a href="/program?cat=tech" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
+            <div class="flex items-center gap-2 text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">
+              <span>TECH & DEV</span>
+            </div>
+            <span class="block text-xs text-tc-muted">Informatika, RPL, TKJ</span>
+          </a>
+
+          <a href="/program?cat=business" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
+            <div class="flex items-center gap-2 text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">
+              <span>DIGITAL BUSINESS</span>
+            </div>
+            <span class="block text-xs text-tc-muted">Digital Marketing, Pemasaran</span>
+          </a>
+
+          <a href="/program?cat=design" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
+            <div class="flex items-center gap-2 text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">
+              <span>CREATIVE ARTS</span>
+            </div>
+            <span class="block text-xs text-tc-muted">DKV, Multimedia</span>
+          </a>
+        </div>
+      </details>
+
+      <a href="/portofolio" class={`px-4 py-3 rounded-xl transition-all ${currentPath.startsWith("/portofolio") ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" : "text-tc-muted hover:text-white"}`}>
+        Portofolio Karya
+      </a>
+
+      <a href="/blog" class={`px-4 py-3 rounded-xl transition-all ${currentPath.startsWith("/blog") ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" : "text-tc-muted hover:text-white"}`}>
+        Blog & Artikel
+      </a>
+
+      <a href="/kontak" class={`px-4 py-3 rounded-xl transition-all ${currentPath.startsWith("/kontak") ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" : "text-tc-muted hover:text-white"}`}>
+        Kontak
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const closeBtn = document.getElementById('close-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  menuBtn?.addEventListener('click', () => drawer?.classList.remove('translate-x-full'));
+  closeBtn?.addEventListener('click', () => drawer?.classList.add('translate-x-full'));
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => drawer?.classList.add('translate-x-full'));
+  });
+</script>

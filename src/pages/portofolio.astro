@@ -1,0 +1,394 @@
+---
+// src/pages/portofolio.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const portofolios = [
+  {
+    id: "p1",
+    category: "media",
+    badge: "Media Digital",
+    mitra: "Jawa Pos Radar Kediri",
+    lokasi: "Kediri",
+    title: "Kemitraan Jurnalistik & Portal Media Digital Radar Kediri",
+    desc: "Pengembangan strategi komunikasi media digital, manajemen konten portal berita komersial, serta optimalisasi jangkauan pembaca digital bersama mitra Jawa Pos Radar Kediri.",
+    tags: ["Media Digital", "SEO Analytics", "Content Writing", "Social Media Management"],
+    img: "/assets/img/kka-radar-kediri.webp"
+  },
+  {
+    id: "p2",
+    category: "vokasi",
+    badge: "Vokasi & Pelatihan",
+    mitra: "SMK PGRI 1 Malang (SKARIGA)",
+    lokasi: "Kota Malang",
+    title: "Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA",
+    desc: "Program peningkatan kompetensi siswa SMK melalui sertifikasi keahlian, pendampingan uji kompetensi keahlian, dan workshop pelatihan akselerasi talenta digital lintas jurusan (RPL, TKJ, DKV, dan Multimedia).",
+    tags: ["Pelatihan SMK", "Sinkronisasi Kurikulum", "RPL", "TKJ", "Multimedia"],
+    img: "/assets/img/pelatihan-smk3pgri.webp"
+  },
+  {
+    id: "p3",
+    category: "vokasi",
+    badge: "Vokasi & Pelatihan",
+    mitra: "Universitas Yudharta Pasuruan",
+    lokasi: "Pasuruan & Malang",
+    title: "Kemitraan Industri & Magang Mahasiswa Universitas Yudharta",
+    desc: "Kolaborasi dan integrasi kurikulum magang terapan Gemilang Training bersama 3 mahasiswa Universitas Yudharta Pasuruan. Berfokus pada pengembangan platform web modern, optimasi ekosistem digital, serta eksekusi proyek riil industri.",
+    tags: ["Kemitraan Universitas", "Magang Mahasiswa", "Informatika", "Web Engineering", "Project Industri"],
+    img: "/assets/img/yudharta.webp"
+  },
+  {
+    id: "p4",
+    category: "vokasi",
+    badge: "Vokasi & Monitoring",
+    mitra: "Politeknik Negeri Banyuwangi (Poliwangi)",
+    lokasi: "Malang",
+    title: "Kunjungan & Evaluasi Industri Dosen Pembimbing Mahasiswa Poliwangi",
+    desc: "Kunjungan kerja (monitoring visit) dosen pembimbing Politeknik Negeri Banyuwangi ke lokasi magang Gemilang Training untuk meninjau secara langsung perkembangan keterampilan, situasi kerja nyata, dan progres proyek terapan mahasiswa.",
+    tags: ["Monitoring Magang", "Supervisi Kampus", "Poliwangi", "Informatika", "Evaluasi Industri"],
+    img: "/assets/img/poliwangi.webp"
+  },
+  {
+    id: "p5",
+    category: "vokasi",
+    badge: "Vokasi & Pelatihan",
+    mitra: "Yayasan Insan Kami",
+    lokasi: "Jawa Timur",
+    title: "Pelatihan Literasi Digital & Pengenalan IT Insan Kamil",
+    desc: "Program pelatihan dasar teknologi informasi, edukasi pemanfaatan internet sehat dan aman, serta pengembangan dasar kapabilitas perangkat komputer bagi generasi muda di lingkungan masyarakat.",
+    tags: ["Pemberdayaan Digital", "Pengenalan Komputer", "Literasi Teknologi", "Generasi Muda"],
+    img: "/assets/img/pelatihan-insan-kamil.webp"
+  },
+  {
+    id: "p6",
+    category: "web-fintech",
+    badge: "Web & Fintech",
+    mitra: "Panitia QRIS Run & Komunitas Digital",
+    lokasi: "Jawa Timur",
+    title: "Sistem Registrasi Digital & Event Management QRIS Run",
+    desc: "Implementasi ticketing smart-presence dan lokasi live tracking untuk kegiatan olahraga bergaya kampanye QRIS, sistem otomatisasi pendaftaran elektronik, dan pemantauan peserta secara aktual.",
+    tags: ["Web Event", "QRIS Payment Gateway", "Ticketing System", "Realtime Tracking"],
+    img: "/assets/img/qris-run.webp"
+  },
+  {
+    id: "p7",
+    category: "edukasi-marketing",
+    badge: "Edukasi & Pemasaran Digital",
+    mitra: "Komunitas UMKM XL Smart Center",
+    lokasi: "Kab. Malang",
+    title: "Seminar Digitalisasi UMKM & Adopsi Teknologi XL Smart",
+    desc: "Seminar dan bimbingan teknis pemasaran digital untuk pelaku usaha mikro kecil dan menengah bersama jaringan XL Smart, mengoptimalkan katalog online, integrasi marketplace, dan strategi promosi multi-channel.",
+    tags: ["Digitalisasi", "E-commerce Branding", "Pemasaran Lokal GEO", "XL Smart Center"],
+    img: "/assets/img/seminar-umkm-xlsmart.webp"
+  },
+  {
+    id: "p8",
+    category: "branding",
+    badge: "Branding & Merchandise",
+    mitra: "Mitra Corporate / Event Pendidikan",
+    lokasi: "Jawa Timur",
+    title: "Pengembangan Fasilitas & Perlengkapan Pelatihan Seminar Kit",
+    desc: "Perancangan dan pengadaan perlengkapan merchandise edukatif, aksesoris penyelenggaraan event, serta kit peserta pelatihan institusi guna mendukung kenyamanan dan kerapian kegiatan kelas/seminar.",
+    tags: ["Merchandise Custom", "Branding Design", "Seminar Kit Production", "Event Kit"],
+    img: "/assets/img/seminarkits.webp"
+  }
+];
+---
+
+<BaseLayout title="Portofolio Dokumentasi Karya - Gemilang Training" isHome={false}>
+  <Navbar slot="header" />
+
+  <section class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header Section -->
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-2 rounded-full border border-tc-border inline-block mb-4">
+        Portofolio & Dokumentasi
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
+        Portofolio Aktivitas & Karya Terapan
+      </h1>
+      <p class="text-tc-muted text-base md:text-lg">
+        Dokumentasi komprehensif implementasi teknologi, pelatihan kejuruan vokasi, dan kerja sama industri Gemilang Training.
+      </p>
+    </div>
+
+    <!-- Filter Buttons Interaktif -->
+    <div class="flex flex-wrap justify-center gap-2 mb-12">
+      <button 
+        data-filter="all" 
+        class="filter-btn active-filter px-4 py-2 rounded-xl text-xs font-bold transition-all border border-tc-accent bg-tc-accent text-slate-950 cursor-pointer"
+      >
+        Semua Kategori
+      </button>
+      <button 
+        data-filter="vokasi" 
+        class="filter-btn px-4 py-2 rounded-xl text-xs font-medium transition-all border border-tc-border bg-tc-card text-tc-muted hover:text-white cursor-pointer"
+      >
+        Vokasi & Pelatihan
+      </button>
+      <button 
+        data-filter="web-fintech" 
+        class="filter-btn px-4 py-2 rounded-xl text-xs font-medium transition-all border border-tc-border bg-tc-card text-tc-muted hover:text-white cursor-pointer"
+      >
+        Web & Fintech
+      </button>
+      <button 
+        data-filter="edukasi-marketing" 
+        class="filter-btn px-4 py-2 rounded-xl text-xs font-medium transition-all border border-tc-border bg-tc-card text-tc-muted hover:text-white cursor-pointer"
+      >
+        Edukasi & Digital Marketing
+      </button>
+      <button 
+        data-filter="branding" 
+        class="filter-btn px-4 py-2 rounded-xl text-xs font-medium transition-all border border-tc-border bg-tc-card text-tc-muted hover:text-white cursor-pointer"
+      >
+        Branding & Merchandise
+      </button>
+    </div>
+
+    <!-- Grid Portofolio (3 Kolom) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {portofolios.map((item) => (
+        <div 
+          class="portofolio-card bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl"
+          data-category={item.category}
+        >
+          <div>
+            <!-- Header Image -->
+            <div class="h-56 overflow-hidden relative border-b border-tc-border/60">
+              <img 
+                src={item.img} 
+                alt={item.title} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
+                {item.badge}
+              </span>
+            </div>
+
+            <!-- Content Body -->
+            <div class="p-6 space-y-3">
+              <div class="flex justify-between items-center text-xs text-tc-accent font-semibold border-b border-tc-border/40 pb-2">
+                <span>📍 {item.mitra}</span>
+                <span class="text-tc-muted">{item.lokasi}</span>
+              </div>
+
+              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                {item.title}
+              </h3>
+
+              <p class="text-tc-muted text-xs leading-relaxed line-clamp-3">
+                {item.desc}
+              </p>
+
+              <!-- Tags / Skill list -->
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                {item.tags.map((tag) => (
+                  <span class="text-[10px] bg-tc-bg px-2.5 py-1 rounded-md text-tc-muted border border-tc-border/60 font-mono">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Button Trigger Modal Pop-up -->
+          <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
+            <button 
+              type="button"
+              data-modal-target={item.id}
+              class="open-modal-btn w-full text-center text-xs font-bold text-tc-accent hover:underline cursor-pointer bg-transparent border-none py-1"
+            >
+              Lihat Detail Portofolio &rarr;
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Banner Penutup CTA -->
+    <div class="mt-20 bg-tc-card border border-tc-border rounded-3xl p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
+      <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-4">
+        Ingin Membangun Portofolio Nyata Seperti Ini?
+      </h2>
+      <p class="text-tc-muted max-w-2xl mx-auto text-xs md:text-sm mb-8">
+        Program Magang Informatika di Kota Malang membuka kesempatan bagi siswa SMK dan mahasiswa untuk menggarap proyek langsung bersama mentor industri.
+      </p>
+      <a 
+        href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mendaftar%20Program%20Magang." 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-3.5 rounded-xl transition-all inline-block shadow-lg hover:scale-105 text-sm"
+      >
+        Daftar Sekarang &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- DIALOG POP-UP MODAL (CONTAINER HIDDEN BY DEFAULT)        -->
+  <!-- ======================================================= -->
+  <div id="modal-overlay" class="fixed inset-0 z-[9999] bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
+    <div id="modal-content" class="bg-tc-card border border-tc-border rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative space-y-6 text-tc-text">
+      
+      <!-- Tombol Close (X) -->
+      <button id="close-modal-btn" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-tc-bg border border-tc-border flex items-center justify-center text-white hover:text-tc-accent transition-colors">
+        ✕
+      </button>
+
+      <!-- Foto Header Modal -->
+      <div class="rounded-2xl overflow-hidden border border-tc-border h-64 w-full relative">
+        <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
+        <span id="modal-badge" class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md"></span>
+      </div>
+
+      <!-- Detail Teks Proyek -->
+      <div class="space-y-4">
+        <div class="flex flex-wrap justify-between items-center text-xs text-tc-accent font-semibold border-b border-tc-border/60 pb-3">
+          <span id="modal-mitra"></span>
+          <span id="modal-lokasi" class="text-tc-muted"></span>
+        </div>
+
+        <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-white leading-tight"></h3>
+        
+        <p id="modal-desc" class="text-tc-muted text-xs md:text-sm leading-relaxed"></p>
+
+        <!-- List Tags -->
+        <div class="space-y-2 border-t border-tc-border/60 pt-4">
+          <span class="text-xs font-mono uppercase text-tc-accent font-bold block">Teknologi & Lingkup Kerja:</span>
+          <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+
+      <!-- Action Button inside Modal -->
+      <div class="pt-4 border-t border-tc-border/60 flex flex-col sm:flex-row gap-3">
+        <a 
+          id="modal-wa-btn" 
+          href="" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-3 rounded-xl transition-all text-xs"
+        >
+          Konsultasikan Proyek Ini via WA
+        </a>
+        <button 
+          id="modal-close-bottom" 
+          class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white font-semibold py-3 rounded-xl transition-all text-xs"
+        >
+          Tutup Detail
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script is:inline define:vars={{ portofolios }}>
+  // Logika Filter & Modal Pop-up
+  function initPortofolioPage() {
+    // -------------------------------------------------------------
+    // 1. LOGIKA FILTER KATEGORI PORTOFOLIO
+    // -------------------------------------------------------------
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portofolioCards = document.querySelectorAll('.portofolio-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filterValue = btn.getAttribute('data-filter');
+
+        // Reset styling tombol filter
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-tc-accent', 'text-slate-950', 'font-bold', 'border-tc-accent');
+          b.classList.add('bg-tc-card', 'text-tc-muted', 'font-medium', 'border-tc-border');
+        });
+
+        // Terapkan styling aktif ke tombol yang diklik
+        btn.classList.remove('bg-tc-card', 'text-tc-muted', 'font-medium', 'border-tc-border');
+        btn.classList.add('bg-tc-accent', 'text-slate-950', 'font-bold', 'border-tc-accent');
+
+        // Filter kartu portofolio
+        portofolioCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (filterValue === 'all' || cardCategory === filterValue) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // -------------------------------------------------------------
+    // 2. LOGIKA MODAL POP-UP
+    // -------------------------------------------------------------
+    const overlay = document.getElementById('modal-overlay');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const closeBottomBtn = document.getElementById('modal-close-bottom');
+    const openBtns = document.querySelectorAll('.open-modal-btn');
+
+    const modalImg = document.getElementById('modal-img');
+    const modalBadge = document.getElementById('modal-badge');
+    const modalMitra = document.getElementById('modal-mitra');
+    const modalLokasi = document.getElementById('modal-lokasi');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDesc = document.getElementById('modal-desc');
+    const modalTags = document.getElementById('modal-tags');
+    const modalWaBtn = document.getElementById('modal-wa-btn');
+
+    function openModal(id) {
+      const data = portofolios.find(p => p.id === id);
+      if (!data || !overlay) return;
+
+      modalImg.src = data.img;
+      modalImg.alt = data.title;
+      modalBadge.textContent = data.badge;
+      modalMitra.textContent = `📍 ${data.mitra}`;
+      modalLokasi.textContent = data.lokasi;
+      modalTitle.textContent = data.title;
+      modalDesc.textContent = data.desc;
+
+      modalTags.innerHTML = '';
+      data.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'text-xs bg-tc-bg px-3 py-1 rounded-md text-tc-muted border border-tc-border font-mono';
+        span.textContent = tag;
+        modalTags.appendChild(span);
+      });
+
+      const waText = encodeURIComponent(`Halo Admin Gemilang Training, saya tertarik ingin bertanya mengenai proyek portofolio: "${data.title}"`);
+      modalWaBtn.href = `https://wa.me/6281943431484?text=${waText}`;
+
+      overlay.classList.remove('hidden');
+      overlay.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      if (!overlay) return;
+      overlay.classList.add('hidden');
+      overlay.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-modal-target');
+        if (targetId) openModal(targetId);
+      });
+    });
+
+    closeBtn?.addEventListener('click', closeModal);
+    closeBottomBtn?.addEventListener('click', closeModal);
+
+    overlay?.addEventListener('click', (e) => {
+      if (e.target === overlay) closeModal();
+    });
+  }
+
+  // Eksekusi fungsi saat pertama kali dimuat & pada navigasi Astro View Transitions
+  initPortofolioPage();
+  document.addEventListener('astro:page-load', initPortofolioPage);
+</script>

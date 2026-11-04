@@ -1,0 +1,428 @@
+---
+// src/pages/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Pelatihan AI dan Prompt untuk Bisnis, Marketing, dan Pemasaran: Bekerja Lebih Cepat dan Terarah";
+const pageDesc = "Panduan pelatihan AI dan prompt untuk bisnis, marketing, dan pemasaran di Malang: struktur prompt, contoh penggunaan, etika, dan langkah latihan.";
+const publishDate = "2026-11-03";
+const pageUrl = "https://infomagangmalang.web.id/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/artikel3a.webp";
+
+// Data Schema JSON-LD
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "mainEntityOfPage": pageUrl,
+      "datePublished": publishDate,
+      "dateModified": publishDate,
+      "author": {
+        "@type": "Organization",
+        "name": "Tim Redaksi & Pembimbing Gemilang Training"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/logo.webp"
+        }
+      },
+      "image": ogImageUrl
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu prompt dalam AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Prompt adalah instruksi tertulis yang diberikan kepada AI. Semakin jelas peran, konteks, tugas, format, dan batasannya, semakin berguna hasil yang diperoleh."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pelatihan ini cocok untuk pemula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, materi dimulai dari dasar. Peserta tidak perlu kemampuan pemrograman, cukup kemauan berlatih dan berpikir kritis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Untuk apa AI dipakai dalam marketing dan pemasaran?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Untuk riset awal, ide dan kalender konten, penulisan teks promosi, ringkasan ulasan, penyuntingan, dan penyusunan narasi laporan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah hasil AI bisa langsung dipublikasikan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sebaiknya tidak. Periksa fakta, sesuaikan dengan gaya merek, dan lakukan penyuntingan sebelum dipublikasikan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah aman memasukkan data pelanggan ke AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Berhati-hatilah. Hindari memasukkan data pribadi atau rahasia usaha, dan ikuti kebijakan privasi serta aturan tempat Anda bekerja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Siapa yang cocok mengikuti pelatihan ini?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mahasiswa Digital Marketing, Bisnis Digital, dan Pemasaran, siswa SMK, serta pelaku usaha kecil yang ingin bekerja lebih efektif dengan bantuan AI."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDesc} isHome={false}>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishDate} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <main class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Pelatihan AI & Prompt</span>
+            <time datetime={publishDate}>3 November 2026</time>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 (Hero) -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/artikel3a.webp" 
+            alt="Peserta berlatih menyusun prompt AI untuk kebutuhan pemasaran" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2 bg-tc-bg/80 border-t border-tc-border">
+            Peserta berlatih menyusun prompt AI generatif dalam pelatihan Gemilang Training.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm">
+            <span>📋 Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#mengapa-penting" class="hover:text-tc-accent transition-colors">1. Mengapa AI dan Prompt Penting dalam Marketing?</a></li>
+              <li><a href="#struktur-prompt" class="hover:text-tc-accent transition-colors">2. Apa Itu Prompt dan Bagaimana Struktur yang Baik?</a></li>
+              <li><a href="#pemanfaatan-ai" class="hover:text-tc-accent transition-colors">3. Contoh Pemanfaatan AI untuk Bisnis dan Pemasaran</a></li>
+              <li><a href="#latihan-prompt" class="hover:text-tc-accent transition-colors">4. Contoh Latihan: Dari Prompt Biasa ke Prompt Terarah</a></li>
+              <li><a href="#etika-batas" class="hover:text-tc-accent transition-colors">5. Etika dan Batas Penggunaan AI</a></li>
+              <li><a href="#alur-latihan" class="hover:text-tc-accent transition-colors">6. Alur Latihan dalam Pelatihan</a></li>
+              <li><a href="#kesalahan-umum" class="hover:text-tc-accent transition-colors">7. Kesalahan Umum saat Memakai AI</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">8. Pertanyaan Sering Diajukan (FAQ)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Pelatihan AI dan prompt untuk bisnis, marketing, dan pemasaran</strong> adalah pelatihan yang mengajarkan cara menyusun perintah (prompt) yang jelas kepada AI generatif untuk membantu riset, pembuatan konten, dan analisis, dengan tetap menjaga ketepatan fakta dan etika.
+          </p>
+
+          <section id="mengapa-penting" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Mengapa AI dan Prompt Penting dalam Pekerjaan Marketing?</h2>
+            <p>
+              Pekerjaan marketing dan pemasaran penuh tugas berulang yang menyita waktu: mencari ide konten, menulis berbagai versi teks promosi, merangkum ulasan pelanggan, hingga menyusun laporan. AI generatif dapat mempercepat banyak di antaranya. Namun hasilnya sangat bergantung pada kualitas perintah yang diberikan. Prompt yang asal-asalan menghasilkan jawaban umum dan kurang berguna, sedangkan prompt yang terarah menghasilkan bahan kerja yang bisa langsung disempurnakan.
+            </p>
+            <p>
+              Karena itu, kemampuan menyusun prompt kini menjadi keterampilan kerja yang bernilai, terutama bagi mahasiswa Digital Marketing, Bisnis Digital, Pemasaran, dan pelaku usaha kecil di Malang. Pelatihan ini merupakan salah satu jalur dalam pelatihan kejuruan terpadu dan sinkronisasi industri SKARIGA.
+            </p>
+          </section>
+
+          <section id="struktur-prompt" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu Prompt dan Bagaimana Struktur yang Baik?</h2>
+            <p>
+              Prompt adalah instruksi yang Anda tulis untuk AI. Semakin jelas konteks dan hasil yang diharapkan, semakin berguna jawabannya. Struktur berikut mudah diingat dan dapat dipakai untuk berbagai kebutuhan:
+            </p>
+
+            <div class="overflow-x-auto my-6 border border-tc-border rounded-2xl bg-tc-bg">
+              <table class="w-full text-left text-xs md:text-sm">
+                <thead class="bg-tc-card text-white font-bold border-b border-tc-border">
+                  <tr>
+                    <th class="p-3">Unsur</th>
+                    <th class="p-3">Fungsi Utama</th>
+                    <th class="p-3 text-tc-accent">Contoh Penerapan</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Peran</td>
+                    <td class="p-3">Menentukan sudut pandang jawaban</td>
+                    <td class="p-3 text-tc-accent">"Anda adalah konsultan pemasaran untuk usaha kuliner kecil."</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Konteks</td>
+                    <td class="p-3">Memberi latar belakang yang relevan</td>
+                    <td class="p-3 text-tc-accent">"Target pembeli adalah mahasiswa dengan anggaran terbatas."</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Tugas</td>
+                    <td class="p-3">Menjelaskan apa yang harus dikerjakan</td>
+                    <td class="p-3 text-tc-accent">"Buat lima ide konten Instagram untuk minggu depan."</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Format</td>
+                    <td class="p-3">Mengatur bentuk hasil keluaran</td>
+                    <td class="p-3 text-tc-accent">"Sajikan dalam tabel: ide, tujuan, dan ajakan bertindak."</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Batasan</td>
+                    <td class="p-3">Membatasi gaya dan hal yang dihindari</td>
+                    <td class="p-3 text-tc-accent">"Gunakan bahasa santai, tanpa klaim berlebihan."</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/artikel3b.webp" 
+              alt="Contoh struktur prompt untuk riset audiens dan konten promosi" 
+              class="w-full h-auto max-h-[380px] object-cover"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2 bg-tc-bg/80 border-t border-tc-border">
+              Penerapan AI untuk riset audiens & konten promosi UMKM lokal.
+            </figcaption>
+          </figure>
+
+          <section id="pemanfaatan-ai" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Contoh Pemanfaatan AI untuk Bisnis dan Pemasaran</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Riset audiens:</strong> Meminta gambaran awal kebutuhan, keluhan, dan kebiasaan calon pembeli, lalu memverifikasinya dengan data nyata.</li>
+              <li><strong>Ide dan kalender konten:</strong> Menyusun rencana unggahan mingguan sesuai tujuan dan platform.</li>
+              <li><strong>Penulisan teks promosi:</strong> Membuat beberapa variasi judul, deskripsi produk, dan ajakan bertindak untuk diuji.</li>
+              <li><strong>Ringkasan ulasan pelanggan:</strong> Merangkum pola keluhan dan pujian dari banyak ulasan.</li>
+              <li><strong>Analisis dan laporan:</strong> Membantu menyusun narasi dari data kinerja kampanye agar mudah dipresentasikan.</li>
+              <li><strong>Penyuntingan:</strong> Merapikan tata bahasa dan menyesuaikan nada tulisan dengan gaya merek.</li>
+            </ul>
+          </section>
+
+          <section id="latihan-prompt" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Contoh Latihan: Dari Prompt Biasa ke Prompt yang Terarah</h2>
+            <p>
+              <strong>Prompt biasa:</strong> <em>"Buatkan caption untuk produk kopi."</em> Hasilnya cenderung umum dan tidak membedakan merek Anda dari yang lain.
+            </p>
+            <p class="bg-tc-bg p-4 rounded-xl border border-tc-border text-xs md:text-sm">
+              <strong>Prompt terarah:</strong> <em>"Anda adalah penulis konten untuk kedai kopi lokal yang menyasar mahasiswa. Buat tiga caption Instagram untuk promo paket belajar malam, masing-masing maksimal 30 kata, bernada santai, dan diakhiri ajakan bertindak yang jelas. Hindari klaim berlebihan."</em>
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">📌 BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Pelatihan Portofolio: Materi dan Praktik Menyusun Karya agar Siap Kerja &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="etika-batas" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Etika dan Batas Penggunaan AI</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Verifikasi fakta:</strong> Periksa angka, nama, dan klaim sebelum dipublikasikan.</li>
+              <li><strong>Jaga kerahasiaan:</strong> Jangan memasukkan data pribadi pelanggan atau rahasia usaha tanpa pertimbangan matang.</li>
+              <li><strong>Hormati hak cipta:</strong> Olah hasil AI agar mencerminkan karya dan suara merek Anda.</li>
+              <li><strong>Tetap berpikir kritis:</strong> Gunakan AI sebagai asisten, bukan pengganti penilaian Anda.</li>
+            </ul>
+          </section>
+
+          <section id="kesalahan-umum" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesalahan Umum saat Memakai AI untuk Pemasaran</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Menyalin hasil mentah-mentah tanpa menyunting dan memeriksa fakta.</li>
+              <li>Prompt terlalu singkat, sehingga jawaban umum dan kurang relevan.</li>
+              <li>Tidak menyebutkan target audiens, akibatnya pesan tidak tepat sasaran.</li>
+              <li>Mengabaikan etika dan kerahasiaan data.</li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">Tim Redaksi & Pembimbing Gemilang Training</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim mentor praktisi industri Gemilang Training Malang. Berfokus melatih efisiensi kerja AI & Prompt Engineering bagi siswa SMK & mahasiswa.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Ingin Mengikuti Pelatihan AI & Prompt Sesuai Jurusan Anda?</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Hubungi tim Gemilang Training melalui WhatsApp resmi untuk konsultasi dan informasi pendaftaran.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Pelatihan%20AI%20dan%20Prompt." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">Pertanyaan Sering Diajukan (FAQ)</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa itu prompt dalam AI?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Prompt adalah instruksi tertulis yang diberikan kepada AI. Semakin jelas peran, konteks, tugas, format, dan batasannya, semakin berguna hasil yang diperoleh.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah pelatihan ini cocok untuk pemula?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Ya, materi dimulai dari dasar. Peserta tidak perlu kemampuan pemrograman, cukup kemauan berlatih dan berpikir kritis.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Konsultasi AI & Prompt</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tanyakan materi pelatihan prompt engineering untuk bisnis & pemasaran di Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Pelatihan%20AI%20dan%20Prompt." 
+              target="_blank" 
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Terkait Sidebar -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/artikel2b.webp" alt="Pelatihan Kejuruan Terpadu" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Panduan Utama</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga">
+                    Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/artikel2c.webp" alt="Pelatihan Portofolio" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Portofolio</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/pelatihan-portofolio-materi-dan-praktik-siap-kerja">
+                    Pelatihan Portofolio: Materi & Praktik Siap Kerja
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) tocIcon.textContent = '▼';
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) tocIcon.textContent = '▶';
+      }
+    });
+  }
+</script>
