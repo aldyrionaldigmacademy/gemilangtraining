@@ -5,89 +5,92 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
 const programs = [
-  // Rumpun Tech
+  // 1. Informatika
   {
-    id: "informatika",
-    category: "tech",
-    categoryLabel: "Tech & Dev",
-    jurusan: "Informatika / Sistem Informasi",
+    slug: "informatika",
+    category: "webdev",
+    categoryLabel: "Web Development",
+    jurusanTarget: "Terbuka untuk: Mahasiswa Informatika & Sistem Informasi",
     title: "Web Engineering & Software Architecture",
-    desc: "Pengembangan sistem web modern berkecepatan tinggi, manajemen database, integrasi REST API, dan deployment cloud.",
-    techs: ["Astro", "Tailwind CSS", "blogspot", "bootsraps"],
+    desc: "Praktik pembuatan website modern SSG dengan Astro Framework, optimasi performa berkecepatan tinggi, integrasi API, serta pengelolaan arsitektur server.",
+    techs: ["Astro Framework", "Bootstrap 5", "Blogspot", "Tailwind CSS"],
     img: "/assets/img/informatika.webp"
   },
+  // 2. RPL
   {
-    id: "rpl",
-    category: "tech",
-    categoryLabel: "Tech & Dev",
-    jurusan: "RPL (Rekayasa Perangkat Lunak)",
+    slug: "rpl",
+    category: "webdev",
+    categoryLabel: "Web Development",
+    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan RPL",
     title: "Frontend & Fullstack Web Development",
-    desc: "Fokus pada pembuatan komponen UI interaktif, pengkodean clean code, arsitektur Clean URL, dan optimasi performa web.",
-    techs: ["HTML5 / CSS3", "JavaScript ES6+", "Astro SSG", "Git/GitHub"],
+    desc: "Fokus pada pembuatan komponen web responsif menggunakan Astro SSG, kustomisasi template Bootstrap, pengelolaan Blogspot komersial, dan Clean Code.",
+    techs: ["Astro SSG", "Bootstrap 5", "Blogspot CMS", "HTML5/CSS3"],
     img: "/assets/img/rpl.webp"
   },
+  // 3. TKJ
   {
-    id: "tkj",
-    category: "tech",
-    categoryLabel: "Tech & Dev",
-    jurusan: "TKJ (Teknik Komputer & Jaringan)",
+    slug: "tkj",
+    category: "webdev",
+    categoryLabel: "Web Development & Infrastructure",
+    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan TKJ",
     title: "Network & Cloud Infrastructure Deployment",
-    desc: "Konfigurasi server hosting, manajemen DNS Record, SSL Security, CDN, dan continuous deployment Vercel/Netlify.",
-    techs: ["Custom DNS", "Vercel / Netlify", "Web Security", "Server Config"],
+    desc: "Deployment platform web Astro ke Vercel/Netlify, konfigurasi DNS Record, manajemen SSL security, serta penyediaan subdomain praktik.",
+    techs: ["Cloud Deployment", "Custom DNS", "Astro Hosting", "Blogspot Domain"],
     img: "/assets/img/tkj.webp"
   },
-
-  // Rumpun Business
+  // 4. Digital Marketing
   {
-    id: "digital-marketing",
-    category: "business",
-    categoryLabel: "Digital Business",
-    jurusan: "Digital Marketing",
+    slug: "digital-marketing",
+    category: "seo",
+    categoryLabel: "Artikel & SEO",
+    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Digital Marketing",
     title: "SEO & Answer Engine Optimization (AEO)",
-    desc: "Optimasi mesin pencari Google & AI Answer Engines, riset kata kunci, strategi backlink, serta analisis trafik Search Console.",
-    techs: ["Google Search Console", "Ahrefs", "AEO Strategy", "SEO Content"],
+    desc: "Riset kata kunci berdaya beli tinggi, strategi penulisan artikel pillar SEO On-Page, optimasi Answer Engine (ChatGPT/Gemini), dan Google Search Console.",
+    techs: ["Artikel SEO", "AEO Strategy", "Google Search Console", "Blogspot SEO"],
     img: "/assets/img/digitalmarketing.webp"
   },
+  // 5. Bisnis Digital
   {
-    id: "bisnis-digital",
-    category: "business",
-    categoryLabel: "Digital Business",
-    jurusan: "Bisnis Digital",
-    title: "Data-Driven Growth & Business Strategy",
-    desc: "Perancangan funnel pemasaran digital, analisis conversion rate, market research, dan manajemen toko marketplace.",
-    techs: ["Market Research", "TikTok Shop/Seller", "Analytics", "Funnel Strategy"],
+    slug: "bisnis-digital",
+    category: "seo",
+    categoryLabel: "Artikel & Business Strategy",
+    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Bisnis Digital",
+    title: "Data-Driven Growth & Content Strategy",
+    desc: "Penyusunan artikel promosi produk, optimasi Sales Funnel, riset pasar digital, serta strategi pertumbuhan omset toko e-commerce.",
+    techs: ["Content Writing", "Sales Funnel", "Market Research", "TikTok Shop"],
     img: "/assets/img/bisnisdigital.webp"
   },
+  // 6. Pemasaran
   {
-    id: "pemasaran",
-    category: "business",
-    categoryLabel: "Digital Business",
-    jurusan: "Pemasaran / Sales",
+    slug: "pemasaran",
+    category: "marketing",
+    categoryLabel: "Pemasaran & Outreach",
+    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Pemasaran",
     title: "Local GEO Tagging & Social Media Campaign",
-    desc: "Eksekusi pemetaan GEO lokasi usaha lokal, optimasi profil bisnis digital, dan campaign outbound marketing.",
-    techs: ["Local GEO", "Social Media Ads", "Customer Acquisition", "Copywriting"],
+    desc: "Pemetaan GEO lokasi usaha lokal di Google Maps, penyusunan copywriting persuasif untuk website & landing page, serta campaign outbound.",
+    techs: ["Local GEO Tagging", "Google Maps Business", "Copywriting", "Outreach"],
     img: "/assets/img/pemasaran.webp"
   },
-
-  // Rumpun Design
+  // 7. DKV
   {
-    id: "dkv",
-    category: "design",
-    categoryLabel: "Creative Arts",
-    jurusan: "DKV (Desain Komunikasi Visual)",
+    slug: "dkv",
+    category: "marketing",
+    categoryLabel: "Desain Visual & UI/UX",
+    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan DKV",
     title: "UI/UX Design System & Brand Identity",
-    desc: "Perancangan antarmuka pengguna di Figma, pembuatan wireframe, Design System, serta identitas brand visual korporat.",
-    techs: ["Figma", "UI/UX Wireframing", "Brand Guidelines", "Design System"],
+    desc: "Perancangan antarmuka situs web (UI/UX) di Figma, penyusunan Design System untuk Astro/Bootstrap, dan pembuatan aset visual brand.",
+    techs: ["Figma UI/UX", "Design System", "Aset Web Graphic", "Brand Book"],
     img: "/assets/img/uiux.webp"
   },
+  // 8. Multimedia
   {
-    id: "multimedia",
-    category: "design",
-    categoryLabel: "Creative Arts",
-    jurusan: "Multimedia / Digital Content",
+    slug: "multimedia",
+    category: "marketing",
+    categoryLabel: "Creative Content & Video",
+    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Multimedia",
     title: "Video Production & Motion Graphic Design",
-    desc: "Produksi konten video kreatif promosi, animasi 2D/motion graphics, editing audio visual, dan thumbnail visual viral.",
-    techs: ["Premiere Pro", "After Effects", "Canva Pro", "Audio Editing"],
+    desc: "Produksi video promo pendek (Shorts/Reels/TikTok), animasi motion graphics 2D, penyuntingan audio visual, serta pembuatan thumbnail web.",
+    techs: ["Premiere Pro", "After Effects", "Web Thumbnail", "Motion Graphics"],
     img: "/assets/img/multimedia.webp"
   }
 ];
@@ -100,41 +103,48 @@ const programs = [
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-12">
       <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-2 rounded-full border border-tc-border inline-block mb-4">
-        Program Magang Spesialisasi
+        Program Magang Berbasis Proyek Industri
       </span>
       <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
-        Pilih Jalur Spesialisasi Karier Kamu
+        Jalur Magang Spesialisasi Kampus & Vokasi
       </h1>
-      <p class="text-tc-muted text-base md:text-lg">
-        Program magang berbasis proyek riil yang disesuaikan secara khusus dengan latar belakang jurusan perkuliahan dan minatmu.
+      <p class="text-tc-muted text-base md:text-lg leading-relaxed">
+        Tempat magang untuk Mahasiswa Informatika dan Siswa SMK (RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, Multimedia) dengan fokus proyek pembuatan website (Astro, Bootstrap, Blogspot), artikel SEO, dan strategi pemasaran digital.
       </p>
     </div>
 
-    <!-- Filter Buttons Interaktif -->
+    <!-- Filter Buttons Interaktif (Ikon SVG Profesional menggantikan Emoji) -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
       <button 
         data-filter="all" 
-        class="filter-btn active-filter px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border bg-tc-card text-tc-accent border-tc-accent"
+        class="filter-btn active-filter px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border bg-tc-card text-tc-accent border-tc-accent inline-flex items-center gap-2"
       >
-        Semua Jurusan
+        <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+        <span>Semua Program</span>
       </button>
+
       <button 
-        data-filter="tech" 
-        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white"
+        data-filter="webdev" 
+        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2"
       >
-        💻 Tech & Dev
+        <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+        <span>Web Development (Astro/Bootstrap/Blogspot)</span>
       </button>
+
       <button 
-        data-filter="business" 
-        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white"
+        data-filter="seo" 
+        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2"
       >
-        📈 Digital Business
+        <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+        <span>Artikel & Optimasi SEO/AEO</span>
       </button>
+
       <button 
-        data-filter="design" 
-        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white"
+        data-filter="marketing" 
+        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2"
       >
-        🎨 Creative Arts
+        <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+        <span>Pemasaran & Desain Visual</span>
       </button>
     </div>
 
@@ -153,14 +163,14 @@ const programs = [
                 alt={item.title} 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
               />
-              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full">
-                {item.jurusan}
+              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md">
+                {item.categoryLabel}
               </span>
             </div>
 
             <!-- Content -->
             <div class="p-6">
-              <span class="text-xs font-mono text-tc-accent uppercase tracking-wider block mb-2">{item.categoryLabel}</span>
+              <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-2">{item.jurusanTarget}</span>
               <h3 class="text-xl font-bold text-white mb-3">{item.title}</h3>
               <p class="text-tc-muted text-sm leading-relaxed mb-6">{item.desc}</p>
               
@@ -175,16 +185,16 @@ const programs = [
             </div>
           </div>
 
-          <!-- Tombol CTA & Detail -->
+          <!-- Tombol CTA & Detail (Struktur Static Folder /program/[slug]) -->
           <div class="px-6 pb-6 pt-2 border-t border-tc-border/60 flex items-center justify-between gap-3">
             <a 
-              href={`/program-detail?id=${item.id}`} 
+              href={`/program/${item.slug}`} 
               class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white text-xs font-semibold py-2.5 rounded-xl transition-all"
             >
-              Detail Program
+              Detail Program &rarr;
             </a>
             <a 
-              href={`https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20tertarik%20pilih%20Program%20${encodeURIComponent(item.jurusan)}.`} 
+              href={`https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20tertarik%20pilih%20Program%20${encodeURIComponent(item.title)}.`} 
               target="_blank" 
               rel="noopener noreferrer" 
               class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 text-xs font-bold py-2.5 rounded-xl transition-all"

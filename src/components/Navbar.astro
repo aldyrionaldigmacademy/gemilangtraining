@@ -7,10 +7,10 @@ const currentPath = pathname.replace(/\/$/, "");
 <header class="fixed top-0 left-0 w-full z-50 bg-[#0A192F]/90 backdrop-blur-md border-b border-tc-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
     
-    <!-- Brand Logo dengan Gambar & Teks -->
+    <!-- Brand Logo -->
     <a href="/" class="text-xl md:text-2xl font-bold tracking-tight text-white flex items-center gap-3 group">
       <img 
-        src="/public/logo.webp" 
+        src="/logo.webp" 
         alt="Logo Gemilang Training" 
         class="w-9 h-9 md:w-10 md:h-10 object-contain transition-transform duration-300 group-hover:scale-105"
         onerror="this.src='/logo.webp'"
@@ -22,7 +22,6 @@ const currentPath = pathname.replace(/\/$/, "");
 
     <!-- Desktop Navigation -->
     <nav class="hidden md:flex items-center gap-2 text-sm font-medium">
-      <!-- 1. Beranda -->
       <a 
         href="/" 
         class={`px-4 py-2 rounded-xl transition-all ${
@@ -34,7 +33,6 @@ const currentPath = pathname.replace(/\/$/, "");
         Beranda
       </a>
 
-      <!-- 2. Tentang Kami -->
       <a 
         href="/tentang" 
         class={`px-4 py-2 rounded-xl transition-all ${
@@ -46,7 +44,7 @@ const currentPath = pathname.replace(/\/$/, "");
         Tentang Kami
       </a>
       
-      <!-- 3. Dropdown Program Magang Desktop -->
+      <!-- Dropdown Program Magang -->
       <div class="relative group py-2">
         <a 
           href="/program"
@@ -60,46 +58,48 @@ const currentPath = pathname.replace(/\/$/, "");
           <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </a>
 
-        <!-- Menu Dropdown -->
-        <div class="absolute left-0 top-full hidden group-hover:block w-72 bg-tc-card border border-tc-border rounded-2xl shadow-2xl p-4 space-y-3 mt-2 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']">
+        <!-- Menu Dropdown Berdasarkan Aktivitas Utama -->
+        <div class="absolute left-0 top-full hidden group-hover:block w-80 bg-tc-card border border-tc-border rounded-2xl shadow-2xl p-4 space-y-3 mt-2 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']">
           
-          <!-- Item 1: Tech & Dev -->
-          <a href="/program?cat=tech" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item">
+          <!-- Web Dev (Astro, Bootstrap, Blogspot) -->
+          <a href="/program?cat=webdev" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item">
             <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
               <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
               </svg>
-              <span>TECH & DEV</span>
+              <span>WEB DEVELOPMENT</span>
             </div>
-            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Informatika, RPL, TKJ</span>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Astro, Bootstrap & Blogspot Dev</span>
+            <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: Informatika, RPL, TKJ</span>
           </a>
 
-          <!-- Item 2: Digital Business -->
-          <a href="/program?cat=business" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
+          <!-- SEO & Article Writing -->
+          <a href="/program?cat=seo" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
             <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
               <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
               </svg>
-              <span>DIGITAL BUSINESS</span>
+              <span>ARTIKEL & OPTIMASI SEO</span>
             </div>
-            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Digital Marketing, Pemasaran</span>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Penulisan Konten, Technical SEO & AEO</span>
+            <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: Digital Marketing, Bisnis Digital</span>
           </a>
 
-          <!-- Item 3: Creative Arts -->
-          <a href="/program?cat=design" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
+          <!-- Pemasaran & Multimedia -->
+          <a href="/program?cat=marketing" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
             <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
               <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
-              <span>CREATIVE ARTS</span>
+              <span>PEMASARAN & DESAIN VISUAL</span>
             </div>
-            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">DKV, Multimedia</span>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Outreach Pemasaran, UI/UX & Video</span>
+            <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: Pemasaran, DKV, Multimedia</span>
           </a>
 
         </div>
       </div>
 
-      <!-- 4. Portofolio -->
       <a 
         href="/portofolio" 
         class={`px-4 py-2 rounded-xl transition-all ${
@@ -111,7 +111,6 @@ const currentPath = pathname.replace(/\/$/, "");
         Portofolio
       </a>
 
-      <!-- 5. Blog -->
       <a 
         href="/blog" 
         class={`px-4 py-2 rounded-xl transition-all ${
@@ -123,7 +122,6 @@ const currentPath = pathname.replace(/\/$/, "");
         Blog
       </a>
 
-      <!-- 6. Kontak -->
       <a 
         href="/kontak" 
         class={`px-4 py-2 rounded-xl transition-all ${
@@ -156,9 +154,8 @@ const currentPath = pathname.replace(/\/$/, "");
     style="background-color: #0A192F !important;"
   >
     <div class="flex items-center justify-between pb-6 border-b border-tc-border">
-      <!-- Logo pada Drawer Mobile -->
       <a href="/" class="flex items-center gap-2.5 text-xl font-bold text-white">
-        <img src="/assets/img/logo.webp" alt="Logo Gemilang Training" class="w-8 h-8 object-contain" onerror="this.src='/logo.webp'" />
+        <img src="/logo.webp" alt="Logo Gemilang Training" class="w-8 h-8 object-contain" onerror="this.src='/logo.webp'" />
         <span><span class="text-tc-accent">Gemilang</span> Training</span>
       </a>
       <button id="close-btn" class="text-tc-muted hover:text-white p-2">
@@ -185,25 +182,19 @@ const currentPath = pathname.replace(/\/$/, "");
         </summary>
 
         <div class="px-4 pb-4 pt-2 space-y-3">
-          <a href="/program?cat=tech" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
-            <div class="flex items-center gap-2 text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">
-              <span>TECH & DEV</span>
-            </div>
-            <span class="block text-xs text-tc-muted">Informatika, RPL, TKJ</span>
+          <a href="/program?cat=webdev" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
+            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">WEB DEVELOPMENT</div>
+            <span class="block text-xs text-tc-muted">Astro, Bootstrap, Blogspot</span>
           </a>
 
-          <a href="/program?cat=business" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
-            <div class="flex items-center gap-2 text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">
-              <span>DIGITAL BUSINESS</span>
-            </div>
-            <span class="block text-xs text-tc-muted">Digital Marketing, Pemasaran</span>
+          <a href="/program?cat=seo" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
+            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">ARTIKEL & SEO</div>
+            <span class="block text-xs text-tc-muted">SEO On-Page & Technical AEO</span>
           </a>
 
-          <a href="/program?cat=design" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
-            <div class="flex items-center gap-2 text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">
-              <span>CREATIVE ARTS</span>
-            </div>
-            <span class="block text-xs text-tc-muted">DKV, Multimedia</span>
+          <a href="/program?cat=marketing" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
+            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">PEMASARAN & VISUAL</div>
+            <span class="block text-xs text-tc-muted">GEO Tagging, UI/UX & Motion</span>
           </a>
         </div>
       </details>
