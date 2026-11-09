@@ -55,46 +55,58 @@ const currentPath = pathname.replace(/\/$/, "");
           }`}
         >
           <span>Program Magang</span>
-          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </a>
 
-        <!-- Menu Dropdown Berdasarkan Aktivitas Utama -->
-        <div class="absolute left-0 top-full hidden group-hover:block w-80 bg-tc-card border border-tc-border rounded-2xl shadow-2xl p-4 space-y-3 mt-2 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']">
+        <!-- Menu Dropdown Terstruktur (70:30 Cross-Skilling & Video Konten 3 Kategori) -->
+        <div class="absolute left-0 top-full hidden group-hover:block w-96 bg-tc-card border border-tc-border rounded-2xl shadow-2xl p-4 space-y-2 mt-2 before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']">
           
-          <!-- Web Dev (Astro, Bootstrap, Blogspot) -->
-          <a href="/program?cat=webdev" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item">
+          <!-- Item 1: Seluruh Program -->
+          <a href="/program" class="block p-2.5 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item">
             <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
-              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-              </svg>
-              <span>WEB DEVELOPMENT</span>
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+              <span>SELURUH PROGRAM MAGANG</span>
             </div>
-            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Astro, Bootstrap & Blogspot Dev</span>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Katalog Lengkap Jalur SMK & Mahasiswa</span>
+          </a>
+
+          <!-- Item 2: Tech & Web Engineering -->
+          <a href="/program?cat=webdev" class="block p-2.5 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
+            <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              <span>TECH & WEB ENGINEERING</span>
+            </div>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">70% Web Dev (Astro/Bootstrap/WP) + 30% SEO</span>
             <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: Informatika, RPL, TKJ</span>
           </a>
 
-          <!-- SEO & Article Writing -->
-          <a href="/program?cat=seo" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
+          <!-- Item 3: Digital Business & SEO -->
+          <a href="/program?cat=seo" class="block p-2.5 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
             <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
-              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-              </svg>
-              <span>ARTIKEL & OPTIMASI SEO</span>
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+              <span>DIGITAL BUSINESS & SEO</span>
             </div>
-            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Penulisan Konten, Technical SEO & AEO</span>
-            <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: Digital Marketing, Bisnis Digital</span>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">70% Artikel SEO & Keyword + 30% Dasar Web</span>
+            <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: Digital Marketing, Bisnis Digital, Pemasaran</span>
           </a>
 
-          <!-- Pemasaran & Multimedia -->
-          <a href="/program?cat=marketing" class="block p-2 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
+          <!-- Item 4: Creative Media & Video Production -->
+          <a href="/program?cat=marketing" class="block p-2.5 rounded-xl hover:bg-tc-bg/80 border border-transparent hover:border-tc-border transition-all group/item border-t border-tc-border/40 pt-2.5">
             <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
-              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-              <span>PEMASARAN & DESAIN VISUAL</span>
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              <span>CREATIVE MEDIA & VIDEO PRODUCTION</span>
             </div>
-            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Outreach Pemasaran, UI/UX & Video</span>
-            <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: Pemasaran, DKV, Multimedia</span>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">3 Kategori Video Konten (Promosi, Edukasi, Berita)</span>
+            <span class="block text-[10px] text-tc-accent/80 pl-6 mt-0.5">Target: DKV, Multimedia</span>
+          </a>
+
+          <!-- Item 5: Alur Pendaftaran -->
+          <a href="/program#alur-pendaftaran" class="block p-2.5 rounded-xl bg-tc-bg/60 hover:bg-tc-bg border border-tc-accent/30 hover:border-tc-accent transition-all group/item mt-3">
+            <div class="flex items-center gap-2 text-xs font-bold text-tc-accent uppercase tracking-wider mb-0.5">
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+              <span>ALUR & SYARAT PENDAFTARAN</span>
+            </div>
+            <span class="block text-xs text-tc-muted group-hover/item:text-white pl-6">Panduan 5 Langkah Terstruktur Magang</span>
           </a>
 
         </div>
@@ -183,18 +195,23 @@ const currentPath = pathname.replace(/\/$/, "");
 
         <div class="px-4 pb-4 pt-2 space-y-3">
           <a href="/program?cat=webdev" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
-            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">WEB DEVELOPMENT</div>
-            <span class="block text-xs text-tc-muted">Astro, Bootstrap, Blogspot</span>
+            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">TECH & WEB ENGINEERING</div>
+            <span class="block text-xs text-tc-muted">Informatika, RPL, TKJ (70% Web : 30% SEO)</span>
           </a>
 
           <a href="/program?cat=seo" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
-            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">ARTIKEL & SEO</div>
-            <span class="block text-xs text-tc-muted">SEO On-Page & Technical AEO</span>
+            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">DIGITAL BUSINESS & SEO</div>
+            <span class="block text-xs text-tc-muted">Marketing, Bisnis Digital (70% SEO : 30% Web)</span>
           </a>
 
           <a href="/program?cat=marketing" class="mobile-link block p-2 rounded-lg bg-tc-bg/60 border border-tc-border/60 hover:border-tc-accent">
-            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">PEMASARAN & VISUAL</div>
-            <span class="block text-xs text-tc-muted">GEO Tagging, UI/UX & Motion</span>
+            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">CREATIVE MEDIA & VIDEO</div>
+            <span class="block text-xs text-tc-muted">Multimedia, DKV (3 Kategori Video Konten)</span>
+          </a>
+
+          <a href="/program#alur-pendaftaran" class="mobile-link block p-2 rounded-lg bg-tc-card border border-tc-accent/40 hover:border-tc-accent">
+            <div class="text-xs font-semibold text-tc-accent uppercase tracking-wider mb-0.5">ALUR PENDAFTARAN</div>
+            <span class="block text-xs text-tc-muted">Panduan & Berkas Resmi</span>
           </a>
         </div>
       </details>
