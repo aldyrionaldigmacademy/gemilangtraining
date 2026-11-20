@@ -5,6 +5,7 @@ import '../global.css';
 interface Props {
   title: string;
   description?: string;
+  keywords?: string;
   image?: string;
   isHome?: boolean;
   type?: 'website' | 'article';
@@ -13,6 +14,7 @@ interface Props {
 const { 
   title, 
   description = "Tempat Magang Mahasiswa (Informatika) & PKL Siswa SMK (RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, Multimedia) berbasis proyek nyata di Malang.", 
+  keywords = "tempat magang malang, tempat pkl malang, info magang malang, lowongan magang malang, magang mahasiswa informatika malang, pkl smk rpl malang, pkl smk tkj malang, pkl digital marketing malang, pkl bisnis digital malang, pkl pemasaran malang, pkl dkv malang, pkl multimedia malang, gemilang training malang",
   image = "/assets/img/beranda1.webp",
   isHome = false,
   type = "website"
@@ -85,9 +87,11 @@ const organizationSchema = {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- Primary Meta Tags -->
+  <!-- Primary Meta Tags & Keywords -->
   <title>{formattedTitle}</title>
   <meta name="description" content={description} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Gemilang Training Malang" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href={canonicalURL} />
 
