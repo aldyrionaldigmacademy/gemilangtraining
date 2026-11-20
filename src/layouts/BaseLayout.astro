@@ -5,16 +5,78 @@ import '../global.css';
 interface Props {
   title: string;
   description?: string;
+  image?: string;
   isHome?: boolean;
+  type?: 'website' | 'article';
 }
 
 const { 
   title, 
-  description = "Program magang berbasis proyek industri untuk siswa SMK dan Mahasiswa (Tech, Marketing, Design) di Malang.", 
-  isHome = false 
+  description = "Tempat Magang Mahasiswa (Informatika) & PKL Siswa SMK (RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, Multimedia) berbasis proyek nyata di Malang.", 
+  image = "/assets/img/beranda1.webp",
+  isHome = false,
+  type = "website"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://infomagangmalang.web.id");
+// 1. CLEAN CANONICAL URL (Tanpa .html & tanpa trailing slash)
+const siteUrl = (Astro.site ? Astro.site.toString() : "https://infomagangmalang.web.id").replace(/\/$/, "");
+const cleanPath = Astro.url.pathname
+  .replace(/\.html$/i, "")
+  .replace(/\/index$/i, "")
+  .replace(/\/+$/, "") || "/";
+const canonicalURL = cleanPath === "/" ? siteUrl : `${siteUrl}${cleanPath}`;
+
+// 2. ABSOLUTE OG IMAGE URL (.webp)
+const ogImageURL = image.startsWith("http") ? image : `${siteUrl}${image.startsWith("/") ? image : `/${image}`}`;
+
+// 3. MENCEGAH DUPLIKASI NAMA BRAND DI TITLE
+const formattedTitle = title.includes("Gemilang Training") ? title : `${title} | Gemilang Training`;
+
+// 4. SCHEMA MARKUP JSON-LD LENGKAP (AEO & LOCAL SEO MALANG)
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Gemilang Training",
+  "alternateName": "Info Magang & PKL Malang - Gemilang Training",
+  "url": siteUrl,
+  "logo": `${siteUrl}/assets/img/beranda1.webp`,
+  "image": ogImageURL,
+  "description": "Tempat praktik Magang Mahasiswa (Informatika) dan PKL Siswa SMK (RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, Multimedia) berbasis proyek nyata di Kota Malang.",
+  "telephone": "+6281943431484",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Malang",
+    "addressRegion": "Jawa Timur",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -7.9427,
+    "longitude": 112.6190
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Malang" },
+    { "@type": "AdministrativeArea", "name": "Malang Raya" },
+    { "@type": "State", "name": "Jawa Timur" }
+  ],
+  "knowsAbout": [
+    "Magang Mahasiswa Informatika Malang",
+    "Tempat PKL SMK RPL Malang",
+    "Tempat PKL SMK TKJ Malang",
+    "Tempat PKL Digital Marketing Malang",
+    "Tempat PKL Bisnis Digital & Pemasaran Malang",
+    "Tempat PKL SMK DKV & Multimedia Malang",
+    "Web Development Astro & Bootstrap",
+    "Search Engine Optimization (SEO)"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+6281943431484",
+    "contactType": "admissions",
+    "areaServed": "ID",
+    "availableLanguage": "Indonesian"
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -22,45 +84,53 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://infomaga
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{title} | Gemilang Training</title>
+  
+  <!-- Primary Meta Tags -->
+  <title>{formattedTitle}</title>
   <meta name="description" content={description} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href={canonicalURL} />
 
-  <!-- GEO Tagging (Kota Malang, Jawa Timur) -->
+  <!-- GEO Tagging (Kota Malang, Jawa Timur - Local SEO) -->
   <meta name="geo.region" content="ID-JI" />
   <meta name="geo.placename" content="Malang" />
   <meta name="geo.position" content="-7.9427;112.6190" />
   <meta name="ICBM" content="-7.9427, 112.6190" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
+  <!-- Open Graph / WhatsApp / Social Media -->
+  <meta property="og:type" content={type} />
+  <meta property="og:site_name" content="Gemilang Training" />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:title" content={`${title} | Gemilang Training`} />
+  <meta property="og:title" content={formattedTitle} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content="/images/og-cover.jpg" />
+  <meta property="og:image" content={ogImageURL} />
+  <meta property="og:image:alt" content={formattedTitle} />
   <meta property="og:locale" content="id_ID" />
 
-  <!-- Schema Org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Gemilang Training",
-    "url": "https://infomagangmalang.web.id",
-    "description": "Platform magang industri berbasis proyek riil untuk siswa SMK dan mahasiswa di Malang."
-  }
-  </script>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={formattedTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageURL} />
+
+  <!-- Schema Org JSON-LD Global (AEO & Local SEO) -->
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+
+  <!-- Slot Head Tambahan (Untuk Schema FAQPage di Beranda atau Article di Blog) -->
+  <slot name="head" />
 </head>
 <body class="min-h-screen flex flex-col justify-between font-sans antialiased bg-tc-bg text-tc-text relative">
   <slot name="header" />
   
   <!-- Breadcrumb (Aktif untuk SEMUA halaman KECUALI Beranda) -->
   {!isHome && (
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-4 text-sm text-tc-muted">
+    <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-4 text-sm text-tc-muted">
       <ol class="flex items-center space-x-2">
         <li><a href="/" class="hover:text-tc-accent transition-colors">Beranda</a></li>
         <li><span>/</span></li>
-        <li class="text-tc-text capitalize">{Astro.url.pathname.replace('/', '').replace('-', ' ')}</li>
+        <li class="text-tc-text capitalize">
+          {cleanPath.replace(/^\//, '').replace(/\//g, ' / ').replace(/-/g, ' ')}
+        </li>
       </ol>
     </nav>
   )}
@@ -89,10 +159,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://infomaga
 
     <!-- 2. Tombol WhatsApp Live Melayang -->
     <a 
-      href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20Program%20Magang." 
+      href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20Program%20Magang%20%26%20PKL." 
       target="_blank" 
       rel="noopener noreferrer"
-      aria-label="Chat WhatsApp"
+      aria-label="Chat WhatsApp Magang & PKL"
       class="bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group relative"
     >
       <svg class="w-6 h-6 fill-current transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-6" viewBox="0 0 24 24" aria-hidden="true">
