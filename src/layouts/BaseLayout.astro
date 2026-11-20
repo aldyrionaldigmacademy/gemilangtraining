@@ -9,6 +9,7 @@ interface Props {
   image?: string;
   isHome?: boolean;
   type?: 'website' | 'article';
+  hideBreadcrumb?: boolean;
 }
 
 const { 
@@ -17,7 +18,8 @@ const {
   keywords = "tempat magang malang, tempat pkl malang, info magang malang, lowongan magang malang, magang mahasiswa informatika malang, pkl smk rpl malang, pkl smk tkj malang, pkl digital marketing malang, pkl bisnis digital malang, pkl pemasaran malang, pkl dkv malang, pkl multimedia malang, gemilang training malang",
   image = "/assets/img/beranda1.webp",
   isHome = false,
-  type = "website"
+  type = "website",
+  hideBreadcrumb = false
 } = Astro.props;
 
 // 1. CLEAN CANONICAL URL 
@@ -126,8 +128,8 @@ const organizationSchema = {
 <body class="min-h-screen flex flex-col justify-between font-sans antialiased bg-tc-bg text-tc-text relative">
   <slot name="header" />
   
-  <!-- Breadcrumb (Aktif untuk SEMUA halaman KECUALI Beranda) -->
-  {!isHome && (
+  <!-- Breadcrumb (Aktif untuk SEMUA halaman KECUALI Beranda atau jika di-hide secara eksplisit) -->
+  {!isHome && !hideBreadcrumb && (
     <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-4 text-sm text-tc-muted">
       <ol class="flex items-center space-x-2">
         <li><a href="/" class="hover:text-tc-accent transition-colors">Beranda</a></li>
