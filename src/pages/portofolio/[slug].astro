@@ -1,0 +1,593 @@
+---
+// src/pages/portofolio/[slug].astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { portofolios, type PortofolioItem } from '../../data/portofolioData';
+
+export function getStaticPaths() {
+  return portofolios.map((item) => ({
+    params: { slug: item.slug },
+    props: { project: item }
+  }));
+}
+
+interface Props {
+  project: PortofolioItem;
+}
+
+const { project } = Astro.props;
+
+// Ambil 2 proyek lainnya untuk bagian Proyek Terkait
+const otherProjects = portofolios.filter((p) => p.slug !== project.slug).slice(0, 2);
+
+// Schema.org Article / CaseStudy JSON-LD
+const caseStudySchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": project.title,
+  "description": project.subtitle,
+  "image": project.img,
+  "author": {
+    "@type": "Organization",
+    "name": "Gemilang Training"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Gemilang Training",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://gemilangtraining.web.id/logo.webp"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": project.badge
+  }
+};
+---
+
+<BaseLayout 
+  title={`${project.title} - Studi Kasus Portofolio Gemilang Training`} 
+  description={project.subtitle}
+  image={project.img}
+  isHome={false}
+  hideBreadcrumb={true}
+>
+  <slot name="head" slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(caseStudySchema)} />
+  </slot>
+
+  <Navbar slot="header" />
+
+  <!-- ======================================================= -->
+  <!-- 1. CORPORATE PAGE HERO SECTION                         -->
+  <!-- ======================================================= -->
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden border-b border-tc-border/60 bg-gradient-to-b from-tc-card/80 via-tc-bg to-tc-bg">
+    <!-- Subtle glow effect -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-tc-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      
+      <!-- Eyebrow Badge -->
+      <div class="inline-flex items-center gap-2 bg-tc-card/90 border border-tc-accent/30 text-tc-accent px-4 py-2 rounded-full text-xs font-semibold tracking-wide shadow-lg mb-6">
+        <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        <span>Studi Kasus Portofolio Proyek</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+        {project.title}
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-tc-muted text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
+        {project.subtitle}
+      </p>
+
+      <!-- Breadcrumbs Corporate -->
+      <nav aria-label="Breadcrumb" class="inline-flex items-center gap-2 text-xs md:text-sm text-tc-muted bg-tc-card/60 backdrop-blur-md px-5 py-2.5 rounded-full border border-tc-border">
+        <a href="/" class="hover:text-tc-accent transition-colors flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+          Beranda
+        </a>
+        <span class="text-tc-border">/</span>
+        <a href="/portofolio" class="hover:text-tc-accent transition-colors">Portofolio</a>
+        <span class="text-tc-border">/</span>
+        <span class="text-white font-medium truncate max-w-[200px] sm:max-w-xs">{project.title}</span>
+      </nav>
+
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- 2. FLOATING STAT COUNTER BAR                           -->
+  <!-- ======================================================= -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20 mb-16">
+    <div class="bg-tc-card/95 backdrop-blur-md border border-tc-border rounded-2xl shadow-2xl p-6 md:p-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 divide-y lg:divide-y-0 lg:divide-x divide-tc-border/60">
+        {project.stats.map((stat, idx) => (
+          <div class={`flex items-center gap-4 ${idx > 0 && idx % 2 === 0 ? 'pt-6 lg:pt-0' : ''} ${idx === 1 ? 'pt-0' : ''} ${idx > 0 ? 'lg:pl-6' : ''}`}>
+            <div class="w-12 h-12 rounded-xl bg-tc-bg border border-tc-border flex items-center justify-center shrink-0 text-tc-accent shadow-inner">
+              {stat.icon === 'speedometer' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              )}
+              {stat.icon === 'trending-up' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+              )}
+              {stat.icon === 'trending-down' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 17h8m0 0v-8m0 8l-8-8-4 4-6-6"></path></svg>
+              )}
+              {stat.icon === 'clock' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              )}
+              {stat.icon === 'calendar' && (
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              )}
+            </div>
+            <div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">{stat.value}</div>
+              <div class="text-xs text-tc-muted font-medium mt-0.5">{stat.label}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= -->
+  <!-- 3. MAIN CASE STUDY CONTENT CONTAINER                   -->
+  <!-- ======================================================= -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 pb-20">
+
+    <!-- SUBSECTION 1: RINGKASAN EKSEKUTIF & SIDEBAR METADATA -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column (8 cols): Executive Summary & Featured Image -->
+      <div class="lg:col-span-8 space-y-6">
+        
+        <!-- Direct Answer / Executive Summary Box -->
+        <div class="bg-tc-card rounded-2xl border border-tc-border p-6 sm:p-8 shadow-xl relative overflow-hidden">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="bg-tc-accent/20 border border-tc-accent text-tc-accent text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+              {project.executiveSummary.badge}
+            </span>
+            <span class="text-xs text-emerald-400 font-semibold flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              {project.executiveSummary.verified}
+            </span>
+          </div>
+
+          <h2 class="text-xl sm:text-2xl font-bold text-white mb-3">
+            {project.executiveSummary.title}
+          </h2>
+
+          <p class="text-tc-muted text-sm sm:text-base leading-relaxed">
+            {project.executiveSummary.content}
+          </p>
+        </div>
+
+        <!-- Featured Image with Badge overlay -->
+        <div class="rounded-2xl border border-tc-border overflow-hidden bg-tc-card shadow-2xl relative group">
+          <div class="h-72 sm:h-96 w-full overflow-hidden">
+            <img 
+              src={project.img} 
+              alt={project.title} 
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+          <!-- Bottom overlay banner -->
+          <div class="p-4 bg-tc-card/95 border-t border-tc-border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+            <span class="text-xs text-tc-muted flex items-center gap-2">
+              <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              {project.executiveSummary.caption}
+            </span>
+            <span class="text-xs font-semibold px-3 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-emerald-300">
+              {project.executiveSummary.metricBadge}
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column (4 cols): Metadata Proyek Sticky -->
+      <div class="lg:col-span-4">
+        <div class="bg-tc-card rounded-2xl border border-tc-border p-6 shadow-xl sticky top-28 space-y-5">
+          <div class="flex items-center gap-2 border-b border-tc-border pb-4">
+            <svg class="w-5 h-5 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <h3 class="text-base font-bold text-white">Metadata Proyek</h3>
+          </div>
+
+          <!-- Klien / Mitra -->
+          <div>
+            <span class="text-xs text-tc-muted block mb-1">Klien / Institusi Mitra:</span>
+            <span class="text-sm font-semibold text-white block">📍 {project.metadata.client}</span>
+            <span class="text-xs text-tc-accent">{project.lokasi}</span>
+          </div>
+
+          <!-- Kategori Jasa -->
+          <div>
+            <span class="text-xs text-tc-muted block mb-1.5">Kategori Bidang:</span>
+            <span class="inline-block text-xs font-bold text-tc-accent bg-tc-bg px-3 py-1.5 rounded-lg border border-tc-border">
+              {project.metadata.category}
+            </span>
+          </div>
+
+          <!-- Pendekatan Desain -->
+          <div>
+            <span class="text-xs text-tc-muted block mb-1">Pendekatan & Metode:</span>
+            <span class="text-xs font-medium text-white leading-relaxed block">
+              {project.metadata.approach}
+            </span>
+          </div>
+
+          <!-- Stack Teknologi -->
+          <div>
+            <span class="text-xs text-tc-muted block mb-2">Teknologi & Tools:</span>
+            <div class="flex flex-wrap gap-1.5">
+              {project.metadata.stack.map((item) => (
+                <span class="text-[11px] bg-tc-bg text-tc-muted px-2.5 py-1 rounded-md border border-tc-border/80 font-mono">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Durasi Pengerjaan -->
+          <div>
+            <span class="text-xs text-tc-muted block mb-1">Durasi Pengerjaan:</span>
+            <span class="text-xs font-semibold text-white block">
+              ⏱ {project.metadata.duration}
+            </span>
+          </div>
+
+          <!-- Tim Pelaksana -->
+          <div class="border-b border-tc-border pb-5">
+            <span class="text-xs text-tc-muted block mb-1">Tim Mentor & Peserta:</span>
+            <span class="text-xs text-tc-muted block leading-relaxed">
+              👥 {project.metadata.team}
+            </span>
+          </div>
+
+          <!-- CTA Button -->
+          <div>
+            <a 
+              href={project.metadata.consultationUrl || "https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20portofolio"} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-3 px-4 rounded-xl transition-all duration-300 block text-xs shadow-lg hover:scale-[1.02]"
+            >
+              Konsultasikan Proyek Serupa &rarr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUBSECTION 2: TANTANGAN VS SOLUSI (DUAL-CARD CONTRAST) -->
+    <div class="space-y-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-1.5 rounded-full border border-tc-border inline-block mb-2">
+          Studi Komparasi Kasus
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Tantangan Lapangan vs Solusi Rekayasa</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Kartu Tantangan (Red/Rose accent) -->
+        <div class="bg-tc-card rounded-2xl border border-rose-500/30 p-6 sm:p-8 space-y-4 shadow-xl relative overflow-hidden">
+          <div class="flex items-center gap-3 border-b border-rose-500/20 pb-4">
+            <div class="w-10 h-10 rounded-xl bg-rose-950/60 border border-rose-500/30 flex items-center justify-center text-rose-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-base sm:text-lg font-bold text-white">Tantangan & Kendala Awal</h4>
+              <span class="text-xs text-rose-400 font-medium">Permasalahan Sebelum Intervensi</span>
+            </div>
+          </div>
+
+          <ul class="space-y-3.5 text-xs sm:text-sm text-tc-muted">
+            {project.challenges.map((c) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-rose-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <strong class="text-white block mb-0.5">{c.title}:</strong>
+                  <span>{c.desc}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Kartu Solusi (Emerald/Success accent) -->
+        <div class="bg-tc-card rounded-2xl border border-emerald-500/30 p-6 sm:p-8 space-y-4 shadow-xl relative overflow-hidden">
+          <div class="flex items-center gap-3 border-b border-emerald-500/20 pb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-950/60 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-base sm:text-lg font-bold text-white">Solusi Rekayasa Gemilang Training</h4>
+              <span class="text-xs text-emerald-400 font-medium">Intervensi Arsitektur & Pelatihan Terapan</span>
+            </div>
+          </div>
+
+          <ul class="space-y-3.5 text-xs sm:text-sm text-tc-muted">
+            {project.solutions.map((s) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                  <strong class="text-white block mb-0.5">{s.title}:</strong>
+                  <span>{s.desc}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SUBSECTION 3: STRATEGI & ALUR KERJA 3 TAHAP -->
+    <div class="bg-tc-card rounded-3xl border border-tc-border p-6 sm:p-10 shadow-2xl space-y-8">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-bg px-4 py-1.5 rounded-full border border-tc-border inline-block">
+          Metodologi Pengerjaan
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Tahapan Eksekusi Terstruktur</h3>
+        <p class="text-tc-muted text-xs sm:text-sm">
+          Setiap fase dijalankan dengan standar industri agency serta pendampingan langsung oleh mentor kepada peserta magang.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {project.workflow.map((item, idx) => (
+          <div class="bg-tc-bg rounded-2xl border border-tc-border p-6 flex flex-col justify-between space-y-4 hover:border-tc-accent transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class={`text-xs font-bold px-3 py-1 rounded-full ${idx === 0 ? 'bg-primary-950 text-blue-400 border border-blue-500/30' : idx === 1 ? 'bg-emerald-950 text-emerald-400 border border-emerald-500/30' : 'bg-amber-950 text-amber-400 border border-amber-500/30'}`}>
+                  {item.stage}
+                </span>
+                <span class="text-[11px] text-tc-muted font-mono">{item.timeline}</span>
+              </div>
+              <h4 class="text-base font-bold text-white mb-2">{item.title}</h4>
+              <p class="text-xs text-tc-muted leading-relaxed">{item.desc}</p>
+            </div>
+            <div class="border-t border-tc-border/60 pt-3 flex items-center gap-1.5 text-xs text-tc-accent font-medium">
+              <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              <span>{item.badge}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- SUBSECTION 4: PERBANDINGAN HASIL NYATA (BEFORE VS AFTER TABLE) -->
+    <div class="space-y-6">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-1.5 rounded-full border border-tc-border inline-block">
+          Metrik Dampak Nyata
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Perbandingan Sebelum vs Sesudah Implementasi</h3>
+        <p class="text-tc-muted text-xs sm:text-sm">
+          Hasil riil yang terverifikasi melalui pengukuran analitik dan uji kinerja pasca peluncuran solusi.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-tc-border bg-tc-card shadow-2xl">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-tc-bg border-b border-tc-border text-tc-muted uppercase font-mono text-[11px]">
+            <tr>
+              <th scope="col" class="py-4 px-6">Parameter Pengukuran</th>
+              <th scope="col" class="py-4 px-6 text-rose-400">Kondisi Awal (Sebelum)</th>
+              <th scope="col" class="py-4 px-6 text-emerald-400">Kondisi Baru (Sesudah)</th>
+              <th scope="col" class="py-4 px-6 text-tc-accent">Hasil Peningkatan</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-tc-border/60">
+            {project.impactMetrics.map((row) => (
+              <tr class="hover:bg-tc-bg/50 transition-colors">
+                <td class="py-4 px-6 font-semibold text-white flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-tc-accent shrink-0"></span>
+                  {row.param}
+                </td>
+                <td class="py-4 px-6 text-rose-400/90 font-medium">{row.before}</td>
+                <td class="py-4 px-6 text-emerald-400 font-bold">{row.after}</td>
+                <td class="py-4 px-6">
+                  <span class="inline-block bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 font-bold text-xs px-3 py-1 rounded-md">
+                    {row.improvement}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SUBSECTION 5: PILAR MAGANG & KOMPETENSI PESERTA -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+      
+      <!-- Kolom Kiri: Highlight Pilar Magang (5 cols) -->
+      <div class="lg:col-span-5 bg-gradient-to-br from-[#0F2B48] to-[#1E3D60] rounded-2xl border border-blue-400/30 p-6 sm:p-8 flex flex-col justify-between shadow-2xl text-white">
+        <div class="space-y-4">
+          <span class="inline-block text-xs font-bold text-slate-950 bg-tc-accent px-3 py-1.5 rounded-full uppercase tracking-wider">
+            {project.internshipPillars.badge}
+          </span>
+          <h4 class="text-xl sm:text-2xl font-extrabold text-white leading-tight">
+            {project.internshipPillars.title}
+          </h4>
+          <p class="text-blue-100/90 text-xs sm:text-sm leading-relaxed">
+            {project.internshipPillars.description}
+          </p>
+        </div>
+
+        <div class="pt-6 mt-6 border-t border-blue-400/20 flex items-start gap-3">
+          <div class="w-10 h-10 rounded-xl bg-tc-accent/20 border border-tc-accent/40 flex items-center justify-center shrink-0 text-tc-accent">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Standar Industri Profesional</div>
+            <div class="text-[11px] text-blue-200/80 mt-0.5">{project.internshipPillars.standards}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kolom Kanan: 4 Kotak Kompetensi yang Dikuasai (7 cols) -->
+      <div class="lg:col-span-7 bg-tc-card rounded-2xl border border-tc-border p-6 sm:p-8 shadow-2xl space-y-4">
+        <div class="flex items-center gap-2 border-b border-tc-border pb-3">
+          <svg class="w-5 h-5 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+          </svg>
+          <h4 class="text-base font-bold text-white">Kompetensi Industri yang Dikuasai Peserta:</h4>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+          {project.internshipPillars.competencies.map((comp) => (
+            <div class="bg-tc-bg rounded-xl border border-tc-border p-4 space-y-1.5 hover:border-tc-accent/60 transition-all">
+              <div class="text-xs font-bold text-tc-accent">{comp.title}</div>
+              <p class="text-xs text-tc-muted leading-relaxed">{comp.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SUBSECTION 6: EKSPLORASI PROYEK LAINNYA -->
+    <div class="border-t border-tc-border pt-12 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-3.5 py-1 rounded-full border border-tc-border inline-block mb-1">
+            Eksplorasi Lanjutan
+          </span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white">Studi Kasus Proyek Lainnya</h3>
+        </div>
+        <a 
+          href="/portofolio" 
+          class="inline-flex items-center gap-1.5 text-xs font-bold text-tc-accent hover:underline bg-tc-card px-4 py-2 rounded-xl border border-tc-border hover:border-tc-accent transition-all shrink-0 w-fit"
+        >
+          <span>Lihat Semua Portofolio</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {otherProjects.map((item) => (
+          <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 shadow-xl flex flex-col justify-between group">
+            <div>
+              <!-- Card Photo Thumbnail -->
+              <a href={`/portofolio/${item.slug}`} class="block h-48 sm:h-56 w-full overflow-hidden relative border-b border-tc-border/60">
+                <img 
+                  src={item.img} 
+                  alt={item.title} 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                  loading="lazy"
+                />
+                <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
+                  {item.badge}
+                </span>
+                <span class="absolute bottom-3 right-3 bg-tc-card/90 border border-tc-border text-tc-muted text-[10px] font-medium px-2.5 py-1 rounded-md backdrop-blur-md flex items-center gap-1">
+                  📍 {item.lokasi}
+                </span>
+              </a>
+
+              <!-- Card Content Body -->
+              <div class="p-5 sm:p-6 space-y-3">
+                <div class="flex items-center justify-between text-xs text-tc-accent font-semibold">
+                  <span class="truncate">📍 {item.mitra}</span>
+                  <span class="text-tc-muted text-[11px] shrink-0 font-mono">{item.metadata.duration}</span>
+                </div>
+
+                <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href={`/portofolio/${item.slug}`} class="hover:text-tc-accent transition-colors">
+                    {item.title}
+                  </a>
+                </h4>
+
+                <p class="text-xs text-tc-muted line-clamp-2 leading-relaxed">
+                  {item.desc}
+                </p>
+
+                <!-- Tags list -->
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                  {item.tags.slice(0, 3).map((tag) => (
+                    <span class="text-[10px] bg-tc-bg px-2 py-0.5 rounded-md text-tc-muted border border-tc-border/60 font-mono">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div class="px-5 sm:px-6 pb-5 pt-3 border-t border-tc-border/60 flex items-center justify-between">
+              <span class="text-xs text-emerald-400 font-medium flex items-center gap-1">
+                <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                {item.stats[0]?.value || 'Verified Project'}
+              </span>
+              <a 
+                href={`/portofolio/${item.slug}`} 
+                class="inline-flex items-center gap-1.5 text-xs font-bold text-tc-accent hover:underline group-hover:translate-x-1 transition-transform"
+              >
+                <span>Lihat Studi Kasus</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- SUBSECTION 7: CORPORATE CTA BANNER -->
+    <div class="bg-gradient-to-r from-[#0F2B48] via-[#112240] to-[#0A192F] border border-tc-border rounded-3xl p-8 md:p-14 text-center shadow-2xl relative overflow-hidden">
+      <div class="max-w-2xl mx-auto space-y-4 relative z-10">
+        <span class="text-xs font-bold text-tc-accent uppercase tracking-widest bg-tc-bg/80 px-4 py-1.5 rounded-full border border-tc-border inline-block">
+          Mulai Transformasi Digital Bersama Kami
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+          Siap Memiliki Proyek atau Portofolio Nyata Seperti Ini?
+        </h2>
+        <p class="text-tc-muted text-xs sm:text-sm leading-relaxed">
+          Diskusikan kebutuhan arsitektur website, pelatihan vokasi terpadu, dan pengembangan talenta digital Anda bersama tim konsultan dan mentor Gemilang Training.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4 pt-4">
+          <a 
+            href={`https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20portofolio%20${encodeURIComponent(project.title)}`}
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-7 py-3 rounded-xl transition-all duration-300 shadow-xl hover:scale-105 text-xs sm:text-sm flex items-center gap-2"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/></svg>
+            <span>Konsultasi Proyek Ini</span>
+          </a>
+          <a 
+            href="/portofolio" 
+            class="bg-tc-card hover:bg-tc-bg border border-tc-border text-white font-semibold px-7 py-3 rounded-xl transition-all text-xs sm:text-sm hover:border-tc-accent"
+          >
+            Lihat Portofolio Lainnya &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>

@@ -3,103 +3,23 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-
-const portofolios = [
-  {
-    id: "p1",
-    category: "media",
-    badge: "Media Digital",
-    mitra: "Jawa Pos Radar Kediri",
-    lokasi: "Kediri",
-    title: "Kemitraan Jurnalistik & Portal Media Digital Radar Kediri",
-    desc: "Pengembangan strategi komunikasi media digital, manajemen konten portal berita komersial, serta optimalisasi jangkauan pembaca digital bersama mitra Jawa Pos Radar Kediri.",
-    tags: ["Media Digital", "SEO Analytics", "Content Writing", "Social Media Management"],
-    img: "/assets/img/kka-radar-kediri.webp"
-  },
-  {
-    id: "p2",
-    category: "vokasi",
-    badge: "Vokasi & Pelatihan",
-    mitra: "SMK PGRI 1 Malang (SKARIGA)",
-    lokasi: "Kota Malang",
-    title: "Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA",
-    desc: "Program peningkatan kompetensi siswa SMK melalui sertifikasi keahlian, pendampingan uji kompetensi keahlian, dan workshop pelatihan akselerasi talenta digital lintas jurusan (RPL, TKJ, DKV, dan Multimedia).",
-    tags: ["Pelatihan SMK", "Sinkronisasi Kurikulum", "RPL", "TKJ", "Multimedia"],
-    img: "/assets/img/pelatihan-smk3pgri.webp"
-  },
-  {
-    id: "p3",
-    category: "vokasi",
-    badge: "Vokasi & Pelatihan",
-    mitra: "Universitas Yudharta Pasuruan",
-    lokasi: "Pasuruan & Malang",
-    title: "Kemitraan Industri & Magang Mahasiswa Universitas Yudharta",
-    desc: "Kolaborasi dan integrasi kurikulum magang terapan Gemilang Training bersama 3 mahasiswa Universitas Yudharta Pasuruan. Berfokus pada pengembangan platform web modern, optimasi ekosistem digital, serta eksekusi proyek riil industri.",
-    tags: ["Kemitraan Universitas", "Magang Mahasiswa", "Informatika", "Web Engineering", "Project Industri"],
-    img: "/assets/img/yudharta.webp"
-  },
-
-  {
-    id: "p5",
-    category: "vokasi",
-    badge: "Vokasi & Pelatihan",
-    mitra: "Yayasan Insan Kami",
-    lokasi: "Jawa Timur",
-    title: "Pelatihan Literasi Digital & Pengenalan IT Insan Kamil",
-    desc: "Program pelatihan dasar teknologi informasi, edukasi pemanfaatan internet sehat dan aman, serta pengembangan dasar kapabilitas perangkat komputer bagi generasi muda di lingkungan masyarakat.",
-    tags: ["Pemberdayaan Digital", "Pengenalan Komputer", "Literasi Teknologi", "Generasi Muda"],
-    img: "/assets/img/pelatihan-insan-kamil.webp"
-  },
-  {
-    id: "p6",
-    category: "web-fintech",
-    badge: "Web & Fintech",
-    mitra: "Panitia QRIS Run & Komunitas Digital",
-    lokasi: "Jawa Timur",
-    title: "Sistem Registrasi Digital & Event Management QRIS Run",
-    desc: "Implementasi ticketing smart-presence dan lokasi live tracking untuk kegiatan olahraga bergaya kampanye QRIS, sistem otomatisasi pendaftaran elektronik, dan pemantauan peserta secara aktual.",
-    tags: ["Web Event", "QRIS Payment Gateway", "Ticketing System", "Realtime Tracking"],
-    img: "/assets/img/qris-run.webp"
-  },
-  {
-    id: "p7",
-    category: "edukasi-marketing",
-    badge: "Edukasi & Pemasaran Digital",
-    mitra: "Komunitas UMKM XL Smart Center",
-    lokasi: "Kab. Malang",
-    title: "Seminar Digitalisasi UMKM & Adopsi Teknologi XL Smart",
-    desc: "Seminar dan bimbingan teknis pemasaran digital untuk pelaku usaha mikro kecil dan menengah bersama jaringan XL Smart, mengoptimalkan katalog online, integrasi marketplace, dan strategi promosi multi-channel.",
-    tags: ["Digitalisasi", "E-commerce Branding", "Pemasaran Lokal GEO", "XL Smart Center"],
-    img: "/assets/img/seminar-umkm-xlsmart.webp"
-  },
-  {
-    id: "p8",
-    category: "branding",
-    badge: "Branding & Merchandise",
-    mitra: "Mitra Corporate / Event Pendidikan",
-    lokasi: "Jawa Timur",
-    title: "Pengembangan Fasilitas & Perlengkapan Pelatihan Seminar Kit",
-    desc: "Perancangan dan pengadaan perlengkapan merchandise edukatif, aksesoris penyelenggaraan event, serta kit peserta pelatihan institusi guna mendukung kenyamanan dan kerapian kegiatan kelas/seminar.",
-    tags: ["Merchandise Custom", "Branding Design", "Seminar Kit Production", "Event Kit"],
-    img: "/assets/img/seminarkits.webp"
-  }
-];
+import { portofolios } from '../data/portofolioData';
 ---
 
-<BaseLayout title="Portofolio Dokumentasi Karya - Gemilang Training" isHome={false}>
+<BaseLayout title="Portofolio Dokumentasi Karya & Studi Kasus - Gemilang Training" isHome={false}>
   <Navbar slot="header" />
 
   <section class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Header Section -->
     <div class="text-center max-w-3xl mx-auto mb-12">
       <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-2 rounded-full border border-tc-border inline-block mb-4">
-        Portofolio & Dokumentasi
+        Portofolio & Studi Kasus
       </span>
       <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4">
         Portofolio Aktivitas & Karya Terapan
       </h1>
       <p class="text-tc-muted text-base md:text-lg">
-        Dokumentasi komprehensif implementasi teknologi, pelatihan kejuruan vokasi, dan kerja sama industri Gemilang Training.
+        Dokumentasi komprehensif implementasi teknologi, pelatihan kejuruan vokasi, dan kerja sama industri Gemilang Training. Klik setiap proyek untuk melihat studi kasus mendalam.
       </p>
     </div>
 
@@ -130,6 +50,12 @@ const portofolios = [
         Edukasi & Digital Marketing
       </button>
       <button 
+        data-filter="media" 
+        class="filter-btn px-4 py-2 rounded-xl text-xs font-medium transition-all border border-tc-border bg-tc-card text-tc-muted hover:text-white cursor-pointer"
+      >
+        Media Digital
+      </button>
+      <button 
         data-filter="branding" 
         class="filter-btn px-4 py-2 rounded-xl text-xs font-medium transition-all border border-tc-border bg-tc-card text-tc-muted hover:text-white cursor-pointer"
       >
@@ -146,7 +72,7 @@ const portofolios = [
         >
           <div>
             <!-- Header Image -->
-            <div class="h-56 overflow-hidden relative border-b border-tc-border/60">
+            <a href={`/portofolio/${item.slug}`} class="block h-56 overflow-hidden relative border-b border-tc-border/60">
               <img 
                 src={item.img} 
                 alt={item.title} 
@@ -155,7 +81,12 @@ const portofolios = [
               <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
                 {item.badge}
               </span>
-            </div>
+              {item.featured && (
+                <span class="absolute top-3 right-3 bg-emerald-500/90 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow">
+                  Unggulan
+                </span>
+              )}
+            </a>
 
             <!-- Content Body -->
             <div class="p-6 space-y-3">
@@ -165,7 +96,9 @@ const portofolios = [
               </div>
 
               <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-                {item.title}
+                <a href={`/portofolio/${item.slug}`} class="hover:text-tc-accent transition-colors">
+                  {item.title}
+                </a>
               </h3>
 
               <p class="text-tc-muted text-xs leading-relaxed line-clamp-3">
@@ -183,15 +116,14 @@ const portofolios = [
             </div>
           </div>
 
-          <!-- Button Trigger Modal Pop-up -->
+          <!-- Direct Link to Dedicated Project Detail Page -->
           <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
-            <button 
-              type="button"
-              data-modal-target={item.id}
-              class="open-modal-btn w-full text-center text-xs font-bold text-tc-accent hover:underline cursor-pointer bg-transparent border-none py-1"
+            <a 
+              href={`/portofolio/${item.slug}`}
+              class="block w-full py-2.5 rounded-xl bg-tc-bg hover:bg-tc-accent hover:text-slate-950 text-center text-xs font-bold text-tc-accent border border-tc-border hover:border-tc-accent transition-all duration-300"
             >
-              Lihat Detail Portofolio &rarr;
-            </button>
+              Lihat Detail Studi Kasus &rarr;
+            </a>
           </div>
         </div>
       ))}
@@ -216,72 +148,12 @@ const portofolios = [
     </div>
   </section>
 
-  <!-- ======================================================= -->
-  <!-- DIALOG POP-UP MODAL (CONTAINER HIDDEN BY DEFAULT)        -->
-  <!-- ======================================================= -->
-  <div id="modal-overlay" class="fixed inset-0 z-[9999] bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-4">
-    <div id="modal-content" class="bg-tc-card border border-tc-border rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative space-y-6 text-tc-text">
-      
-      <!-- Tombol Close (X) -->
-      <button id="close-modal-btn" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-tc-bg border border-tc-border flex items-center justify-center text-white hover:text-tc-accent transition-colors">
-        ✕
-      </button>
-
-      <!-- Foto Header Modal -->
-      <div class="rounded-2xl overflow-hidden border border-tc-border h-64 w-full relative">
-        <img id="modal-img" src="" alt="" class="w-full h-full object-cover" />
-        <span id="modal-badge" class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full backdrop-blur-md"></span>
-      </div>
-
-      <!-- Detail Teks Proyek -->
-      <div class="space-y-4">
-        <div class="flex flex-wrap justify-between items-center text-xs text-tc-accent font-semibold border-b border-tc-border/60 pb-3">
-          <span id="modal-mitra"></span>
-          <span id="modal-lokasi" class="text-tc-muted"></span>
-        </div>
-
-        <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-white leading-tight"></h3>
-        
-        <p id="modal-desc" class="text-tc-muted text-xs md:text-sm leading-relaxed"></p>
-
-        <!-- List Tags -->
-        <div class="space-y-2 border-t border-tc-border/60 pt-4">
-          <span class="text-xs font-mono uppercase text-tc-accent font-bold block">Teknologi & Lingkup Kerja:</span>
-          <div id="modal-tags" class="flex flex-wrap gap-2"></div>
-        </div>
-      </div>
-
-      <!-- Action Button inside Modal -->
-      <div class="pt-4 border-t border-tc-border/60 flex flex-col sm:flex-row gap-3">
-        <a 
-          id="modal-wa-btn" 
-          href="" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-3 rounded-xl transition-all text-xs"
-        >
-          Konsultasikan Proyek Ini via WA
-        </a>
-        <button 
-          id="modal-close-bottom" 
-          class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white font-semibold py-3 rounded-xl transition-all text-xs"
-        >
-          Tutup Detail
-        </button>
-      </div>
-
-    </div>
-  </div>
-
   <Footer slot="footer" />
 </BaseLayout>
 
-<script is:inline define:vars={{ portofolios }}>
-  // Logika Filter & Modal Pop-up
-  function initPortofolioPage() {
-    // -------------------------------------------------------------
-    // 1. LOGIKA FILTER KATEGORI PORTOFOLIO
-    // -------------------------------------------------------------
+<script is:inline>
+  // Logika Filter Kategori Portofolio Interaktif
+  function initPortofolioFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portofolioCards = document.querySelectorAll('.portofolio-card');
 
@@ -310,75 +182,9 @@ const portofolios = [
         });
       });
     });
-
-    // -------------------------------------------------------------
-    // 2. LOGIKA MODAL POP-UP
-    // -------------------------------------------------------------
-    const overlay = document.getElementById('modal-overlay');
-    const closeBtn = document.getElementById('close-modal-btn');
-    const closeBottomBtn = document.getElementById('modal-close-bottom');
-    const openBtns = document.querySelectorAll('.open-modal-btn');
-
-    const modalImg = document.getElementById('modal-img');
-    const modalBadge = document.getElementById('modal-badge');
-    const modalMitra = document.getElementById('modal-mitra');
-    const modalLokasi = document.getElementById('modal-lokasi');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDesc = document.getElementById('modal-desc');
-    const modalTags = document.getElementById('modal-tags');
-    const modalWaBtn = document.getElementById('modal-wa-btn');
-
-    function openModal(id) {
-      const data = portofolios.find(p => p.id === id);
-      if (!data || !overlay) return;
-
-      modalImg.src = data.img;
-      modalImg.alt = data.title;
-      modalBadge.textContent = data.badge;
-      modalMitra.textContent = `📍 ${data.mitra}`;
-      modalLokasi.textContent = data.lokasi;
-      modalTitle.textContent = data.title;
-      modalDesc.textContent = data.desc;
-
-      modalTags.innerHTML = '';
-      data.tags.forEach(tag => {
-        const span = document.createElement('span');
-        span.className = 'text-xs bg-tc-bg px-3 py-1 rounded-md text-tc-muted border border-tc-border font-mono';
-        span.textContent = tag;
-        modalTags.appendChild(span);
-      });
-
-      const waText = encodeURIComponent(`Halo Admin Gemilang Training, saya tertarik ingin bertanya mengenai proyek portofolio: "${data.title}"`);
-      modalWaBtn.href = `https://wa.me/6281943431484?text=${waText}`;
-
-      overlay.classList.remove('hidden');
-      overlay.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      if (!overlay) return;
-      overlay.classList.add('hidden');
-      overlay.classList.remove('flex');
-      document.body.style.overflow = '';
-    }
-
-    openBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.getAttribute('data-modal-target');
-        if (targetId) openModal(targetId);
-      });
-    });
-
-    closeBtn?.addEventListener('click', closeModal);
-    closeBottomBtn?.addEventListener('click', closeModal);
-
-    overlay?.addEventListener('click', (e) => {
-      if (e.target === overlay) closeModal();
-    });
   }
 
   // Eksekusi fungsi saat pertama kali dimuat & pada navigasi Astro View Transitions
-  initPortofolioPage();
-  document.addEventListener('astro:page-load', initPortofolioPage);
+  initPortofolioFilter();
+  document.addEventListener('astro:page-load', initPortofolioFilter);
 </script>
