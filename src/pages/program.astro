@@ -15,7 +15,7 @@ const jalurProgram = [
       "Sertifikat resmi kelulusan & lembar penilaian kampus"
     ],
     detailLink: "/program/magang-mahasiswa",
-    alurLink: "/alur-pendaftaran?jalur=mahasiswa"
+    daftarLink: "/pendaftaran?jalur=mahasiswa"
   },
   {
     badge: "Jalur Sekolah Menengah Kejuruan",
@@ -27,7 +27,7 @@ const jalurProgram = [
       "Pendampingan monitoring guru & pengisian jurnal PKL"
     ],
     detailLink: "/program/pkl-smk",
-    alurLink: "/alur-pendaftaran?jalur=smk"
+    daftarLink: "/pendaftaran?jalur=smk"
   }
 ];
 
@@ -120,7 +120,7 @@ const programs = [
     </div>
   </section>
 
-  <!-- 2. PILIH JALUR PROGRAM (TERHUBUNG KE /program/magang-mahasiswa, /program/pkl-smk, & /alur-pendaftaran) -->
+  <!-- 2. PILIH JALUR PROGRAM -->
   <section class="pt-14 md:pt-20 pb-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
       <div>
@@ -167,15 +167,15 @@ const programs = [
           <div class="pt-5 border-t border-tc-border/60 flex flex-col sm:flex-row gap-3">
             <a 
               href={item.detailLink} 
-              class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-xs md:text-sm py-3 px-4 rounded-xl transition-all shadow-md"
+              class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white hover:text-tc-accent font-semibold text-xs md:text-sm py-3 px-4 rounded-xl transition-all"
             >
               Detail {item.title} &rarr;
             </a>
             <a 
-              href={item.alurLink} 
-              class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white hover:text-tc-accent font-semibold text-xs md:text-sm py-3 px-4 rounded-xl transition-all"
+              href={item.daftarLink} 
+              class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-xs md:text-sm py-3 px-4 rounded-xl transition-all shadow-md"
             >
-              Alur Pendaftaran
+              Daftar Program
             </a>
           </div>
         </div>
@@ -261,21 +261,13 @@ const programs = [
             </div>
           </div>
 
-          <!-- Tombol CTA & Detail -->
-          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between gap-3">
+          <!-- Satu Tombol Daftar Program (Terhubung ke /pendaftaran) -->
+          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60">
             <a 
-              href={`/program/${item.slug}`} 
-              class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white text-xs font-semibold py-2.5 rounded-xl transition-all"
+              href={`/pendaftaran?program=${encodeURIComponent(item.title)}`} 
+              class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 text-xs sm:text-sm font-bold py-3 rounded-xl transition-all shadow-md"
             >
-              Detail Materi &rarr;
-            </a>
-            <a 
-              href={`https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20Magang%20%26%20PKL%20materi%20${encodeURIComponent(item.title)}.`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 text-xs font-bold py-2.5 rounded-xl transition-all"
-            >
-              Daftar via WA
+              Daftar Program &rarr;
             </a>
           </div>
         </div>
@@ -288,10 +280,10 @@ const programs = [
     <div class="bg-tc-card border border-tc-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
       <div class="max-w-xl text-center md:text-left">
         <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-3">
-          Belum Yakin Memilih Jalur atau Materinya?
+          Siap Mengajukan Pendaftaran Magang atau PKL?
         </h2>
         <p class="text-tc-muted text-sm md:text-base">
-          Pelajari langkah pengajuan surat pengantar di halaman Alur Pendaftaran atau konsultasikan langsung kebutuhan jurusanmu dengan admin kami.
+          Pelajari tahapan administrasi di halaman Alur Pendaftaran atau langsung isi formulir registrasi mandiri sekarang juga.
         </p>
       </div>
       <div class="flex flex-wrap justify-center gap-3 shrink-0">
@@ -302,12 +294,10 @@ const programs = [
           Alur Pendaftaran
         </a>
         <a 
-          href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Program%20Magang%20%26%20PKL." 
-          target="_blank" 
-          rel="noopener noreferrer"
+          href="/pendaftaran" 
           class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg hover:scale-105"
         >
-          Konsultasi via WA &rarr;
+          Isi Formulir Pendaftaran &rarr;
         </a>
       </div>
     </div>

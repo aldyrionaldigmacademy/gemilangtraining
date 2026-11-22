@@ -4,6 +4,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { portofolios } from '../data/portofolioData';
+
+const formattedPortofolios = portofolios.map((item) => {
+  const isYudharta =
+    item.title.toLowerCase().includes('yudharta') ||
+    item.mitra.toLowerCase().includes('yudharta');
+
+  if (!isYudharta) return item;
+
+  return {
+    ...item,
+    slug: 'kemitraan-industri-magang-mahasiswa-poliwangi',
+    mitra: 'Politeknik Negeri Banyuwangi (Poliwangi)',
+    lokasi: 'Banyuwangi, Jawa Timur',
+    title: 'Kemitraan Industri & Magang Mahasiswa Poliwangi',
+    desc: 'Kolaborasi program magang mahasiswa Politeknik Negeri Banyuwangi (Poliwangi) dalam pengembangan website modern, optimasi SEO, dan proyek digital terapan bersama mentor industri.',
+    tags: item.tags.map((t) =>
+      t.toLowerCase().includes('yudharta') ? 'Poliwangi' : t
+    ),
+  };
+});
 ---
 
 <BaseLayout title="Portofolio Dokumentasi Karya & Studi Kasus - Gemilang Training" isHome={false}>
@@ -19,7 +39,7 @@ import { portofolios } from '../data/portofolioData';
         Portofolio Aktivitas & Karya Terapan
       </h1>
       <p class="text-tc-muted text-base md:text-lg">
-        Dokumentasi komprehensif implementasi teknologi, pelatihan kejuruan vokasi, dan kerja sama industri Gemilang Training. Klik setiap proyek untuk melihat studi kasus mendalam.
+        Dokumentasi komprehensif implementasi teknologi, pelatihan kejuruan vokasi, dan kerja sama industri Gemilang Training. Hubungi tim kami untuk berkonsultasi mengenai detail pengerjaan proyek.
       </p>
     </div>
 
@@ -65,68 +85,75 @@ import { portofolios } from '../data/portofolioData';
 
     <!-- Grid Portofolio (3 Kolom) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {portofolios.map((item) => (
-        <div 
-          class="portofolio-card bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl"
-          data-category={item.category}
-        >
-          <div>
-            <!-- Header Image -->
-            <a href={`/portofolio/${item.slug}`} class="block h-56 overflow-hidden relative border-b border-tc-border/60">
-              <img 
-                src={item.img} 
-                alt={item.title} 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              />
-              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
-                {item.badge}
-              </span>
-              {item.featured && (
-                <span class="absolute top-3 right-3 bg-emerald-500/90 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow">
-                  Unggulan
+      {formattedPortofolios.map((item) => {
+        const waMessage = `Halo Admin Gemilang Training, saya tertarik dan ingin menanyakan detail mengenai proyek "${item.title}" (${item.mitra}).`;
+        const waUrl = `https://wa.me/6281943431484?text=${encodeURIComponent(waMessage)}`;
+
+        return (
+          <div 
+            class="portofolio-card bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl"
+            data-category={item.category}
+          >
+            <div>
+              <!-- Header Image -->
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" class="block h-56 overflow-hidden relative border-b border-tc-border/60">
+                <img 
+                  src={item.img} 
+                  alt={item.title} 
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
+                  {item.badge}
                 </span>
-              )}
-            </a>
-
-            <!-- Content Body -->
-            <div class="p-6 space-y-3">
-              <div class="flex justify-between items-center text-xs text-tc-accent font-semibold border-b border-tc-border/40 pb-2">
-                <span>📍 {item.mitra}</span>
-                <span class="text-tc-muted">{item.lokasi}</span>
-              </div>
-
-              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-                <a href={`/portofolio/${item.slug}`} class="hover:text-tc-accent transition-colors">
-                  {item.title}
-                </a>
-              </h3>
-
-              <p class="text-tc-muted text-xs leading-relaxed line-clamp-3">
-                {item.desc}
-              </p>
-
-              <!-- Tags / Skill list -->
-              <div class="flex flex-wrap gap-1.5 pt-2">
-                {item.tags.map((tag) => (
-                  <span class="text-[10px] bg-tc-bg px-2.5 py-1 rounded-md text-tc-muted border border-tc-border/60 font-mono">
-                    {tag}
+                {item.featured && (
+                  <span class="absolute top-3 right-3 bg-emerald-500/90 text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow">
+                    Unggulan
                   </span>
-                ))}
+                )}
+              </a>
+
+              <!-- Content Body -->
+              <div class="p-6 space-y-3">
+                <div class="flex justify-between items-center text-xs text-tc-accent font-semibold border-b border-tc-border/40 pb-2">
+                  <span>📍 {item.mitra}</span>
+                  <span class="text-tc-muted">{item.lokasi}</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href={waUrl} target="_blank" rel="noopener noreferrer" class="hover:text-tc-accent transition-colors">
+                    {item.title}
+                  </a>
+                </h3>
+
+                <p class="text-tc-muted text-xs leading-relaxed line-clamp-3">
+                  {item.desc}
+                </p>
+
+                <!-- Tags / Skill list -->
+                <div class="flex flex-wrap gap-1.5 pt-2">
+                  {item.tags.map((tag) => (
+                    <span class="text-[10px] bg-tc-bg px-2.5 py-1 rounded-md text-tc-muted border border-tc-border/60 font-mono">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Direct Link to Dedicated Project Detail Page -->
-          <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
-            <a 
-              href={`/portofolio/${item.slug}`}
-              class="block w-full py-2.5 rounded-xl bg-tc-bg hover:bg-tc-accent hover:text-slate-950 text-center text-xs font-bold text-tc-accent border border-tc-border hover:border-tc-accent transition-all duration-300"
-            >
-              Lihat Detail Studi Kasus &rarr;
-            </a>
+            <!-- Direct Redirect to WhatsApp -->
+            <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
+              <a 
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full py-2.5 rounded-xl bg-tc-bg hover:bg-tc-accent hover:text-slate-950 text-center text-xs font-bold text-tc-accent border border-tc-border hover:border-tc-accent transition-all duration-300"
+              >
+                Konsultasi Proyek via WA &rarr;
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
 
     <!-- Banner Penutup CTA -->

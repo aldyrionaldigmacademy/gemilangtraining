@@ -70,7 +70,7 @@ const materiSpesialisasi = [
     title: "Pembuatan Website Modern dengan Astro",
     desc: "Membangun website multi-halaman berkecepatan tinggi dengan struktur Clean URL tanpa .html hingga deploy online.",
     img: "/assets/img/informatika.webp",
-    link: "/program/website-astro"
+    programValue: "Pembuatan Website Modern dengan Astro"
   },
   {
     category: "webdev",
@@ -78,7 +78,7 @@ const materiSpesialisasi = [
     title: "Desain & Koding Website Bootstrap 5",
     desc: "Menyusun antarmuka responsif di HP dan laptop dengan komponen Bootstrap 5 serta aset gambar .webp ringan.",
     img: "/assets/img/rpl.webp",
-    link: "/program/website-bootstrap"
+    programValue: "Desain & Koding Website dengan Bootstrap"
   },
   {
     category: "webdev",
@@ -86,7 +86,7 @@ const materiSpesialisasi = [
     title: "Pengelolaan Website & Domain Blogspot",
     desc: "Membuat portal informasi dan profil usaha berbasis Blogspot lengkap dengan navigasi dan custom domain.",
     img: "/assets/img/tkj.webp",
-    link: "/program/website-blogspot"
+    programValue: "Pembuatan Website & Pengelolaan Blogspot"
   },
   {
     category: "seo-marketing",
@@ -94,7 +94,7 @@ const materiSpesialisasi = [
     title: "Optimasi SEO & Google Search Console",
     desc: "Riset kata kunci, optimasi On-Page, pengaturan Open Graph, dan pemantauan indeks halaman di Google.",
     img: "/assets/img/digitalmarketing.webp",
-    link: "/program/optimasi-seo"
+    programValue: "Optimasi SEO & Riset Kata Kunci"
   },
   {
     category: "seo-marketing",
@@ -102,7 +102,7 @@ const materiSpesialisasi = [
     title: "Penulisan Artikel SEO & Digital Marketing",
     desc: "Menyusun artikel informatif dan strategi promosi digital yang terstruktur untuk menarik pengunjung.",
     img: "/assets/img/bisnisdigital.webp",
-    link: "/program/pembuatan-artikel"
+    programValue: "Penulisan Artikel SEO & Konten Website"
   }
 ];
 ---
@@ -364,12 +364,10 @@ const materiSpesialisasi = [
             Konsultasikan jadwal magang kampus dan ketersediaan kuota jurusan Informatika langsung dengan admin kami.
           </p>
           <a 
-            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20mahasiswa%20Informatika%20ingin%20mendaftar%20Program%20Magang." 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href="/pendaftaran?jalur=mahasiswa" 
             class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-sm py-3.5 rounded-xl transition-all shadow-md hover:scale-[1.02]"
           >
-            Daftar via WhatsApp &rarr;
+            Daftar Program &rarr;
           </a>
           <p class="text-[11px] text-tc-muted text-center mt-3">
             Respon cepat pada jam kerja (Senin - Sabtu)
@@ -442,10 +440,12 @@ const materiSpesialisasi = [
                 <p class="text-tc-muted text-xs leading-relaxed">{item.desc}</p>
               </div>
             </div>
-            <div class="px-6 pb-5 pt-3 border-t border-tc-border/60 flex items-center justify-between">
-              <span class="text-xs font-semibold text-tc-muted">Pelajari Detail</span>
-              <a href={item.link} class="w-8 h-8 rounded-full bg-tc-bg border border-tc-border group-hover:bg-tc-accent group-hover:text-slate-950 text-tc-accent flex items-center justify-center transition-all font-bold text-sm">
-                &rarr;
+            <div class="px-6 pb-6 pt-3 border-t border-tc-border/60">
+              <a 
+                href={`/pendaftaran?jalur=mahasiswa&program=${encodeURIComponent(item.programValue)}`} 
+                class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 text-xs font-bold py-2.5 rounded-xl transition-all shadow-md"
+              >
+                Daftar Program &rarr;
               </a>
             </div>
           </div>
@@ -468,16 +468,14 @@ const materiSpesialisasi = [
           Siap Mengambil Langkah Magang di Malang?
         </h2>
         <p class="text-tc-muted text-sm md:text-base">
-          Hubungi tim kami sekarang untuk konsultasi jadwal magang mahasiswa Informatika dan mulai bangun portofolio website nyatamu.
+          Isi formulir pendaftaran online sekarang untuk mengajukan jadwal magang mahasiswa Informatika dan mulai bangun portofolio website nyatamu.
         </p>
       </div>
       <a 
-        href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Program%20Magang%20Mahasiswa." 
-        target="_blank" 
-        rel="noopener noreferrer"
+        href="/pendaftaran?jalur=mahasiswa" 
         class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105 shrink-0"
       >
-        Hubungi Admin Sekarang &rarr;
+        Daftar Program Sekarang &rarr;
       </a>
     </div>
   </section>
