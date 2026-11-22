@@ -4,40 +4,117 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
-// Database Artikel Blog Terstruktur (Pembaruan 3 November 2026)
+const pageTitle = "Blog & Edukasi Karier Digital - Gemilang Training";
+const pageDesc = "Panduan tempat magang di Malang, ciri tawaran magang mencurigakan, pelatihan kejuruan SKARIGA, portofolio, dan AI prompt dari Gemilang Training Kota Malang.";
+const pageUrl = "https://infomagangmalang.web.id/blog";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/tempat-magang-malang-1.webp";
+
+// Database Artikel Blog Terstruktur (Pembaruan 22 November 2026)
 const articles = [
+  {
+    slug: "tempat-magang-malang",
+    category: "Panduan Utama",
+    tag: "Panduan Magang",
+    cluster: "Tempat Magang Malang",
+    title: "Tempat Magang di Malang 2027 dan Cara Memilihnya",
+    desc: "Temukan jenis tempat magang di Malang, cara memilih yang sesuai jurusan, dan checklist verifikasi sebelum mendaftar. Baca panduan lengkapnya dan mulai melamar.",
+    date: "22 Nov 2026",
+    img: "/assets/img/tempat-magang-malang-1.webp",
+    alt: "Daftar periksa sebelum mendaftar magang di Malang"
+  },
+  {
+    slug: "ciri-tawaran-magang-perlu-diwaspadai",
+    category: "Keamanan & Cek",
+    tag: "Anti-Penipuan",
+    cluster: "Tempat Magang Malang",
+    title: "Ciri Tawaran Magang Mencurigakan dan Cara Cek",
+    desc: "Kenali ciri tawaran magang yang mencurigakan dan cara cek tempat magang terpercaya sebelum daftar. Simak langkah verifikasi dan lindungi data Anda sekarang.",
+    date: "22 Nov 2026",
+    img: "/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp",
+    alt: "Mahasiswa memeriksa tawaran magang mencurigakan di ponsel"
+  },
   {
     slug: "pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga",
     category: "Panduan Utama",
-    tag: "Pillar Page",
+    tag: "Vokasi & Industri",
+    cluster: "Pelatihan & Skill",
     title: "Pelatihan Kejuruan Terpadu & Sinkronisasi Industri SKARIGA: Menyelaraskan Keterampilan dengan Kebutuhan Dunia Kerja",
     desc: "Panduan pelatihan kejuruan terpadu dan sinkronisasi industri SKARIGA di Malang: dua jalur pelatihan, alur belajar, dan cara memilih program yang tepat.",
     date: "03 Nov 2026",
-    img: "/assets/img/artikel2b.webp"
+    img: "/assets/img/artikel2b.webp",
+    alt: "Pelatihan Kejuruan Terpadu dan Sinkronisasi Industri SKARIGA"
   },
   {
     slug: "pelatihan-portofolio-materi-dan-praktik-siap-kerja",
     category: "Portofolio",
-    tag: "Karir & Vokasi",
+    tag: "Karya & CV",
+    cluster: "Pelatihan & Skill",
     title: "Pelatihan Portofolio: Materi dan Praktik Menyusun Karya agar Siap Kerja",
     desc: "Panduan pelatihan pembuatan portofolio untuk siswa SMK dan mahasiswa: materi, isi portofolio tiap jurusan, langkah menyusun, dan kesalahan umum yang perlu dihindari.",
     date: "03 Nov 2026",
-    img: "/assets/img/artikel2c.webp"
+    img: "/assets/img/artikel2c.webp",
+    alt: "Pelatihan Portofolio untuk siswa SMK dan mahasiswa"
   },
   {
     slug: "pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran",
     category: "AI & Prompt",
-    tag: "Tech & Growth",
+    tag: "AI & Marketing",
+    cluster: "Pelatihan & Skill",
     title: "Pelatihan AI dan Prompt untuk Bisnis, Marketing, dan Pemasaran: Bekerja Lebih Cepat dan Terarah",
     desc: "Panduan pelatihan AI dan prompt untuk bisnis, marketing, dan pemasaran: struktur prompt yang baik, contoh penggunaan, etika, dan alur latihan praktis.",
     date: "03 Nov 2026",
-    img: "/assets/img/artikel3a.webp"
+    img: "/assets/img/artikel3a.webp",
+    alt: "Pelatihan AI dan Prompt untuk Bisnis, Marketing, dan Pemasaran"
   }
 ];
+
+const schemaBlogIndex = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": `${pageUrl}#collection`,
+      "url": pageUrl,
+      "name": pageTitle,
+      "description": pageDesc,
+      "inLanguage": "id-ID",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "itemListElement": articles.map((article, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "url": `${pageUrl}/${article.slug}`,
+        "name": article.title
+      }))
+    }
+  ]
+};
 ---
 
-<BaseLayout title="Blog & Edukasi Karier Digital - Gemilang Training" isHome={false}>
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/tempat-magang-malang-1.webp"
+  type="website"
+  isHome={false}
+>
   <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="website" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBlogIndex)} />
+  </head>
 
   <section class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
     
@@ -50,12 +127,12 @@ const articles = [
         Blog & Warta Edukasi Magang
       </h1>
       <p class="text-tc-muted text-base md:text-lg">
-        Artikel edukatif, panduan berkas PKL, tips seleksi industri, dan kabar program terkini Gemilang Training Kota Malang.
+        Artikel edukatif, panduan memilih tempat magang, ciri tawaran magang mencurigakan, pelatihan kejuruan, dan kabar program terkini Gemilang Training Kota Malang.
       </p>
     </div>
 
-    <!-- FITUR SEARCH BAR INTERAKTIF -->
-    <div class="max-w-2xl mx-auto">
+    <!-- FITUR SEARCH BAR & FILTER KLASTER -->
+    <div class="max-w-3xl mx-auto space-y-4">
       <div class="relative">
         <input 
           type="text" 
@@ -67,6 +144,18 @@ const articles = [
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
         </svg>
       </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <button type="button" data-cluster="all" class="cluster-btn bg-tc-accent text-slate-950 font-bold text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
+          Semua Artikel
+        </button>
+        <button type="button" data-cluster="Tempat Magang Malang" class="cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
+          Panduan Magang Malang
+        </button>
+        <button type="button" data-cluster="Pelatihan & Skill" class="cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
+          Pelatihan, Portofolio & AI
+        </button>
+      </div>
     </div>
 
     <!-- PESAN TIDAK DITEMUKAN (HIDDEN BY DEFAULT) -->
@@ -74,7 +163,7 @@ const articles = [
       <p class="text-tc-muted text-sm">Tidak ada artikel yang cocok dengan kata kunci pencarianmu.</p>
     </div>
 
-    <!-- GRID ARTIKEL (3 KARTU BARU BERBAHAN CLEAN URL) -->
+    <!-- GRID ARTIKEL TERHUBUNG -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="article-grid">
       {articles.map((article) => (
         <article 
@@ -82,13 +171,14 @@ const articles = [
           data-title={article.title.toLowerCase()}
           data-desc={article.desc.toLowerCase()}
           data-tag={article.tag.toLowerCase()}
+          data-cluster={article.cluster}
         >
           <div>
             <!-- 1. Gambar Thumbnail Foto di Atas -->
             <div class="h-52 overflow-hidden relative border-b border-tc-border/60">
               <img 
                 src={article.img} 
-                alt={article.title} 
+                alt={article.alt} 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
               />
               <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
@@ -98,10 +188,13 @@ const articles = [
 
             <!-- 2. Isi Konten Artikel -->
             <div class="p-6 space-y-3">
-              <!-- Category Badge -->
-              <div>
+              <!-- Tag & Cluster Badge -->
+              <div class="flex flex-wrap items-center gap-2">
                 <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">
                   {article.tag}
+                </span>
+                <span class="text-[11px] font-mono text-tc-muted">
+                  {article.cluster}
                 </span>
               </div>
 
@@ -139,24 +232,28 @@ const articles = [
 </BaseLayout>
 
 <script>
-  // Logika Pencarian Artikel Real-Time
-  function setupBlogSearch() {
+  function setupBlogFilterAndSearch() {
     const searchInput = document.getElementById('blog-search-input') as HTMLInputElement;
+    const clusterButtons = document.querySelectorAll('.cluster-btn');
     const articleCards = document.querySelectorAll('.article-card');
     const noResultsMsg = document.getElementById('no-results-msg');
 
-    if (!searchInput || !articleCards.length) return;
+    let activeCluster = 'all';
 
-    searchInput.addEventListener('input', (e) => {
-      const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+    function applyFilters() {
+      const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
       let visibleCount = 0;
 
       articleCards.forEach(card => {
         const title = card.getAttribute('data-title') || '';
         const desc = card.getAttribute('data-desc') || '';
         const tag = card.getAttribute('data-tag') || '';
+        const cluster = card.getAttribute('data-cluster') || '';
 
-        if (title.includes(query) || desc.includes(query) || tag.includes(query)) {
+        const matchesCluster = activeCluster === 'all' || cluster === activeCluster;
+        const matchesQuery = title.includes(query) || desc.includes(query) || tag.includes(query) || cluster.toLowerCase().includes(query);
+
+        if (matchesCluster && matchesQuery) {
           (card as HTMLElement).style.display = 'flex';
           visibleCount++;
         } else {
@@ -164,7 +261,6 @@ const articles = [
         }
       });
 
-      // Tampilkan/Sembunyikan pesan hasil pencarian kosong
       if (noResultsMsg) {
         if (visibleCount === 0) {
           noResultsMsg.classList.remove('hidden');
@@ -172,10 +268,27 @@ const articles = [
           noResultsMsg.classList.add('hidden');
         }
       }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilters);
+    }
+
+    clusterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeCluster = btn.getAttribute('data-cluster') || 'all';
+
+        clusterButtons.forEach(b => {
+          b.className = 'cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all';
+        });
+
+        btn.className = 'cluster-btn bg-tc-accent text-slate-950 font-bold text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all';
+        applyFilters();
+      });
     });
   }
 
-  // Jalankan saat halaman dimuat & saat navigasi Astro
-  setupBlogSearch();
-  document.addEventListener('astro:page-load', setupBlogSearch);
+  setupBlogFilterAndSearch();
+  document.addEventListener('astro:page-load', setupBlogFilterAndSearch);
 </script>
+```[cite: 33]

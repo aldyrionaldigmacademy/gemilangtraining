@@ -1,0 +1,456 @@
+---
+// src/pages/blog/ciri-tawaran-magang-perlu-diwaspadai.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Ciri Tawaran Magang Mencurigakan dan Cara Cek";
+const pageDesc = "Kenali ciri tawaran magang yang mencurigakan dan cara cek tempat magang terpercaya sebelum daftar. Simak langkah verifikasi dan lindungi data Anda sekarang.";
+const publishDate = "2026-11-22";
+const publishIsoDate = "2026-11-22T12:00:00+07:00";
+const pageSlug = "/ciri-tawaran-magang-perlu-diwaspadai";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/ciri-tawaran-magang-perlu-diwaspadai-2.webp";
+const authorName = "Tim Redaksi Gemilang Training";
+const keywordsList = "ciri tawaran magang mencurigakan, cara cek tempat magang terpercaya, penipuan lowongan magang, verifikasi tempat magang, Gemilang Training Malang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "keywords": keywordsList,
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "author": {
+        "@type": "Organization",
+        "name": authorName
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        ogImageUrl,
+        secondImageUrl
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah magang yang meminta biaya pendaftaran pasti penipuan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Permintaan biaya pendaftaran adalah tanda bahaya yang kuat dan sebaiknya ditolak. Konfirmasi dulu ke kampus atau sekolah, karena penyelenggara magang yang terpercaya umumnya tidak memungut biaya dari peserta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah tawaran magang lewat WhatsApp pasti palsu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak pasti palsu, tetapi perlu diverifikasi lebih ketat. Cocokkan identitas penyelenggara di situs resmi dan hubungi mereka lewat kanal yang Anda temukan sendiri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana jika perusahaan terkenal mengirim tawaran magang lewat email gratis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anggap mencurigakan sampai terkonfirmasi. Pelaku penipuan sering memakai nama perusahaan besar, sehingga cek ulang melalui situs karier resmi perusahaan tersebut."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Mahasiswa memeriksa tawaran magang mencurigakan di ponsel" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Cluster 1" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Cluster 1</span>
+            <time datetime={publishIsoDate}>22 November 2026 • 12:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp" 
+            alt="Mahasiswa memeriksa tawaran magang mencurigakan di ponsel" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Mahasiswa memeriksa tawaran magang mencurigakan di ponsel.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#ringkasan-inti" class="hover:text-tc-accent transition-colors">1. Ringkasan Inti</a></li>
+              <li><a href="#ciri-mencurigakan" class="hover:text-tc-accent transition-colors">2. Apa saja ciri tawaran magang yang mencurigakan?</a></li>
+              <li><a href="#cara-mengecek" class="hover:text-tc-accent transition-colors">3. Bagaimana cara mengecek tempat magang terpercaya?</a></li>
+              <li><a href="#perjanjian-tertulis" class="hover:text-tc-accent transition-colors">4. Apakah wajib ada perjanjian tertulis untuk magang?</a></li>
+              <li><a href="#tindakan-lanjutan" class="hover:text-tc-accent transition-colors">5. Apa yang harus dilakukan jika sudah terlanjur mengirim data atau uang?</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">6. FAQ tentang Tawaran Magang Mencurigakan</a></li>
+              <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">7. Kesimpulan</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Cara cek tempat magang terpercaya</strong> adalah memverifikasi penyelenggara di kanal resmi, membaca tugas dan hak peserta, serta menolak tawaran yang meminta biaya atau data berlebihan.
+          </p>
+
+          <section id="ringkasan-inti" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Ringkasan Inti</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Tanda bahaya utama adalah permintaan biaya, tugas yang tidak jelas, janji bayaran besar dengan syarat ringan, dan tekanan untuk segera memutuskan.</li>
+              <li>Verifikasi identitas penyelenggara melalui situs resmi, alamat nyata, dan kontak yang dapat dikonfirmasi.</li>
+              <li>GASA mencatat 49 persen responden State of Scams in Indonesia 2025 pernah mengalami penipuan pekerjaan.</li>
+              <li>Kementerian Ketenagakerjaan pada Juli 2026 mengingatkan bahwa tawaran magang yang terlalu mudah, misalnya hanya absen tetapi digaji, patut dicurigai.</li>
+              <li>Minta perjanjian atau surat penerimaan tertulis sebelum mulai bekerja.</li>
+            </ul>
+          </section>
+
+          <section id="ciri-mencurigakan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa saja ciri tawaran magang yang mencurigakan?</h2>
+            <p>
+              Ciri tawaran magang mencurigakan meliputi permintaan biaya, deskripsi tugas yang kabur, bayaran tidak masuk akal, komunikasi hanya lewat aplikasi pesan, dan desakan untuk segera setuju.
+            </p>
+            <p>
+              Dalam laporan State of Scams in Indonesia 2025, GASA mencatat 49 persen responden pernah mengalami penipuan pekerjaan (dilaporkan Bisnis.com, 31 Oktober 2025). Temuan ini menunjukkan bahwa tawaran palsu bukan kasus langka, sehingga mahasiswa dan siswa SMK perlu mengenali polanya.
+            </p>
+            <p>Berikut tanda yang paling sering muncul:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Biaya di awal.</strong> Penyelenggara meminta uang untuk pendaftaran, seragam, pelatihan, atau administrasi.</li>
+              <li><strong>Tugas tidak jelas.</strong> Posisi hanya disebut admin atau asisten tanpa rincian pekerjaan dan pembimbing.</li>
+              <li><strong>Janji terlalu manis.</strong> Bayaran besar, tanpa seleksi, atau tanpa pekerjaan nyata. Kemnaker mengingatkan bahwa tawaran peserta cukup absen tanpa kegiatan magang patut dicurigai.</li>
+              <li><strong>Seleksi tidak masuk akal.</strong> Langsung diterima tanpa wawancara atau pemeriksaan berkas.</li>
+              <li><strong>Komunikasi tidak resmi.</strong> Seluruh proses hanya lewat aplikasi pesan, akun pribadi, atau email gratis.</li>
+              <li><strong>Permintaan data sensitif.</strong> Foto KTP, nomor rekening, atau kode verifikasi diminta sebelum ada perjanjian.</li>
+              <li><strong>Tekanan waktu.</strong> Pelamar diminta menjawab segera dengan alasan kuota hampir habis.</li>
+            </ul>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/ciri-tawaran-magang-perlu-diwaspadai-2.webp" 
+              alt="Langkah memverifikasi tempat magang sebelum mengirim lamaran" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Langkah memverifikasi tempat magang sebelum mengirim lamaran.
+            </figcaption>
+          </figure>
+
+          <section id="cara-mengecek" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana cara mengecek tempat magang terpercaya?</h2>
+            <p>
+              Cek tempat magang terpercaya dengan mencocokkan nama, alamat, dan kontak resmi di beberapa sumber, lalu menghubungi penyelenggara lewat kanal yang Anda verifikasi sendiri.
+            </p>
+            <p>Ikuti langkah berikut secara berurutan.</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Cari identitas penyelenggara.</strong> Pastikan nama perusahaan, alamat, dan kontak sama di situs resmi, profil bisnis, dan akun media sosial yang aktif.</li>
+              <li><strong>Hubungi lewat kanal yang Anda temukan sendiri.</strong> Jangan memakai nomor atau tautan yang dikirim oleh pihak yang menawarkan lowongan.</li>
+              <li><strong>Periksa asal lowongan.</strong> Lowongan yang berasal dari situs karier resmi perusahaan, portal kampus, atau program pemerintah lebih mudah diverifikasi.</li>
+              <li><strong>Baca deskripsi tugas dan hak peserta.</strong> Pastikan ada posisi, tugas, durasi, jam kerja, dan penjelasan uang saku.</li>
+              <li><strong>Tanyakan pembimbing.</strong> Penyelenggara terpercaya dapat menyebutkan nama atau jabatan pembimbing.</li>
+              <li><strong>Konfirmasi ke kampus atau sekolah.</strong> Bagian kemahasiswaan atau koordinator magang dapat menilai kelayakan dan prosedur.</li>
+              <li><strong>Kunjungi lokasi atau wawancara secara langsung bila memungkinkan.</strong> Untuk tempat di Malang Raya, kunjungan singkat atau wawancara video terjadwal membantu memastikan keberadaan penyelenggara.</li>
+            </ul>
+          </section>
+
+          <section id="perjanjian-tertulis" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apakah wajib ada perjanjian tertulis untuk magang?</h2>
+            <p>
+              Perjanjian tertulis sangat dianjurkan; pemagangan resmi diatur Permenaker Nomor 6 Tahun 2020 dengan perjanjian memuat program, jangka waktu, dan besaran uang saku.
+            </p>
+            <p>
+              Pemagangan dalam skema tersebut dibatasi paling lama satu tahun. Magang akademik yang diatur kampus atau sekolah dapat memakai format dokumen yang berbeda, seperti surat penerimaan atau perjanjian kerja sama, sehingga tanyakan format yang berlaku di institusi Anda.
+            </p>
+            <p>Perjanjian yang sehat biasanya memuat hal berikut:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Identitas peserta dan penyelenggara.</li>
+              <li>Posisi, tugas, dan nama pembimbing.</li>
+              <li>Tanggal mulai, tanggal selesai, serta jam kerja.</li>
+              <li>Besaran dan jadwal uang saku, bila ada.</li>
+              <li>Hak mendapatkan sertifikat atau surat keterangan.</li>
+              <li>Ketentuan keselamatan kerja dan penghentian magang.</li>
+            </ul>
+            <p>
+              Teks resmi peraturan dapat dibaca di Peraturan Menteri Ketenagakerjaan Nomor 6 Tahun 2020 di JDIH Kemnaker.
+            </p>
+          </section>
+
+          <section id="tindakan-lanjutan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa yang harus dilakukan jika sudah terlanjur mengirim data atau uang?</h2>
+            <p>
+              Jika sudah mengirim data atau uang ke penyelenggara mencurigakan, hentikan komunikasi, simpan bukti, hubungi bank, dan laporkan ke kampus atau sekolah serta kanal pengaduan resmi.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Simpan tangkapan layar iklan, percakapan, bukti transfer, dan identitas akun.</li>
+              <li>Hubungi bank atau penyedia dompet digital secepatnya bila sudah mentransfer uang.</li>
+              <li>Ganti kata sandi dan aktifkan verifikasi dua langkah bila data akun ikut dibagikan.</li>
+              <li>Laporkan akun atau iklan ke platform tempat tawaran ditemukan.</li>
+              <li>Beritahu kampus atau sekolah agar mahasiswa lain tidak menjadi korban.</li>
+              <li>Pertimbangkan laporan ke kepolisian atau kanal pengaduan resmi pemerintah untuk kasus kerugian uang atau penyalahgunaan data.</li>
+            </ul>
+            <p>
+              Untuk gambaran lengkap pemilihan tempat magang dan verifikasi sebelum mendaftar, baca panduan utama kami tentang <a href="/blog/tempat-magang-malang" class="text-tc-accent underline hover:text-white transition-colors">tempat magang di Malang dan cara memilihnya</a>.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/tempat-magang-malang" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL PILAR</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Tempat Magang di Malang 2027 dan Cara Memilihnya &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="kesimpulan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p>
+              Cara cek tempat magang terpercaya: verifikasi penyelenggara, pahami tugas dan hak peserta, serta tolak tawaran yang meminta biaya, data berlebihan, atau janji tidak masuk akal.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Jangan transfer uang untuk alasan apa pun saat melamar magang.</li>
+              <li>Verifikasi lewat kanal yang Anda temukan sendiri.</li>
+              <li>Minta perjanjian atau surat penerimaan tertulis.</li>
+              <li>Libatkan kampus atau sekolah sejak awal.</li>
+              <li>Simpan semua bukti komunikasi.</li>
+            </ul>
+            <p>
+              Informasi dalam artikel ini bersifat umum dan bukan nasihat hukum. Untuk kasus kerugian uang atau penyalahgunaan data pribadi, hubungi pihak berwenang atau konsultan hukum.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim redaksi Gemilang Training Malang untuk edukasi kewaspadaan penipuan magang dan verifikasi penyelenggara.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Cek Program Magang Resmi di Malang</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Hubungi kanal resmi Gemilang Training untuk informasi program, ketentuan tertulis, dan jadwal magang yang jelas.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20memastikan%20informasi%20program%20magang%20resmi%20di%20Malang." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ tentang Tawaran Magang Mencurigakan</h3>
+          <p class="text-tc-muted text-xs md:text-sm leading-relaxed">
+            Pertanyaan berikut membahas keraguan yang sering muncul saat memeriksa tawaran magang, lengkap dengan jawaban yang bisa dipahami tanpa membaca bagian lain.
+          </p>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah magang yang meminta biaya pendaftaran pasti penipuan?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Permintaan biaya pendaftaran adalah tanda bahaya yang kuat dan sebaiknya ditolak. Konfirmasi dulu ke kampus atau sekolah, karena penyelenggara magang yang terpercaya umumnya tidak memungut biaya dari peserta.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah tawaran magang lewat WhatsApp pasti palsu?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak pasti palsu, tetapi perlu diverifikasi lebih ketat. Cocokkan identitas penyelenggara di situs resmi dan hubungi mereka lewat kanal yang Anda temukan sendiri.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana jika perusahaan terkenal mengirim tawaran magang lewat email gratis?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Anggap mencurigakan sampai terkonfirmasi. Pelaku penipuan sering memakai nama perusahaan besar, sehingga cek ulang melalui situs karier resmi perusahaan tersebut.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Verifikasi Program Magang</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Hubungi kontak resmi untuk menanyakan program magang, surat penerimaan, dan alur pendaftaran.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20memastikan%20informasi%20program%20magang%20resmi%20di%20Malang." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/tempat-magang-malang-1.webp" alt="Daftar periksa sebelum mendaftar magang di Malang" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Artikel Pilar</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/tempat-magang-malang">
+                    Tempat Magang di Malang 2027 dan Cara Memilihnya
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/tempat-magang-malang-2.webp" alt="Mahasiswa berdiskusi dengan pembimbing" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Panduan Pilihan Tempat</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/cara-memilih-tempat-magang-malang">
+                    Cara Memilih Tempat Magang di Malang: 4 Hal yang Dicek Sebelum Daftar
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>
