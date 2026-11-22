@@ -73,9 +73,21 @@ const breadcrumbItems = pathSegments.map((seg, index) => {
 // 5. JSON-LD Schema Terstruktur untuk SEO, AEO & Bing
 const orgId = `${siteUrl}/#organization`;
 const websiteId = `${siteUrl}/#website`;
+const creatorId = `${siteUrl}/#creator`;
 const breadcrumbId = `${canonicalURL}#breadcrumb`;
 
 const schemaGraph: Record<string, unknown>[] = [
+  {
+    "@type": "Person",
+    "@id": creatorId,
+    "name": "Aldi Rionaldi Simanullang",
+    "alternateName": "Aldi Rionaldi",
+    "jobTitle": "Web Developer",
+    "url": "https://github.com/aldyrionaldigmacademy",
+    "sameAs": [
+      "https://github.com/aldyrionaldigmacademy"
+    ]
+  },
   {
     "@type": "EducationalOrganization",
     "@id": orgId,
@@ -136,6 +148,7 @@ const schemaGraph: Record<string, unknown>[] = [
     "description": description,
     "inLanguage": "id-ID",
     "publisher": { "@id": orgId },
+    "creator": { "@id": creatorId },
     "potentialAction": {
       "@type": "SearchAction",
       "target": {
@@ -184,11 +197,13 @@ const globalSchema = {
   <title>{formattedTitle}</title>
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
-  <meta name="author" content="Gemilang Training Malang" />
+  <meta name="author" content="Aldi Rionaldi Simanullang" />
+  <meta name="creator" content="Aldi Rionaldi Simanullang" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href={canonicalURL} />
+  <link rel="author" href="/humans.txt" />
 
   <!-- Open Graph (WhatsApp, Facebook, LinkedIn, Threads) -->
   <meta property="og:type" content={type} />
