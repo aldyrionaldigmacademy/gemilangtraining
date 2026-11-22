@@ -1,48 +1,31 @@
 User-agent: *
-
 Allow: /
 
-
-
-# Mengizinkan AI Agentic & Search Crawlers (AEO Ready 2026)
+# Search & AI / Answer Engine Crawlers (AEO)
+User-agent: Bingbot
+Allow: /
 
 User-agent: GPTBot
-
 Allow: /
-
-
 
 User-agent: ChatGPT-User
-
 Allow: /
-
-
 
 User-agent: Google-Extended
-
 Allow: /
-
-
 
 User-agent: PerplexityBot
-
 Allow: /
-
-
 
 User-agent: ClaudeBot
-
 Allow: /
-
-
 
 User-agent: Claude-Web
-
 Allow: /
 
+User-agent: Applebot-Extended
+Allow: /
 
-
-# Peta Situs Resmi Gemilang Training
-
+# Sitemaps
 Sitemap: https://infomagangmalang.web.id/sitemap-index.xml
 Sitemap: https://infomagangmalang.web.id/sitemap-0.xml

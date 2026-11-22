@@ -9,8 +9,7 @@ export default defineConfig({
   integrations: [sitemap()],
   redirects: {
     '/sitemap.xml': '/sitemap-index.xml',
-    '/portfolio/detail': '/portofolio/redesain-website-bisnis-edukasi',
-    '/portofolio/detail': '/portofolio/redesain-website-bisnis-edukasi'
+    '/portfolio/detail': '/portofolio/redesain-website-bisnis-edukasi'
   },
   vite: {
     plugins: [tailwindcss()]
