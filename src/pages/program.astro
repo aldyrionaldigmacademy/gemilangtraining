@@ -5,151 +5,133 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
 const programs = [
-  // 1. Informatika
+  // 1. Pembuatan Website dengan Astro Framework
   {
-    slug: "informatika",
+    slug: "website-astro",
     category: "webdev",
-    categoryLabel: "Tech & Web Dev",
-    jurusanTarget: "Terbuka untuk: Mahasiswa Informatika & Sistem Informasi",
-    title: "Web Engineering & Software Architecture",
-    desc: "Pembuatan website Astro Framework, Bootstrap 5, WordPress & Blogspot (70% Web Dev) + 30% optimasi SEO dasar.",
-    techs: ["Astro Framework", "Bootstrap 5", "WordPress", "Blogspot CMS", "Riset Keyword"],
+    categoryLabel: "Pembuatan Website",
+    jurusanTarget: "Magang Mahasiswa Informatika & PKL SMK (RPL, TKJ)",
+    title: "Pembuatan Website Modern dengan Astro",
+    desc: "Praktik membangun website multi-halaman berkecepatan tinggi menggunakan Astro JS, struktur Clean URL tanpa .html, hingga proses deploy online.",
+    techs: ["Astro Framework", "Clean URL", "Optimasi PageSpeed", "Deploy Vercel"],
     img: "/assets/img/informatika.webp"
   },
-  // 2. RPL
+  // 2. Pembuatan Website dengan Bootstrap
   {
-    slug: "rpl",
+    slug: "website-bootstrap",
     category: "webdev",
-    categoryLabel: "Tech & Web Dev",
-    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan RPL",
-    title: "Frontend & Fullstack Web Development",
-    desc: "Pengembangan antarmuka responsif Astro SSG, Bootstrap 5, WordPress & Blogspot komersial (70% Coding) + 30% SEO.",
-    techs: ["Astro SSG", "Bootstrap 5", "WordPress", "Blogspot CMS", "Artikel SEO"],
+    categoryLabel: "Pembuatan Website",
+    jurusanTarget: "Magang Mahasiswa Informatika & PKL SMK (RPL, DKV, MM)",
+    title: "Desain & Koding Website dengan Bootstrap",
+    desc: "Belajar menyusun tampilan website yang rapi, responsif di HP maupun laptop, menggunakan komponen Bootstrap 5, HTML, CSS, dan aset gambar .webp ringan.",
+    techs: ["Bootstrap 5", "HTML & CSS", "Desain Responsif", "Kompresi WebP"],
     img: "/assets/img/rpl.webp"
   },
-  // 3. TKJ
+  // 3. Pembuatan Website & Pengelolaan Blogspot
   {
-    slug: "tkj",
+    slug: "website-blogspot",
     category: "webdev",
-    categoryLabel: "Tech & Web Dev",
-    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan TKJ",
-    title: "Network & Cloud Infrastructure Deployment",
-    desc: "Setup server & hosting WordPress, deployment Astro ke Vercel, konfigurasi DNS (70% Infra Web) + 30% pengisian konten.",
-    techs: ["Cloud Deployment", "WordPress Hosting", "Custom DNS", "Blogspot Domain"],
+    categoryLabel: "Pembuatan Website",
+    jurusanTarget: "PKL SMK (RPL, TKJ, Digital Marketing, Bisnis Digital)",
+    title: "Pembuatan Website & Pengelolaan Blogspot",
+    desc: "Praktik membuat website profil usaha dan portal informasi menggunakan Blogspot, mulai dari pengaturan tata letak, navigasi menu, hingga hubungkan domain kustom.",
+    techs: ["Blogspot CMS", "Custom Domain", "Setting Navigasi", "Kelola Halaman"],
     img: "/assets/img/tkj.webp"
   },
-  // 4. Digital Marketing
+  // 4. Optimasi SEO (Search Engine Optimization)
   {
-    slug: "digital-marketing",
-    category: "digital-creative",
-    categoryLabel: "Digital Business & Creative",
-    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Digital Marketing",
-    title: "SEO & Answer Engine Optimization (AEO)",
-    desc: "Riset keyword, artikel SEO On-Page (70% SEO & Marketing) + 30% praktik koding dasar Bootstrap & Blogspot.",
-    techs: ["Riset Keyword", "Artikel SEO", "Search Console", "Dasar Bootstrap"],
+    slug: "optimasi-seo",
+    category: "seo-marketing",
+    categoryLabel: "SEO & Digital Marketing",
+    jurusanTarget: "Magang Mahasiswa & PKL SMK Semua Jurusan",
+    title: "Optimasi SEO & Riset Kata Kunci",
+    desc: "Praktik agar website mudah ditemukan di halaman atas Google melalui riset keyword, pengaturan meta tag, Open Graph, serta pemantauan di Google Search Console.",
+    techs: ["Riset Keyword", "SEO On-Page", "Google Search Console", "Open Graph & Schema"],
     img: "/assets/img/digitalmarketing.webp"
   },
-  // 5. Bisnis Digital
+  // 5. Penulisan & Publikasi Artikel SEO
   {
-    slug: "bisnis-digital",
-    category: "digital-creative",
-    categoryLabel: "Digital Business & Creative",
-    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Bisnis Digital",
-    title: "Data-Driven Growth & Content Strategy",
-    desc: "Penyusunan artikel promosi produk & strategi marketing (70%) + 30% praktik pembuatan landing page web Bootstrap.",
-    techs: ["Strategi Marketing", "Artikel Promosi", "Riset Pasar", "Dasar Landing Page"],
+    slug: "pembuatan-artikel",
+    category: "seo-marketing",
+    categoryLabel: "SEO & Digital Marketing",
+    jurusanTarget: "PKL SMK (Digital Marketing, Bisnis Digital, Pemasaran)",
+    title: "Penulisan Artikel SEO & Konten Website",
+    desc: "Belajar menyusun artikel informatif dan promosi yang enak dibaca sekaligus ramah mesin pencari, lengkap dengan struktur heading, internal link, dan gambar pendukung.",
+    techs: ["Artikel SEO", "Copywriting", "Struktur Heading", "Internal Linking"],
     img: "/assets/img/bisnisdigital.webp"
   },
-  // 6. Pemasaran
+  // 6. Strategi Digital Marketing & Pemasaran Lokal
   {
-    slug: "pemasaran",
-    category: "digital-creative",
-    categoryLabel: "Digital Business & Creative",
-    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Pemasaran",
-    title: "Local GEO Tagging & Marketing Strategy",
-    desc: "Pemetaan GEO lokasi usaha di Google Maps & campaign jualan (70% Pemasaran) + 30% dasar pengelolaan halaman web.",
-    techs: ["Local GEO Tagging", "Google Business Profile", "Copywriting", "Dasar Web Ops"],
+    slug: "digital-marketing",
+    category: "seo-marketing",
+    categoryLabel: "SEO & Digital Marketing",
+    jurusanTarget: "PKL SMK (Pemasaran, Bisnis Digital, DKV, Multimedia)",
+    title: "Digital Marketing & Promosi Online",
+    desc: "Praktik memasarkan produk dan jasa secara digital menggunakan halaman landing page, optimasi lokasi lokal, serta pembuatan materi promosi visual untuk menarik calon pelanggan.",
+    techs: ["Strategi Promosi", "Landing Page", "Local GEO Tagging", "Konten Promosi"],
     img: "/assets/img/pemasaran.webp"
-  },
-  // 7. DKV
-  {
-    slug: "dkv",
-    category: "digital-creative",
-    categoryLabel: "Digital Business & Creative",
-    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan DKV",
-    title: "Creative Visual & Video Content Production",
-    desc: "Produksi video konten 3 kategori (Promosi, Edukasi, Berita/Jurnalistik) (70% Visual & Video) + 30% estetika layout web.",
-    techs: ["Video Promosi", "Video Edukasi", "Video Berita/Jurnalistik", "Aset Graphic Web"],
-    img: "/assets/img/uiux.webp"
-  },
-  // 8. Multimedia
-  {
-    slug: "multimedia",
-    category: "digital-creative",
-    categoryLabel: "Digital Business & Creative",
-    jurusanTarget: "Terbuka untuk: Siswa SMK Jurusan Multimedia",
-    title: "Video Production & Motion Graphics",
-    desc: "Pengambilan gambar & editing video 3 kategori (Promosi, Edukasi, Berita) (70% Video) + 30% pengelolaan media CMS.",
-    techs: ["Video Promosi", "Video Edukasi", "Video Jurnalistik", "Premiere Pro", "Thumbnail Web"],
-    img: "/assets/img/multimedia.webp"
   }
 ];
 ---
 
-<BaseLayout title="Program Magang Spesialisasi - Gemilang Training" isHome={false}>
+<BaseLayout 
+  title="Program Materi Magang & PKL - Pembuatan Website, SEO & Digital Marketing" 
+  description="Daftar materi praktik Magang Mahasiswa & PKL Siswa SMK di Gemilang Training Malang: pembuatan website Astro, Bootstrap, Blogspot, optimasi SEO, penulisan artikel, dan digital marketing."
+  isHome={false}
+>
   <Navbar slot="header" />
 
   <section class="py-12 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-12">
       <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-2 rounded-full border border-tc-border inline-block mb-4">
-        Katalog Program Magang
+        Materi Praktik Magang & PKL
       </span>
-      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
-        Pilihan Program Magang Spesialisasi
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+        Apa Saja yang Dipelajari Saat <span class="text-tc-accent">Magang & PKL?</span>
       </h1>
       <p class="text-tc-muted text-base md:text-lg leading-relaxed">
-        Pilih program magang berbasis proyek industri sesuai dengan latar belakang jurusan SMK dan Mahasiswa (Skema Silang 70:30).
+        Selama mengikuti Magang Mahasiswa atau PKL Siswa SMK di Gemilang Training Malang, kamu akan langsung mempraktikkan pembuatan website (<strong class="text-white">Astro, Bootstrap, dan Blogspot</strong>), <strong class="text-white">Optimasi SEO</strong>, <strong class="text-white">Penulisan Artikel</strong>, hingga <strong class="text-white">Digital Marketing</strong>.
       </p>
     </div>
 
-    <!-- Filter Buttons Interaktif (Hanya 2 Rumpun Utama) -->
+    <!-- Filter Buttons Interaktif -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
       <button 
         data-filter="all" 
-        class="filter-btn active-filter px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border bg-tc-card text-tc-accent border-tc-accent inline-flex items-center gap-2"
+        class="filter-btn active-filter px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-accent bg-tc-card text-tc-accent inline-flex items-center gap-2 cursor-pointer"
       >
         <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
-        <span>Semua Program</span>
+        <span>Semua Materi (6)</span>
       </button>
 
       <button 
         data-filter="webdev" 
-        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2"
+        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2 cursor-pointer"
       >
         <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-        <span>Tech & Web Engineering (Informatika, RPL, TKJ)</span>
+        <span>Pembuatan Website (Astro, Bootstrap, Blogspot)</span>
       </button>
 
       <button 
-        data-filter="digital-creative" 
-        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2"
+        data-filter="seo-marketing" 
+        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2 cursor-pointer"
       >
         <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-        <span>Digital Business & Creative Media (Marketing, Bisnis, DKV, MM)</span>
+        <span>Optimasi SEO, Artikel & Digital Marketing</span>
       </button>
     </div>
 
-    <!-- Grid Kartu Program Individual -->
+    <!-- Grid Kartu Program -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="program-grid">
       {programs.map((item) => (
         <div 
-          class="program-card bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between"
+          class="program-card bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group"
           data-category={item.category}
         >
           <div>
             <!-- Thumbnail Gambar -->
-            <div class="h-48 overflow-hidden relative">
+            <div class="h-48 overflow-hidden relative border-b border-tc-border/60">
               <img 
                 src={item.img} 
                 alt={item.title} 
@@ -163,7 +145,7 @@ const programs = [
             <!-- Content -->
             <div class="p-6">
               <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider block mb-2">{item.jurusanTarget}</span>
-              <h3 class="text-xl font-bold text-white mb-3">{item.title}</h3>
+              <h2 class="text-xl font-bold text-white mb-3">{item.title}</h2>
               <p class="text-tc-muted text-sm leading-relaxed mb-6">{item.desc}</p>
               
               <!-- Tag Tech/Skills -->
@@ -178,20 +160,20 @@ const programs = [
           </div>
 
           <!-- Tombol CTA & Detail -->
-          <div class="px-6 pb-6 pt-2 border-t border-tc-border/60 flex items-center justify-between gap-3">
+          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between gap-3">
             <a 
               href={`/program/${item.slug}`} 
               class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white text-xs font-semibold py-2.5 rounded-xl transition-all"
             >
-              Detail Program &rarr;
+              Detail Materi &rarr;
             </a>
             <a 
-              href={`https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20tertarik%20pilih%20Program%20${encodeURIComponent(item.title)}.`} 
+              href={`https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20Magang%20%26%20PKL%20materi%20${encodeURIComponent(item.title)}.`} 
               target="_blank" 
               rel="noopener noreferrer" 
               class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 text-xs font-bold py-2.5 rounded-xl transition-all"
             >
-              Daftar VIA WA
+              Daftar via WA
             </a>
           </div>
         </div>
@@ -215,11 +197,11 @@ const programs = [
 
       filterBtns.forEach(b => {
         b.classList.remove('bg-tc-card', 'text-tc-accent', 'border-tc-accent');
-        b.classList.add('text-tc-muted');
+        b.classList.add('text-tc-muted', 'border-tc-border');
       });
 
       targetBtn.classList.add('bg-tc-card', 'text-tc-accent', 'border-tc-accent');
-      targetBtn.classList.remove('text-tc-muted');
+      targetBtn.classList.remove('text-tc-muted', 'border-tc-border');
 
       programCards.forEach(card => {
         const category = card.getAttribute('data-category');
