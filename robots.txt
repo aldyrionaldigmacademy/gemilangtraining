@@ -44,5 +44,5 @@ Allow: /
 
 # Peta Situs Resmi Gemilang Training
 
-Sitemap: https://gemilangtraining.web.id/sitemap-index.xml
-Sitemap: https://gemilangtraining.web.id/sitemap-0.xml
+Sitemap: https://infomagangmalang.web.id/sitemap-index.xml
+Sitemap: https://infomagangmalang.web.id/sitemap-0.xml

@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gemilangtraining.web.id',
+  site: 'https://infomagangmalang.web.id',
   integrations: [sitemap()],
   redirects: {
     '/sitemap.xml': '/sitemap-index.xml',
