@@ -30,6 +30,31 @@ const cleanPath = Astro.url.pathname
   .replace(/\/+$/, "") || "/";
 const canonicalURL = cleanPath === "/" ? siteUrl : `${siteUrl}${cleanPath}`;
 
+// Deteksi apakah halaman saat ini termasuk bagian Program
+const isProgramSection = cleanPath === "/program" || cleanPath.startsWith("/program/");
+
+// Bangun item breadcrumb dinamis yang bisa diklik per segmen
+const labelOverrides: Record<string, string> = {
+  "program": "Program",
+  "magang-mahasiswa": "Magang Mahasiswa",
+  "pkl-smk": "PKL Siswa SMK",
+  "alur-pendaftaran": "Alur Pendaftaran",
+  "pendaftaran": "Pendaftaran",
+  "portofolio": "Portofolio",
+  "blog": "Blog",
+  "tentang-kami": "Tentang Kami",
+  "kontak": "Kontak"
+};
+
+const pathSegments = cleanPath === "/" ? [] : cleanPath.replace(/^\//, "").split("/");
+const breadcrumbItems = pathSegments.map((seg, index) => {
+  const href = "/" + pathSegments.slice(0, index + 1).join("/");
+  const customLabel = labelOverrides[seg.toLowerCase()];
+  const label = customLabel || seg.replace(/-/g, " ").replace(/\b\w/g, (ch) => ch.toUpperCase());
+  const isLast = index === pathSegments.length - 1;
+  return { href, label, isLast };
+});
+
 // 2. ABSOLUTE OG IMAGE URL (.webp)
 const ogImageURL = image.startsWith("http") ? image : `${siteUrl}${image.startsWith("/") ? image : `/${image}`}`;
 
@@ -81,6 +106,25 @@ const organizationSchema = {
     "availableLanguage": "Indonesian"
   }
 };
+
+const breadcrumbSchema = !isHome && !hideBreadcrumb && breadcrumbItems.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": siteUrl
+    },
+    ...breadcrumbItems.map((item, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 2,
+      "name": item.label,
+      "item": `${siteUrl}${item.href}`
+    }))
+  ]
+} : null;
 ---
 
 <!DOCTYPE html>
@@ -121,22 +165,43 @@ const organizationSchema = {
 
   <!-- Schema Org JSON-LD Global (AEO & Local SEO) -->
   <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  {breadcrumbSchema && (
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  )}
 
   <!-- Slot Head Tambahan (Untuk Schema FAQPage di Beranda atau Article di Blog) -->
   <slot name="head" />
 </head>
-<body class="min-h-screen flex flex-col justify-between font-sans antialiased bg-tc-bg text-tc-text relative">
+<body 
+  data-active-section={isProgramSection ? "program" : undefined}
+  data-current-path={cleanPath}
+  class="min-h-screen flex flex-col justify-between font-sans antialiased bg-tc-bg text-tc-text relative"
+>
   <slot name="header" />
   
   <!-- Breadcrumb (Aktif untuk SEMUA halaman KECUALI Beranda atau jika di-hide secara eksplisit) -->
-  {!isHome && !hideBreadcrumb && (
+  {!isHome && !hideBreadcrumb && breadcrumbItems.length > 0 && (
     <nav aria-label="Breadcrumb" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-24 pb-4 text-sm text-tc-muted">
-      <ol class="flex items-center space-x-2">
-        <li><a href="/" class="hover:text-tc-accent transition-colors">Beranda</a></li>
-        <li><span>/</span></li>
-        <li class="text-tc-text capitalize">
-          {cleanPath.replace(/^\//, '').replace(/\//g, ' / ').replace(/-/g, ' ')}
+      <ol class="flex flex-wrap items-center gap-2">
+        <li>
+          <a href="/" class="text-tc-muted hover:text-tc-accent transition-colors">Beranda</a>
         </li>
+        {breadcrumbItems.map((item) => (
+          <>
+            <li aria-hidden="true" class="text-tc-muted/60">/</li>
+            {item.isLast ? (
+              <li aria-current="page" class="text-white font-medium hover:text-tc-accent transition-colors cursor-default">
+                {item.label}
+              </li>
+            ) : (
+              <li>
+                <a href={item.href} class="text-tc-muted hover:text-tc-accent transition-colors">
+                  {item.label}
+                </a>
+              </li>
+            )}
+          </>
+        ))}
       </ol>
     </nav>
   )}
@@ -183,7 +248,7 @@ const organizationSchema = {
 
   </div>
 
-  <!-- Script Logika Scroll ke Atas -->
+  <!-- Script Logika Scroll ke Atas & Sinkronisasi Menu Program Aktif -->
   <script>
     function setupScrollToTop() {
       const scrollBtn = document.getElementById('scroll-to-top-btn');
@@ -207,8 +272,36 @@ const organizationSchema = {
       });
     }
 
+    function syncActiveProgramNav() {
+      const isProgram = document.body.getAttribute('data-active-section') === 'program';
+      const currentPath = document.body.getAttribute('data-current-path') || window.location.pathname;
+      if (!isProgram) return;
+
+      const navLinks = document.querySelectorAll('header nav a, header nav button');
+      navLinks.forEach((el) => {
+        const href = el.getAttribute('href') || '';
+        const text = (el.textContent || '').trim().toLowerCase();
+        const isProgramTarget =
+          href === '/program' ||
+          href.startsWith('/program/') ||
+          text.startsWith('program');
+
+        if (isProgramTarget) {
+          el.setAttribute('data-active', 'true');
+          el.classList.add('text-white');
+          if (href === currentPath) {
+            el.setAttribute('aria-current', 'page');
+          }
+        }
+      });
+    }
+
     setupScrollToTop();
-    document.addEventListener('astro:page-load', setupScrollToTop);
+    syncActiveProgramNav();
+    document.addEventListener('astro:page-load', () => {
+      setupScrollToTop();
+      syncActiveProgramNav();
+    });
   </script>
 </body>
 </html>
