@@ -44,7 +44,7 @@ const currentPath = pathname.replace(/\/$/, "");
         Tentang Kami
       </a>
       
-      <!-- Dropdown Program Magang (Clean List Style) -->
+      <!-- Dropdown Program Magang -->
       <div class="relative group py-2">
         <a 
           href="/program"
@@ -60,51 +60,61 @@ const currentPath = pathname.replace(/\/$/, "");
           </svg>
         </a>
 
-        <!-- Menu Dropdown Minimalis (Menyesuaikan Warna Tema Gelap) -->
-        <div class="absolute left-0 top-full hidden group-hover:block w-64 bg-tc-card border border-tc-border rounded-2xl shadow-2xl py-2.5 px-2 mt-1 before:absolute before:-top-3 before:left-0 before:w-full before:h-3 before:content-['']">
+        <!-- Menu Dropdown -->
+        <div class="absolute left-0 top-full hidden group-hover:block w-80 bg-tc-card border border-tc-border rounded-2xl shadow-2xl p-2 mt-1 before:absolute before:-top-3 before:left-0 before:w-full before:h-3 before:content-['']">
           
           <a 
             href="/program" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-medium text-white hover:bg-tc-bg hover:text-tc-accent transition-colors"
+            class={`block px-4 py-3 rounded-xl hover:bg-tc-bg transition-colors group/item ${currentPath === "/program" ? "bg-tc-bg/80" : ""}`}
           >
-            Semua Program Magang
+            <div class={`text-sm font-bold transition-colors ${currentPath === "/program" ? "text-tc-accent" : "text-white group-hover/item:text-tc-accent"}`}>
+              Semua Program
+            </div>
+            <p class="text-xs text-tc-muted mt-0.5 line-clamp-1">
+              Eksplorasi seluruh bidang keahlian web, SEO & konten
+            </p>
           </a>
+
+          <div class="my-1 border-t border-tc-border/50"></div>
 
           <a 
-            href="/program?cat=webdev" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-medium text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors"
+            href="/program/magang-mahasiswa" 
+            class={`block px-4 py-3 rounded-xl hover:bg-tc-bg transition-colors group/item ${currentPath === "/program/magang-mahasiswa" ? "bg-tc-bg/80" : ""}`}
           >
-            Pembuatan Website
+            <div class={`text-sm font-bold transition-colors ${currentPath === "/program/magang-mahasiswa" ? "text-tc-accent" : "text-white group-hover/item:text-tc-accent"}`}>
+              Magang Mahasiswa
+            </div>
+            <p class="text-xs text-tc-muted mt-0.5 line-clamp-1">
+              Program praktik kuliah, proyek nyata & konversi SKS
+            </p>
           </a>
+
+          <div class="my-1 border-t border-tc-border/50"></div>
 
           <a 
-            href="/program?cat=seo-marketing" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-medium text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors"
+            href="/program/pkl-smk" 
+            class={`block px-4 py-3 rounded-xl hover:bg-tc-bg transition-colors group/item ${currentPath === "/program/pkl-smk" ? "bg-tc-bg/80" : ""}`}
           >
-            SEO & Digital Marketing
+            <div class={`text-sm font-bold transition-colors ${currentPath === "/program/pkl-smk" ? "text-tc-accent" : "text-white group-hover/item:text-tc-accent"}`}>
+              PKL Siswa SMK
+            </div>
+            <p class="text-xs text-tc-muted mt-0.5 line-clamp-1">
+              Bimbingan dari dasar untuk RPL, TKJ, Marketing & DKV
+            </p>
           </a>
 
-          <a 
-            href="/program/pembuatan-artikel" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-medium text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors"
-          >
-            Penulisan Artikel SEO
-          </a>
-
-          <a 
-            href="/tentang" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-medium text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors"
-          >
-            Kompetensi yang Dipelajari
-          </a>
-
-          <div class="my-1.5 border-t border-tc-border/60"></div>
+          <div class="my-1 border-t border-tc-border/50"></div>
 
           <a 
             href="/alur-pendaftaran" 
-            class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-tc-accent hover:bg-tc-bg transition-colors"
+            class="block px-4 py-3 rounded-xl bg-tc-bg/60 hover:bg-tc-bg transition-colors group/item"
           >
-            Alur Pendaftaran
+            <div class="text-sm font-bold text-tc-accent transition-colors">
+              Alur Pendaftaran
+            </div>
+            <p class="text-xs text-tc-muted mt-0.5 line-clamp-1">
+              Langkah pengajuan berkas hingga penerbitan surat balasan
+            </p>
           </a>
 
         </div>
@@ -191,8 +201,8 @@ const currentPath = pathname.replace(/\/$/, "");
       Tentang Kami
     </a>
 
-    <!-- Accordion Mobile (Clean List Style) -->
-    <details class="group rounded-xl border border-transparent [&[open]]:border-tc-border [&[open]]:bg-tc-card/50 transition-all">
+    <!-- Accordion Mobile -->
+    <details class="group rounded-xl border border-transparent [&[open]]:border-tc-border [&[open]]:bg-tc-card/50 transition-all" open={currentPath.startsWith("/program") || currentPath.startsWith("/alur-pendaftaran")}>
       <summary class={`flex items-center justify-between px-4 py-3 cursor-pointer list-none select-none rounded-xl ${currentPath.startsWith("/program") || currentPath.startsWith("/alur-pendaftaran") ? "bg-tc-card text-tc-accent border border-tc-border font-semibold" : "text-tc-muted hover:text-white"}`}>
         <span>Program Magang</span>
         <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,25 +210,27 @@ const currentPath = pathname.replace(/\/$/, "");
         </svg>
       </summary>
 
-      <div class="px-3 pb-3 pt-1 space-y-1">
-        <a href="/program" class="block px-3 py-2.5 rounded-lg text-sm text-white hover:bg-tc-bg hover:text-tc-accent transition-colors">
-          Semua Program Magang
+      <div class="px-3 pb-3 pt-1 space-y-1.5">
+        <a href="/program" class="block px-3 py-2.5 rounded-lg hover:bg-tc-bg transition-colors">
+          <div class={`text-sm font-bold ${currentPath === "/program" ? "text-tc-accent" : "text-white"}`}>Semua Program</div>
+          <p class="text-[11px] text-tc-muted">Eksplorasi seluruh bidang keahlian web, SEO & konten</p>
         </a>
-        <a href="/program?cat=webdev" class="block px-3 py-2.5 rounded-lg text-sm text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors">
-          Pembuatan Website
+
+        <a href="/program/magang-mahasiswa" class="block px-3 py-2.5 rounded-lg hover:bg-tc-bg transition-colors">
+          <div class={`text-sm font-bold ${currentPath === "/program/magang-mahasiswa" ? "text-tc-accent" : "text-white"}`}>Magang Mahasiswa</div>
+          <p class="text-[11px] text-tc-muted">Program praktik kuliah, proyek nyata & konversi SKS</p>
         </a>
-        <a href="/program?cat=seo-marketing" class="block px-3 py-2.5 rounded-lg text-sm text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors">
-          SEO & Digital Marketing
+
+        <a href="/program/pkl-smk" class="block px-3 py-2.5 rounded-lg hover:bg-tc-bg transition-colors">
+          <div class={`text-sm font-bold ${currentPath === "/program/pkl-smk" ? "text-tc-accent" : "text-white"}`}>PKL Siswa SMK</div>
+          <p class="text-[11px] text-tc-muted">Bimbingan dari dasar untuk RPL, TKJ, Marketing & DKV</p>
         </a>
-        <a href="/program/pembuatan-artikel" class="block px-3 py-2.5 rounded-lg text-sm text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors">
-          Penulisan Artikel SEO
-        </a>
-        <a href="/tentang" class="block px-3 py-2.5 rounded-lg text-sm text-tc-muted hover:bg-tc-bg hover:text-tc-accent transition-colors">
-          Kompetensi yang Dipelajari
-        </a>
+
         <div class="my-1 border-t border-tc-border/60"></div>
-        <a href="/alur-pendaftaran" class="block px-3 py-2.5 rounded-lg text-sm font-semibold text-tc-accent hover:bg-tc-bg transition-colors">
-          Alur Pendaftaran
+
+        <a href="/alur-pendaftaran" class="block px-3 py-2.5 rounded-lg bg-tc-bg/60 hover:bg-tc-bg transition-colors">
+          <div class="text-sm font-bold text-tc-accent">Alur Pendaftaran</div>
+          <p class="text-[11px] text-tc-muted">Langkah pengajuan berkas hingga penerbitan surat balasan</p>
         </a>
       </div>
     </details>

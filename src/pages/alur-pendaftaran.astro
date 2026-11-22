@@ -3,126 +3,491 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+const alurMahasiswa = [
+  {
+    step: "1",
+    badge: "TAHAP 1",
+    target: "Magang Mahasiswa",
+    title: "Cek Persyaratan & Pilih Fokus Keahlian",
+    desc: "Mahasiswa jurusan Informatika (D3/D4/S1) meninjau ketentuan durasi magang (3–6 bulan) serta menentukan minat proyek utama antara Pengembangan Website (Astro, Bootstrap, Blogspot) atau Optimasi SEO & Konten.",
+    pic: "Calon Peserta Mahasiswa",
+    estimasi: "1 - 2 Hari",
+    note: "Pastikan periode tanggal magang sudah sesuai dengan jadwal KRS/kalender akademik kampus."
+  },
+  {
+    step: "2",
+    badge: "TAHAP 2",
+    target: "Magang Mahasiswa",
+    title: "Siapkan CV & Surat Pengantar Kampus",
+    desc: "Lengkapi berkas administrasi berupa CV singkat, tautan portofolio/GitHub (jika ada), serta Surat Pengantar Resmi Magang yang ditandatangani oleh Ketua Program Studi / Dekan / bagian akademik kampus.",
+    pic: "Mahasiswa & Pihak Kampus",
+    estimasi: "2 - 5 Hari Kerja",
+    note: "Surat pengantar wajib mencantumkan NIM, program studi, jumlah mahasiswa, dan tanggal mulai magang."
+  },
+  {
+    step: "3",
+    badge: "TAHAP 3",
+    target: "Magang Mahasiswa",
+    title: "Pengajuan Berkas & Konsultasi Kuota via WA",
+    desc: "Kirimkan salinan PDF surat pengantar kampus dan CV melalui WhatsApp Admin Gemilang Training untuk pengecekan kuota bimbingan serta konfirmasi jadwal wawancara.",
+    pic: "Mahasiswa & Admin",
+    estimasi: "15 - 30 Menit",
+    note: "Pengajuan dapat dilakukan secara individu maupun kelompok dalam satu surat pengantar."
+  },
+  {
+    step: "4",
+    badge: "TAHAP 4",
+    target: "Magang Mahasiswa",
+    title: "Wawancara Singkat & Skill Mapping",
+    desc: "Sesi diskusi santai (online via Google Meet atau datang langsung ke Malang) bersama mentor praktisi untuk memetakan kemampuan teknis awal dan target luaran proyek.",
+    pic: "Mentor Gemilang Training",
+    estimasi: "1 - 2 Hari Kerja",
+    note: null
+  },
+  {
+    step: "5",
+    badge: "TAHAP 5",
+    target: "Magang Mahasiswa",
+    title: "Penerbitan Surat Balasan Penerimaan Magang",
+    desc: "Setelah berkas dan hasil pemetaan disetujui, Gemilang Training menerbitkan Surat Balasan Resmi Penerimaan Magang untuk diserahkan mahasiswa ke bagian akademik kampus.",
+    pic: "Admin Gemilang Training",
+    estimasi: "1 - 2 Hari Kerja",
+    note: "Simpan salinan surat balasan resmi sebagai syarat pemberkasan magang di kampus."
+  },
+  {
+    step: "6",
+    badge: "TAHAP 6",
+    target: "Magang Mahasiswa",
+    title: "Konfirmasi Jadwal Masuk & Logbook Kampus",
+    desc: "Mahasiswa melakukan konfirmasi kehadiran hari pertama serta menyepakati tata tertib kerja, pembagian jadwal bimbingan mingguan, dan format pengisian logbook harian kampus.",
+    pic: "Mahasiswa & Pembimbing Lapangan",
+    estimasi: "H-2 Sebelum Mulai",
+    note: null
+  },
+  {
+    step: "7",
+    badge: "TAHAP 7",
+    target: "Magang Mahasiswa",
+    title: "Onboarding & Setup Proyek Website",
+    desc: "Mulai masuk hari pertama dengan membawa laptop pribadi, setup lingkungan kerja (VS Code, Git, browser tools), dan mulai mengerjakan proyek website Astro, Bootstrap, atau optimasi SEO.",
+    pic: "Mahasiswa & Mentor Praktisi",
+    estimasi: "Hari Pertama Magang",
+    note: null
+  },
+  {
+    step: "8",
+    badge: "TAHAP 8",
+    target: "Magang Mahasiswa",
+    title: "Evaluasi Akhir, Penilaian Kampus & Sertifikat",
+    desc: "Di akhir periode magang, mentor mengecek hasil karya website/artikel yang sudah live, mengisi lembar penilaian magang dari kampus, dan menerbitkan Sertifikat Resmi Kelulusan Magang.",
+    pic: "Mahasiswa, Mentor & Dosen Pembimbing",
+    estimasi: "3 - 6 Bulan (Sesuai Periode)",
+    note: "Sertifikat dan portofolio proyek siap digunakan untuk laporan akhir maupun melamar kerja."
+  }
+];
+
+const alurSmk = [
+  {
+    step: "1",
+    badge: "TAHAP 1",
+    target: "PKL Siswa SMK",
+    title: "Cek Kuota Jurusan & Periode PKL Sekolah",
+    desc: "Siswa atau guru pembimbing meninjau kesesuaian jurusan SMK (RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, atau Multimedia) dan jadwal gelombang PKL dari sekolah.",
+    pic: "Siswa SMK / Guru Pembimbing",
+    estimasi: "1 - 2 Hari",
+    note: "Pengajuan PKL dapat dilakukan per individu maupun berkelompok (1 tim berisi 2–5 siswa)."
+  },
+  {
+    step: "2",
+    badge: "TAHAP 2",
+    target: "PKL Siswa SMK",
+    title: "Siapkan Surat Permohonan PKL dari Sekolah",
+    desc: "Mengurus Surat Permohonan Resmi PKL yang ditandatangani oleh Kepala Sekolah / Kaprog / Pokja PKL, dilampiri biodata singkat masing-masing siswa yang diajukan.",
+    pic: "Siswa & Pokja PKL Sekolah",
+    estimasi: "2 - 5 Hari Kerja",
+    note: "Pastikan surat mencantumkan nama lengkap siswa, NIS/NISN, kompetensi keahlian, dan durasi PKL."
+  },
+  {
+    step: "3",
+    badge: "TAHAP 3",
+    target: "PKL Siswa SMK",
+    title: "Kirim Surat Permohonan via WhatsApp Admin",
+    desc: "Mengirimkan foto/scan PDF surat permohonan PKL dari sekolah melalui WhatsApp Admin Gemilang Training untuk konfirmasi ketersediaan kuota tempat PKL.",
+    pic: "Siswa / Guru & Admin",
+    estimasi: "15 - 30 Menit",
+    note: "Disarankan mengajukan maksimal 2–4 minggu sebelum tanggal penerjunan PKL."
+  },
+  {
+    step: "4",
+    badge: "TAHAP 4",
+    target: "PKL Siswa SMK",
+    title: "Perkenalan Singkat & Pembagian Kelompok",
+    desc: "Sesi obrolan ringan bersama mentor untuk mengetahui minat siswa serta pembagian tim kolaborasi antara jurusan teknis (RPL/TKJ) dan jurusan bisnis/kreatif (Marketing/DKV/MM).",
+    pic: "Mentor Gemilang Training",
+    estimasi: "1 - 2 Hari Kerja",
+    note: "Tidak wajib sudah mahir koding atau SEO, materi diajarkan bertahap dari dasar."
+  },
+  {
+    step: "5",
+    badge: "TAHAP 5",
+    target: "PKL Siswa SMK",
+    title: "Penerbitan Surat Balasan Kesediaan PKL",
+    desc: "Gemilang Training menerbitkan Surat Balasan Resmi Kesediaan Menerima Siswa PKL untuk diserahkan kembali ke bagian Pokja PKL / Tata Usaha sekolah.",
+    pic: "Admin Gemilang Training",
+    estimasi: "1 - 2 Hari Kerja",
+    note: "Surat balasan menjadi dasar resmi penerjunan siswa PKL oleh pihak sekolah."
+  },
+  {
+    step: "6",
+    badge: "TAHAP 6",
+    target: "PKL Siswa SMK",
+    title: "Persiapan Perangkat Laptop & Buku Jurnal PKL",
+    desc: "Siswa menyiapkan laptop pribadi yang akan dibawa selama masa PKL serta buku jurnal kegiatan harian / absensi PKL dari sekolah.",
+    pic: "Siswa SMK",
+    estimasi: "H-2 Sebelum Mulai",
+    note: null
+  },
+  {
+    step: "7",
+    badge: "TAHAP 7",
+    target: "PKL Siswa SMK",
+    title: "Penerjunan, Pengarahan & Mulai Praktik",
+    desc: "Hari pertama masuk PKL (bisa diantar guru pembimbing sekolah), pengenalan aturan kerja, instalasi aplikasi pendukung, dan mulai belajar membuat website (Bootstrap, Astro, Blogspot) serta artikel SEO.",
+    pic: "Siswa, Guru Pembimbing & Mentor",
+    estimasi: "Hari Pertama PKL",
+    note: null
+  },
+  {
+    step: "8",
+    badge: "TAHAP 8",
+    target: "PKL Siswa SMK",
+    title: "Monitoring Berkala, Penilaian & Sertifikat PKL",
+    desc: "Evaluasi proyek mingguan, pendampingan saat guru sekolah melakukan kunjungan monitoring, pengisian nilai akhir PKL pada rapor/lembar sekolah, serta penerbitan Sertifikat Resmi PKL.",
+    pic: "Siswa, Mentor & Guru Pembimbing",
+    estimasi: "3 - 6 Bulan (Sesuai Periode)",
+    note: "Setiap siswa lulus PKL dengan membawa portofolio website online dan sertifikat resmi."
+  }
+];
 ---
 
-<BaseLayout title="Alur & Syarat Pendaftaran Magang - Gemilang Training" isHome={false}>
+<BaseLayout 
+  title="Alur & Prosedur Pendaftaran Magang Mahasiswa & PKL SMK - Gemilang Training Malang" 
+  description="Panduan lengkap 8 tahapan pendaftaran Magang Mahasiswa Informatika dan PKL Siswa SMK di Gemilang Training Malang mulai dari persiapan berkas hingga penerbitan sertifikat resmi."
+  keywords="alur pendaftaran magang malang, cara daftar pkl smk malang, syarat magang mahasiswa malang, surat pengantar pkl smk malang, gemilang training malang"
+  isHome={false}
+>
   <Navbar slot="header" />
 
-  <section class="py-12 md:py-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-2 rounded-full border border-tc-border inline-block mb-4">
-        Prosedur Resmi Magang Vokasi & Kampus
+  <!-- 1. HERO HEADER BANNER -->
+  <section class="relative bg-tc-card/80 border-b border-tc-border overflow-hidden">
+    <div class="absolute inset-0 opacity-15">
+      <img src="/assets/img/beranda1.webp" alt="Alur Pendaftaran Magang dan PKL Gemilang Training" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
+      <span class="inline-block text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-bg/90 px-4 py-1.5 rounded-full border border-tc-border mb-4">
+        Prosedur Resmi Magang & PKL
       </span>
-      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
-        Alur & Syarat Pendaftaran Magang
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        Alur & Prosedur <span class="text-tc-accent">Pendaftaran</span>
       </h1>
-      <p class="text-tc-muted text-base md:text-lg leading-relaxed">
-        Panduan 5 langkah terstruktur bagi Siswa SMK (PKL) dan Mahasiswa (Magang Industri) mulai dari konsultasi awal hingga penerbitan Surat Balasan Resmi.
+      <p class="text-tc-muted text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
+        Pilih jalur pendaftaran di bawah ini untuk melihat langkah-langkah terstruktur dari persiapan berkas hingga penerbitan sertifikat resmi.
       </p>
     </div>
+  </section>
 
-    <!-- Timeline Steps -->
-    <div class="space-y-6 mb-16">
+  <!-- 2. MAIN CONTENT (2 KOLOM: FILTER + TIMELINE KIRI & STICKY SIDEBAR KANAN) -->
+  <section class="py-14 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
       
-      <!-- Step 1 -->
-      <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border hover:border-tc-accent transition-all flex flex-col md:flex-row gap-6 items-start">
-        <div class="w-12 h-12 rounded-2xl bg-tc-accent/20 border border-tc-accent text-tc-accent font-mono font-bold text-lg flex items-center justify-center shrink-0">
-          01
-        </div>
-        <div class="space-y-2 flex-1">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-white">1. Konsultasi Program & Penyesuaian Jurusan</h3>
-            <span class="text-xs font-mono text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border">Tahap Awal</span>
-          </div>
-          <p class="text-tc-muted text-sm leading-relaxed">
-            Calon peserta magang memilih program magang yang diminati atau berkonsultasi langsung melalui kontak WhatsApp Admin Gemilang Training untuk penyesuaian porsi proyek (Skema 70:30 Tech vs Marketing/Konten).
+      <!-- KOLOM KIRI (8 Kolom) -->
+      <div class="lg:col-span-8">
+        
+        <!-- Header & Filter Tabs Jalur -->
+        <div class="mb-8">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">
+            Pilih Jalur Pendidikan
+          </span>
+          <h2 id="alur-heading" class="text-2xl md:text-3xl font-bold text-white mb-3">
+            Tahapan Pendaftaran Magang Mahasiswa
+          </h2>
+          <p id="alur-subdesc" class="text-tc-muted text-sm md:text-base leading-relaxed mb-6">
+            Panduan lengkap pengajuan magang bagi mahasiswa jurusan Informatika (D3/D4/S1) mulai dari surat pengantar kampus hingga konversi nilai dan sertifikat.
           </p>
+
+          <!-- Tombol Filter Jalur -->
+          <div class="inline-flex flex-wrap gap-2.5 p-1.5 bg-tc-card rounded-2xl border border-tc-border">
+            <button 
+              type="button"
+              data-jalur-btn="mahasiswa"
+              class="jalur-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-bold bg-tc-accent text-slate-950 transition-all cursor-pointer"
+            >
+              Alur Magang Mahasiswa
+            </button>
+            <button 
+              type="button"
+              data-jalur-btn="smk"
+              class="jalur-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold text-tc-muted hover:text-white transition-all cursor-pointer"
+            >
+              Alur PKL Siswa SMK
+            </button>
+          </div>
         </div>
+
+        <!-- PANEL 1: TIMELINE MAGANG MAHASISWA -->
+        <div id="panel-mahasiswa" class="alur-panel space-y-6 relative before:absolute before:left-5 before:top-4 before:bottom-4 before:w-0.5 before:bg-tc-border">
+          {alurMahasiswa.map((item) => (
+            <div class="relative pl-14">
+              <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-tc-accent text-slate-950 font-extrabold text-sm flex items-center justify-center shadow-lg">
+                {item.step}
+              </div>
+
+              <div class="bg-tc-card p-6 md:p-7 rounded-2xl border border-tc-border hover:border-tc-accent/70 transition-all shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                  <span class="text-[11px] font-mono text-tc-muted uppercase tracking-wider font-semibold">
+                    {item.badge}
+                  </span>
+                  <span class="text-[11px] font-semibold text-tc-accent bg-tc-bg border border-tc-border px-2.5 py-0.5 rounded-full">
+                    {item.target}
+                  </span>
+                </div>
+
+                <h3 class="text-lg md:text-xl font-bold text-white mb-2.5">
+                  {item.title}
+                </h3>
+                <p class="text-tc-muted text-sm leading-relaxed mb-4">
+                  {item.desc}
+                </p>
+
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs pt-3 border-t border-tc-border/60">
+                  <div>
+                    <span class="text-tc-muted">Penanggung Jawab: </span>
+                    <span class="text-white font-semibold">{item.pic}</span>
+                  </div>
+                  <div>
+                    <span class="text-tc-muted">Estimasi Waktu: </span>
+                    <span class="text-tc-accent font-semibold">{item.estimasi}</span>
+                  </div>
+                </div>
+
+                {item.note && (
+                  <div class="mt-4 bg-tc-bg/90 border border-tc-border rounded-xl px-4 py-2.5 text-xs flex items-start gap-2.5">
+                    <span class="text-tc-accent font-bold shrink-0">ⓘ</span>
+                    <span class="text-tc-muted leading-relaxed">{item.note}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- PANEL 2: TIMELINE PKL SISWA SMK -->
+        <div id="panel-smk" class="alur-panel hidden space-y-6 relative before:absolute before:left-5 before:top-4 before:bottom-4 before:w-0.5 before:bg-tc-border">
+          {alurSmk.map((item) => (
+            <div class="relative pl-14">
+              <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-tc-accent text-slate-950 font-extrabold text-sm flex items-center justify-center shadow-lg">
+                {item.step}
+              </div>
+
+              <div class="bg-tc-card p-6 md:p-7 rounded-2xl border border-tc-border hover:border-tc-accent/70 transition-all shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                  <span class="text-[11px] font-mono text-tc-muted uppercase tracking-wider font-semibold">
+                    {item.badge}
+                  </span>
+                  <span class="text-[11px] font-semibold text-tc-accent bg-tc-bg border border-tc-border px-2.5 py-0.5 rounded-full">
+                    {item.target}
+                  </span>
+                </div>
+
+                <h3 class="text-lg md:text-xl font-bold text-white mb-2.5">
+                  {item.title}
+                </h3>
+                <p class="text-tc-muted text-sm leading-relaxed mb-4">
+                  {item.desc}
+                </p>
+
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs pt-3 border-t border-tc-border/60">
+                  <div>
+                    <span class="text-tc-muted">Penanggung Jawab: </span>
+                    <span class="text-white font-semibold">{item.pic}</span>
+                  </div>
+                  <div>
+                    <span class="text-tc-muted">Estimasi Waktu: </span>
+                    <span class="text-tc-accent font-semibold">{item.estimasi}</span>
+                  </div>
+                </div>
+
+                {item.note && (
+                  <div class="mt-4 bg-tc-bg/90 border border-tc-border rounded-xl px-4 py-2.5 text-xs flex items-start gap-2.5">
+                    <span class="text-tc-accent font-bold shrink-0">ⓘ</span>
+                    <span class="text-tc-muted leading-relaxed">{item.note}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
 
-      <!-- Step 2 -->
-      <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border hover:border-tc-accent transition-all flex flex-col md:flex-row gap-6 items-start">
-        <div class="w-12 h-12 rounded-2xl bg-tc-accent/20 border border-tc-accent text-tc-accent font-mono font-bold text-lg flex items-center justify-center shrink-0">
-          02
-        </div>
-        <div class="space-y-2 flex-1">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-white">2. Pengajuan Berkas & Surat Pengantar</h3>
-            <span class="text-xs font-mono text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border">Administrasi</span>
-          </div>
-          <p class="text-tc-muted text-sm leading-relaxed">
-            Pendaftar menyerahkan kelengkapan berkas seperti CV/Portofolio singkat dan **Surat Pengantar Magang / PKL Resmi** yang diterbitkan oleh pihak Sekolah (SMK) atau Kampus.
+      <!-- KOLOM KANAN: STICKY SIDEBAR 3 KARTU (4 Kolom) -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+        
+        <!-- Card 1: Kartu Aksen Utama -->
+        <div class="bg-gradient-to-br from-tc-card via-tc-card to-tc-bg p-6 rounded-2xl border border-tc-accent/50 shadow-xl">
+          <h3 class="text-xl font-bold text-white mb-2">
+            Siap Mendaftar Sekarang?
+          </h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-5">
+            Pastikan berkas surat pengantar sekolah/kampus sudah siap, lalu hubungi admin kami untuk konfirmasi kuota dan jadwal masuk.
           </p>
+          <a 
+            id="sidebar-wa-btn"
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20sudah%20membaca%20alur%20pendaftaran%20dan%20ingin%20mendaftar%20Magang%20Mahasiswa." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-sm py-3.5 rounded-xl transition-all shadow-md hover:scale-[1.02]"
+          >
+            Ajukan Pendaftaran via WA &rarr;
+          </a>
         </div>
-      </div>
 
-      <!-- Step 3 -->
-      <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border hover:border-tc-accent transition-all flex flex-col md:flex-row gap-6 items-start">
-        <div class="w-12 h-12 rounded-2xl bg-tc-accent/20 border border-tc-accent text-tc-accent font-mono font-bold text-lg flex items-center justify-center shrink-0">
-          03
-        </div>
-        <div class="space-y-2 flex-1">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-white">3. Wawancara Singkat & Skill Mapping</h3>
-            <p class="text-xs font-mono text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border">Verifikasi</p>
-          </div>
-          <p class="text-tc-muted text-sm leading-relaxed">
-            Sesi wawancara/diskusi singkat secara online atau offline bersama mentor untuk pemetaan kemampuan awal dan penentuan tanggung jawab proyek yang akan dikerjakan.
+        <!-- Card 2: Pilih Jalur Program (Terhubung ke folder /program/...) -->
+        <div class="bg-tc-card p-6 rounded-2xl border border-tc-border shadow-xl">
+          <h3 class="text-lg font-bold text-white mb-2">
+            Belum Tahu Detail Programnya?
+          </h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-4">
+            Lihat syarat lengkap dan daftar materi praktik sesuai jenjang pendidikanmu sebelum mengajukan berkas.
           </p>
+          <div class="space-y-2.5">
+            <a 
+              href="/program/magang-mahasiswa" 
+              class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white hover:text-tc-accent font-semibold text-xs py-3 rounded-xl transition-all"
+            >
+              Info Magang Mahasiswa &rarr;
+            </a>
+            <a 
+              href="/program/pkl-smk" 
+              class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white hover:text-tc-accent font-semibold text-xs py-3 rounded-xl transition-all"
+            >
+              Info PKL Siswa SMK &rarr;
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- Step 4 -->
-      <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border hover:border-tc-accent transition-all flex flex-col md:flex-row gap-6 items-start">
-        <div class="w-12 h-12 rounded-2xl bg-tc-accent/20 border border-tc-accent text-tc-accent font-mono font-bold text-lg flex items-center justify-center shrink-0">
-          04
-        </div>
-        <div class="space-y-2 flex-1">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-white">4. Penerbitan Surat Balasan Penerimaan Magang</h3>
-            <span class="text-xs font-mono text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border">Legalitas</span>
+        <!-- Card 3: Catatan Penting -->
+        <div class="bg-tc-card/60 p-6 rounded-2xl border border-tc-border">
+          <div class="flex items-center gap-2 text-tc-accent font-bold text-sm mb-2">
+            <span>Catatan Penting</span>
           </div>
-          <p class="text-tc-muted text-sm leading-relaxed">
-            Setelah dinyatakan lolos verifikasi, tim Gemilang Training menerbitkan **Surat Balasan Penerimaan Resmi** bertanda tangan untuk diserahkan peserta ke pihak sekolah/kampus.
+          <p class="text-tc-muted text-xs leading-relaxed">
+            Seluruh proses informasi pendaftaran resmi hanya dilakukan melalui kontak WhatsApp admin Gemilang Training. Pastikan surat pengantar sudah diketahui oleh pihak sekolah atau program studi kampus.
           </p>
         </div>
-      </div>
 
-      <!-- Step 5 -->
-      <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border hover:border-tc-accent transition-all flex flex-col md:flex-row gap-6 items-start">
-        <div class="w-12 h-12 rounded-2xl bg-tc-accent/20 border border-tc-accent text-tc-accent font-mono font-bold text-lg flex items-center justify-center shrink-0">
-          05
-        </div>
-        <div class="space-y-2 flex-1">
-          <div class="flex items-center justify-between">
-            <h3 class="text-xl font-bold text-white">5. Onboarding & Orientasi Proyek Industri</h3>
-            <span class="text-xs font-mono text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border">Mulai Magang</span>
-          </div>
-          <p class="text-tc-muted text-sm leading-relaxed">
-            Peserta mengikuti orientasi alur kerja industri, pembagian repositori (Astro, WordPress, Blogspot, atau Video Production), dan mulai mengerjakan proyek magang terpandu.
-          </p>
-        </div>
-      </div>
+      </aside>
 
     </div>
+  </section>
 
-    <!-- CTA Box -->
-    <div class="bg-tc-card border border-tc-border rounded-3xl p-8 text-center space-y-4 shadow-2xl">
-      <h2 class="text-2xl font-bold text-white">Siap Memulai Pendaftaran Magang?</h2>
-      <p class="text-tc-muted text-sm max-w-xl mx-auto">
-        Hubungi tim pendaftaran kami via WhatsApp untuk mengirimkan berkas dan memulai konsultasi program.
-      </p>
+  <!-- 3. CTA BANNER BAWAH -->
+  <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-tc-card border border-tc-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="max-w-xl text-center md:text-left">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3">
+          Sudah Memahami Alur dan Persyaratannya?
+        </h2>
+        <p class="text-tc-muted text-sm md:text-base">
+          Pilih jalur program yang sesuai dengan jurusanmu dan mulai langkah praktik kerja digital di Gemilang Training Malang sekarang.
+        </p>
+      </div>
       <a 
-        href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mendaftar%20magang%20dan%20menanyakan%20persyaratan%20berkas." 
+        href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mendaftar%20Program%20Magang%20%26%20PKL." 
         target="_blank" 
-        rel="noopener noreferrer" 
-        class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg inline-block text-sm"
+        rel="noopener noreferrer"
+        class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105 shrink-0"
       >
-        Daftar Sekarang via WA
+        Pendaftaran Sekarang &rarr;
       </a>
     </div>
   </section>
 
   <Footer slot="footer" />
 </BaseLayout>
+
+<script>
+  function setupAlurFilter() {
+    const btns = document.querySelectorAll('.jalur-btn');
+    const panelMahasiswa = document.getElementById('panel-mahasiswa');
+    const panelSmk = document.getElementById('panel-smk');
+    const heading = document.getElementById('alur-heading');
+    const subdesc = document.getElementById('alur-subdesc');
+    const waBtn = document.getElementById('sidebar-wa-btn') as HTMLAnchorElement | null;
+
+    if (!btns.length || !panelMahasiswa || !panelSmk) return;
+
+    const switchJalur = (jalur: string, updateUrl = false) => {
+      const activeJalur = jalur === 'smk' ? 'smk' : 'mahasiswa';
+
+      btns.forEach((b) => {
+        const isTarget = b.getAttribute('data-jalur-btn') === activeJalur;
+        if (isTarget) {
+          b.classList.add('bg-tc-accent', 'text-slate-950', 'font-bold');
+          b.classList.remove('text-tc-muted', 'font-semibold');
+        } else {
+          b.classList.remove('bg-tc-accent', 'text-slate-950', 'font-bold');
+          b.classList.add('text-tc-muted', 'font-semibold');
+        }
+      });
+
+      if (activeJalur === 'smk') {
+        panelMahasiswa.classList.add('hidden');
+        panelSmk.classList.remove('hidden');
+        if (heading) heading.textContent = 'Tahapan Pendaftaran PKL Siswa SMK';
+        if (subdesc) {
+          subdesc.textContent =
+            'Panduan lengkap pengajuan PKL bagi siswa SMK (RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, & Multimedia) mulai dari surat permohonan sekolah hingga sertifikat kelulusan.';
+        }
+        if (waBtn) {
+          waBtn.href =
+            'https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20sudah%20membaca%20alur%20pendaftaran%20dan%20ingin%20mendaftar%20PKL%20Siswa%20SMK.';
+        }
+      } else {
+        panelSmk.classList.add('hidden');
+        panelMahasiswa.classList.remove('hidden');
+        if (heading) heading.textContent = 'Tahapan Pendaftaran Magang Mahasiswa';
+        if (subdesc) {
+          subdesc.textContent =
+            'Panduan lengkap pengajuan magang bagi mahasiswa jurusan Informatika (D3/D4/S1) mulai dari surat pengantar kampus hingga konversi nilai dan sertifikat.';
+        }
+        if (waBtn) {
+          waBtn.href =
+            'https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20sudah%20membaca%20alur%20pendaftaran%20dan%20ingin%20mendaftar%20Magang%20Mahasiswa.';
+        }
+      }
+
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        url.searchParams.set('jalur', activeJalur);
+        window.history.replaceState({}, '', url.toString());
+      }
+    };
+
+    // Cek parameter URL saat halaman dibuka (?jalur=smk atau ?jalur=mahasiswa)
+    const params = new URLSearchParams(window.location.search);
+    const initialJalur = params.get('jalur') || 'mahasiswa';
+    switchJalur(initialJalur, false);
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const selected = btn.getAttribute('data-jalur-btn') || 'mahasiswa';
+        switchJalur(selected, true);
+      });
+    });
+  }
+
+  setupAlurFilter();
+  document.addEventListener('astro:page-load', setupAlurFilter);
+</script>

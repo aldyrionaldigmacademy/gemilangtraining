@@ -1,0 +1,520 @@
+---
+// src/pages/program/magang-mahasiswa.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const alurMagang = [
+  {
+    step: "1",
+    badge: "TAHAP PENDAFTARAN",
+    title: "Konsultasi & Pengajuan Surat Magang",
+    desc: "Hubungi admin Gemilang Training melalui WhatsApp untuk menanyakan ketersediaan kuota dan menyerahkan surat pengantar resmi magang dari kampus/program studi.",
+    note: "Pastikan surat mencantumkan tanggal mulai dan durasi magang."
+  },
+  {
+    step: "2",
+    badge: "TAHAP SELEKSI & PENEMPATAN",
+    title: "Wawancara Singkat & Pemetaan Kemampuan",
+    desc: "Sesi obrolan santai bersama mentor untuk mengetahui minat bidangmu (pembuatan website atau optimasi SEO & konten) sebelum pembagian proyek.",
+    note: "Tidak wajib sudah mahir, yang terpenting siap belajar dan praktik."
+  },
+  {
+    step: "3",
+    badge: "MINGGU 1",
+    title: "Onboarding & Pengenalan Alur Kerja Tim",
+    desc: "Pengenalan lingkungan kerja, pengaturan alat kerja di laptop (VS Code, Git, browser tools), serta pembagian jadwal bimbingan rutin.",
+    note: "Peserta wajib membawa laptop pribadi yang siap digunakan."
+  },
+  {
+    step: "4",
+    badge: "BULAN 1",
+    title: "Praktik Pembuatan Website (Astro, Bootstrap & Blogspot)",
+    desc: "Mulai terjun langsung membuat tampilan website responsif menggunakan Bootstrap 5, membangun halaman cepat dengan Astro, serta mengelola website Blogspot.",
+    note: null
+  },
+  {
+    step: "5",
+    badge: "BULAN 1 - 2",
+    title: "Optimasi SEO & Riset Kata Kunci",
+    desc: "Mempelajari cara agar website muncul di halaman pencarian Google melalui riset keyword, pengaturan meta tag, Open Graph, serta pemantauan Google Search Console.",
+    note: "Diterapkan langsung pada proyek website yang sedang dikerjakan."
+  },
+  {
+    step: "6",
+    badge: "BULAN 2 - 3",
+    title: "Penulisan Artikel SEO & Digital Marketing",
+    desc: "Praktik menyusun artikel informatif dan promosi yang ramah mesin pencari, pengelolaan aset gambar .webp ringan, serta strategi pemasaran digital lokal.",
+    note: null
+  },
+  {
+    step: "7",
+    badge: "RUTIN MINGGUAN",
+    title: "Evaluasi Proyek & Pendampingan Mentor",
+    desc: "Setiap hasil pengerjaan dicek langsung oleh mentor praktisi untuk perbaikan struktur kode, kecepatan akses (PageSpeed), maupun kualitas tulisan.",
+    note: null
+  },
+  {
+    step: "8",
+    badge: "AKHIR PERIODE",
+    title: "Penyusunan Laporan, Portofolio & Sertifikat",
+    desc: "Rekap seluruh hasil karya website dan artikel yang sudah online sebagai portofolio pribadi, pengisian nilai kampus, serta penerbitan sertifikat resmi magang.",
+    note: "Sertifikat dan daftar karya siap dilampirkan untuk syarat kelulusan."
+  }
+];
+
+const materiSpesialisasi = [
+  {
+    category: "webdev",
+    badge: "Pembuatan Website",
+    title: "Pembuatan Website Modern dengan Astro",
+    desc: "Membangun website multi-halaman berkecepatan tinggi dengan struktur Clean URL tanpa .html hingga deploy online.",
+    img: "/assets/img/informatika.webp",
+    link: "/program/website-astro"
+  },
+  {
+    category: "webdev",
+    badge: "Pembuatan Website",
+    title: "Desain & Koding Website Bootstrap 5",
+    desc: "Menyusun antarmuka responsif di HP dan laptop dengan komponen Bootstrap 5 serta aset gambar .webp ringan.",
+    img: "/assets/img/rpl.webp",
+    link: "/program/website-bootstrap"
+  },
+  {
+    category: "webdev",
+    badge: "Pembuatan Website",
+    title: "Pengelolaan Website & Domain Blogspot",
+    desc: "Membuat portal informasi dan profil usaha berbasis Blogspot lengkap dengan navigasi dan custom domain.",
+    img: "/assets/img/tkj.webp",
+    link: "/program/website-blogspot"
+  },
+  {
+    category: "seo-marketing",
+    badge: "SEO & Marketing",
+    title: "Optimasi SEO & Google Search Console",
+    desc: "Riset kata kunci, optimasi On-Page, pengaturan Open Graph, dan pemantauan indeks halaman di Google.",
+    img: "/assets/img/digitalmarketing.webp",
+    link: "/program/optimasi-seo"
+  },
+  {
+    category: "seo-marketing",
+    badge: "SEO & Marketing",
+    title: "Penulisan Artikel SEO & Digital Marketing",
+    desc: "Menyusun artikel informatif dan strategi promosi digital yang terstruktur untuk menarik pengunjung.",
+    img: "/assets/img/bisnisdigital.webp",
+    link: "/program/pembuatan-artikel"
+  }
+];
+---
+
+<BaseLayout 
+  title="Program Magang Mahasiswa Informatika di Malang - Gemilang Training" 
+  description="Informasi lengkap Program Magang Mahasiswa Informatika di Gemilang Training Malang: alur pendaftaran, durasi, sistem bimbingan mentor praktisi, dan materi pembuatan website Astro, Bootstrap, Blogspot serta SEO."
+  keywords="magang mahasiswa informatika malang, tempat magang mahasiswa malang, magang kuliah informatika malang, magang web developer mahasiswa malang, gemilang training malang"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <!-- 1. HERO HEADER BANNER -->
+  <section class="relative bg-tc-card/80 border-b border-tc-border overflow-hidden">
+    <div class="absolute inset-0 opacity-15">
+      <img src="/assets/img/beranda1.webp" alt="Suasana Magang Mahasiswa Gemilang Training" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
+      <span class="inline-block text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-bg/90 px-4 py-1.5 rounded-full border border-tc-border mb-4">
+        Program Khusus Mahasiswa • Kota Malang
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        Program <span class="text-tc-accent">Magang Mahasiswa</span>
+      </h1>
+      <p class="text-tc-muted text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
+        Praktik kerja nyata untuk mahasiswa jurusan Informatika dengan bimbingan mentor praktisi di Kota Malang.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. MAIN CONTENT (2 KOLOM: KONTEN KIRI + STICKY SIDEBAR KANAN) -->
+  <section class="py-14 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM KIRI (8 Kolom) -->
+      <div class="lg:col-span-8 space-y-16">
+        
+        <!-- A. Ringkasan Program -->
+        <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Tentang Program</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            Ringkasan Program Magang Mahasiswa
+          </h2>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed mb-6">
+            Program Magang Mahasiswa di <strong class="text-white">Gemilang Training Malang</strong> dirancang untuk mahasiswa jurusan <strong class="text-white">Informatika</strong> yang ingin mengasah keterampilan teknis secara langsung melalui proyek nyata. Peserta tidak sekadar diberi tugas administratif, melainkan dibimbing membangun website modern, mengoptimalkan SEO, serta menyusun konten artikel yang terbit secara online.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Proyek Website Nyata</div>
+              <p class="text-xs text-tc-muted">Praktik langsung menggunakan Astro, Bootstrap 5, dan Blogspot hingga siap tayang.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Mentor Praktisi</div>
+              <p class="text-xs text-tc-muted">Evaluasi kode, kecepatan halaman, dan struktur SEO langsung oleh pembimbing.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Portofolio & Sertifikat</div>
+              <p class="text-xs text-tc-muted">Pulang membawa bukti karya website live serta sertifikat resmi kelulusan magang.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Konversi SKS & Laporan</div>
+              <p class="text-xs text-tc-muted">Mendukung kebutuhan administrasi kampus, logbook harian, dan penilaian akhir.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- B. Tabel Detail & Ketentuan -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Informasi Teknis</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+            Detail & Ketentuan Pelaksanaan
+          </h2>
+          <p class="text-tc-muted text-sm mb-6">
+            Berikut rincian informasi pelaksanaan magang bagi mahasiswa di Gemilang Training Malang:
+          </p>
+
+          <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr class="bg-tc-bg/90 border-b border-tc-border text-tc-accent text-xs uppercase tracking-wider">
+                    <th class="py-3.5 px-5 font-semibold">Aspek</th>
+                    <th class="py-3.5 px-5 font-semibold">Keterangan</th>
+                    <th class="py-3.5 px-5 font-semibold text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 text-tc-muted">
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Sasaran Peserta</td>
+                    <td class="py-4 px-5">Mahasiswa aktif jurusan Informatika (D3 / D4 / S1)</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Terbuka</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Durasi Magang</td>
+                    <td class="py-4 px-5">3 hingga 6 bulan (menyesuaikan kalender akademik kampus)</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-bg text-white border border-tc-border text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Fleksibel</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Sistem Kerja</td>
+                    <td class="py-4 px-5">Onsite Malang / Hybrid sesuai kesepakatan jadwal</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Terjadwal</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Fokus Materi</td>
+                    <td class="py-4 px-5">Website (Astro, Bootstrap, Blogspot), SEO, Artikel & Digital Marketing</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Praktik</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Perangkat Wajib</td>
+                    <td class="py-4 px-5">Laptop pribadi & koneksi internet yang memadai</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-bg text-white border border-tc-border text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Wajib</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- C. Kriteria Mahasiswa yang Cocok -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Kualifikasi Peserta</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Untuk Siapa Program Ini?
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+              <span class="text-xs font-mono font-bold text-tc-accent block mb-2">KRITERIA 01</span>
+              <h3 class="text-base font-bold text-white mb-2">Mahasiswa Informatika</h3>
+              <p class="text-xs text-tc-muted leading-relaxed">
+                Mahasiswa semester pertengahan hingga akhir yang sedang mengambil mata kuliah magang wajib atau kampus merdeka.
+              </p>
+            </div>
+            <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+              <span class="text-xs font-mono font-bold text-tc-accent block mb-2">KRITERIA 02</span>
+              <h3 class="text-base font-bold text-white mb-2">Minat Web & SEO</h3>
+              <p class="text-xs text-tc-muted leading-relaxed">
+                Tertarik mendalami pembuatan website ringan (Astro & Bootstrap) sekaligus cara optimasinya di mesin pencari Google.
+              </p>
+            </div>
+            <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+              <span class="text-xs font-mono font-bold text-tc-accent block mb-2">KRITERIA 03</span>
+              <h3 class="text-base font-bold text-white mb-2">Komitmen & Disiplin</h3>
+              <p class="text-xs text-tc-muted leading-relaxed">
+                Memiliki semangat belajar tinggi, komunikatif saat berdiskusi dalam tim, dan bertanggung jawab menyelesaikan target proyek.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- D. Timeline Tahapan Magang (Langkah 1 - 8) -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Alur & Tahapan</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">
+            Tahapan Kegiatan Magang Mahasiswa
+          </h2>
+
+          <div class="space-y-5 relative before:absolute before:left-5 before:top-4 before:bottom-4 before:w-0.5 before:bg-tc-border">
+            {alurMagang.map((item) => (
+              <div class="relative pl-14">
+                <!-- Bulatan Nomor -->
+                <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-tc-accent text-slate-950 font-extrabold text-sm flex items-center justify-center shadow-md">
+                  {item.step}
+                </div>
+
+                <!-- Card Tahapan -->
+                <div class="bg-tc-card p-6 rounded-2xl border border-tc-border hover:border-tc-accent/60 transition-colors">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider font-semibold">
+                      {item.badge}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p class="text-sm text-tc-muted leading-relaxed">{item.desc}</p>
+
+                  {item.note && (
+                    <div class="mt-4 bg-tc-bg/90 border border-tc-border/80 rounded-xl px-4 py-2.5 text-xs text-tc-accent flex items-center gap-2">
+                      <span class="font-bold">Info:</span>
+                      <span class="text-tc-muted">{item.note}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- E. FAQ Khusus Magang Mahasiswa -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Tanya Jawab</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Pertanyaan Seputar Magang Mahasiswa
+          </h2>
+
+          <div class="space-y-3">
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah menerima pengajuan magang individu maupun kelompok dari kampus?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Ya, kami menerima pendaftaran baik secara individu maupun tim/kelompok dari kampus dengan menyesuaikan kuota bimbingan yang tersedia.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah pihak Gemilang Training membantu tanda tangan logbook & penilaian kampus?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Tentu. Pembimbing lapangan akan mendampingi pengisian logbook kegiatan, evaluasi tengah/akhir magang, serta penerbitan sertifikat resmi selesai magang.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana jika belum terlalu mahir menggunakan Astro atau SEO?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Tidak masalah. Di awal magang akan ada sesi pengenalan dan bimbingan bertahap dari mentor praktisi mulai dari dasar hingga kamu bisa menerapkannya pada proyek nyata.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Kapan waktu pendaftaran magang mahasiswa dibuka?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Pendaftaran dibuka sepanjang tahun mengikuti gelombang jadwal magang masing-masing perguruan tinggi. Disarankan menghubungi admin maksimal 2-4 minggu sebelum tanggal mulai magang.
+              </p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KOLOM KANAN: STICKY SIDEBAR (4 Kolom) -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+        
+        <!-- Card 1: Pendaftaran -->
+        <div class="bg-tc-card p-6 rounded-2xl border border-tc-border shadow-xl">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Pendaftaran Dibuka</span>
+          <h3 class="text-xl font-bold text-white mb-2">Daftar Magang Mahasiswa</h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-5">
+            Konsultasikan jadwal magang kampus dan ketersediaan kuota jurusan Informatika langsung dengan admin kami.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20mahasiswa%20Informatika%20ingin%20mendaftar%20Program%20Magang." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-sm py-3.5 rounded-xl transition-all shadow-md hover:scale-[1.02]"
+          >
+            Daftar via WhatsApp &rarr;
+          </a>
+          <p class="text-[11px] text-tc-muted text-center mt-3">
+            Respon cepat pada jam kerja (Senin - Sabtu)
+          </p>
+        </div>
+
+        <!-- Card 2: Card Aksen Konsultasi -->
+        <div class="bg-gradient-to-br from-tc-card to-tc-bg p-6 rounded-2xl border border-tc-accent/40 shadow-xl">
+          <h3 class="text-lg font-bold text-white mb-2">Butuh Surat Balasan Kampus?</h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-5">
+            Kirimkan surat pengantar magang dari jurusan/fakultas kamu, tim kami siap membantu proses administrasi penerimaan magang.
+          </p>
+          <a 
+            href="/alur-pendaftaran?jalur=mahasiswa" 
+            class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent font-semibold text-xs py-3 rounded-xl transition-all"
+          >
+            Lihat Alur Pendaftaran Mahasiswa &rarr;
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- 3. SPESIALISASI MATERI YANG DIPELAJARI -->
+  <section class="py-20 bg-tc-card/40 border-y border-tc-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Kurikulum Praktik</span>
+          <h2 class="text-2xl md:text-4xl font-extrabold text-white">
+            Materi Praktik Magang Mahasiswa
+          </h2>
+        </div>
+        <p class="text-tc-muted text-sm max-w-md">
+          Fokus keterampilan teknis yang dipraktikkan langsung pada proyek website dan optimasi digital selama masa magang.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap gap-2.5 mb-8">
+        <button data-mfilter="all" class="mfilter-btn px-4 py-2 rounded-xl text-xs font-bold bg-tc-accent text-slate-950 transition-all cursor-pointer">
+          Semua Materi
+        </button>
+        <button data-mfilter="webdev" class="mfilter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-tc-card border border-tc-border text-tc-muted hover:text-white transition-all cursor-pointer">
+          Pembuatan Website (Astro, Bootstrap, Blogspot)
+        </button>
+        <button data-mfilter="seo-marketing" class="mfilter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-tc-card border border-tc-border text-tc-muted hover:text-white transition-all cursor-pointer">
+          Optimasi SEO & Artikel
+        </button>
+      </div>
+
+      <!-- Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {materiSpesialisasi.map((item) => (
+          <div 
+            class="materi-card bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group"
+            data-mcat={item.category}
+          >
+            <div>
+              <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+                <img src={item.img} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full">
+                  {item.badge}
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p class="text-tc-muted text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+            <div class="px-6 pb-5 pt-3 border-t border-tc-border/60 flex items-center justify-between">
+              <span class="text-xs font-semibold text-tc-muted">Pelajari Detail</span>
+              <a href={item.link} class="w-8 h-8 rounded-full bg-tc-bg border border-tc-border group-hover:bg-tc-accent group-hover:text-slate-950 text-tc-accent flex items-center justify-center transition-all font-bold text-sm">
+                &rarr;
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/program" class="inline-flex items-center gap-2 bg-tc-card hover:border-tc-accent border border-tc-border text-white text-xs font-semibold px-6 py-3 rounded-xl transition-all">
+          Lihat Semua Program & Materi &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CTA BANNER BAWAH -->
+  <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-tc-card border border-tc-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="max-w-xl text-center md:text-left">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3">
+          Siap Mengambil Langkah Magang di Malang?
+        </h2>
+        <p class="text-tc-muted text-sm md:text-base">
+          Hubungi tim kami sekarang untuk konsultasi jadwal magang mahasiswa Informatika dan mulai bangun portofolio website nyatamu.
+        </p>
+      </div>
+      <a 
+        href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Program%20Magang%20Mahasiswa." 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105 shrink-0"
+      >
+        Hubungi Admin Sekarang &rarr;
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupMateriFilter() {
+    const btns = document.querySelectorAll('.mfilter-btn');
+    const cards = document.querySelectorAll('.materi-card');
+    if (!btns.length || !cards.length) return;
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-mfilter') || 'all';
+
+        btns.forEach((b) => {
+          b.classList.remove('bg-tc-accent', 'text-slate-950', 'font-bold');
+          b.classList.add('bg-tc-card', 'border', 'border-tc-border', 'text-tc-muted', 'font-semibold');
+        });
+
+        btn.classList.add('bg-tc-accent', 'text-slate-950', 'font-bold');
+        btn.classList.remove('bg-tc-card', 'border', 'border-tc-border', 'text-tc-muted', 'font-semibold');
+
+        cards.forEach((card) => {
+          const cat = card.getAttribute('data-mcat');
+          if (val === 'all' || val === cat) {
+            (card as HTMLElement).style.display = 'flex';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  setupMateriFilter();
+  document.addEventListener('astro:page-load', setupMateriFilter);
+</script>

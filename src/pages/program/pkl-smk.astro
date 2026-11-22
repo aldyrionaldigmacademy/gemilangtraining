@@ -1,0 +1,529 @@
+---
+// src/pages/program/pkl-smk.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const alurPkl = [
+  {
+    step: "1",
+    badge: "TAHAP PENDAFTARAN",
+    title: "Konsultasi & Pengajuan Surat Permohonan PKL",
+    desc: "Siswa atau guru pembimbing menghubungi admin Gemilang Training via WhatsApp untuk menanyakan kuota jurusan serta mengirimkan surat permohonan PKL resmi dari sekolah.",
+    note: "Sertakan jumlah siswa, jurusan SMK, dan jadwal periode PKL."
+  },
+  {
+    step: "2",
+    badge: "TAHAP VERIFIKASI & PENEMPATAN",
+    title: "Obrolan Singkat & Pembagian Kelompok",
+    desc: "Sesi perkenalan bersama mentor untuk memetakan jurusan masing-masing siswa (RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, atau Multimedia).",
+    note: "Tidak harus sudah mahir, bimbingan dimulai dari dasar."
+  },
+  {
+    step: "3",
+    badge: "MINGGU 1",
+    title: "Pengenalan Aturan & Persiapan Perangkat",
+    desc: "Pengarahan tata tertib PKL, pengisian jurnal/buku kegiatan harian, serta instalasi aplikasi pendukung kerja di laptop masing-masing.",
+    note: "Siswa dianjurkan membawa laptop pribadi selama masa PKL."
+  },
+  {
+    step: "4",
+    badge: "BULAN 1",
+    title: "Praktik Pembuatan Website (Astro, Bootstrap & Blogspot)",
+    desc: "Siswa mulai praktik membuat halaman website responsif menggunakan Bootstrap 5, website cepat dengan Astro, serta mengelola portal berbasis Blogspot.",
+    note: null
+  },
+  {
+    step: "5",
+    badge: "BULAN 1 - 2",
+    title: "Optimasi SEO & Riset Kata Kunci",
+    desc: "Belajar cara agar website mudah muncul di pencarian Google melalui riset keyword, pengaturan meta tag, gambar ringan .webp, serta Google Search Console.",
+    note: "Diterapkan langsung pada website proyek tim."
+  },
+  {
+    step: "6",
+    badge: "BULAN 2 - 4",
+    title: "Penulisan Artikel SEO & Digital Marketing",
+    desc: "Praktik menulis artikel informatif maupun promosi yang terstruktur, membuat materi pemasaran digital lokal, serta mengelola konten media.",
+    note: null
+  },
+  {
+    step: "7",
+    badge: "RUTIN MINGGUAN",
+    title: "Evaluasi Proyek & Monitoring Guru Pembimbing",
+    desc: "Mentor mengecek hasil kerja siswa setiap minggu dan berkoordinasi dengan guru pembimbing dari sekolah saat kunjungan monitoring PKL.",
+    note: null
+  },
+  {
+    step: "8",
+    badge: "AKHIR PERIODE",
+    title: "Penilaian Akhir, Portofolio & Sertifikat PKL",
+    desc: "Pengisian nilai rapor/sertifikat PKL dari sekolah, rekap hasil karya website dan artikel yang sudah online, serta penerbitan sertifikat resmi kelulusan PKL.",
+    note: "Seluruh hasil karya menjadi bukti portofolio siswa setelah lulus SMK."
+  }
+];
+
+const materiPkl = [
+  {
+    category: "webdev",
+    badge: "Pembuatan Website",
+    title: "Pembuatan Website Modern dengan Astro",
+    desc: "Praktik membangun website multi-halaman berkecepatan tinggi dengan Clean URL tanpa .html hingga online.",
+    img: "/assets/img/informatika.webp",
+    link: "/program/website-astro"
+  },
+  {
+    category: "webdev",
+    badge: "Pembuatan Website",
+    title: "Desain & Koding Website Bootstrap 5",
+    desc: "Menyusun tampilan website responsif untuk HP dan laptop menggunakan Bootstrap 5 serta gambar .webp ringan.",
+    img: "/assets/img/rpl.webp",
+    link: "/program/website-bootstrap"
+  },
+  {
+    category: "webdev",
+    badge: "Pembuatan Website",
+    title: "Pembuatan & Pengelolaan Website Blogspot",
+    desc: "Membuat website profil usaha dan portal berita menggunakan Blogspot lengkap dengan navigasi dan custom domain.",
+    img: "/assets/img/tkj.webp",
+    link: "/program/website-blogspot"
+  },
+  {
+    category: "seo-marketing",
+    badge: "SEO & Digital Marketing",
+    title: "Optimasi SEO & Riset Kata Kunci",
+    desc: "Riset keyword populer, optimasi SEO On-Page, Open Graph, dan pemantauan indeks di Google Search Console.",
+    img: "/assets/img/digitalmarketing.webp",
+    link: "/program/optimasi-seo"
+  },
+  {
+    category: "seo-marketing",
+    badge: "SEO & Digital Marketing",
+    title: "Penulisan Artikel SEO & Promosi Online",
+    desc: "Menyusun artikel informatif, copywriting promosi produk, dan strategi pemasaran digital lokal.",
+    img: "/assets/img/bisnisdigital.webp",
+    link: "/program/pembuatan-artikel"
+  },
+  {
+    category: "seo-marketing",
+    badge: "SEO & Digital Marketing",
+    title: "Digital Marketing & Konten Visual Web",
+    desc: "Pembuatan materi promosi visual dan pengelolaan halaman penawaran untuk menarik calon pelanggan.",
+    img: "/assets/img/pemasaran.webp",
+    link: "/program/digital-marketing"
+  }
+];
+---
+
+<BaseLayout 
+  title="Program PKL Siswa SMK di Malang (RPL, TKJ, Digital Marketing, DKV, MM) - Gemilang Training" 
+  description="Informasi lengkap tempat PKL Siswa SMK di Gemilang Training Malang untuk jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia dengan bimbingan mentor praktisi."
+  keywords="tempat pkl smk malang, pkl smk rpl malang, pkl smk tkj malang, pkl digital marketing malang, pkl bisnis digital malang, pkl pemasaran malang, pkl dkv malang, pkl multimedia malang, info pkl malang"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <!-- 1. HERO HEADER BANNER -->
+  <section class="relative bg-tc-card/80 border-b border-tc-border overflow-hidden">
+    <div class="absolute inset-0 opacity-15">
+      <img src="/assets/img/beranda1.webp" alt="Suasana PKL Siswa SMK Gemilang Training Malang" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
+      <span class="inline-block text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-bg/90 px-4 py-1.5 rounded-full border border-tc-border mb-4">
+        Program Khusus Siswa SMK • Kota Malang
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        Program <span class="text-tc-accent">PKL Siswa SMK</span> di Malang
+      </h1>
+      <p class="text-tc-muted text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
+        Praktik Kerja Lapangan berbasis proyek nyata untuk siswa SMK jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. MAIN CONTENT (2 KOLOM: KONTEN KIRI + STICKY SIDEBAR KANAN) -->
+  <section class="py-14 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM KIRI (8 Kolom) -->
+      <div class="lg:col-span-8 space-y-16">
+        
+        <!-- A. Ringkasan Program PKL -->
+        <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Tentang Program</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            Ringkasan Program Praktik Kerja Lapangan (PKL)
+          </h2>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed mb-6">
+            Program PKL di <strong class="text-white">Gemilang Training Malang</strong> dirancang agar siswa SMK bisa mempraktikkan langsung ilmu dari sekolah ke dalam proyek digital sungguhan. Selama masa PKL, siswa dibimbing langkah demi langkah oleh mentor praktisi mulai dari pembuatan website (<strong class="text-white">Astro, Bootstrap, Blogspot</strong>), <strong class="text-white">Optimasi SEO</strong>, <strong class="text-white">Penulisan Artikel</strong>, hingga <strong class="text-white">Digital Marketing</strong>.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Dibimbing Dari Dasar</div>
+              <p class="text-xs text-tc-muted">Tidak perlu takut kalau belum mahir, mentor siap membimbing bertahap sampai paham.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Full Praktik Karya Nyata</div>
+              <p class="text-xs text-tc-muted">Langsung membuat website, artikel SEO, dan konten promosi, bukan disuruh fotokopi.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Kerja Sama Lintas Jurusan</div>
+              <p class="text-xs text-tc-muted">Siswa RPL & TKJ berkolaborasi langsung dengan teman-teman Marketing, DKV, & Multimedia.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Sertifikat & Portofolio</div>
+              <p class="text-xs text-tc-muted">Lulus PKL membawa sertifikat resmi, nilai sekolah lengkap, dan hasil karya yang online.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- B. Tabel Persyaratan & Dokumen Wajib -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Administrasi & Ketentuan</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+            Persyaratan & Dokumen Wajib PKL
+          </h2>
+          <p class="text-tc-muted text-sm mb-6">
+            Berikut kelengkapan administrasi dan ketentuan bagi siswa SMK yang akan mengikuti PKL di Gemilang Training:
+          </p>
+
+          <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr class="bg-tc-bg/90 border-b border-tc-border text-tc-accent text-xs uppercase tracking-wider">
+                    <th class="py-3.5 px-5 font-semibold">Persyaratan</th>
+                    <th class="py-3.5 px-5 font-semibold">Keterangan Lengkap</th>
+                    <th class="py-3.5 px-5 font-semibold text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 text-tc-muted">
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Surat Pengantar Sekolah</td>
+                    <td class="py-4 px-5">Surat permohonan resmi PKL yang ditandatangani oleh Kepala Sekolah / Kaprog / Pokja PKL</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Wajib</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Jurusan SMK Terkait</td>
+                    <td class="py-4 px-5">RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Wajib</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Durasi Periode PKL</td>
+                    <td class="py-4 px-5">3 hingga 6 bulan mengikuti kalender akademik sekolah masing-masing</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-bg text-white border border-tc-border text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Fleksibel</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Perangkat Laptop</td>
+                    <td class="py-4 px-5">Membawa laptop pribadi untuk praktik koding website, penulisan artikel, dan riset SEO</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Wajib</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Jurnal Kegiatan PKL</td>
+                    <td class="py-4 px-5">Buku jurnal harian / logbook dari sekolah untuk diparaf pembimbing lapangan</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-bg text-white border border-tc-border text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Sesuai Sekolah</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="text-xs text-tc-muted mt-3">
+            * Pengajuan PKL dapat dilakukan secara individu maupun berkelompok (1 tim berisi 2–5 siswa).
+          </p>
+        </div>
+
+        <!-- C. Kriteria Peserta PKL SMK (2 Kartu Utama Rumpun Jurusan) -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Rumpun Jurusan</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Syarat & Kategori Siswa SMK yang Diterima
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+              <div class="w-10 h-10 rounded-xl bg-tc-bg border border-tc-border text-tc-accent font-bold flex items-center justify-center mb-4">
+                01
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Rumpun Teknologi (RPL & TKJ)</h3>
+              <p class="text-xs md:text-sm text-tc-muted leading-relaxed">
+                Siswa SMK jurusan Rekayasa Perangkat Lunak (RPL) maupun Teknik Komputer & Jaringan (TKJ) yang ingin memperdalam pembuatan website dengan Astro, Bootstrap 5, dan Blogspot beserta optimasi SEO dasar.
+              </p>
+            </div>
+
+            <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+              <div class="w-10 h-10 rounded-xl bg-tc-bg border border-tc-border text-tc-accent font-bold flex items-center justify-center mb-4">
+                02
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Rumpun Bisnis & Kreatif (Marketing, DKV, MM)</h3>
+              <p class="text-xs md:text-sm text-tc-muted leading-relaxed">
+                Siswa SMK jurusan Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia yang fokus pada riset kata kunci SEO, penulisan artikel website, strategi promosi digital, dan pengelolaan konten.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- D. Timeline Alur Pelaksanaan PKL (Langkah 1 - 8) -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Alur Pelaksanaan</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">
+            Tahapan Kegiatan PKL Siswa SMK
+          </h2>
+
+          <div class="space-y-5 relative before:absolute before:left-5 before:top-4 before:bottom-4 before:w-0.5 before:bg-tc-border">
+            {alurPkl.map((item) => (
+              <div class="relative pl-14">
+                <!-- Bulatan Nomor -->
+                <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-tc-accent text-slate-950 font-extrabold text-sm flex items-center justify-center shadow-md">
+                  {item.step}
+                </div>
+
+                <!-- Card Tahapan -->
+                <div class="bg-tc-card p-6 rounded-2xl border border-tc-border hover:border-tc-accent/60 transition-colors">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider font-semibold">
+                      {item.badge}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p class="text-sm text-tc-muted leading-relaxed">{item.desc}</p>
+
+                  {item.note && (
+                    <div class="mt-4 bg-tc-bg/90 border border-tc-border/80 rounded-xl px-4 py-2.5 text-xs text-tc-accent flex items-center gap-2">
+                      <span class="font-bold">Catatan:</span>
+                      <span class="text-tc-muted">{item.note}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- E. FAQ Khusus Siswa SMK -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Tanya Jawab</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Pertanyaan Umum Siswa PKL
+          </h2>
+
+          <div class="space-y-3">
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah sekolah bisa mengajukan PKL untuk beberapa siswa sekaligus?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Bisa. Pihak sekolah atau kelompok siswa dapat mengajukan surat permohonan PKL untuk tim berisi beberapa siswa sekaligus sesuai kuota gelombang yang tersedia.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah siswa SMK yang belum bisa koding tetap boleh mendaftar?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Sangat boleh. Di Gemilang Training, materi diajarkan secara bertahap mulai dari pengenalan dasar hingga siswa mampu membuat website dengan Bootstrap/Astro/Blogspot maupun menulis artikel SEO sendiri.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana sistem monitoring guru pembimbing dari sekolah?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Kami terbuka menerima kunjungan monitoring dari guru pembimbing sekolah serta membantu pengisian jurnal kegiatan harian, presensi, hingga lembar penilaian akhir PKL.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah ada biaya pendaftaran untuk mengikuti PKL di Gemilang Training?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Untuk informasi kuota gelombang terbaru dan ketentuan administrasi sekolah, silakan konsultasikan langsung dengan admin kami melalui tombol WhatsApp di halaman ini.
+              </p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KOLOM KANAN: STICKY SIDEBAR (4 Kolom) -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+        
+        <!-- Card 1: Pendaftaran Siswa SMK -->
+        <div class="bg-tc-card p-6 rounded-2xl border border-tc-border shadow-xl">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Kuota PKL SMK</span>
+          <h3 class="text-xl font-bold text-white mb-2">Daftar PKL Siswa SMK</h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-5">
+            Tanyakan ketersediaan kuota PKL untuk jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, atau Multimedia.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20siswa%20SMK%20ingin%20mendaftar%20Program%20PKL." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-sm py-3.5 rounded-xl transition-all shadow-md hover:scale-[1.02]"
+          >
+            Ajukan PKL via WhatsApp &rarr;
+          </a>
+          <p class="text-[11px] text-tc-muted text-center mt-3">
+            Melayani pengajuan individu maupun kelompok sekolah
+          </p>
+        </div>
+
+        <!-- Card 2: Card Panduan Alur Pendaftaran -->
+        <div class="bg-gradient-to-br from-tc-card to-tc-bg p-6 rounded-2xl border border-tc-accent/40 shadow-xl">
+          <h3 class="text-lg font-bold text-white mb-2">Panduan Surat Pengantar SMK</h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-5">
+            Sudah menyiapkan surat permohonan PKL dari sekolah? Lihat langkah-langkah pengajuannya di halaman alur pendaftaran.
+          </p>
+          <a 
+            href="/alur-pendaftaran?jalur=smk" 
+            class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent font-semibold text-xs py-3 rounded-xl transition-all"
+          >
+            Lihat Alur Pendaftaran PKL SMK &rarr;
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- 3. SPESIALISASI MATERI PKL SMK -->
+  <section class="py-20 bg-tc-card/40 border-y border-tc-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Kurikulum Praktik SMK</span>
+          <h2 class="text-2xl md:text-4xl font-extrabold text-white">
+            Materi Praktik PKL Siswa SMK
+          </h2>
+        </div>
+        <p class="text-tc-muted text-sm max-w-md">
+          Materi praktik yang dipelajari selama masa PKL sesuai kebutuhan keahlian masing-masing jurusan SMK.
+        </p>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap gap-2.5 mb-8">
+        <button data-smkfilter="all" class="smkfilter-btn px-4 py-2 rounded-xl text-xs font-bold bg-tc-accent text-slate-950 transition-all cursor-pointer">
+          Semua Materi
+        </button>
+        <button data-smkfilter="webdev" class="smkfilter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-tc-card border border-tc-border text-tc-muted hover:text-white transition-all cursor-pointer">
+          Pembuatan Website (Astro, Bootstrap, Blogspot)
+        </button>
+        <button data-smkfilter="seo-marketing" class="smkfilter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-tc-card border border-tc-border text-tc-muted hover:text-white transition-all cursor-pointer">
+          Optimasi SEO, Artikel & Digital Marketing
+        </button>
+      </div>
+
+      <!-- Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {materiPkl.map((item) => (
+          <div 
+            class="smk-card bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group"
+            data-smkcat={item.category}
+          >
+            <div>
+              <div class="h-44 overflow-hidden relative border-b border-tc-border/60">
+                <img src={item.img} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full">
+                  {item.badge}
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p class="text-tc-muted text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+            <div class="px-6 pb-5 pt-3 border-t border-tc-border/60 flex items-center justify-between">
+              <span class="text-xs font-semibold text-tc-muted">Detail Materi</span>
+              <a href={item.link} class="w-8 h-8 rounded-full bg-tc-bg border border-tc-border group-hover:bg-tc-accent group-hover:text-slate-950 text-tc-accent flex items-center justify-center transition-all font-bold text-sm">
+                &rarr;
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/program" class="inline-flex items-center gap-2 bg-tc-card hover:border-tc-accent border border-tc-border text-white text-xs font-semibold px-6 py-3 rounded-xl transition-all">
+          Lihat Semua Program & Materi &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CTA BANNER BAWAH -->
+  <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-tc-card border border-tc-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="max-w-xl text-center md:text-left">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3">
+          Siap Mengikuti PKL SMK di Gemilang Training?
+        </h2>
+        <p class="text-tc-muted text-sm md:text-base">
+          Hubungi admin kami sekarang untuk menanyakan jadwal gelombang PKL dan mulai belajar membuat karya digital nyatamu.
+        </p>
+      </div>
+      <a 
+        href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20Program%20PKL%20Siswa%20SMK." 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:scale-105 shrink-0"
+      >
+        Hubungi Admin Sekarang &rarr;
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupSmkFilter() {
+    const btns = document.querySelectorAll('.smkfilter-btn');
+    const cards = document.querySelectorAll('.smk-card');
+    if (!btns.length || !cards.length) return;
+
+    btns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const val = btn.getAttribute('data-smkfilter') || 'all';
+
+        btns.forEach((b) => {
+          b.classList.remove('bg-tc-accent', 'text-slate-950', 'font-bold');
+          b.classList.add('bg-tc-card', 'border', 'border-tc-border', 'text-tc-muted', 'font-semibold');
+        });
+
+        btn.classList.add('bg-tc-accent', 'text-slate-950', 'font-bold');
+        btn.classList.remove('bg-tc-card', 'border', 'border-tc-border', 'text-tc-muted', 'font-semibold');
+
+        cards.forEach((card) => {
+          const cat = card.getAttribute('data-smkcat');
+          if (val === 'all' || val === cat) {
+            (card as HTMLElement).style.display = 'flex';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  setupSmkFilter();
+  document.addEventListener('astro:page-load', setupSmkFilter);
+</script>
