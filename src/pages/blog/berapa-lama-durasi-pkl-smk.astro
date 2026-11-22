@@ -1,0 +1,552 @@
+---
+// src/pages/blog/berapa-lama-durasi-pkl-smk.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Berapa Lama PKL SMK? Durasi Menurut Panduan Kemendikbud dan Cara Menghitungnya";
+const metaTitle = "Berapa Lama PKL SMK? Durasi Menurut Panduan Kemendikbud dan Cara Menghitungnya";
+const pageDesc = "Berapa lama durasi PKL SMK? Kelas XII minimal 16 minggu (736 JP), SMK 4 tahun 10 bulan. Cek hitungannya, lalu daftar PKL SMK lewat Info Magang Malang.";
+const publishDate = "2026-11-21";
+const publishIsoDate = "2026-11-21T16:00:00+07:00";
+const pageSlug = "/blog/berapa-lama-durasi-pkl-smk";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/durasi-PKL-SMK-3.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/Siswa-SMK-PKL-di-Malang.webp";
+const authorName = "Yolanda Deva Apriliana Putri";
+const keywordsList = "berapa lama durasi pkl smk, berapa bulan pkl smk, pkl smk kelas berapa, durasi pkl kurikulum merdeka, perbedaan pkl smk 3 tahun dan 4 tahun, cara menghitung jp pkl smk, tempat pkl smk malang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Berapa Lama Durasi PKL SMK Sesuai Kemendikbud 2026",
+      "description": pageDesc,
+      "inLanguage": "id-ID",
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "image": [ogImageUrl, secondImageUrl],
+      "author": {
+        "@type": "Person",
+        "name": authorName,
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Info Magang Malang",
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "about": "Durasi PKL SMK Kurikulum Merdeka",
+      "keywords": keywordsList
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Berapa bulan PKL SMK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PKL SMK program 3 tahun berlangsung minimal satu semester atau 16 minggu efektif, setara sekitar 4 bulan kalender, di kelas XII. SMK program 4 tahun menjalani PKL minimal 10 bulan di kelas XIII. Di industri, durasi penempatan umumnya 3 sampai 6 bulan mengikuti kalender akademik sekolah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "PKL SMK kelas berapa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Panduan Kemendikbudristek menempatkan PKL di kelas XII untuk SMK program 3 tahun dan kelas XIII untuk SMK program 4 tahun. Sebagian SMK di Malang menjadwalkan PKL mulai kelas XI sesuai kalender akademik, sehingga siswa perlu memeriksa jadwal resmi sekolah masing-masing sebelum mendaftar ke tempat PKL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa bedanya PKL SMK 3 tahun dan 4 tahun?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SMK program 3 tahun melaksanakan PKL di kelas XII selama minimal 16 minggu efektif (736 JP). SMK program 4 tahun melaksanakannya di kelas XIII selama minimal 10 bulan (1.216 JP). Perbedaan utamanya ada pada kelas pelaksanaan, lama waktu, dan total jam pelajaran yang wajib dipenuhi siswa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa total JP minimal untuk PKL SMK di Kurikulum Merdeka?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Total JP minimal PKL pada Kurikulum Merdeka adalah 736 JP untuk SMK program 3 tahun dan 1.216 JP untuk SMK program 4 tahun, menurut Panduan PKL sebagai Mata Pelajaran dari Kemendikbudristek. Sebagian dokumen sekolah mencantumkan angka berbeda, sehingga sekolah perlu memastikan edisi panduan yang dipakai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara menghitung 736 JP ke dalam minggu atau bulan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bagi total JP dengan jumlah JP per minggu. Untuk SMK 3 tahun, 736 JP dibagi 46 JP per minggu menghasilkan 16 minggu, atau sekitar 3,7 bulan jika dibagi 4,3 minggu per bulan. Hasil ini dibulatkan menjadi 4 bulan kalender, di luar waktu pembekalan dan asesmen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah PKL SMK bisa dilaksanakan di kelas XI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PKL SMK bisa dilaksanakan di kelas XI jika sekolah menetapkannya dalam kalender akademik, karena sebagian SMK di Malang menjadwalkan PKL lebih awal. Ketentuan Kemendikbudristek menempatkan PKL di kelas XII (program 3 tahun) dan kelas XIII (program 4 tahun), sehingga siswa wajib memastikan jadwal ke guru koordinator PKL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana jika kalender sekolah berbeda dari ketentuan standar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jika kalender akademik sekolah berbeda dari ketentuan standar, ikuti kalender sekolah dan pastikan total durasi serta JP tetap memenuhi batas minimal panduan. Guru koordinator PKL menyesuaikan tanggal mulai, tanggal selesai, dan penempatan industri, sehingga siswa hanya perlu mengonfirmasi jadwal sebelum mendaftar."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={metaTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/durasi-PKL-SMK-3.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="durasi PKL SMK 3 tahun dan 4 tahun menurut panduan Kemendikbud" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Durasi & JP" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Durasi & JP</span>
+            <time datetime={publishIsoDate}>21 November 2026 • 16:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/durasi-PKL-SMK-3.webp" 
+            alt="durasi PKL SMK 3 tahun dan 4 tahun menurut panduan Kemendikbud" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Durasi PKL SMK 3 tahun dan 4 tahun menurut panduan Kemendikbud.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#berapa-bulan" class="hover:text-tc-accent transition-colors">1. Berapa Bulan PKL SMK Menurut Aturan Terbaru?</a></li>
+              <li><a href="#ketentuan-kemendikbud" class="hover:text-tc-accent transition-colors">2. Apa Ketentuan Durasi PKL Menurut Panduan Kemendikbud?</a></li>
+              <li><a href="#kelas-berapa" class="hover:text-tc-accent transition-colors">3. PKL SMK Kelas Berapa dan Apakah Bisa di Kelas XI?</a></li>
+              <li><a href="#hitung-jp" class="hover:text-tc-accent transition-colors">4. Bagaimana Cara Menghitung JP PKL SMK ke Minggu dan Bulan?</a></li>
+              <li><a href="#kalender-sekolah" class="hover:text-tc-accent transition-colors">5. Berapa Lama Durasi PKL SMK di Industri Kalau Kalender Sekolah Berbeda?</a></li>
+              <li><a href="#alur-daftar-smk" class="hover:text-tc-accent transition-colors">6. Bagaimana Syarat dan Alur Mendaftar PKL SMK di Malang?</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">7. FAQ Seputar Durasi PKL SMK</a></li>
+              <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">8. Kesimpulan dan Langkah Selanjutnya</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+            Durasi PKL SMK program 3 tahun minimal satu semester atau 16 minggu efektif (736 JP) di kelas XII, sedangkan SMK 4 tahun minimal 10 bulan.
+          </div>
+
+          <p>
+            Berapa lama durasi PKL SMK ditentukan oleh Panduan Praktik Kerja Lapangan sebagai Mata Pelajaran dalam Implementasi Kurikulum Merdeka yang diterbitkan Kemendikbudristek. Panduan tersebut mengatur batas minimal waktu dan jam pelajaran (JP), sehingga sekolah, industri, dan siswa memakai acuan yang sama.
+          </p>
+
+          <section id="berapa-bulan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Berapa Bulan PKL SMK Menurut Aturan Terbaru?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              PKL SMK 3 tahun minimal 16 minggu efektif (sekitar 4 bulan), SMK 4 tahun minimal 10 bulan, dengan praktik industri umumnya 3 sampai 6 bulan.
+            </div>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>SMK program 3 tahun:</strong> dilaksanakan di kelas XII, minimal 1 semester atau 16 minggu efektif, setara 736 JP.</li>
+              <li><strong>SMK program 4 tahun:</strong> dilaksanakan di kelas XIII, minimal 10 bulan, setara 1.216 JP.</li>
+              <li><strong>Praktik di industri:</strong> penempatan siswa umumnya berlangsung 3 sampai 6 bulan dan menyesuaikan kalender akademik sekolah.</li>
+            </ul>
+            <p>
+              Durasi penempatan di industri bisa lebih pendek dari satu semester penuh karena mata pelajaran PKL dilaksanakan di satuan pendidikan dan dunia kerja. Pembekalan, bimbingan, dan asesmen berlangsung di sekolah, sedangkan praktik berlangsung di perusahaan atau lembaga mitra.
+            </p>
+          </section>
+
+          <section id="ketentuan-kemendikbud" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Ketentuan Durasi PKL Menurut Panduan Kemendikbud?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Kemendikbudristek menetapkan PKL sebagai mata pelajaran wajib SMK dengan minimal 736 JP untuk program 3 tahun dan 1.216 JP untuk program 4 tahun.
+            </div>
+            <h3 class="text-lg font-bold text-white pt-1">Aturan untuk SMK Program 3 Tahun</h3>
+            <p>
+              SMK program 3 tahun melaksanakan PKL di kelas XII dengan durasi minimal satu semester atau 16 minggu efektif. Beban belajar minimal tersebut setara 736 JP, atau 46 JP per minggu apabila dibagi rata selama 16 minggu.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Aturan untuk SMK Program 4 Tahun</h3>
+            <p>
+              SMK program 4 tahun melaksanakan PKL di kelas XIII dengan durasi minimal 10 bulan. Beban belajar minimal tersebut setara 1.216 JP, sehingga PKL pada program 4 tahun jauh lebih panjang daripada program 3 tahun.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Perbedaan PKL SMK 3 Tahun dan 4 Tahun</h3>
+            <div class="overflow-x-auto rounded-2xl border border-tc-border bg-tc-bg">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="border-b border-tc-border bg-tc-card/80 text-white">
+                    <th class="p-3.5 font-bold">Aspek</th>
+                    <th class="p-3.5 font-bold text-tc-accent">SMK Program 3 Tahun</th>
+                    <th class="p-3.5 font-bold text-tc-accent">SMK Program 4 Tahun</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Kelas pelaksanaan</td>
+                    <td class="p-3.5">Kelas XII</td>
+                    <td class="p-3.5">Kelas XIII</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Durasi minimal</td>
+                    <td class="p-3.5">1 semester atau 16 minggu efektif</td>
+                    <td class="p-3.5">10 bulan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Total JP minimal</td>
+                    <td class="p-3.5">736 JP</td>
+                    <td class="p-3.5">1.216 JP</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Perkiraan kalender</td>
+                    <td class="p-3.5">Sekitar 4 bulan</td>
+                    <td class="p-3.5">Sekitar 10 bulan</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Sebagian dokumen sekolah mencantumkan angka JP yang berbeda karena perbedaan edisi panduan dan asumsi jumlah minggu efektif. Angka di tabel mengikuti Panduan PKL sebagai Mata Pelajaran dari Kemendikbudristek, dan sekolah tetap menjadi pihak yang menetapkan rincian akhir.
+            </p>
+          </section>
+
+          <section id="kelas-berapa" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">PKL SMK Kelas Berapa dan Apakah Bisa di Kelas XI?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Panduan Kemendikbudristek menempatkan PKL di kelas XII untuk SMK 3 tahun dan kelas XIII untuk SMK 4 tahun, meski sebagian sekolah menjadwalkan mulai kelas XI.
+            </div>
+            <p>
+              Pada SMK program 3 tahun, PKL berada di kelas XII. Pada SMK program 4 tahun, PKL berada di kelas XIII. Beberapa SMK di Malang tetap menjadwalkan PKL mulai kelas XI agar siswa mendapat waktu praktik lebih panjang atau agar penempatan industri lebih longgar. Siswa kelas X, XI, dan XII sebaiknya menanyakan jadwal PKL ke guru koordinator PKL sebelum menghubungi industri.
+            </p>
+          </section>
+
+          <section id="hitung-jp" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Cara Menghitung JP PKL SMK ke Minggu dan Bulan?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Bagi total JP dengan JP per minggu untuk jumlah minggu, lalu bagi 4,3 untuk bulan; 736 JP dibagi 46 JP per minggu menghasilkan 16 minggu.
+            </div>
+            <p>
+              Rumus konversinya sederhana: jumlah minggu sama dengan total JP dibagi JP per minggu, dan jumlah bulan sama dengan jumlah minggu dibagi 4,3 (rata-rata minggu dalam satu bulan kalender), dengan asumsi 1 JP sama dengan 45 menit.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Contoh Hitungan untuk SMK 3 Tahun (736 JP)</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>736 JP dibagi 46 JP per minggu menghasilkan 16 minggu.</li>
+              <li>16 minggu dibagi 4,3 menghasilkan sekitar 3,7 bulan, dibulatkan menjadi 4 bulan kalender.</li>
+              <li>46 JP dikali 45 menit menghasilkan sekitar 34,5 jam per minggu, setara hari kerja penuh sekitar 7 jam selama lima hari.</li>
+              <li>Satu semester penuh berkisar enam bulan kalender, dengan selisih dua bulan dipakai untuk pembekalan, libur, dan asesmen di sekolah.</li>
+            </ul>
+            <h3 class="text-lg font-bold text-white pt-1">Contoh Hitungan untuk SMK 4 Tahun (1.216 JP)</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>10 bulan dikali 4,3 menghasilkan sekitar 43 minggu kalender.</li>
+              <li>1.216 JP dibagi 43 minggu menghasilkan sekitar 28 JP per minggu, atau sekitar 21 jam per minggu.</li>
+              <li>Jika siswa bekerja 46 JP per minggu seperti pola SMK 3 tahun, 1.216 JP terpenuhi dalam sekitar 26 minggu, atau sekitar 6 bulan.</li>
+            </ul>
+            <p>
+              Panduan menyebut batas minimal 10 bulan dan 1.216 JP sebagai dua ukuran yang berbeda: ukuran waktu dan ukuran beban belajar. Sekolah bersama mitra industri merinci JP per minggu dalam rencana PKL.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/tempat-pkl-malang" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Tempat PKL Malang untuk Siswa SMK Sesuai Jurusanmu &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="kalender-sekolah" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Berapa Lama Durasi PKL SMK di Industri Kalau Kalender Sekolah Berbeda?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Durasi PKL di industri umumnya 3 sampai 6 bulan dan mengikuti kalender akademik sekolah, sehingga siswa wajib mencocokkan jadwal sekolah dengan ketentuan Kemendikbudristek.
+            </div>
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+              <img 
+                src="/assets/img/Siswa-SMK-PKL-di-Malang.webp" 
+                alt="Siswa SMK Malang di tempat PKL SMK dan durasi PKL di Info Magang Malang" 
+                class="w-full h-auto max-h-[360px] object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+                Siswa SMK Malang di tempat PKL SMK dan durasi PKL di Info Magang Malang.
+              </figcaption>
+            </figure>
+            <p>
+              Praktik penempatan PKL di industri, termasuk di Gemilang Training sebagai pengelola Info Magang Malang, umumnya berlangsung 3 sampai 6 bulan. Siswa SMK di Malang sebaiknya mengecek empat hal sebelum mendaftar: tanggal mulai dan selesai pada kalender sekolah, total JP PKL, kelas pelaksanaan, serta kebutuhan surat pengantar resmi. Jika ingin menghitung jarak dan biaya berangkat selama durasi tersebut, pelajari juga <a href="/blog/tempat-pkl-terdekat-malang" class="text-tc-accent underline hover:text-white">Tempat PKL Terdekat Malang untuk SMK dan Mahasiswa</a>.
+            </p>
+          </section>
+
+          <section id="alur-daftar-smk" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Syarat dan Alur Mendaftar PKL SMK di Malang?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Pendaftaran PKL SMK di Malang dimulai dari surat pengantar sekolah, pemilihan program sesuai jurusan, pengajuan berkas, hingga penerbitan surat balasan dari tempat PKL.
+            </div>
+            <p>
+              Info Magang Malang menyediakan program PKL SMK di Malang untuk jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia. Peserta belajar lewat proyek nyata dengan bimbingan mentor praktisi, dimulai dari dasar sehingga cocok bagi siswa yang baru pertama kali praktik kerja. Langkah pengajuan dijelaskan lengkap di <a href="/alur-pendaftaran-smk" class="text-tc-accent underline hover:text-white">halaman alur pendaftaran PKL SMK</a>, sedangkan daftar bidang tersedia di <a href="/program" class="text-tc-accent underline hover:text-white">halaman program PKL dan magang</a>.
+            </p>
+          </section>
+
+          <section id="kesimpulan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan dan Langkah Selanjutnya</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Durasi PKL SMK mengikuti panduan Kemendikbudristek dan kalender sekolah; setelah jadwal pasti, ajukan penempatan PKL lebih awal agar kuota terjamin.
+            </div>
+            <p>
+              Cek <a href="/program" class="text-tc-accent underline hover:text-white">program magang</a> dan <a href="/alur-pendaftaran-smk" class="text-tc-accent underline hover:text-white">alur pendaftaran khusus siswa SMK di Info Magang Malang</a> untuk mengamankan kuota PKL sesuai kalender sekolahmu. Tim kami melayani konsultasi pada hari Senin sampai Jumat pukul 08.00 sampai 17.00 WIB, atau hubungi <a href="/kontak" class="text-tc-accent underline hover:text-white">tim Info Magang Malang</a> dan kunjungi kantor di Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141.
+            </p>
+            <p class="text-xs text-tc-muted/90">
+              Sumber: Panduan Praktik Kerja Lapangan sebagai Mata Pelajaran dalam Implementasi Kurikulum Merdeka, Direktorat Jenderal Pendidikan Vokasi, Kemendikbudristek (edisi 2023 dan 2024, kurikulum.kemdikbud.go.id); praktik penempatan PKL Gemilang Training Malang.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            YD
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Menyusun panduan PKL dan magang berdasarkan pendampingan langsung siswa SMK dan mahasiswa di Malang, diverifikasi ke dokumen resmi Kemendikbudristek dan praktik penempatan di Gemilang Training.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-tc-card border border-amber-400/60 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Sesuaikan Durasi PKL SMK dengan Jadwal Sekolahmu</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Konsultasikan tanggal mulai, jumlah JP/minggu, dan ketersediaan kuota divisi SMK bersama admin resmi Gemilang Training.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20durasi%20dan%20pendaftaran%20PKL%20SMK." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Seputar Durasi PKL SMK</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa bulan PKL SMK?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                PKL SMK program 3 tahun berlangsung minimal satu semester atau 16 minggu efektif, setara sekitar 4 bulan kalender, di kelas XII. SMK program 4 tahun menjalani PKL minimal 10 bulan di kelas XIII. Di industri, durasi penempatan umumnya 3 sampai 6 bulan mengikuti kalender akademik sekolah.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>PKL SMK kelas berapa?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Panduan Kemendikbudristek menempatkan PKL di kelas XII untuk SMK program 3 tahun dan kelas XIII untuk SMK program 4 tahun. Sebagian SMK di Malang menjadwalkan PKL mulai kelas XI sesuai kalender akademik, sehingga siswa perlu memeriksa jadwal resmi sekolah masing-masing sebelum mendaftar ke tempat PKL.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa bedanya PKL SMK 3 tahun dan 4 tahun?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                SMK program 3 tahun melaksanakan PKL di kelas XII selama minimal 16 minggu efektif (736 JP). SMK program 4 tahun melaksanakannya di kelas XIII selama minimal 10 bulan (1.216 JP). Perbedaan utamanya ada pada kelas pelaksanaan, lama waktu, dan total jam pelajaran yang wajib dipenuhi siswa.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa total JP minimal untuk PKL SMK di Kurikulum Merdeka?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Total JP minimal PKL pada Kurikulum Merdeka adalah 736 JP untuk SMK program 3 tahun dan 1.216 JP untuk SMK program 4 tahun, menurut Panduan PKL sebagai Mata Pelajaran dari Kemendikbudristek. Sebagian dokumen sekolah mencantumkan angka berbeda, sehingga sekolah perlu memastikan edisi panduan yang dipakai.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana cara menghitung 736 JP ke dalam minggu atau bulan?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Bagi total JP dengan jumlah JP per minggu. Untuk SMK 3 tahun, 736 JP dibagi 46 JP per minggu menghasilkan 16 minggu, atau sekitar 3,7 bulan jika dibagi 4,3 minggu per bulan. Hasil ini dibulatkan menjadi 4 bulan kalender, di luar waktu pembekalan dan asesmen.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah PKL SMK bisa dilaksanakan di kelas XI?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                PKL SMK bisa dilaksanakan di kelas XI jika sekolah menetapkannya dalam kalender akademik, karena sebagian SMK di Malang menjadwalkan PKL lebih awal. Ketentuan Kemendikbudristek menempatkan PKL di kelas XII (program 3 tahun) dan kelas XIII (program 4 tahun), sehingga siswa wajib memastikan jadwal ke guru koordinator PKL.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana jika kalender sekolah berbeda dari ketentuan standar?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Jika kalender akademik sekolah berbeda dari ketentuan standar, ikuti kalender sekolah dan pastikan total durasi serta JP tetap memenuhi batas minimal panduan. Guru koordinator PKL menyesuaikan tanggal mulai, tanggal selesai, dan penempatan industri, sehingga siswa hanya perlu mengonfirmasi jadwal sebelum mendaftar.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Konsultasi Durasi PKL SMK</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Cocokkan jadwal PKL sekolah, target JP, dan kuota penempatan di Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20durasi%20dan%20pendaftaran%20PKL%20SMK." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA Admin Resmi
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/Siswa-SMK-memilih-tempat-PKL-Malang.webp" alt="Siswa SMK memilih tempat PKL Malang sesuai jurusan" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Jurusan & Seleksi</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/tempat-pkl-malang">
+                    Tempat PKL Malang untuk Siswa SMK Sesuai Jurusanmu
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/Paket-program-PKL.webp" alt="Infografis perbedaan pkl dan magang untuk siswa SMK dan mahasiswa di Malang" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Perbandingan Jalur</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/perbedaan-pkl-dan-magang">
+                    Perbedaan PKL dan Magang untuk Siswa dan Mahasiswa
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>

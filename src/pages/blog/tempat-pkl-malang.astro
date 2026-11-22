@@ -1,0 +1,650 @@
+---
+// src/pages/blog/tempat-pkl-malang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Tempat PKL Malang untuk Siswa SMK Sesuai Jurusanmu";
+const pageDesc = "Cari tempat PKL Malang sesuai jurusan SMK? Pelajari cara memilih, persiapan berkas, dan program PKL Gemilang. Cek kuota lalu daftar PKL sekarang juga!";
+const publishDate = "2026-11-21";
+const publishIsoDate = "2026-11-21T20:00:00+07:00";
+const pageSlug = "/blog/tempat-pkl-malang";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/Siswa-SMK-memilih-tempat-PKL-Malang.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/rekomendasi-tempat-PKL-Malang.webp";
+const authorName = "Yolanda Deva Apriliana Putri";
+const keywordsList = "tempat pkl malang, tempat pkl smk di malang, tempat magang smk malang sesuai jurusan, rekomendasi tempat pkl malang, cara mencari tempat pkl sendiri, persiapan sebelum pkl smk, tempat pkl jurusan rpl tkj dkv bdp malang, pendaftaran pkl malang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": pageTitle,
+      "description": pageDesc,
+      "mainEntityOfPage": pageUrl,
+      "image": [ogImageUrl, secondImageUrl],
+      "inLanguage": "id-ID",
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "author": {
+        "@type": "Person",
+        "name": authorName
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id/"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "name": "Cara mencari tempat PKL Malang sendiri sesuai jurusan SMK",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Lakukan asesmen awal",
+          "text": "Catat tiga kompetensi terkuat, satu bidang minat, dan satu kelemahan yang ingin diperbaiki."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Uji kesesuaian konsentrasi",
+          "text": "Terapkan Uji Kecocokan Empat Lapis: kompetensi, tugas, pembimbing, dan bukti."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Cek rekam jejak mitra",
+          "text": "Periksa alamat usaha, portofolio proyek, dan sistem pembimbingan."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Ajukan surat permohonan PKL",
+          "text": "Siapkan CV dan portofolio, minta surat pengantar sekolah, lalu hubungi mitra industri."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Tempat PKL mana yang paling sesuai dengan jurusanku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tempat PKL yang sesuai adalah lokasi dengan tugas harian yang sama dengan konsentrasi keahlianmu. Siswa RPL dan TKJ memilih perusahaan IT, siswa DKV memilih studio kreatif, dan siswa bisnis digital memilih agensi pemasaran. Cocokkan pilihan dengan Uji Kecocokan Empat Lapis sebelum mengajukan surat permohonan ke sekolah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah bisa mendaftar PKL di Malang secara mandiri tanpa rombongan sekolah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa, selama sekolah menerbitkan surat pengantar dan guru pembimbing menyetujui penempatan. Ketentuan tiap sekolah berbeda, sehingga siswa perlu mengonfirmasi prosedur ke tim Pokja PKL terlebih dahulu. Pendaftaran individu ke mitra industri tetap memerlukan CV, portofolio, dan surat permohonan resmi dari sekolah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan waktu terbaik mulai mendaftar tempat PKL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Waktu terbaik mendaftar adalah dua sampai tiga bulan sebelum jadwal PKL sekolah dimulai. Rentang ini memberi ruang untuk asesmen awal, pembekalan, pelengkapan berkas, dan menunggu surat balasan mitra. Pendaftaran yang terlalu mepet berisiko kehabisan kuota pada divisi yang paling diminati siswa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi PKL SMK dalam Kurikulum Merdeka?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Panduan PKL Kurikulum Merdeka 2023 menyebut PKL pada SMK tiga tahun dapat berlangsung minimal enam bulan atau setara 792 jam pelajaran. Program Gemilang Training berdurasi 3 sampai 6 bulan dan disesuaikan dengan kalender PKL masing-masing sekolah, sehingga siswa wajib memastikan jadwal ke guru pembimbing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara meyakinkan orang tua untuk memilih tempat PKL di Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sampaikan data yang bisa diverifikasi: alamat lengkap, jam kerja, nama pembimbing, sistem pembimbingan, dan rencana tempat tinggal. Ajak orang tua membuka halaman kontak mitra beserta portofolio proyeknya. Informasi yang transparan membuat orang tua dapat menilai keamanan dan kualitas tempat PKL secara langsung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah peserta PKL mendapat sertifikat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Peserta PKL Gemilang Training yang menyelesaikan program dengan baik menerima sertifikat resmi kelulusan, penilaian dari mentor, dan bukti portofolio karya. Dokumen tersebut membantu siswa saat asesmen PKL di sekolah, saat melamar pekerjaan, maupun ketika melanjutkan studi ke jenjang berikutnya."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Tempat PKL Malang",
+          "item": pageUrl
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/Siswa-SMK-memilih-tempat-PKL-Malang.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Siswa SMK memilih tempat PKL Malang sesuai jurusan" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Jurusan & Seleksi" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Jurusan & Seleksi</span>
+            <time datetime={publishIsoDate}>21 November 2026 • 20:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar Setelah Paragraf Pembuka -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/Siswa-SMK-memilih-tempat-PKL-Malang.webp" 
+            alt="Siswa SMK memilih tempat PKL Malang sesuai jurusan" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Siswa SMK memilih tempat PKL Malang sesuai jurusan.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#rekomendasi-jurusan" class="hover:text-tc-accent transition-colors">1. Rekomendasi Tempat PKL Malang Sesuai Jurusan SMK</a></li>
+              <li><a href="#cari-sendiri" class="hover:text-tc-accent transition-colors">2. Bagaimana Cara Mencari Tempat PKL Malang Sendiri?</a></li>
+              <li><a href="#persiapan-pkl" class="hover:text-tc-accent transition-colors">3. Apa Persiapan Sebelum PKL SMK yang Wajib Dilakukan?</a></li>
+              <li><a href="#program-gemilang" class="hover:text-tc-accent transition-colors">4. Apa Saja Program PKL Gemilang Training di Malang?</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">5. Pertanyaan Umum tentang Tempat PKL Malang</a></li>
+              <li><a href="#langkah-selanjutnya" class="hover:text-tc-accent transition-colors">6. Langkah Selanjutnya Menentukan Tempat PKL Malang</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+            Tempat PKL Malang yang tepat adalah lokasi dengan pekerjaan sesuai konsentrasi keahlian siswa SMK, memiliki mentor praktisi, dan memberi proyek nyata yang bisa dinilai.
+          </div>
+
+          <p>
+            Memilih tempat PKL Malang yang linear dengan konsentrasi keahlian menentukan apakah capaian pembelajaran dan asesmen kompetensi siswa SMK terpenuhi. Panduan Praktik Kerja Lapangan Kemendikbudristek menetapkan bahwa penempatan harus selaras dengan konsentrasi keahlian dan didahului asesmen awal. Panduan ini merangkum jenis lokasi untuk tiap jurusan, cara mencari sendiri, persiapan wajib, dan program PKL Gemilang di Malang.
+          </p>
+
+          <section id="rekomendasi-jurusan" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Rekomendasi Tempat PKL Malang Sesuai Jurusan SMK</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Tempat PKL Malang mengikuti konsentrasi keahlian: bisnis digital ke agensi pemasaran, DKV ke studio kreatif, RPL dan TKJ ke perusahaan IT, MPLB ke kantor operasional.
+            </div>
+
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+              <img 
+                src="/assets/img/rekomendasi-tempat-PKL-Malang.webp" 
+                alt="rekomendasi tempat PKL Malang untuk jurusan RPL, TKJ, DKV, dan bisnis digital" 
+                class="w-full h-auto max-h-[360px] object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+                Rekomendasi tempat PKL Malang untuk jurusan RPL, TKJ, DKV, dan bisnis digital.
+              </figcaption>
+            </figure>
+
+            <div class="overflow-x-auto rounded-2xl border border-tc-border bg-tc-bg">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="border-b border-tc-border bg-tc-card/80 text-white">
+                    <th class="p-3.5 font-bold">Jurusan</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Jenis tempat PKL</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Kompetensi yang diasah</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Program tersedia</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Bisnis Digital dan Pemasaran</td>
+                    <td class="p-3.5">Agensi digital marketing, toko online, retail modern</td>
+                    <td class="p-3.5">Riset keyword, artikel promosi, kampanye penjualan</td>
+                    <td class="p-3.5">Bisnis Digital, Digital Marketing, Pemasaran</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">DKV dan Multimedia</td>
+                    <td class="p-3.5">Rumah produksi, agensi desain, studio konten</td>
+                    <td class="p-3.5">Desain grafis, produksi dan editing video</td>
+                    <td class="p-3.5">DKV dan Multimedia</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">RPL, TKJ, Informatika</td>
+                    <td class="p-3.5">Software house, web agency, penyedia layanan jaringan</td>
+                    <td class="p-3.5">Pengembangan web, hosting, konfigurasi DNS</td>
+                    <td class="p-3.5">RPL dan TKJ</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">MPLB dan Akuntansi</td>
+                    <td class="p-3.5">Kantor operasional bisnis, lembaga pelatihan, perusahaan jasa</td>
+                    <td class="p-3.5">Administrasi digital, pengarsipan, pencatatan transaksi</td>
+                    <td class="p-3.5">Konsultasi lewat halaman Kontak</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg font-bold text-white pt-1">Tempat PKL Jurusan Bisnis Digital dan Pemasaran (BDP)</h3>
+            <p>
+              Siswa BDP dan Pemasaran paling sesuai ditempatkan di agensi digital marketing, pengelola e-commerce, atau perusahaan retail modern. Tugas ideal mencakup riset keyword, penulisan artikel promosi, dan analisis kampanye. Gemilang Training menyediakan PKL Bisnis Digital, PKL Digital Marketing, dan PKL Pemasaran dengan porsi praktik inti 70 persen dan pengelolaan halaman web 30 persen.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Tempat PKL Jurusan DKV dan Multimedia</h3>
+            <p>
+              Siswa DKV dan Multimedia membutuhkan rumah produksi kreatif, agensi desain grafis, atau studio konten yang menghasilkan karya terukur. Program PKL DKV dan PKL Multimedia di Gemilang Training mewajibkan produksi video dalam tiga kategori, yaitu promosi, edukasi, dan jurnalistik, sehingga portofolio siswa langsung terisi.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Tempat PKL Jurusan RPL, TKJ, dan Informatika</h3>
+            <p>
+              Siswa RPL dan TKJ cocok di software house, web agency, atau perusahaan layanan IT dan jaringan. Program PKL RPL berfokus pada website dengan Astro, Bootstrap 5, dan WordPress, sedangkan PKL TKJ menekankan setup hosting WordPress, deployment ke Vercel, dan konfigurasi DNS.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Tempat PKL Jurusan MPLB dan Akuntansi</h3>
+            <p>
+              Siswa MPLB dan Akuntansi sebaiknya memilih kantor operasional bisnis, lembaga pelatihan, atau perusahaan jasa dengan tugas administrasi, pengarsipan, dan pencatatan. Program Gemilang Training saat ini mencakup tujuh jurusan digital, sehingga kecocokan kompetensi administrasi perlu dikonfirmasi lewat <a href="/kontak" class="text-tc-accent underline hover:text-white">halaman Kontak</a> sebelum mendaftar.
+            </p>
+          </section>
+
+          <section id="cari-sendiri" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Cara Mencari Tempat PKL Malang Sendiri?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Cari tempat PKL sendiri lewat empat langkah: asesmen kompetensi, uji kesesuaian konsentrasi, verifikasi rekam jejak mitra industri, lalu pengajuan surat permohonan resmi dari sekolah.
+            </div>
+            <h3 class="text-lg font-bold text-white pt-1">Melakukan Asesmen Awal Sesuai Kompetensi dan Minat</h3>
+            <p>
+              Kemendikbudristek mengatur asesmen awal untuk menentukan tempat PKL berdasarkan tingkat kompetensi dan minat siswa. Siswa menuliskan tiga kompetensi terkuat, satu bidang yang diminati, dan satu kelemahan yang ingin diperbaiki.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Memastikan Kesesuaian Penempatan dengan Konsentrasi Keahlian</h3>
+            <p>
+              Info Magang Malang merangkum pengecekan kesesuaian ke dalam <strong>Uji Kecocokan Empat Lapis</strong>:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Lapis kompetensi:</strong> tugas PKL sama dengan capaian pembelajaran konsentrasi keahlian siswa.</li>
+              <li><strong>Lapis tugas:</strong> minimal 70 persen tugas harian berkaitan langsung dengan jurusan, mengacu pada skema silang 70:30 Gemilang Training.</li>
+              <li><strong>Lapis pembimbing:</strong> tersedia mentor atau pembimbing industri yang menguasai bidang siswa.</li>
+              <li><strong>Lapis bukti:</strong> tersedia keluaran yang bisa dinilai, misalnya website, artikel, video, atau konfigurasi jaringan.</li>
+            </ul>
+            <h3 class="text-lg font-bold text-white pt-1">Mengecek Rekam Jejak, Sistem Pembimbingan, dan Portofolio Industri</h3>
+            <p>
+              Siswa perlu memeriksa alamat usaha yang jelas, proyek yang pernah dikerjakan, dan sistem pembimbingan yang tertulis. Gemilang Training menampilkan proyek bersama Jawa Pos Radar Kediri, SMK PGRI 1 Malang (SKARIGA), dan panitia QRIS Run di halaman portofolio karya alumni.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Langkah Menghubungi Mitra Industri dan Mengajukan Surat Permohonan PKL</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Siapkan CV satu halaman dan portofolio sesuai jurusan.</li>
+              <li>Minta surat pengantar atau permohonan resmi dari sekolah.</li>
+              <li>Hubungi mitra industri melalui email atau kanal resmi, lalu sebutkan jurusan, durasi, dan periode PKL.</li>
+              <li>Tunggu surat balasan penerimaan sebelum melapor ke guru pembimbing.</li>
+            </ul>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/tempat-pkl-terdekat-malang" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Tempat PKL Terdekat Malang untuk SMK dan Mahasiswa &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="persiapan-pkl" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Persiapan Sebelum PKL SMK yang Wajib Dilakukan?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Persiapan sebelum PKL SMK mencakup tiga hal wajib: mengikuti pembekalan sekolah, melengkapi berkas administrasi, dan mendapat izin orang tua atas lokasi, tempat tinggal, serta keamanan.
+            </div>
+            <h3 class="text-lg font-bold text-white pt-1">Mengikuti Pembekalan Teknis dan Non-Teknis dari Sekolah</h3>
+            <p>
+              Pedoman pelaksanaan PKL SMK mewajibkan pembekalan sebelum keberangkatan yang meliputi aspek teknis, keselamatan kerja, dan etika budaya kerja industri. Menurut Panduan PKL Kurikulum Merdeka 2023, PKL pada SMK tiga tahun dapat berlangsung minimal enam bulan atau setara 792 jam pelajaran; untuk rincian hitungan JP dan minggu, baca juga <a href="/blog/berapa-lama-durasi-pkl-smk" class="text-tc-accent underline hover:text-white">Berapa Lama PKL SMK? Durasi Menurut Panduan Kemendikbud dan Cara Menghitungnya</a>.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Melengkapi Berkas Administrasi (Surat Pengantar, CV, Portofolio, Jurnal PKL)</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Surat pengantar:</strong> diterbitkan sekolah sebagai dasar permohonan resmi kepada mitra.</li>
+              <li><strong>CV:</strong> satu halaman berisi jurusan, keterampilan, dan kontak siswa.</li>
+              <li><strong>Portofolio:</strong> kumpulan karya sesuai konsentrasi, misalnya desain, artikel, atau tautan website.</li>
+              <li><strong>Jurnal PKL:</strong> catatan harian kegiatan dan capaian yang dipakai sebagai bahan asesmen.</li>
+              <li><strong>Surat persetujuan orang tua:</strong> bukti izin keluarga atas lokasi dan jadwal PKL.</li>
+            </ul>
+            <h3 class="text-lg font-bold text-white pt-1">Koordinasi dan Izin Orang Tua (Lokasi, Tempat Tinggal, dan Keamanan)</h3>
+            <p>
+              Orang tua lebih mudah memberi izin ketika siswa menyampaikan alamat lengkap, jam kerja, nama pembimbing, dan rencana tempat tinggal atau kos. Kantor Gemilang Training berlokasi di <a href="/kontak" class="text-tc-accent underline hover:text-white">Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</a>, dengan jam operasional Senin sampai Jumat pukul 08.00 sampai 17.00 WIB. Siswa dari luar kota dapat menanyakan pilihan pelaksanaan WFH, hybrid, atau onsite Malang agar biaya tempat tinggal sesuai kemampuan keluarga.
+            </p>
+          </section>
+
+          <section id="program-gemilang" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Program PKL Gemilang Training di Malang?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Gemilang Training menyediakan PKL SMK di Malang untuk RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia dengan mentor praktisi serta proyek nyata.
+            </div>
+            <h3 class="text-lg font-bold text-white pt-1">Rincian Divisi dan Kompetensi yang Dipelajari per Jurusan</h3>
+            <div class="overflow-x-auto rounded-2xl border border-tc-border bg-tc-bg">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="border-b border-tc-border bg-tc-card/80 text-white">
+                    <th class="p-3.5 font-bold">Program</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Fokus divisi</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Praktik inti (70%)</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Pendamping (30%)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">PKL RPL</td>
+                    <td class="p-3.5">Frontend dan fullstack web</td>
+                    <td class="p-3.5">Antarmuka responsif Astro, Bootstrap 5, WordPress, Blogspot</td>
+                    <td class="p-3.5">SEO</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">PKL TKJ</td>
+                    <td class="p-3.5">Network dan cloud</td>
+                    <td class="p-3.5">Hosting WordPress, deployment Astro ke Vercel, DNS</td>
+                    <td class="p-3.5">Konten</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Digital Marketing</td>
+                    <td class="p-3.5">SEO dan Answer Engine Optimization</td>
+                    <td class="p-3.5">Riset keyword dan artikel SEO on-page</td>
+                    <td class="p-3.5">Bootstrap dan Blogspot</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Bisnis Digital</td>
+                    <td class="p-3.5">Growth dan strategi berbasis data</td>
+                    <td class="p-3.5">Artikel promosi dan strategi marketing</td>
+                    <td class="p-3.5">Landing page Bootstrap</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Pemasaran</td>
+                    <td class="p-3.5">Local GEO tagging dan campaign</td>
+                    <td class="p-3.5">Pemetaan GEO lokasi usaha dan campaign jualan</td>
+                    <td class="p-3.5">Pengelolaan halaman web</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">PKL DKV</td>
+                    <td class="p-3.5">Visual dan video kreatif</td>
+                    <td class="p-3.5">Video promosi, edukasi, jurnalistik, dan grafis</td>
+                    <td class="p-3.5">Layout web</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">PKL Multimedia</td>
+                    <td class="p-3.5">Produksi video dan motion graphic</td>
+                    <td class="p-3.5">Editing video tiga kategori</td>
+                    <td class="p-3.5">Kelola media CMS</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg font-bold text-white pt-1">Keunggulan Program (Mentor Praktisi, Proyek Riil, Sertifikat Kompetensi)</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Proyek nyata:</strong> peserta membuat website, optimasi SEO, dan konten kreatif, bukan tugas administratif semata.</li>
+              <li><strong>Mentor praktisi:</strong> pembimbingan langkah demi langkah dari praktisi di bidangnya.</li>
+              <li><strong>Portofolio dan sertifikat:</strong> setiap lulusan membawa karya nyata dan sertifikat resmi kelulusan.</li>
+              <li><strong>Skema silang 70:30:</strong> kolaborasi rumpun teknologi dengan rumpun bisnis digital dan media kreatif.</li>
+            </ul>
+
+            <h3 class="text-lg font-bold text-white pt-1">Cara Daftar dan Kuota Penerimaan PKL</h3>
+            <p>
+              Pendaftaran PKL Malang di Gemilang Training dimulai dengan memilih program sesuai jurusan di <a href="/program" class="text-tc-accent underline hover:text-white">daftar program PKL sesuai jurusan</a>, membaca <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran PKL</a>, lalu mengecek kuota divisi melalui admin. Durasi program berkisar 3 sampai 6 bulan mengikuti kalender PKL sekolah. Siswa dapat langsung <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20daftar%20PKL%20SMK%20sesuai%20jurusan." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">daftar PKL lewat WhatsApp</a> atau <a href="/kontak" class="text-tc-accent underline hover:text-white">konsultasi penempatan PKL</a> bersama tim.
+            </p>
+          </section>
+
+          <section id="langkah-selanjutnya" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Langkah Selanjutnya Menentukan Tempat PKL Malang</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Pilih tempat PKL Malang yang sesuai jurusan, siapkan pembekalan dan berkas, lalu cek kuota divisi di Info Magang Malang untuk memulai pendaftaran PKL.
+            </div>
+            <p>
+              Tempat PKL yang selaras dengan konsentrasi keahlian membuat capaian pembelajaran, portofolio, dan sertifikat siswa SMK terpenuhi dalam satu program. Tentukan jurusan, lakukan Uji Kecocokan Empat Lapis, lalu lengkapi persiapan bersama sekolah dan orang tua.
+            </p>
+            <p>
+              Cek kuota dan pilih divisi PKL sesuai jurusanmu sekarang di <a href="/program" class="text-tc-accent underline hover:text-white">halaman Program PKL Info Magang Malang</a>, atau hubungi tim kami untuk <a href="/kontak" class="text-tc-accent underline hover:text-white">konsultasi penempatan PKL</a>. Siap mendaftar? <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20daftar%20PKL%20SMK%20sesuai%20jurusan." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">Daftar lewat WhatsApp</a>.
+            </p>
+            <p class="text-xs text-tc-muted/90">
+              Sumber rujukan: Panduan Praktik Kerja Lapangan sebagai Mata Pelajaran dalam Implementasi Kurikulum Merdeka, Kemendikbudristek 2023; Permendikbud No. 50 Tahun 2020 tentang Praktik Kerja Lapangan bagi Peserta Didik; halaman resmi Info Magang Malang.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            YD
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Mengolah panduan Kemendikbudristek tentang PKL SMK dan praktik pembimbingan siswa di Gemilang Training Malang dengan fokus pada penempatan sesuai konsentrasi keahlian dan penyusunan portofolio.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-tc-card border border-amber-400/60 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Cek Kuota Divisi PKL SMK Sesuai Jurusanmu</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Pastikan ketersediaan kuota RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, atau Multimedia sebelum mengajukan surat sekolah.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20daftar%20PKL%20SMK%20sesuai%20jurusan." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Daftar PKL Lewat WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">Pertanyaan Umum tentang Tempat PKL Malang</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Tempat PKL mana yang paling sesuai dengan jurusanku?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tempat PKL yang sesuai adalah lokasi dengan tugas harian yang sama dengan konsentrasi keahlianmu. Siswa RPL dan TKJ memilih perusahaan IT, siswa DKV memilih studio kreatif, dan siswa bisnis digital memilih agensi pemasaran. Cocokkan pilihan dengan Uji Kecocokan Empat Lapis sebelum mengajukan surat permohonan ke sekolah.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah bisa mendaftar PKL di Malang secara mandiri tanpa rombongan sekolah?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Bisa, selama sekolah menerbitkan surat pengantar dan guru pembimbing menyetujui penempatan. Ketentuan tiap sekolah berbeda, sehingga siswa perlu mengonfirmasi prosedur ke tim Pokja PKL terlebih dahulu. Pendaftaran individu ke mitra industri tetap memerlukan CV, portofolio, dan surat permohonan resmi dari sekolah.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Kapan waktu terbaik mulai mendaftar tempat PKL?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Waktu terbaik mendaftar adalah dua sampai tiga bulan sebelum jadwal PKL sekolah dimulai. Rentang ini memberi ruang untuk asesmen awal, pembekalan, pelengkapan berkas, dan menunggu surat balasan mitra. Pendaftaran yang terlalu mepet berisiko kehabisan kuota pada divisi yang paling diminati siswa.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa lama durasi PKL SMK dalam Kurikulum Merdeka?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Panduan PKL Kurikulum Merdeka 2023 menyebut PKL pada SMK tiga tahun dapat berlangsung minimal enam bulan atau setara 792 jam pelajaran. Program Gemilang Training berdurasi 3 sampai 6 bulan dan disesuaikan dengan kalender PKL masing-masing sekolah, sehingga siswa wajib memastikan jadwal ke guru pembimbing.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana cara meyakinkan orang tua untuk memilih tempat PKL di Malang?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Sampaikan data yang bisa diverifikasi: alamat lengkap, jam kerja, nama pembimbing, sistem pembimbingan, dan rencana tempat tinggal. Ajak orang tua membuka halaman kontak mitra beserta portofolio proyeknya. Informasi yang transparan membuat orang tua dapat menilai keamanan dan kualitas tempat PKL secara langsung.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah peserta PKL mendapat sertifikat?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Ya. Peserta PKL Gemilang Training yang menyelesaikan program dengan baik menerima sertifikat resmi kelulusan, penilaian dari mentor, dan bukti portofolio karya. Dokumen tersebut membantu siswa saat asesmen PKL di sekolah, saat melamar pekerjaan, maupun ketika melanjutkan studi ke jenjang berikutnya.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Cek Kuota PKL Sesuai Jurusan</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Konsultasikan kesesuaian konsentrasi keahlian dan kuota divisi SMK di Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20daftar%20PKL%20SMK%20sesuai%20jurusan." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA Admin Resmi
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/durasi-PKL-SMK-3.webp" alt="durasi PKL SMK 3 tahun dan 4 tahun menurut panduan Kemendikbud" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Durasi & JP</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/berapa-lama-durasi-pkl-smk">
+                    Berapa Lama PKL SMK? Durasi Menurut Panduan Kemendikbud dan Cara Menghitungnya
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/Paket-program-PKL.webp" alt="Infografis perbedaan pkl dan magang untuk siswa SMK dan mahasiswa di Malang" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Perbandingan Jalur</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/perbedaan-pkl-dan-magang">
+                    Perbedaan PKL dan Magang untuk Siswa dan Mahasiswa
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>

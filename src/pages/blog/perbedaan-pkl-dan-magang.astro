@@ -1,0 +1,573 @@
+---
+// src/pages/blog/perbedaan-pkl-dan-magang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Perbedaan PKL dan Magang untuk Siswa dan Mahasiswa";
+const pageDesc = "Pahami perbedaan PKL dan magang dari istilah, peserta, durasi, hingga uang saku. Buka paket program PKL dan magang di Malang lewat Info Magang Malang.";
+const publishDate = "2026-11-21";
+const publishIsoDate = "2026-11-21T11:00:00+07:00";
+const pageSlug = "/blog/perbedaan-pkl-dan-magang";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/Paket-program-PKL.webp";
+const authorName = "Yolanda Deva Apriliana Putri";
+const keywordsList = "perbedaan pkl dan magang, beda pkl dan magang, apa itu pkl, apa itu magang, perbedaan pkl dan prakerin, apakah pkl dibayar, durasi pkl smk, magang mahasiswa, aturan pkl dan magang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "headline": pageTitle,
+      "description": pageDesc,
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": pageUrl,
+      "url": pageUrl,
+      "image": ogImageUrl,
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "keywords": keywordsList,
+      "about": ["PKL", "Magang", "Prakerin"],
+      "author": {
+        "@type": "Person",
+        "name": authorName,
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa beda PKL dan magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PKL (Praktik Kerja Lapangan) diikuti siswa SMK dan berfokus menguji kompetensi teknis sesuai jurusan. Magang diikuti mahasiswa dan berfokus mengenalkan dunia kerja profesional. PKL dan magang sama-sama praktik di instansi mitra, tetapi berbeda pada peserta, tujuan, sistem penilaian, dan ketentuan uang saku."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah PKL dibayar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PKL tidak selalu dibayar. Pembayaran atau uang saku ditentukan kebijakan instansi mitra, sehingga sebagian tempat PKL memberi uang saku dan sebagian lain tidak. Siswa SMK sebaiknya menanyakan uang saku, biaya transportasi, dan sertifikat secara tertulis sebelum perjanjian PKL ditandatangani sekolah dan mitra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Adakah durasi baku nasional untuk PKL dan magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak ada durasi baku nasional untuk PKL maupun magang. Lama pelaksanaan mengikuti kebijakan sekolah atau kampus dan kesepakatan dengan instansi mitra. Rentang yang lazim adalah 3 sampai 6 bulan, sehingga siswa dan mahasiswa perlu mencocokkan durasi dengan panduan PKL atau magang dari lembaga pendidikannya."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan PKL, magang, dan prakerin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PKL dan prakerin (Praktik Kerja Industri) adalah dua nama untuk kegiatan yang sama, yaitu praktik kerja siswa SMK. Prakerin merupakan istilah lama yang masih dipakai penyedia lokal. Magang berbeda karena umumnya diikuti mahasiswa dan lebih mengarah pada pengenalan dunia kerja."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi PKL SMK dan magang mahasiswa pada umumnya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PKL SMK dan magang mahasiswa pada umumnya berlangsung 3 sampai 6 bulan, tetapi angka tersebut bukan aturan nasional. Info Magang Malang menyediakan durasi 3 sampai 6 bulan yang disesuaikan dengan kalender PKL SMK dan ketentuan magang resmi kampus masing-masing peserta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana alur pendaftaran PKL SMK dan magang mahasiswa di Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pilih program sesuai jurusan di halaman paket program, lalu ikuti alur pendaftaran SMK untuk siswa atau alur pendaftaran mahasiswa untuk mahasiswa. Pendaftar juga dapat berkonsultasi lewat chat admin via WhatsApp sebelum mengajukan surat pengantar dari sekolah atau kampus kepada instansi tujuan."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": pageTitle,
+          "item": pageUrl
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/Paket-program-PKL.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Infografis perbedaan pkl dan magang untuk siswa SMK dan mahasiswa di Malang" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Perbandingan Jalur" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Perbandingan Jalur</span>
+            <time datetime={publishIsoDate}>21 November 2026 • 11:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar Hero -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/Paket-program-PKL.webp" 
+            alt="Infografis perbedaan pkl dan magang untuk siswa SMK dan mahasiswa di Malang" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Infografis perbedaan PKL dan magang untuk siswa SMK dan mahasiswa di Malang.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#pengertian" class="hover:text-tc-accent transition-colors">1. Apa Pengertian PKL dan Magang?</a></li>
+              <li><a href="#tabel-perbedaan" class="hover:text-tc-accent transition-colors">2. Apa Saja Perbedaan PKL dan Magang dalam Tabel?</a></li>
+              <li><a href="#contoh-kasus" class="hover:text-tc-accent transition-colors">3. Seperti Apa Contoh Kasus Siswa SMK dan Mahasiswa?</a></li>
+              <li><a href="#prakerin" class="hover:text-tc-accent transition-colors">4. Apa Itu Prakerin dan Apakah Sama dengan PKL?</a></li>
+              <li><a href="#durasi-pembayaran" class="hover:text-tc-accent transition-colors">5. Bagaimana Aturan Durasi dan Pembayaran PKL dan Magang?</a></li>
+              <li><a href="#cara-memilih" class="hover:text-tc-accent transition-colors">6. Bagaimana Cara Memilih PKL atau Magang?</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">7. FAQ Seputar PKL dan Magang</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+            Perbedaan PKL dan magang terletak pada peserta dan tujuan. PKL diikuti siswa SMK untuk menguji kompetensi teknis, sedangkan magang diikuti mahasiswa untuk mengenal dunia kerja.
+          </div>
+
+          <p>
+            Panduan perbedaan PKL dan magang dari Info Magang Malang ini membantu siswa SMK, mahasiswa, guru pembimbing, dan orang tua memilih jalur praktik yang tepat. Menurut Pintarly, PKL menguji kompetensi teknis dan tidak selalu dibayar, sedangkan magang lebih mengarah pada pengenalan dunia kerja. Durasi PKL maupun magang tidak memiliki angka baku nasional; lama pelaksanaan mengikuti kebijakan sekolah atau kampus dan kesepakatan dengan instansi mitra.
+          </p>
+
+          <section id="pengertian" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Pengertian PKL dan Magang?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              PKL (Praktik Kerja Lapangan) adalah praktik kerja siswa SMK untuk menguji kompetensi teknis. Magang adalah pengalaman kerja yang mengenalkan mahasiswa pada dunia profesional.
+            </div>
+            <h3 class="text-lg font-bold text-white pt-1">Apa Itu PKL (Praktik Kerja Lapangan)?</h3>
+            <p>
+              PKL (Praktik Kerja Lapangan) adalah kegiatan praktik siswa SMK di instansi atau perusahaan mitra, dan menjadi bagian dari pembelajaran kejuruan. Siswa mengerjakan tugas yang berkaitan langsung dengan jurusannya, misalnya Rekayasa Perangkat Lunak (RPL), Teknik Komputer dan Jaringan (TKJ), atau Desain Komunikasi Visual (DKV). Karena fokus utamanya menguji kompetensi teknis, hasil PKL biasanya dinilai oleh guru pembimbing dari sekolah dan pembimbing dari tempat PKL.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Apa Itu Magang (Internship)?</h3>
+            <p>
+              Magang (internship) adalah program pengalaman kerja sementara yang mengenalkan peserta pada budaya kerja, alur proyek, dan ekspektasi dunia profesional. Peserta yang paling umum adalah mahasiswa. Orientasi magang lebih luas daripada PKL: mahasiswa belajar bekerja dalam tim, menerima brief, dan menyelesaikan tugas sesuai tenggat, bukan hanya diuji pada satu kompetensi teknis.
+            </p>
+          </section>
+
+          <section id="tabel-perbedaan" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Perbedaan PKL dan Magang dalam Tabel?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Perbedaan PKL dan magang mencakup istilah, peserta, tujuan, durasi, uang saku, dan penilaian. PKL menguji kompetensi siswa SMK, sedangkan magang mengenalkan mahasiswa pada dunia kerja.
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-tc-border bg-tc-bg">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="border-b border-tc-border bg-tc-card/80 text-white">
+                    <th class="p-3.5 font-bold">Aspek</th>
+                    <th class="p-3.5 font-bold text-tc-accent">PKL</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Magang</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Istilah</td>
+                    <td class="p-3.5">PKL (Praktik Kerja Lapangan), dahulu disebut prakerin (Praktik Kerja Industri)</td>
+                    <td class="p-3.5">Magang atau internship, di sebagian kampus disebut kerja praktik</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Peserta</td>
+                    <td class="p-3.5">Siswa SMK</td>
+                    <td class="p-3.5">Mahasiswa perguruan tinggi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Fokus dan tujuan</td>
+                    <td class="p-3.5">Menguji kompetensi teknis sesuai jurusan</td>
+                    <td class="p-3.5">Mengenalkan dunia kerja, budaya tim, dan alur profesional</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Durasi</td>
+                    <td class="p-3.5">Tidak ada angka baku nasional, umumnya 3 sampai 6 bulan mengikuti kalender PKL sekolah</td>
+                    <td class="p-3.5">Tidak ada angka baku nasional, umumnya 3 sampai 6 bulan mengikuti ketentuan kampus dan mitra</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Uang saku</td>
+                    <td class="p-3.5">Tidak selalu dibayar, ditentukan kebijakan instansi mitra</td>
+                    <td class="p-3.5">Bervariasi, ditentukan perjanjian dengan instansi mitra</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Sistem evaluasi</td>
+                    <td class="p-3.5">Guru pembimbing dan pembimbing tempat PKL, berupa laporan, nilai, dan sertifikat</td>
+                    <td class="p-3.5">Dosen pembimbing dan mentor mitra, berupa laporan, penilaian, dan sertifikat sesuai kampus</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              Selisih terbesar ada pada tujuan. PKL menjawab pertanyaan apakah siswa SMK menguasai kompetensi jurusannya, sedangkan magang menjawab pertanyaan apakah mahasiswa siap bekerja di lingkungan profesional.
+            </p>
+          </section>
+
+          <section id="contoh-kasus" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Seperti Apa Contoh Kasus Siswa SMK dan Mahasiswa?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Siswa SMK RPL menjalani PKL dengan membangun website untuk menguji kompetensi, sedangkan mahasiswa Informatika magang mengikuti alur proyek untuk mengenal dunia profesional.
+            </div>
+            <h3 class="text-lg font-bold text-white pt-1">Contoh Kasus PKL Siswa SMK</h3>
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+              <img 
+                src="/assets/img/Siswa-SMK-Malang.webp" 
+                alt="Siswa SMK jurusan RPL mengerjakan proyek website sebagai contoh perbedaan pkl dan magang" 
+                class="w-full h-auto max-h-[340px] object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+                Siswa SMK jurusan RPL mengerjakan proyek website sebagai contoh perbedaan PKL dan magang.
+              </figcaption>
+            </figure>
+            <p>
+              Ilustrasi ini disusun dari pola program PKL di Info Magang Malang (Gemilang Training). Seorang siswa SMK jurusan RPL menjalani PKL selama 3 sampai 6 bulan sesuai kalender sekolah, membangun antarmuka website responsif dengan Bootstrap 5 dan WordPress, lalu mempelajari SEO dasar. Skema porsi 70:30 membagi waktu menjadi 70 persen untuk praktik inti jurusan dan 30 persen untuk keterampilan pendukung. Hasil akhirnya berupa karya portofolio dan penilaian dari mentor serta guru pembimbing.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Contoh Kasus Magang Mahasiswa</h3>
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+              <img 
+                src="/assets/img/Mahasiswa-Informatika-magang-di-malang.webp" 
+                alt="Mahasiswa Informatika magang di Malang sebagai contoh perbedaan pkl dan magang" 
+                class="w-full h-auto max-h-[340px] object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+                Mahasiswa Informatika magang di Malang sebagai contoh perbedaan PKL dan magang.
+              </figcaption>
+            </figure>
+            <p>
+              Seorang mahasiswa Informatika menjalani magang pada tim yang mengerjakan proyek website, belajar menerima brief, membagi tugas, mengikuti review mentor, dan menyerahkan hasil sesuai tenggat, selain menguasai Astro Framework dan WordPress. Pengalaman alur kerja menjadi nilai utama magang, di samping hasil teknis.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/berapa-lama-durasi-pkl-smk" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Berapa Lama PKL SMK? Durasi Menurut Panduan Kemendikbud dan Cara Menghitungnya &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="prakerin" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu Prakerin dan Apakah Sama dengan PKL?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Prakerin (Praktik Kerja Industri) adalah istilah lama PKL dengan makna sama dan masih dipakai pada listing penyedia tempat PKL lokal di hasil pencarian.
+            </div>
+            <p>
+              Observasi hasil pencarian lokal Info Magang Malang pada November 2026 menunjukkan bahwa penyedia tempat PKL dan magang di Malang masih memakai kata prakerin pada judul listing. Orang tua dan siswa yang mencari perbedaan PKL dan prakerin sebenarnya membandingkan dua nama untuk kegiatan yang sama.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>PKL</strong> adalah nama resmi yang kini umum dipakai di SMK.</li>
+              <li><strong>Prakerin</strong> adalah nama lama PKL dengan arti yang sama.</li>
+              <li><strong>Magang</strong> adalah pengalaman kerja yang umumnya diikuti mahasiswa.</li>
+              <li><strong>Internship</strong> adalah padanan bahasa Inggris untuk magang.</li>
+              <li><strong>Kerja praktik</strong> adalah sebutan magang pada sebagian program studi di kampus.</li>
+            </ul>
+          </section>
+
+          <section id="durasi-pembayaran" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Aturan Durasi dan Pembayaran PKL dan Magang?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Tidak ada durasi baku nasional untuk PKL dan magang, dan PKL tidak selalu dibayar. Kedua ketentuan mengikuti kebijakan sekolah atau kampus serta instansi mitra.
+            </div>
+            <h3 class="text-lg font-bold text-white pt-1">Adakah Durasi Baku Nasional?</h3>
+            <p>
+              Tidak ada durasi baku nasional untuk PKL maupun magang. Lama pelaksanaan ditentukan sekolah atau kampus bersama instansi mitra, umumnya 3 sampai 6 bulan. Pintarly menyebut bahwa tidak ada ketentuan durasi tunggal yang berlaku nasional untuk PKL dan magang. Untuk hitungan detail JP dan minggu bagi siswa SMK, lihat <a href="/blog/berapa-lama-durasi-pkl-smk" class="text-tc-accent underline hover:text-white">panduan durasi PKL SMK</a>.
+            </p>
+            <h3 class="text-lg font-bold text-white pt-1">Apakah PKL Dibayar?</h3>
+            <p>
+              PKL tidak selalu dibayar. Sebagian instansi memberi uang saku dan sebagian tidak, sehingga ketentuan pembayaran perlu dipastikan sebelum perjanjian PKL ditandatangani. Sebelum menandatangani perjanjian, pastikan empat hal berikut tertulis jelas:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Ada atau tidaknya uang saku dan besarannya.</li>
+              <li>Biaya transportasi dan makan selama praktik.</li>
+              <li>Sertifikat dan bentuk penilaian akhir.</li>
+              <li>Jam kerja, sistem WFH, hybrid, atau onsite.</li>
+            </ul>
+          </section>
+
+          <section id="cara-memilih" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Cara Memilih PKL atau Magang?</h2>
+            <div class="bg-sky-950/50 border-l-4 border-sky-400 p-4 rounded-xl text-white font-medium">
+              Pilih PKL bila berstatus siswa SMK dan ingin menguji kompetensi jurusan. Pilih magang bila berstatus mahasiswa dan ingin mengenal dunia kerja profesional.
+            </div>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Jenjang</strong> – siswa SMK mengikuti PKL, mahasiswa mengikuti magang.</li>
+              <li><strong>Tujuan</strong> – menguji kompetensi teknis mengarah ke PKL, mengenal budaya kerja mengarah ke magang.</li>
+              <li><strong>Waktu</strong> – cocokkan dengan kalender PKL sekolah atau jadwal magang kampus.</li>
+              <li><strong>Pembayaran</strong> – tanyakan uang saku dan sertifikat sebelum memutuskan.</li>
+            </ul>
+            <p>
+              Info Magang Malang menyediakan 8 jalur program: Informatika, RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia. Seluruh jalur dapat dibandingkan pada <a href="/program" class="text-tc-accent underline hover:text-white">halaman paket program PKL dan magang</a>.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            YD
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Menyusun materi praktik berbasis proyek nyata untuk siswa SMK dan mahasiswa di Malang pada bidang pengembangan web, SEO, digital marketing, dan konten kreatif.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP (KOTAK ORANYE / ACCENT) -->
+        <div class="bg-gradient-to-r from-amber-500/20 via-orange-500/20 to-tc-card border border-amber-400/60 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Cek Paket Program PKL dan Magang di Info Magang Malang</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Pilih jalur sesuai jenjang dan jurusanmu di <a href="/program" class="text-tc-accent underline">paket program PKL dan magang</a>, atau konsultasikan langsung dengan admin kami di <a href="/kontak" class="text-tc-accent underline">Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</a>.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20memilih%20jalur%20PKL%20atau%20magang%20di%20Malang." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Seputar PKL dan Magang</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa beda PKL dan magang?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                PKL (Praktik Kerja Lapangan) diikuti siswa SMK dan berfokus menguji kompetensi teknis sesuai jurusan. Magang diikuti mahasiswa dan berfokus mengenalkan dunia kerja profesional. PKL dan magang sama-sama praktik di instansi mitra, tetapi berbeda pada peserta, tujuan, sistem penilaian, dan ketentuan uang saku.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah PKL dibayar?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                PKL tidak selalu dibayar. Pembayaran atau uang saku ditentukan kebijakan instansi mitra, sehingga sebagian tempat PKL memberi uang saku dan sebagian lain tidak. Siswa SMK sebaiknya menanyakan uang saku, biaya transportasi, dan sertifikat secara tertulis sebelum perjanjian PKL ditandatangani sekolah dan mitra.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Adakah durasi baku nasional untuk PKL dan magang?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak ada durasi baku nasional untuk PKL maupun magang. Lama pelaksanaan mengikuti kebijakan sekolah atau kampus dan kesepakatan dengan instansi mitra. Rentang yang lazim adalah 3 sampai 6 bulan, sehingga siswa dan mahasiswa perlu mencocokkan durasi dengan panduan PKL atau magang dari lembaga pendidikannya.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa perbedaan PKL, magang, dan prakerin?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                PKL dan prakerin (Praktik Kerja Industri) adalah dua nama untuk kegiatan yang sama, yaitu praktik kerja siswa SMK. Prakerin merupakan istilah lama yang masih dipakai penyedia lokal. Magang berbeda karena umumnya diikuti mahasiswa dan lebih mengarah pada pengenalan dunia kerja.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa lama durasi PKL SMK dan magang mahasiswa pada umumnya?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                PKL SMK dan magang mahasiswa pada umumnya berlangsung 3 sampai 6 bulan, tetapi angka tersebut bukan aturan nasional. Info Magang Malang menyediakan durasi 3 sampai 6 bulan yang disesuaikan dengan kalender PKL SMK dan ketentuan magang resmi kampus masing-masing peserta.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana alur pendaftaran PKL SMK dan magang mahasiswa di Malang?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Pilih program sesuai jurusan di halaman paket program, lalu ikuti alur pendaftaran SMK untuk siswa atau alur pendaftaran mahasiswa untuk mahasiswa. Pendaftar juga dapat berkonsultasi lewat chat admin via WhatsApp sebelum mengajukan surat pengantar dari sekolah atau kampus kepada instansi tujuan.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Konsultasi Jalur PKL & Magang</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Bandingkan jalur siswa SMK dan mahasiswa bersama admin di Mojolangu, Lowokwaru, Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20memilih%20jalur%20PKL%20atau%20magang%20di%20Malang." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA Admin Resmi
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/durasi-PKL-SMK-3.webp" alt="durasi PKL SMK 3 tahun dan 4 tahun menurut panduan Kemendikbud" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Durasi & JP</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/berapa-lama-durasi-pkl-smk">
+                    Berapa Lama PKL SMK? Durasi Menurut Panduan Kemendikbud dan Cara Menghitungnya
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/Siswa-SMK-PKL-di-Malang.webp" alt="Siswa SMK PKL di Malang kawasan Mojolangu Lowokwaru" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Lokasi & Transportasi</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/tempat-pkl-terdekat-malang">
+                    Tempat PKL Terdekat Malang untuk SMK dan Mahasiswa
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>
