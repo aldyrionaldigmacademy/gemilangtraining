@@ -42,6 +42,7 @@ Allow: /
 
 
 
-# Peta Situs Resmi TalentaCraft
+# Peta Situs Resmi Gemilang Training
 
-Sitemap: https://talentacraft.web.id/sitemap.xml
+Sitemap: https://gemilangtraining.web.id/sitemap-index.xml
+Sitemap: https://gemilangtraining.web.id/sitemap-0.xml
