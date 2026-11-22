@@ -1,0 +1,612 @@
+---
+// src/pages/blog/magang-mahasiswa-informatika-malang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Mahasiswa Informatika Malang Posisi Web Engineering";
+const pageDesc = "Panduan magang mahasiswa informatika Malang jalur Web Engineering: aktivitas, teknologi Astro dan Bootstrap 5, skill dasar, portofolio, dan alur pendaftaran.";
+const publishDate = "2026-11-20";
+const publishIsoDate = "2026-11-20T10:00:00+07:00";
+const pageSlug = "/blog/magang-mahasiswa-informatika-malang";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/magang-mahasiswa-informatika-malang-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/magang-mahasiswa-informatika-malang-2.webp";
+const authorName = "Tim Redaksi Gemilang Training";
+const keywordsList = "magang mahasiswa informatika malang, magang web engineering, tempat magang informatika malang, magang web developer malang, magang Astro Bootstrap, daftar magang Gemilang Training, magang sistem informasi malang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "keywords": keywordsList,
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "author": {
+        "@type": "Organization",
+        "name": authorName
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        ogImageUrl,
+        secondImageUrl
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah magang informatika di Malang harus dilakukan langsung di lokasi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gemilang Training menyediakan pelaksanaan onsite di Malang atau hybrid, tergantung kesepakatan jadwal dan ketentuan kampus. Peserta yang memilih datang langsung mendapat bimbingan tatap muka, sedangkan wawancara awal dapat dilakukan online lewat Google Meet bagi yang berada di luar kota."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah mahasiswa harus sudah mahir Astro sebelum mendaftar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak. Peserta tidak wajib mahir; yang terpenting siap belajar dan praktik. Di awal magang tersedia sesi pengenalan dan bimbingan bertahap dari mentor praktisi, mulai dari dasar hingga peserta mampu menerapkannya pada proyek nyata. Bekal HTML dan CSS tetap membantu mempercepat adaptasi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi magang yang tersedia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Durasinya fleksibel antara 3 dan 6 bulan, menyesuaikan kalender akademik dan ketentuan kampus masing-masing. Cocokkan tanggal mulai dan selesai magang dengan jadwal KRS agar tidak berbenturan dengan perkuliahan, lalu cantumkan tanggal tersebut pada surat pengantar kampus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bisakah mendaftar secara berkelompok?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. Pengajuan dapat dilakukan individu maupun kelompok dalam satu surat pengantar, menyesuaikan kuota bimbingan yang tersedia. Surat perlu mencantumkan NIM, program studi, jumlah mahasiswa, dan tanggal mulai magang agar pengecekan kuota berjalan lancar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah peserta mendapat bantuan logbook dan penilaian kampus?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Pembimbing lapangan mendampingi pengisian logbook kegiatan, evaluasi tengah dan akhir magang, serta penilaian dari kampus. Di akhir periode peserta menerima sertifikat resmi kelulusan magang beserta rekap karya yang dapat dilampirkan sebagai bukti kegiatan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Perangkat apa yang perlu disiapkan peserta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peserta wajib membawa laptop pribadi yang siap dipakai dan memiliki koneksi internet yang memadai. Pada hari pertama, perangkat disiapkan dengan VS Code, Git, dan browser tools, sehingga pastikan laptop mampu menjalankan aplikasi tersebut dengan lancar."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/magang-mahasiswa-informatika-malang-1.webp"
+  imageAlt="Mahasiswa mengikuti magang mahasiswa informatika Malang dengan praktik Web Engineering"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Mahasiswa mengikuti magang mahasiswa informatika Malang dengan praktik Web Engineering" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Artikel Pilar" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Artikel Pilar</span>
+            <time datetime={publishIsoDate}>20 November 2026 • 10:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/magang-informatika-semester-berapa-1.webp" 
+            alt="Mahasiswa mengikuti magang mahasiswa informatika Malang dengan praktik Web Engineering" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Mahasiswa mengikuti magang mahasiswa informatika Malang dengan praktik Web Engineering.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#gambaran-program" class="hover:text-tc-accent transition-colors">1. Gambaran Program Magang Mahasiswa Informatika di Malang</a></li>
+              <li><a href="#aktivitas-bidang" class="hover:text-tc-accent transition-colors">2. Aktivitas dan Bidang Pekerjaan dalam Jalur Web Engineering</a></li>
+              <li><a href="#teknologi-tools" class="hover:text-tc-accent transition-colors">3. Teknologi dan Tools yang Dipelajari</a></li>
+              <li><a href="#skill-dasar" class="hover:text-tc-accent transition-colors">4. Skill Dasar yang Perlu Disiapkan Mahasiswa</a></li>
+              <li><a href="#hasil-portofolio" class="hover:text-tc-accent transition-colors">5. Hasil Pembelajaran dan Portofolio yang Dapat Dikembangkan</a></li>
+              <li><a href="#cara-mendaftar" class="hover:text-tc-accent transition-colors">6. Cara Mendaftar Magang Informatika di Gemilang Training</a></li>
+              <li><a href="#mengenal-gemilang" class="hover:text-tc-accent transition-colors">7. Mengenal Gemilang Training dan Program yang Tersedia</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">8. FAQ Magang Mahasiswa Informatika Malang</a></li>
+              <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">9. Kesimpulan</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Magang mahasiswa informatika di Malang</strong> adalah praktik membangun website nyata bersama mentor praktisi, dengan jalur Web Engineering berfokus pada Astro, Bootstrap 5, dan SEO dasar.
+          </p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Jalur Web Engineering &amp; Architecture ditujukan bagi mahasiswa Informatika dan Sistem Informasi jenjang D3, D4, dan S1.</li>
+            <li>Komposisi belajarnya sekitar 70% pengembangan website dan 30% dasar-dasar SEO.</li>
+            <li>Teknologi yang dipraktikkan mencakup Astro Framework, Bootstrap 5, WordPress, Blogspot, gambar WebP, dan deployment ke Vercel.</li>
+            <li>Peserta tidak wajib mahir sejak awal, tetapi HTML, CSS, dan kemauan belajar Git sangat membantu.</li>
+            <li>Pendaftaran dimulai dari CV dan surat pengantar kampus, lalu diajukan ke admin lewat WhatsApp.</li>
+          </ul>
+          <p>
+            Mahasiswa informatika yang mencari tempat magang di Malang biasanya menghadapi tiga pertanyaan sekaligus: pekerjaan apa yang akan dikerjakan, keterampilan apa yang harus disiapkan, dan bagaimana prosedur pendaftarannya. Malang dikenal sebagai kota pelajar, sehingga pilihan tempat magang cukup beragam, dari perusahaan teknologi sampai lembaga pelatihan berbasis proyek.
+          </p>
+          <p>
+            Panduan ini membahas jalur Web Engineering, yaitu jalur magang yang berfokus pada pembangunan website modern. Anda akan melihat aktivitas yang dikerjakan, teknologi yang dipelajari, skill dasar yang perlu disiapkan, hasil yang bisa dibawa pulang, dan alur pendaftaran di Gemilang Training.
+          </p>
+
+          <section id="gambaran-program" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Gambaran Program Magang Mahasiswa Informatika di Malang</h2>
+            <p>
+              Program ini menempatkan mahasiswa pada proyek website sungguhan dengan bimbingan mentor, bukan sekadar tugas administratif, dan mendukung kebutuhan logbook serta penilaian kampus.
+            </p>
+            <p>
+              Magang informatika pada dasarnya adalah jembatan antara teori di kelas dan praktik di dunia kerja digital. Di Gemilang Training, jalur untuk mahasiswa Informatika dan Sistem Informasi disebut Web Engineering &amp; Architecture. Peserta dibimbing membangun website yang benar-benar tayang, mengoptimalkannya agar mudah ditemukan di mesin pencari, dan menulis konten yang terbit secara online.
+            </p>
+            <div class="overflow-x-auto rounded-2xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead class="bg-tc-bg text-white">
+                  <tr>
+                    <th class="p-3.5 border-b border-tc-border font-bold">Aspek</th>
+                    <th class="p-3.5 border-b border-tc-border font-bold">Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Sasaran peserta</td>
+                    <td class="p-3.5">Mahasiswa aktif jurusan Informatika / Sistem Informasi (D3, D4, S1)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Durasi</td>
+                    <td class="p-3.5">3 hingga 6 bulan, menyesuaikan kalender akademik kampus</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Sistem kerja</td>
+                    <td class="p-3.5">Onsite di Malang atau hybrid sesuai kesepakatan jadwal</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Fokus materi</td>
+                    <td class="p-3.5">Pembuatan website, SEO, dan penulisan artikel</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Perangkat</td>
+                    <td class="p-3.5">Laptop pribadi dan koneksi internet yang memadai</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Komposisi belajarnya sekitar 70% pengembangan website dan 30% dasar-dasar SEO. Perpaduan ini relevan karena website yang cepat dan rapi tetap kurang berguna jika tidak ditemukan pengguna.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/magang-mahasiswa-informatika-malang-2.webp" 
+              alt="Tools magang informatika Malang" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Tools magang informatika Malang pada laptop pengembangan proyek.
+            </figcaption>
+          </figure>
+
+          <section id="aktivitas-bidang" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Aktivitas dan Bidang Pekerjaan dalam Jalur Web Engineering</h2>
+            <p>
+              Peserta mengerjakan pembuatan halaman web, antarmuka responsif, pengelolaan Blogspot dan WordPress, optimasi SEO, serta penulisan artikel, lalu hasilnya dievaluasi mentor secara berkala.
+            </p>
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-white">Membangun dan Merapikan Website</h3>
+              <p>
+                Aktivitas inti adalah membangun website. Peserta menyusun tampilan responsif dengan Bootstrap 5, membuat website multi-halaman yang cepat dengan Astro Framework, dan mengelola website berbasis WordPress maupun Blogspot. Pada Blogspot, pekerjaan mencakup navigasi dan penggunaan domain khusus. Hasil akhirnya adalah website yang dapat diakses publik, bukan sekadar latihan di laptop.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-white">SEO Dasar pada Proyek Website</h3>
+              <p>
+                Bagian 30% dari program berisi optimasi mesin pencari yang diterapkan langsung pada proyek. Peserta belajar riset kata kunci, pengaturan meta tag dan Open Graph, serta pemantauan indeks halaman lewat Google Search Console.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-white">Penulisan Artikel dan Konten Digital</h3>
+              <p>
+                Peserta juga menyusun artikel informatif yang ramah mesin pencari, serta mengelola aset gambar berformat WebP agar halaman tetap ringan.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <h3 class="text-lg font-bold text-white">Evaluasi Bersama Mentor Praktisi</h3>
+              <p>
+                Setiap hasil pengerjaan diperiksa mentor praktisi, mulai dari struktur kode, kecepatan halaman (PageSpeed), sampai kualitas tulisan. Gambaran lengkapnya tersedia di halaman <a href="/program/magang-mahasiswa" class="text-tc-accent hover:underline">program magang mahasiswa</a>.
+              </p>
+            </div>
+          </section>
+
+          <section id="teknologi-tools" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Teknologi dan Tools yang Dipelajari</h2>
+            <p>
+              Teknologi utamanya meliputi Astro Framework, Bootstrap 5, HTML dan CSS, WordPress, Blogspot, gambar WebP, serta deployment ke Vercel untuk menayangkan website secara online.
+            </p>
+            <div class="overflow-x-auto rounded-2xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead class="bg-tc-bg text-white">
+                  <tr>
+                    <th class="p-3.5 border-b border-tc-border font-bold">Teknologi / Tools</th>
+                    <th class="p-3.5 border-b border-tc-border font-bold">Kegunaan dalam proyek</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">HTML dan CSS</td>
+                    <td class="p-3.5">Membentuk struktur dan tampilan dasar halaman</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Bootstrap 5</td>
+                    <td class="p-3.5">Membuat antarmuka responsif di ponsel dan laptop dengan komponen siap pakai</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Astro Framework</td>
+                    <td class="p-3.5">Membangun website multi-halaman yang cepat dengan Clean URL tanpa .html</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">WordPress</td>
+                    <td class="p-3.5">Mengelola website berbasis CMS</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Blogspot</td>
+                    <td class="p-3.5">Membuat portal informasi dan profil usaha lengkap dengan navigasi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Gambar WebP</td>
+                    <td class="p-3.5">Menjaga ukuran aset gambar tetap ringan agar halaman cepat dimuat</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Vercel</td>
+                    <td class="p-3.5">Mendeploy website sehingga dapat diakses secara online</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">VS Code dan Git</td>
+                    <td class="p-3.5">Menulis kode dan mengelola perubahan pekerjaan</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Urutan belajarnya biasanya dimulai dari tampilan dengan Bootstrap, lalu berlanjut ke Astro untuk halaman yang lebih terstruktur dan cepat. Teknologi terakhir yang dikuasai adalah proses deployment.
+            </p>
+          </section>
+
+          <section id="skill-dasar" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Skill Dasar yang Perlu Disiapkan Mahasiswa</h2>
+            <p>
+              Modal awal yang cukup adalah pemahaman HTML dan CSS, logika dasar pemrograman, kemauan belajar Git, dan kebiasaan membaca dokumentasi, tanpa harus mahir seluruh teknologi.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>HTML dan CSS dasar:</strong> Memahami tag, struktur halaman, selector, dan layout sederhana.</li>
+              <li><strong>Logika dasar pemrograman:</strong> Terbiasa memecah masalah menjadi langkah kecil.</li>
+              <li><strong>Pengenalan Git:</strong> Cukup memahami konsep menyimpan dan melacak perubahan kode.</li>
+              <li><strong>Kebiasaan membaca dokumentasi:</strong> Dokumentasi resmi Bootstrap dan Astro menjadi rujukan sehari-hari.</li>
+              <li><strong>Komunikasi dan disiplin:</strong> Aktif berdiskusi dalam tim dan bertanggung jawab menyelesaikan target proyek.</li>
+            </ul>
+            <p>
+              Jika sebagian bekal itu belum dikuasai, Anda tetap bisa mendaftar. Mulailah dari HTML dan CSS karena keduanya menjadi fondasi hampir semua teknologi lain.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/magang-informatika-semester-berapa" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Magang Informatika Semester Berapa? Syarat SKS dan Waktunya &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="hasil-portofolio" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Hasil Pembelajaran dan Portofolio yang Dapat Dikembangkan</h2>
+            <p>
+              Hasil magang berupa website dan artikel yang sudah tayang, laporan kegiatan, sertifikat resmi kelulusan, serta lembar penilaian kampus yang dapat dipakai sebagai portofolio.
+            </p>
+            <p>
+              Di akhir periode, peserta merekap seluruh karya website dan artikel yang sudah online sebagai portofolio pribadi. Mahasiswa juga mengisi penilaian kampus dan menerima sertifikat resmi kelulusan magang. Untuk gambaran jenis proyek yang pernah dikerjakan, Anda dapat melihat halaman <a href="/portofolio" class="text-tc-accent hover:underline">portofolio karya</a> Gemilang Training.
+            </p>
+          </section>
+
+          <section id="cara-mendaftar" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Cara Mendaftar Magang Informatika di Gemilang Training</h2>
+            <p>
+              Pendaftaran dimulai dari menyiapkan CV dan surat pengantar kampus, lalu mengirimkannya ke admin Gemilang Training lewat WhatsApp untuk pengecekan kuota dan jadwal wawancara.
+            </p>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li><strong>Cek persyaratan dan pilih fokus keahlian:</strong> Tinjau ketentuan durasi magang 3–6 bulan, lalu tentukan minat proyek utama: pengembangan website atau optimasi SEO dan konten.</li>
+              <li><strong>Siapkan CV dan surat pengantar kampus:</strong> Lengkapi CV singkat, tautan portofolio atau GitHub jika ada, serta surat pengantar resmi yang ditandatangani ketua program studi, dekan, atau bagian akademik.</li>
+              <li><strong>Ajukan berkas dan konsultasi kuota via WhatsApp:</strong> Kirim salinan PDF surat pengantar dan CV kepada admin (individu maupun kelompok dalam satu surat).</li>
+              <li><strong>Wawancara singkat dan pemetaan kemampuan:</strong> Sesi santai bersama mentor via Google Meet atau tatap muka di Malang untuk memetakan kemampuan awal.</li>
+              <li><strong>Terima surat balasan penerimaan magang:</strong> Surat balasan resmi diterbitkan untuk diserahkan ke bagian akademik kampus.</li>
+              <li><strong>Konfirmasi jadwal masuk dan logbook:</strong> Sepakati tata tertib, jadwal bimbingan mingguan, dan format logbook harian kampus sekitar dua hari sebelum mulai.</li>
+              <li><strong>Onboarding dan setup proyek:</strong> Pada hari pertama, bawa laptop pribadi, siapkan VS Code, Git, dan browser tools, lalu mulai mengerjakan proyek website Astro, Bootstrap, atau optimasi SEO.</li>
+              <li><strong>Evaluasi akhir, penilaian kampus, dan sertifikat:</strong> Mentor memeriksa hasil karya yang sudah tayang, mengisi lembar penilaian dari kampus, dan menerbitkan sertifikat resmi kelulusan magang.</li>
+            </ol>
+          </section>
+
+          <section id="mengenal-gemilang" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Mengenal Gemilang Training dan Program yang Tersedia</h2>
+            <p>
+              Gemilang Training adalah wadah magang dan PKL berbasis proyek nyata di Mojolangu, Kota Malang, dengan mentor praktisi untuk mahasiswa Informatika dan siswa SMK.
+            </p>
+            <p>
+              Pendekatannya Project-Based Learning, dengan pendampingan mentor praktisi serta hasil berupa portofolio dan sertifikat. Selain jalur Informatika, tersedia program PKL untuk siswa SMK jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia. Seluruh program dapat dilihat di halaman <a href="/program" class="text-tc-accent hover:underline">daftar program magang</a>, dan informasi tentang lembaga ada di halaman <a href="/tentang-kami" class="text-tc-accent hover:underline">tentang kami</a>.
+            </p>
+          </section>
+
+          <section id="kesimpulan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p>
+              Magang mahasiswa informatika di Malang jalur Web Engineering memberi pengalaman membangun website nyata dengan Astro, Bootstrap 5, WordPress, dan Blogspot, ditambah dasar-dasar SEO. Peserta dibimbing mentor praktisi, tidak perlu mahir sejak awal, dan pulang membawa portofolio, sertifikat resmi, serta penilaian kampus.
+            </p>
+            <p>
+              Jika Anda sedang mencari tempat magang informatika di Malang, daftarkan diri Anda ke Gemilang Training dan mulai bangun portofolio dari proyek website nyata. Isi <a href="/pendaftaran" class="text-tc-accent hover:underline">formulir pendaftaran mahasiswa</a> atau hubungi admin langsung.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim redaksi Gemilang Training (Mojolangu, Lowokwaru, Kota Malang) untuk panduan magang mahasiswa Informatika jalur Web Engineering &amp; SEO.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Daftar Magang Informatika di Gemilang Training</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Konsultasikan kuota gelombang magang kampus, pengiriman CV &amp; surat pengantar, serta jadwal wawancara bersama admin kami di Malang (Senin–Jumat, 08.00–17.00 WIB).
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20mahasiswa%20Informatika%20ingin%20bertanya%20mengenai%20program%20magang%20Web%20Engineering." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Magang Mahasiswa Informatika Malang</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah magang informatika di Malang harus dilakukan langsung di lokasi?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Gemilang Training menyediakan pelaksanaan onsite di Malang atau hybrid, tergantung kesepakatan jadwal dan ketentuan kampus. Peserta yang memilih datang langsung mendapat bimbingan tatap muka, sedangkan wawancara awal dapat dilakukan online lewat Google Meet bagi yang berada di luar kota.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah mahasiswa harus sudah mahir Astro sebelum mendaftar?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak. Peserta tidak wajib mahir; yang terpenting siap belajar dan praktik. Di awal magang tersedia sesi pengenalan dan bimbingan bertahap dari mentor praktisi, mulai dari dasar hingga peserta mampu menerapkannya pada proyek nyata. Bekal HTML dan CSS tetap membantu mempercepat adaptasi.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa lama durasi magang yang tersedia?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Durasinya fleksibel antara 3 dan 6 bulan, menyesuaikan kalender akademik dan ketentuan kampus masing-masing. Cocokkan tanggal mulai dan selesai magang dengan jadwal KRS agar tidak berbenturan dengan perkuliahan, lalu cantumkan tanggal tersebut pada surat pengantar kampus.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bisakah mendaftar secara berkelompok?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Bisa. Pengajuan dapat dilakukan individu maupun kelompok dalam satu surat pengantar, menyesuaikan kuota bimbingan yang tersedia. Surat perlu mencantumkan NIM, program studi, jumlah mahasiswa, dan tanggal mulai magang agar pengecekan kuota berjalan lancar.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah peserta mendapat bantuan logbook dan penilaian kampus?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Ya. Pembimbing lapangan mendampingi pengisian logbook kegiatan, evaluasi tengah dan akhir magang, serta penilaian dari kampus. Di akhir periode peserta menerima sertifikat resmi kelulusan magang beserta rekap karya yang dapat dilampirkan sebagai bukti kegiatan.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Perangkat apa yang perlu disiapkan peserta?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Peserta wajib membawa laptop pribadi yang siap dipakai dan memiliki koneksi internet yang memadai. Pada hari pertama, perangkat disiapkan dengan VS Code, Git, dan browser tools, sehingga pastikan laptop mampu menjalankan aplikasi tersebut dengan lancar.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Info &amp; Kuota Magang Malang</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Lokasi: Mojolangu, Lowokwaru, Kota Malang 65141. Hubungi admin untuk cek kuota &amp; jadwal masuk.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20cek%20kuota%20magang%20mahasiswa%20Informatika." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/magang-informatika-semester-berapa-1.webp" alt="Persiapan magang informatika" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Supporting 1 • 20 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-informatika-semester-berapa">
+                    Magang Informatika Semester Berapa? Syarat SKS dan Waktunya
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/magang-web-developer-untuk-pemula-1.webp" alt="Mahasiswa Informatika mempersiapkan bekal magang web developer untuk pemula" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Supporting 2 • 20 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-web-developer-untuk-pemula">
+                    Magang Web Developer untuk Pemula, Bekal dan Tugas Awal
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>

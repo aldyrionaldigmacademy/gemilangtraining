@@ -1,0 +1,542 @@
+---
+// src/pages/blog/magang-web-developer-untuk-pemula.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Web Developer untuk Pemula, Bekal dan Tugas Awal";
+const pageDesc = "Magang web developer untuk pemula: bekal HTML, CSS, Bootstrap 5, Git, Astro JS, kesalahan umum, dan cara menyusun portofolio dari hasil belajar.";
+const publishDate = "2026-11-20";
+const publishIsoDate = "2026-11-20T15:00:00+07:00";
+const pageSlug = "/blog/magang-web-developer-untuk-pemula";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/magang-web-developer-untuk-pemula-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/magang-web-developer-untuk-pemula-2.webp";
+const authorName = "Tim Redaksi Gemilang Training";
+const keywordsList = "magang web developer untuk pemula, bekal magang web developer, belajar HTML CSS pemula, Bootstrap 5 untuk pemula, Git untuk pemula, Astro JS pemula, portofolio web developer";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "keywords": keywordsList,
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "author": {
+        "@type": "Organization",
+        "name": authorName
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        ogImageUrl,
+        secondImageUrl
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah pemula harus bisa JavaScript sebelum magang web developer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak wajib. HTML dan CSS adalah syarat paling penting untuk memulai. JavaScript dasar memang membantu, terutama untuk interaksi halaman, tetapi bisa dipelajari bertahap setelah Anda nyaman dengan struktur dan tampilan. Fokuskan energi awal pada fondasi dulu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Editor kode apa yang cocok untuk pemula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Visual Studio Code (VS Code) adalah pilihan umum karena gratis, ringan, dan punya banyak ekstensi untuk HTML, CSS, dan Git. Dalam program magang di Gemilang Training, VS Code juga termasuk alat yang disiapkan pada hari pertama bersama Git dan browser tools."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pemula perlu paham SEO sebelum magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak perlu. Pemahaman SEO bisa dipelajari selama magang, terutama dasar seperti struktur heading, meta tag, dan kecepatan halaman. Yang membantu sejak awal adalah kebiasaan menulis HTML yang rapi, karena struktur yang baik otomatis memudahkan optimasi mesin pencari."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang sebaiknya dilakukan jika terjebak pada error?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Baca pesan error dengan teliti, cari di dokumentasi resmi, lalu coba selesaikan sendiri dalam batas waktu wajar, misalnya 30 sampai 60 menit. Jika belum berhasil, tanyakan ke mentor dengan menyertakan kode dan pesan errornya agar bantuan lebih cepat dan tepat."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/magang-web-developer-untuk-pemula-1.webp"
+  imageAlt="Mahasiswa Informatika mempersiapkan bekal magang web developer untuk pemula dengan belajar HTML dan CSS menggunakan laptop"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Mahasiswa Informatika mempersiapkan bekal magang web developer untuk pemula dengan belajar HTML dan CSS menggunakan laptop" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Panduan Pemula" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Panduan Pemula</span>
+            <time datetime={publishIsoDate}>20 November 2026 • 15:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/magang-web-developer-untuk-pemula-1.webp" 
+            alt="Mahasiswa Informatika mempersiapkan bekal magang web developer untuk pemula dengan belajar HTML dan CSS menggunakan laptop" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Mahasiswa Informatika mempersiapkan bekal magang web developer untuk pemula dengan belajar HTML dan CSS menggunakan laptop.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#gambaran-pemula" class="hover:text-tc-accent transition-colors">1. Gambaran Magang Web Developer untuk Pemula</a></li>
+              <li><a href="#html-css" class="hover:text-tc-accent transition-colors">2. Keterampilan Dasar: HTML dan CSS</a></li>
+              <li><a href="#bootstrap-5" class="hover:text-tc-accent transition-colors">3. Pengenalan Bootstrap 5</a></li>
+              <li><a href="#dasar-git" class="hover:text-tc-accent transition-colors">4. Dasar Penggunaan Git dan Pengelolaan Kode</a></li>
+              <li><a href="#astro-js" class="hover:text-tc-accent transition-colors">5. Pengenalan Astro JS dan Pengembangan Website</a></li>
+              <li><a href="#aktivitas-awal" class="hover:text-tc-accent transition-colors">6. Gambaran Aktivitas Pembelajaran pada Tahap Awal</a></li>
+              <li><a href="#kesalahan-pemula" class="hover:text-tc-accent transition-colors">7. Kesalahan yang Sering Dilakukan Pemula</a></li>
+              <li><a href="#meningkatkan-kemampuan" class="hover:text-tc-accent transition-colors">8. Cara Meningkatkan Kemampuan Selama Mengikuti Magang</a></li>
+              <li><a href="#pengembangan-portofolio" class="hover:text-tc-accent transition-colors">9. Pengembangan Portofolio dari Hasil Pembelajaran</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">10. FAQ Magang Web Developer untuk Pemula</a></li>
+              <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">11. Kesimpulan</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Magang web developer untuk pemula</strong> memiliki bekal minimal HTML dan CSS dasar, mau belajar Bootstrap 5 dan Git, serta kebiasaan membaca dokumentasi dan bertanya.
+          </p>
+          <ul class="list-disc pl-5 space-y-2">
+            <li>Pemula tidak perlu menguasai semua teknologi sebelum mendaftar; fondasi HTML dan CSS sudah cukup untuk memulai.</li>
+            <li>Keterampilan sebaiknya dipelajari berurutan: HTML dan CSS, Bootstrap 5, Git, lalu Astro JS.</li>
+            <li>Minggu-minggu awal lazimnya diisi penyiapan alat, membaca proyek, dan latihan perubahan kecil.</li>
+            <li>Kesalahan pemula yang paling sering adalah melompati dasar dan enggan bertanya.</li>
+            <li>Portofolio tidak wajib ada sebelum magang; hasil belajar selama magang dapat menjadi portofolio pertama.</li>
+          </ul>
+          <p>
+            Banyak calon peserta ragu mendaftar magang web developer karena merasa belum cukup mahir. Padahal magang justru dirancang sebagai tempat belajar terbimbing. Program magang di Gemilang Training memakai teknologi yang sama sehingga pembahasan ini relevan bagi pemula yang ingin mulai.
+          </p>
+
+          <section id="gambaran-pemula" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Gambaran Magang Web Developer untuk Pemula</h2>
+            <p>
+              Magang web developer pemula adalah masa belajar terbimbing membangun website nyata, di mana peserta dibimbing dari dasar dan tidak dituntut sudah menguasai semua teknologi.
+            </p>
+            <div class="overflow-x-auto rounded-2xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead class="bg-tc-bg text-white">
+                  <tr>
+                    <th class="p-3.5 border-b border-tc-border font-bold">Tingkat</th>
+                    <th class="p-3.5 border-b border-tc-border font-bold">Keterampilan</th>
+                    <th class="p-3.5 border-b border-tc-border font-bold">Fungsi</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Dasar</td>
+                    <td class="p-3.5">HTML dan CSS</td>
+                    <td class="p-3.5">Struktur dan tampilan halaman</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Menengah awal</td>
+                    <td class="p-3.5">Bootstrap 5</td>
+                    <td class="p-3.5">Layout responsif dengan komponen siap pakai</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Menengah</td>
+                    <td class="p-3.5">Git dan pengelolaan kode</td>
+                    <td class="p-3.5">Melacak, membandingkan, dan menyimpan perubahan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Lanjutan</td>
+                    <td class="p-3.5">Astro JS, gambar WebP, deployment Vercel</td>
+                    <td class="p-3.5">Website cepat dan siap tayang</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/magang-web-developer-untuk-pemula-2.webp" 
+              alt="Mahasiswa informatika belajar coding dan memahami struktur kode website sebagai bekal magang web developer pemula" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Mahasiswa informatika belajar coding dan memahami struktur kode website sebagai bekal magang web developer pemula.
+            </figcaption>
+          </figure>
+
+          <section id="html-css" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Keterampilan Dasar: HTML dan CSS</h2>
+            <p>
+              HTML membentuk struktur halaman dan CSS mengatur tampilannya; keduanya adalah fondasi yang paling perlu dikuasai sebelum mempelajari framework apa pun.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Menulis halaman HTML dengan struktur heading, paragraf, daftar, dan tautan yang benar.</li>
+              <li>Memahami selector, warna, tipografi, dan box model dalam CSS.</li>
+              <li>Mengatur layout sederhana dengan flexbox.</li>
+              <li>Membuat halaman yang tidak rusak ketika dibuka di layar kecil.</li>
+            </ul>
+          </section>
+
+          <section id="bootstrap-5" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pengenalan Bootstrap 5</h2>
+            <p>
+              Bootstrap 5 menyediakan grid dan komponen siap pakai sehingga pemula dapat membuat tampilan responsif di ponsel dan laptop tanpa menulis semua CSS dari awal.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Sistem grid dengan kolom dan breakpoint.</li>
+              <li>Komponen umum seperti navbar, card, dan form.</li>
+              <li>Utility class untuk jarak, warna, dan perataan.</li>
+              <li>Cara menimpa gaya Bootstrap dengan CSS sendiri secara rapi.</li>
+            </ul>
+          </section>
+
+          <section id="dasar-git" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Dasar Penggunaan Git dan Pengelolaan Kode</h2>
+            <p>
+              Git mencatat setiap perubahan kode sehingga pekerjaan dapat ditelusuri, dibandingkan, dan dikembalikan; pemula cukup memahami commit, branch, dan push terlebih dahulu.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>commit</strong> untuk menyimpan perubahan beserta catatannya.</li>
+              <li><strong>branch</strong> untuk bekerja pada fitur tanpa mengganggu versi utama.</li>
+              <li><strong>push dan pull</strong> untuk menyinkronkan pekerjaan dengan repositori.</li>
+              <li><strong>status dan log</strong> untuk melihat kondisi dan riwayat pekerjaan.</li>
+            </ul>
+          </section>
+
+          <section id="astro-js" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pengenalan Astro JS dan Pengembangan Website</h2>
+            <p>
+              Astro JS membangun website statis yang cepat dengan komponen terpisah; teknologi ini dipelajari setelah HTML, CSS, dan Bootstrap terasa nyaman.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Struktur proyek:</strong> Memahami folder halaman, komponen, dan aset.</li>
+              <li><strong>Gambar WebP:</strong> Format gambar yang ukurannya lebih kecil sehingga halaman cepat dimuat.</li>
+              <li><strong>Deployment ke Vercel:</strong> Menayangkan website agar bisa dibuka siapa saja.</li>
+            </ul>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/magang-berbasis-proyek-nyata" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Magang Berbasis Proyek Nyata vs Magang Administratif &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="aktivitas-awal" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Gambaran Aktivitas Pembelajaran pada Tahap Awal</h2>
+            <p>
+              Tahap awal biasanya diisi penyiapan alat kerja, membaca struktur proyek, mengubah halaman sederhana, dan menerima masukan dari mentor atas hasil kerja pertama.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Menyiapkan lingkungan kerja:</strong> Memasang editor seperti VS Code, Git, dan alat bantu browser.</li>
+              <li><strong>Membaca dan memahami proyek:</strong> Menelusuri folder, file, dan hubungan antarhalaman.</li>
+              <li><strong>Perubahan kecil:</strong> Mengganti teks, warna, atau tata letak satu bagian halaman.</li>
+              <li><strong>Membuat komponen sederhana:</strong> Misalnya kartu atau bagian profil dengan Bootstrap.</li>
+              <li><strong>Commit pertama:</strong> Menyimpan perubahan lewat Git dengan pesan yang jelas.</li>
+              <li><strong>Menerima review:</strong> Mentor memberi masukan, lalu peserta merevisi.</li>
+            </ul>
+          </section>
+
+          <section id="kesalahan-pemula" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesalahan yang Sering Dilakukan Pemula</h2>
+            <p>
+              Kesalahan paling umum pemula adalah melompati dasar, menyalin kode tanpa memahaminya, mengabaikan Git, dan enggan bertanya ketika terhambat terlalu lama.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Melompati dasar:</strong> Langsung memakai framework tanpa paham HTML dan CSS, sehingga bingung saat tampilan tidak sesuai harapan.</li>
+              <li><strong>Menyalin tanpa memahami:</strong> Kode jalan, tetapi tidak bisa dijelaskan atau diperbaiki saat ada masalah.</li>
+              <li><strong>Mengabaikan Git:</strong> Perubahan tidak tercatat, sehingga sulit kembali ke versi yang benar.</li>
+              <li><strong>Tidak menguji di layar kecil:</strong> Tampilan bagus di laptop, tetapi berantakan di ponsel.</li>
+              <li><strong>Enggan bertanya:</strong> Terjebak berjam-jam pada masalah yang sebenarnya bisa selesai dengan satu pertanyaan.</li>
+              <li><strong>Mengabaikan ukuran gambar:</strong> Memakai gambar besar yang memperlambat halaman.</li>
+            </ul>
+          </section>
+
+          <section id="meningkatkan-kemampuan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Cara Meningkatkan Kemampuan Selama Mengikuti Magang</h2>
+            <p>
+              Kemampuan naik lebih cepat bila peserta rutin berlatih pada proyek kecil, membaca dokumentasi resmi, meminta review kode, dan mencatat hal baru setiap hari.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Berlatih rutin:</strong> Dua jam latihan fokus setiap hari lebih efektif daripada maraton sekali seminggu.</li>
+              <li><strong>Membaca dokumentasi resmi:</strong> Dokumentasi Bootstrap dan Astro menjawab sebagian besar pertanyaan dasar.</li>
+              <li><strong>Meminta review:</strong> Tunjukkan hasil lebih awal, jangan menunggu sempurna.</li>
+              <li><strong>Membuat catatan belajar:</strong> Tulis masalah, penyebab, dan solusinya.</li>
+              <li><strong>Membangun proyek mini:</strong> Misalnya halaman profil, landing page, atau blog sederhana.</li>
+            </ul>
+          </section>
+
+          <section id="pengembangan-portofolio" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pengembangan Portofolio dari Hasil Pembelajaran</h2>
+            <p>
+              Portofolio tidak wajib ada sebelum magang; hasil belajar selama magang, seperti website yang tayang dan repositori kode rapi, dapat menjadi portofolio pertama Anda.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Website yang sudah tayang beserta tautannya.</li>
+              <li>Repositori Git dengan riwayat commit yang rapi.</li>
+              <li>Halaman atau komponen yang Anda kerjakan, lengkap dengan catatan peran Anda.</li>
+              <li>Catatan singkat tentang masalah yang dipecahkan dan teknologi yang dipakai.</li>
+            </ul>
+            <p>
+              Contoh bentuk karya dapat dilihat di halaman <a href="/portofolio" class="text-tc-accent hover:underline">portofolio Gemilang Training</a>.
+            </p>
+          </section>
+
+          <section id="kesimpulan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p>
+              Pemula bisa mengikuti magang web developer tanpa menguasai semua teknologi. Mulailah dari HTML dan CSS, lanjutkan ke Bootstrap 5 dan Git, lalu pelajari Astro JS secara bertahap. Hindari melompati dasar, biasakan berlatih rutin, dan jangan ragu bertanya.
+            </p>
+            <p>
+              Siap belajar membangun website nyata bersama mentor praktisi? Daftarkan magang Anda ke Gemilang Training. Program Web Engineering untuk mahasiswa Informatika dapat dilihat di halaman <a href="/program/magang-mahasiswa" class="text-tc-accent hover:underline">program magang mahasiswa</a>.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim redaksi Gemilang Training Malang untuk bimbingan teknis web development pemula (HTML, CSS, Bootstrap 5, Git, dan Astro JS).
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Mulai Belajar Web Development dari Dasar</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Belum punya portofolio? Tidak masalah. Konsultasikan jalur magang Web Engineering bersama mentor praktisi kami di Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20program%20magang%20web%20developer%20untuk%20pemula." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Magang Web Developer untuk Pemula</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah pemula harus bisa JavaScript sebelum magang web developer?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak wajib. HTML dan CSS adalah syarat paling penting untuk memulai. JavaScript dasar memang membantu, terutama untuk interaksi halaman, tetapi bisa dipelajari bertahap setelah Anda nyaman dengan struktur dan tampilan. Fokuskan energi awal pada fondasi dulu.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Editor kode apa yang cocok untuk pemula?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Visual Studio Code (VS Code) adalah pilihan umum karena gratis, ringan, dan punya banyak ekstensi untuk HTML, CSS, dan Git. Dalam program magang di Gemilang Training, VS Code juga termasuk alat yang disiapkan pada hari pertama bersama Git dan browser tools.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah pemula perlu paham SEO sebelum magang?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak perlu. Pemahaman SEO bisa dipelajari selama magang, terutama dasar seperti struktur heading, meta tag, dan kecepatan halaman. Yang membantu sejak awal adalah kebiasaan menulis HTML yang rapi, karena struktur yang baik otomatis memudahkan optimasi mesin pencari.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa yang sebaiknya dilakukan jika terjebak pada error?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Baca pesan error dengan teliti, cari di dokumentasi resmi, lalu coba selesaikan sendiri dalam batas waktu wajar, misalnya 30 sampai 60 menit. Jika belum berhasil, tanyakan ke mentor dengan menyertakan kode dan pesan errornya agar bantuan lebih cepat dan tepat.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Bimbingan Magang Pemula</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Belajar bertahap dari HTML/CSS hingga deploy website Astro JS &amp; Bootstrap 5 di Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20program%20magang%20Web%20Engineering." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/magang-mahasiswa-informatika-malang-1.webp" alt="Mahasiswa mengikuti magang mahasiswa informatika Malang dengan praktik Web Engineering" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Artikel Pilar • 20 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-mahasiswa-informatika-malang">
+                    Magang Mahasiswa Informatika Malang Posisi Web Engineering
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/magang-berbasis-proyek-nyata-1.webp" alt="Mahasiswa mengerjakan proyek digital menggunakan laptop sebagai bagian dari magang berbasis proyek nyata" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Supporting 3 • 20 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-berbasis-proyek-nyata">
+                    Magang Berbasis Proyek Nyata vs Magang Administratif
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>
