@@ -1,0 +1,516 @@
+---
+// src/pages/blog/syarat-pendaftaran-magang-dan-pkl.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Syarat dan Berkas PKL dan Magang, Checklist Lengkap";
+const pageDesc = "Checklist syarat pendaftaran magang dan PKL untuk siswa SMK dan mahasiswa, alur 8 tahap sampai mulai.";
+const publishDate = "2026-11-19";
+const publishIsoDate = "2026-11-19T10:00:00+07:00";
+const pageSlug = "/blog/syarat-pendaftaran-magang-dan-pkl";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/syarat-pendaftaran-magang-dan-pkl-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/syarat-pendaftaran-magang-dan-pkl-2.webp";
+const authorName = "Tim Redaksi Gemilang Training";
+const keywordsList = "syarat pendaftaran magang dan pkl, syarat dan berkas magang atau pkl, checklist berkas pkl mahasiswa, alur pendaftaran magang, surat pengantar pkl, syarat magang malang, berkas pkl smk";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "keywords": keywordsList,
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "author": {
+        "@type": "Organization",
+        "name": authorName
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        ogImageUrl,
+        secondImageUrl
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah semua peserta wajib membawa surat persetujuan orang tua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Surat persetujuan orang tua atau wali diwajibkan khususnya bagi siswa SMK atau peserta di bawah 18 tahun. Surat ini menjadi bentuk izin resmi dari keluarga."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi PKL di Gemilang Training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Durasinya 3-6 bulan, dan peserta memilihnya pada tahap pertama saat mengecek persyaratan. Penyesuaian dilakukan dengan jadwal akademik sekolah atau kampus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan sebaiknya berkas dikirim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Untuk siswa SMK, pengiriman disarankan 2-4 minggu sebelum penerjunan. Berkas dikirim dalam bentuk PDF ke WhatsApp admin di +62 819-4343-1484."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/syarat-pendaftaran-magang-dan-pkl-1.webp"
+  imageAlt="Siswa SMK membawa map berkas surat permohonan PKL di ruang tata usaha"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Siswa SMK membawa map berkas surat permohonan PKL di ruang tata usaha" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Artikel Pilar" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Artikel Pilar</span>
+            <time datetime={publishIsoDate}>19 November 2026 • 10:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            Syarat dan Berkas Magang atau PKL, Checklist Lengkap untuk Siswa SMK dan Mahasiswa
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/syarat-pendaftaran-magang-dan-pkl-1.webp" 
+            alt="Siswa SMK membawa map berkas surat permohonan PKL di ruang tata usaha" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Siswa SMK berseragam memegang map berkas di ruang tata usaha sekolah.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#berkas-disiapkan" class="hover:text-tc-accent transition-colors">1. Berkas Apa Saja yang Harus Disiapkan?</a></li>
+              <li><a href="#checklist-smk" class="hover:text-tc-accent transition-colors">2. Apa Saja Checklist untuk Siswa SMK?</a></li>
+              <li><a href="#checklist-mahasiswa" class="hover:text-tc-accent transition-colors">3. Apa Saja Checklist untuk Mahasiswa?</a></li>
+              <li><a href="#surat-pengantar" class="hover:text-tc-accent transition-colors">4. Siapa yang Mengurus Surat Pengantar?</a></li>
+              <li><a href="#alur-daftar-mulai" class="hover:text-tc-accent transition-colors">5. Bagaimana Alur dari Daftar sampai Mulai?</a></li>
+              <li><a href="#syarat-teknis" class="hover:text-tc-accent transition-colors">6. Apa Saja Syarat Teknis Selama Pelaksanaan?</a></li>
+              <li><a href="#contoh-program-lain" class="hover:text-tc-accent transition-colors">7. Seperti Apa Contoh Syarat di Program Lain?</a></li>
+              <li><a href="#kesalahan-umum" class="hover:text-tc-accent transition-colors">8. Kesalahan Apa yang Paling Sering Terjadi?</a></li>
+              <li><a href="#kata-alumni" class="hover:text-tc-accent transition-colors">9. Apa Kata Alumni tentang Prosesnya?</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">10. FAQ Syarat &amp; Berkas PKL / Magang</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Syarat pendaftaran magang dan PKL</strong> umumnya meliputi surat pengantar sekolah atau kampus, CV, rapor atau transkrip, identitas, dan laptop pribadi. Berkas lengkap mempercepat proses.
+          </p>
+          <p>
+            Di bawah ini ada checklist berkas untuk siswa SMK dan mahasiswa, lengkap dengan alur 8 tahap dari daftar sampai hari pertama.
+          </p>
+          <p>
+            Angka yang perlu diingat cuma tiga: 5 kelompok berkas utama, 8 tahap alur, dan 3-6 bulan durasi. Sisanya tinggal dicocokkan dengan kondisi sekolah atau kampus masing-masing.
+          </p>
+          <p>
+            Kesalahan berkas biasanya sepele. Surat lupa mencantumkan NISN, periode tidak jelas, atau file dikirim dalam format foto yang buram. Semua itu bisa dicegah dengan checklist yang jelas.
+          </p>
+
+          <section id="berkas-disiapkan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Berkas Apa Saja yang Harus Disiapkan?</h2>
+            <p>
+              Berkas yang harus disiapkan ada lima kelompok: surat pengantar dari lembaga pendidikan, CV dan portofolio, rapor atau transkrip, surat persetujuan orang tua, serta identitas diri dan pasfoto. Kelimanya dikirim dalam bentuk PDF.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Surat pengantar atau permohonan resmi dari sekolah atau kampus.</li>
+              <li>CV singkat yang rapi, plus tautan portofolio atau GitHub jika ada.</li>
+              <li>Salinan rapor terakhir atau transkrip nilai.</li>
+              <li>Surat persetujuan orang tua atau wali, terutama untuk peserta di bawah 18 tahun.</li>
+              <li>Salinan KTP atau kartu pelajar yang masih aktif, beserta pasfoto formal.</li>
+            </ul>
+            <p>
+              Kebijakan tiap sekolah dan kampus bisa berbeda. Karena itu, rincian terbaru selalu dikonfirmasi ke admin sebelum berkas dikirim.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/syarat-pendaftaran-magang-dan-pkl-2.webp" 
+              alt="Mahasiswa menyiapkan CV dan portofolio di laptop sebelum mendaftar PKL" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Mahasiswa menyiapkan CV dan laptop di meja kos yang berantakan.
+            </figcaption>
+          </figure>
+
+          <section id="checklist-smk" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Checklist untuk Siswa SMK?</h2>
+            <p>
+              Siswa SMK wajib membawa surat permohonan resmi PKL yang ditandatangani Kepala Sekolah, Kaprog, atau Pokja PKL. Surat itu harus memuat nama lengkap, NIS/NISN, kompetensi keahlian, dan durasi PKL.
+            </p>
+            <p>
+              Jurusan yang dilayani meliputi RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia. Pendaftaran bisa individu atau kelompok 2-5 siswa.
+            </p>
+            <p>
+              Kalau sekolahmu belum punya format baku, kamu bisa lihat <a href="/blog/contoh-surat-permohonan-pkl" class="text-tc-accent hover:underline">contoh surat permohonan PKL untuk RPL, TKJ, dan Bisnis Digital</a>. Isinya tinggal disalin lalu disesuaikan.
+            </p>
+            <p>
+              Siswa juga perlu surat persetujuan orang tua dan salinan rapor terakhir. Dua dokumen ini sering terlupa karena dianggap urusan belakangan.
+            </p>
+          </section>
+
+          <section id="checklist-mahasiswa" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Checklist untuk Mahasiswa?</h2>
+            <p>
+              Mahasiswa wajib membawa surat pengantar resmi dari kampus yang ditandatangani Ketua Program Studi, Dekan, atau bagian akademik. Surat itu mencantumkan NIM, program studi, jumlah mahasiswa, dan periode tanggal pelaksanaan.
+            </p>
+            <p>
+              Program ini menyasar mahasiswa D3, D4, dan S1 jurusan Informatika dan komputer. Tambahkan CV ATS-friendly, transkrip nilai, KTP, dan pasfoto.
+            </p>
+            <p>
+              Kalau kamu ingin melamar mandiri dengan surat sendiri, ada panduan <a href="/blog/contoh-surat-lamaran-magang-mahasiswa" class="text-tc-accent hover:underline">surat lamaran untuk mahasiswa Informatika tanpa pengalaman kerja</a>. Portofolio proyek kuliah dan repositori GitHub jadi modal utamanya.
+            </p>
+            <p>
+              Untuk urusan kirim berkas, ada juga panduan soal <a href="/blog/cara-melamar-pkl-lewat-whatsapp" class="text-tc-accent hover:underline">melamar lewat WhatsApp lengkap dengan contoh pesannya</a>.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/contoh-surat-permohonan-pkl" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA TEMPLATE SURAT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Contoh Surat Permohonan PKL SMK untuk RPL, TKJ, dan Bisnis Digital &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="surat-pengantar" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Siapa yang Mengurus Surat Pengantar?</h2>
+            <p>
+              Surat pengantar diterbitkan dan ditandatangani pihak sekolah atau kampus, sedangkan peserta atau Pokja PKL yang mengajukannya. Gemilang Training tidak membuatkan surat ini.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Siswa SMK mengajukan ke Kepala Sekolah, Kaprog, atau Pokja PKL.</li>
+              <li>Mahasiswa mengajukan ke Ketua Program Studi, Dekan, atau bagian akademik.</li>
+              <li>Gemilang Training baru menerbitkan surat balasan setelah berkas masuk.</li>
+            </ul>
+            <p>
+              Sekolah dan kampus kadang punya format surat sendiri. Kalau ada, pakai format itu, jangan bikin versi sendiri.
+            </p>
+          </section>
+
+          <section id="alur-daftar-mulai" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Alur dari Daftar sampai Mulai?</h2>
+            <p>
+              Alur pendaftaran di Gemilang Training terdiri dari 8 tahap, mulai dari cek persyaratan sampai evaluasi dan sertifikat. Urutannya sebagai berikut:
+            </p>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li>Cek persyaratan dan pilih fokus keahlian, termasuk durasi 3-6 bulan.</li>
+              <li>Siapkan CV, portofolio, rapor atau transkrip, dan surat pengantar.</li>
+              <li>Kirim berkas PDF lewat WhatsApp admin untuk pengecekan kuota bimbingan.</li>
+              <li>Wawancara singkat dan skill mapping bersama mentor praktisi, daring lewat Google Meet atau luring di Malang.</li>
+              <li>Gemilang Training menerbitkan surat balasan resmi kesediaan menerima peserta.</li>
+              <li>Konfirmasi jadwal, tata tertib, dan arahan pengisian logbook.</li>
+              <li>Onboarding dan pengerjaan proyek nyata: website dengan Astro, Bootstrap 5, dan Blogspot, optimasi SEO, serta penulisan artikel.</li>
+              <li>Evaluasi akhir, pengisian nilai rapor atau SKS, dan sertifikat resmi.</li>
+            </ol>
+            <p>
+              Tahap yang waktunya paling susah ditebak adalah tahap 2, karena bergantung pada tanda tangan dan stempel sekolah atau kampus. Untuk siswa SMK, pengajuan disarankan 2-4 minggu sebelum penerjunan.
+            </p>
+            <p>
+              Detail tiap tahap bisa dicek di halaman <a href="/alur-pendaftaran" class="text-tc-accent hover:underline">alur pendaftaran</a>.
+            </p>
+          </section>
+
+          <section id="syarat-teknis" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Syarat Teknis Selama Pelaksanaan?</h2>
+            <p>
+              Syarat teknisnya ada empat: laptop pribadi, logbook, kesediaan pelaksanaan onsite atau hybrid, dan perlindungan Jaminan Kecelakaan Kerja. Semuanya dibahas sebelum hari pertama.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Laptop pribadi dengan spesifikasi memadai untuk VS Code, Git, penulisan artikel, dan riset SEO.</li>
+              <li>Buku jurnal atau logbook dari sekolah atau kampus untuk catatan harian dan paraf pembimbing.</li>
+              <li>Pelaksanaan onsite di Malang (Mojolangu, Lowokwaru) atau hybrid sesuai kesepakatan jadwal akademik.</li>
+              <li>Jaminan Kecelakaan Kerja (JKK) sesuai Surat Edaran Menteri Ketenagakerjaan.</li>
+            </ul>
+            <p>
+              Jujur saja, poin laptop sering jadi pertimbangan terbesar. Pastikan perangkatmu sanggup menjalankan editor kode dan beberapa tab browser sekaligus.
+            </p>
+          </section>
+
+          <section id="contoh-program-lain" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Seperti Apa Contoh Syarat di Program Lain?</h2>
+            <p>
+              Sebagai pembanding, Magang Kemdiktisaintek 2026 Batch 3 menurut Detik meminta surat pengantar pimpinan kampus, KTM, KRS, CV dengan portofolio, dan surat kesediaan bermeterai. Ini contoh program lain, bukan syarat Gemilang Training.
+            </p>
+            <p>
+              Polanya mirip: surat dari institusi, identitas, dan bukti kemampuan. Bedanya ada di detail seperti meterai atau KRS. Jadi kalau kamu melamar ke beberapa tempat, jangan menyamaratakan berkas. Baca syarat masing-masing penyelenggara.
+            </p>
+          </section>
+
+          <section id="kesalahan-umum" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesalahan Apa yang Paling Sering Terjadi?</h2>
+            <p>
+              Kesalahan paling sering adalah berkas yang tidak lengkap atau tidak rapi, sehingga proses pengecekan kuota tertunda. Hampir semuanya bisa dicegah.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Surat tidak mencantumkan NIS/NISN, NIM, atau periode pelaksanaan.</li>
+              <li>Berkas dikirim berupa foto buram, bukan PDF.</li>
+              <li>Nama file asal-asalan, padahal lebih mudah dikenali kalau memakai pola seperti <code class="text-tc-accent">CV_NamaLengkap_Jurusan.pdf</code>.</li>
+              <li>Pengajuan terlalu mepet dengan jadwal penerjunan.</li>
+              <li>Pesan dikirim malam hari atau berkali-kali tanpa jeda.</li>
+            </ul>
+            <p>
+              Pola nama file itu juga disarankan Hendik Darmawan dari Snap Careers agar berkas cepat dikenali. Hal kecil, efeknya terasa.
+            </p>
+          </section>
+
+          <section id="kata-alumni" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Kata Alumni tentang Prosesnya?</h2>
+            <p>
+              Alumni menilai proses di Gemilang Training berujung pada proyek nyata dan bimbingan langsung mentor praktisi. Tiga alumni berikut menceritakan pengalamannya.
+            </p>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Fajar Ramadhan (Mahasiswa Informatika)</p>
+              <p class="text-tc-muted text-xs italic">"Magang di sini beneran ngerjain proyek nyata. Saya yang dari jurusan Informatika jadi paham cara bangun website cepat dengan Astro dan Bootstrap."</p>
+            </blockquote>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Siti Nurhaliza (Siswa PKL Bisnis Digital &amp; Pemasaran)</p>
+              <p class="text-tc-muted text-xs italic">"Waktu PKL di sini, praktik Digital Marketing-nya langsung ke kasus nyata. Riset keyword SEO dan pembuatan artikel beneran kepakai dan bikin portofolio saya makin berbobot!"</p>
+            </blockquote>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Dion Arisandi (Siswa PKL DKV &amp; Multimedia)</p>
+              <p class="text-tc-muted text-xs italic">"Bimbingan PKL-nya intensif banget. Produksi video konten dan pengelolaan media web saya benar-benar di-review langsung oleh mentor praktisi."</p>
+            </blockquote>
+            <p>
+              Syarat PKL dan magang pada dasarnya soal kerapian berkas: surat pengantar, CV, rapor atau transkrip, izin orang tua, dan identitas. Siapkan lebih awal, kirim dalam PDF, dan ikuti 8 tahap alurnya.
+            </p>
+            <p>
+              Gemilang Training melayani Malang untuk siswa SMK dan mahasiswa Informatika yang ingin belajar lewat proyek nyata. Lihat pilihan di halaman <a href="/program" class="text-tc-accent hover:underline">program</a>, pelajari tahapnya di <a href="/alur-pendaftaran" class="text-tc-accent hover:underline">alur pendaftaran</a>, lalu kirim berkasmu lewat <a href="/kontak" class="text-tc-accent hover:underline">halaman kontak</a> atau WhatsApp admin di +62 819-4343-1484.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim redaksi Gemilang Training Malang untuk panduan syarat berkas, checklist administrasi, dan alur pendaftaran PKL SMK serta magang mahasiswa.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Kirim Berkas &amp; Cek Kuota PKL / Magang</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Pastikan berkas PDF Anda lengkap sebelum dikirim ke admin Gemilang Training di Mojolangu, Lowokwaru, Kota Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mengecek%20syarat%20berkas%20dan%20kuota%20PKL%20atau%20magang." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Kirim Berkas via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Syarat &amp; Berkas PKL / Magang</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah semua peserta wajib membawa surat persetujuan orang tua?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Surat persetujuan orang tua atau wali diwajibkan khususnya bagi siswa SMK atau peserta di bawah 18 tahun. Surat ini menjadi bentuk izin resmi dari keluarga.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa lama durasi PKL di Gemilang Training?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Durasinya 3-6 bulan, dan peserta memilihnya pada tahap pertama saat mengecek persyaratan. Penyesuaian dilakukan dengan jadwal akademik sekolah atau kampus.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Kapan sebaiknya berkas dikirim?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Untuk siswa SMK, pengiriman disarankan 2-4 minggu sebelum penerjunan. Berkas dikirim dalam bentuk PDF ke WhatsApp admin di +62 819-4343-1484.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Admin Pendaftaran Malang</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Senin–Jumat (08.00–17.00 WIB). Kirim PDF surat pengantar/permohonan &amp; CV ke admin.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20checklist%20berkas%20pendaftaran." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/contoh-surat-permohonan-pkl-1.webp" alt="Guru Pokja PKL menandatangani surat permohonan PKL di ruang guru" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Supporting 1 • 19 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/contoh-surat-permohonan-pkl">
+                    Contoh Surat Permohonan PKL SMK Siap Pakai
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/contoh-surat-lamaran-magang-mahasiswa-1.webp" alt="Mahasiswa Informatika menulis surat lamaran di laptop dengan GitHub terbuka" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Supporting 2 • 19 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/contoh-surat-lamaran-magang-mahasiswa">
+                    Contoh Surat Lamaran Magang Mahasiswa Informatika
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>

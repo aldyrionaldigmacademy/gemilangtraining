@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const pageTitle = "Blog & Edukasi Karier Digital - Gemilang Training";
-const pageDesc = "Panduan tempat magang di Malang, magang mahasiswa Informatika Web Engineering, uang saku magang, model kerja WFH/hybrid/onsite, pelatihan kejuruan SKARIGA, portofolio, dan AI prompt dari Gemilang Training Kota Malang.";
+const pageDesc = "Panduan tempat magang di Malang, syarat dan berkas PKL/magang, contoh surat permohonan & lamaran, melamar lewat WhatsApp, magang mahasiswa Informatika Web Engineering, pelatihan kejuruan SKARIGA, portofolio, dan AI prompt dari Gemilang Training Kota Malang.";
 const pageUrl = "https://infomagangmalang.web.id/blog";
 const ogImageUrl = "https://infomagangmalang.web.id/assets/img/tempat-magang-malang-1.webp";
 
@@ -144,6 +144,50 @@ const articles = [
     alt: "Mahasiswa mengikuti magang mahasiswa informatika Malang dengan praktik Web Engineering"
   },
   {
+    slug: "cara-melamar-pkl-lewat-whatsapp",
+    category: "Panduan Pengiriman",
+    tag: "Etika & Pesan WA",
+    cluster: "Berkas & Pendaftaran",
+    title: "Cara Melamar PKL atau Magang Lewat WhatsApp, Contoh Pesan yang Sopan dan Jelas",
+    desc: "Cara melamar PKL lewat WhatsApp dengan etika yang benar, plus contoh pesan untuk siswa, mahasiswa, dan orang tua.",
+    date: "19 Nov 2026 • 19:00 WIB",
+    img: "/assets/img/cara-melamar-pkl-lewat-whatsapp-1.webp",
+    alt: "Siswa SMK mengetik pesan lamaran PKL lewat WhatsApp di ponsel"
+  },
+  {
+    slug: "contoh-surat-lamaran-magang-mahasiswa",
+    category: "Template & Format",
+    tag: "Surat Lamaran Mahasiswa",
+    cluster: "Berkas & Pendaftaran",
+    title: "Contoh Surat Lamaran Magang Mahasiswa Informatika Tanpa Pengalaman Kerja",
+    desc: "Contoh surat lamaran magang mahasiswa Informatika tanpa pengalaman kerja, termasuk format email.",
+    date: "19 Nov 2026 • 15:00 WIB",
+    img: "/assets/img/contoh-surat-lamaran-magang-mahasiswa-1.webp",
+    alt: "Mahasiswa Informatika menulis surat lamaran di laptop dengan GitHub terbuka"
+  },
+  {
+    slug: "contoh-surat-permohonan-pkl",
+    category: "Template & Format",
+    tag: "Surat Permohonan SMK",
+    cluster: "Berkas & Pendaftaran",
+    title: "Contoh Surat Permohonan PKL SMK untuk RPL, TKJ, dan Bisnis Digital (Siap Pakai)",
+    desc: "Contoh surat permohonan PKL untuk SMK jurusan RPL, TKJ, dan Bisnis Digital, lengkap struktur dan penandatangan.",
+    date: "19 Nov 2026 • 12:00 WIB",
+    img: "/assets/img/contoh-surat-permohonan-pkl-1.webp",
+    alt: "Guru Pokja PKL menandatangani surat permohonan PKL di ruang guru"
+  },
+  {
+    slug: "syarat-pendaftaran-magang-dan-pkl",
+    category: "Artikel Pilar",
+    tag: "Checklist Berkas & Alur",
+    cluster: "Berkas & Pendaftaran",
+    title: "Syarat dan Berkas Magang atau PKL, Checklist Lengkap untuk Siswa SMK dan Mahasiswa",
+    desc: "Checklist syarat pendaftaran magang dan PKL untuk siswa SMK dan mahasiswa, alur 8 tahap sampai mulai.",
+    date: "19 Nov 2026 • 10:00 WIB",
+    img: "/assets/img/syarat-pendaftaran-magang-dan-pkl-1.webp",
+    alt: "Siswa SMK membawa map berkas surat permohonan PKL di ruang tata usaha"
+  },
+  {
     slug: "pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga",
     category: "Panduan Utama",
     tag: "Vokasi & Industri",
@@ -237,7 +281,7 @@ const schemaBlogIndex = {
         Blog & Warta Edukasi Magang
       </h1>
       <p class="text-tc-muted text-base md:text-lg">
-        Artikel edukatif, panduan memilih tempat magang, magang mahasiswa Informatika Web Engineering, ciri tawaran magang mencurigakan, pelatihan kejuruan, dan kabar program terkini Gemilang Training Kota Malang.
+        Artikel edukatif, panduan memilih tempat magang, syarat berkas & contoh surat PKL/magang, magang mahasiswa Informatika Web Engineering, pelatihan kejuruan, dan kabar program terkini Gemilang Training Kota Malang.
       </p>
     </div>
 
@@ -264,6 +308,9 @@ const schemaBlogIndex = {
         </button>
         <button type="button" data-cluster="Magang Informatika" class="cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
           Magang Informatika
+        </button>
+        <button type="button" data-cluster="Berkas & Pendaftaran" class="cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
+          Berkas & Pendaftaran
         </button>
         <button type="button" data-cluster="Pelatihan & Skill" class="cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
           Pelatihan, Portofolio & AI

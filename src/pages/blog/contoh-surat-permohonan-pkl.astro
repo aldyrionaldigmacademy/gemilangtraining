@@ -1,0 +1,503 @@
+---
+// src/pages/blog/contoh-surat-permohonan-pkl.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Contoh Surat Permohonan PKL SMK Siap Pakai";
+const pageDesc = "Contoh surat permohonan PKL untuk SMK jurusan RPL, TKJ, dan Bisnis Digital, lengkap struktur dan penandatangan.";
+const publishDate = "2026-11-19";
+const publishIsoDate = "2026-11-19T12:00:00+07:00";
+const pageSlug = "/blog/contoh-surat-permohonan-pkl";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/contoh-surat-permohonan-pkl-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/contoh-surat-permohonan-pkl-2.webp";
+const authorName = "Tim Redaksi Gemilang Training";
+const keywordsList = "contoh surat permohonan pkl, surat permohonan pkl smk, format surat permohonan pkl, surat pkl rpl tkj bisnis digital, penandatangan surat pkl, pengajuan pkl smk malang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "keywords": keywordsList,
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "author": {
+        "@type": "Organization",
+        "name": authorName
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        ogImageUrl,
+        secondImageUrl
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah satu surat bisa untuk beberapa siswa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. Daftar siswa ditulis berurutan dalam satu surat, dan pendaftaran kelompok berisi 2-5 siswa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja yang dilampirkan bersama surat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lampiran yang umum adalah proposal PKL, biodata atau CV siswa, dan salinan rapor. Semuanya dikirim dalam format PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan surat sebaiknya dikirim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Disarankan 2-4 minggu sebelum jadwal penerjunan siswa. Jeda ini memberi waktu untuk pengecekan kuota dan penerbitan surat balasan."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/contoh-surat-permohonan-pkl-1.webp"
+  imageAlt="Guru Pokja PKL menandatangani surat permohonan PKL di ruang guru"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Guru Pokja PKL menandatangani surat permohonan PKL di ruang guru" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Template & Format" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Template &amp; Format</span>
+            <time datetime={publishIsoDate}>19 November 2026 • 12:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            Contoh Surat Permohonan PKL SMK untuk RPL, TKJ, dan Bisnis Digital (Siap Pakai)
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/contoh-surat-permohonan-pkl-1.webp" 
+            alt="Guru Pokja PKL menandatangani surat permohonan PKL di ruang guru" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Guru Pokja PKL menandatangani surat di meja ruang guru.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#fungsi-surat" class="hover:text-tc-accent transition-colors">1. Apa Fungsi Surat Permohonan PKL?</a></li>
+              <li><a href="#beda-surat-lamaran" class="hover:text-tc-accent transition-colors">2. Apa Bedanya dengan Surat Lamaran?</a></li>
+              <li><a href="#format-surat" class="hover:text-tc-accent transition-colors">3. Bagaimana Format Surat Permohonan PKL?</a></li>
+              <li><a href="#penandatangan" class="hover:text-tc-accent transition-colors">4. Siapa yang Menandatangani?</a></li>
+              <li><a href="#template-surat" class="hover:text-tc-accent transition-colors">5. Seperti Apa Contoh Surat Permohonan PKL SMK?</a></li>
+              <li><a href="#setelah-dikirim" class="hover:text-tc-accent transition-colors">6. Apa yang Terjadi Setelah Surat Dikirim?</a></li>
+              <li><a href="#kata-pakar-alumni" class="hover:text-tc-accent transition-colors">7. Apa Kata Pakar dan Alumni?</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">8. FAQ Surat Permohonan PKL SMK</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Contoh surat permohonan PKL</strong> memuat kop sekolah, identitas siswa, durasi, dan tanda tangan resmi. Format di bawah bisa disalin dan diisi langsung. Di sini kamu dapat struktur surat, template yang bisa diisi, dan variasi data untuk RPL, TKJ, serta Bisnis Digital.
+          </p>
+          <p>
+            Menurut panduan PKL Kurikulum Merdeka dari Ditjen Pendidikan Vokasi Kemendikbudristek, PKL kini mata pelajaran wajib sekurang-kurangnya 6 bulan atau 792 jam pelajaran di kelas XII. Durasi akhirnya tetap mengikuti ketentuan sekolahmu.
+          </p>
+          <p>
+            Surat permohonan hanya satu dari beberapa berkas yang perlu disiapkan. Untuk gambaran utuhnya, lihat <a href="/blog/syarat-pendaftaran-magang-dan-pkl" class="text-tc-accent hover:underline">syarat dan berkas PKL selengkapnya</a>.
+          </p>
+
+          <section id="fungsi-surat" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Fungsi Surat Permohonan PKL?</h2>
+            <p>
+              Surat permohonan PKL adalah dokumen pengantar resmi dari sekolah yang menjadi dasar formal bagi mitra industri untuk memproses pengajuan siswa. Tanpa surat ini, pengajuan siswa belum dianggap resmi.
+            </p>
+            <p>
+              Surat inilah yang pertama kali dibaca admin tempat PKL. Isinya menentukan apakah proses pengecekan kuota bisa lanjut tanpa bolak-balik.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/contoh-surat-permohonan-pkl-2.webp" 
+              alt="Siswa SMK mengisi template surat permohonan PKL di laptop" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Siswa SMK mengisi data di template surat pada laptop.
+            </figcaption>
+          </figure>
+
+          <section id="beda-surat-lamaran" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Bedanya dengan Surat Lamaran?</h2>
+            <p>
+              Surat permohonan PKL diterbitkan oleh sekolah atas nama siswa, sedangkan surat lamaran ditulis sendiri oleh pelamar sebagai personal statement. Glints membedakan keduanya dengan cara ini.
+            </p>
+            <p>
+              Glints juga mencatat bahwa sekolah atau kampus kadang menyediakan format sendiri. Jadi tanyakan dulu ke Pokja PKL sebelum memakai template apa pun.
+            </p>
+            <p>
+              Kemdikbud pun memuat lampiran contoh surat permohonan PKL atau magang sebagai pembanding. Jangan menyalin mentah-mentah, cukup jadikan acuan struktur.
+            </p>
+          </section>
+
+          <section id="format-surat" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Format Surat Permohonan PKL?</h2>
+            <p>
+              Format surat permohonan PKL terdiri dari kop sekolah, nomor dan perihal, alamat tujuan, identitas siswa, periode PKL, lampiran, serta tanda tangan dan cap. Urutannya harus rapi.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Kop surat resmi sekolah: nama dinas, nama sekolah, alamat, dan kontak.</li>
+              <li>Tempat, tanggal, nomor surat, lampiran, dan perihal.</li>
+              <li>Alamat tujuan: Gemilang Training Malang, Mojolangu, Lowokwaru, Kota Malang 65141.</li>
+              <li>Identitas siswa: nama lengkap, NIS/NISN, kelas, dan kompetensi keahlian.</li>
+              <li>Rencana durasi dan periode PKL, biasanya 3-6 bulan.</li>
+              <li>Lampiran pendukung seperti proposal PKL, biodata, atau salinan rapor.</li>
+              <li>Tanda tangan dan cap resmi.</li>
+            </ul>
+          </section>
+
+          <section id="penandatangan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Siapa yang Menandatangani?</h2>
+            <p>
+              Surat permohonan PKL ditandatangani Kepala Sekolah, Kaprog, atau Pokja PKL, lalu dibubuhi cap resmi sekolah. Siswa tidak boleh menandatanganinya sendiri.
+            </p>
+            <p>
+              Pastikan nama penandatangan dan jabatannya tertulis jelas di bawah tanda tangan. Surat tanpa cap sering dianggap belum sah.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/syarat-pendaftaran-magang-dan-pkl" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL PILAR</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Syarat dan Berkas PKL dan Magang, Checklist Lengkap &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="template-surat" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Seperti Apa Contoh Surat Permohonan PKL SMK?</h2>
+            <p>
+              Berikut template yang bisa disalin ke Word atau Google Docs, lalu diisi sesuai data sekolahmu.
+            </p>
+            <pre class="bg-tc-bg p-5 rounded-2xl border border-tc-border text-xs md:text-sm text-tc-muted font-mono overflow-x-auto whitespace-pre-wrap leading-relaxed">
+[KOP SEKOLAH: nama dinas, nama sekolah, alamat, kontak]
+
+[Kota], [Tanggal Bulan Tahun]
+Nomor    : [Nomor Surat]
+Lampiran : 1 (satu) berkas proposal PKL
+Hal      : Permohonan Praktik Kerja Lapangan (PKL)
+
+Yth. Pimpinan / Admin Gemilang Training Malang
+Mojolangu, Lowokwaru, Kota Malang 65141
+
+Dengan hormat,
+Dalam rangka pelaksanaan Kurikulum Merdeka dan penguatan
+kompetensi peserta didik, SMK [Nama Sekolah] mengajukan
+permohonan PKL bagi siswa berikut:
+
+1. Nama   : [Nama Siswa]
+   NISN   : [NISN]
+   Kelas  : [Kelas] / [Kompetensi Keahlian]
+
+PKL direncanakan selama [3 / 6] bulan, mulai [Tanggal Mulai]
+sampai [Tanggal Selesai]. Siswa akan mematuhi tata tertib
+dan arahan pembimbing.
+
+Bersama surat ini kami lampirkan proposal PKL dan biodata siswa.
+Atas perhatian dan kerja samanya, kami ucapkan terima kasih.
+
+Kepala Sekolah / Ketua Pokja PKL,
+(Tanda tangan dan cap resmi)
+[Nama Lengkap] - NIP. [jika ada]
+            </pre>
+
+            <p>
+              Tiga baris data siswa berikut tinggal ditempel pada bagian nomor 1 sesuai jurusan.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+              <div class="bg-tc-bg p-4 rounded-xl border border-tc-border space-y-1">
+                <p class="font-bold text-tc-accent">RPL</p>
+                <p>Nama: [Nama Siswa] | NISN: [NISN]</p>
+                <p>Kelas / Jurusan: XI / Rekayasa Perangkat Lunak (RPL)</p>
+                <p>Fokus yang diminati: pembuatan website modern (Astro, Bootstrap 5, Blogspot)</p>
+              </div>
+              <div class="bg-tc-bg p-4 rounded-xl border border-tc-border space-y-1">
+                <p class="font-bold text-tc-accent">TKJ</p>
+                <p>Nama: [Nama Siswa] | NISN: [NISN]</p>
+                <p>Kelas / Jurusan: XI / Teknik Komputer dan Jaringan (TKJ)</p>
+                <p>Fokus yang diminati: sesuai hasil pemetaan kemampuan bersama mentor</p>
+              </div>
+              <div class="bg-tc-bg p-4 rounded-xl border border-tc-border space-y-1">
+                <p class="font-bold text-tc-accent">Bisnis Digital</p>
+                <p>Nama: [Nama Siswa] | NISN: [NISN]</p>
+                <p>Kelas / Jurusan: XI / Bisnis Digital (Digital Marketing)</p>
+                <p>Fokus yang diminati: riset keyword SEO dan penulisan artikel</p>
+              </div>
+            </div>
+            <p>
+              Baris fokus itu opsional. Kalau sekolahmu punya aturan format sendiri, aturan sekolah yang menang.
+            </p>
+          </section>
+
+          <section id="setelah-dikirim" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa yang Terjadi Setelah Surat Dikirim?</h2>
+            <p>
+              Setelah surat dikirim, Gemilang Training mengecek kuota, mengatur perkenalan, lalu menerbitkan surat balasan kesediaan menerima siswa. Surat balasan itu diserahkan kembali ke Pokja PKL sekolah.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Siswa atau guru mengecek kuota jurusan dan mengirim scan PDF ke WhatsApp admin.</li>
+              <li>Sesi perkenalan memetakan minat dan membagi kelompok lintas jurusan dengan skema 70% keterampilan jurusan dan 30% ilmu pendukung.</li>
+              <li>Siswa menyiapkan laptop pribadi dan jurnal harian.</li>
+              <li>Monitoring, penilaian, dan sertifikat resmi diterbitkan di akhir.</li>
+            </ul>
+            <p>
+              Mau lihat pilihannya dulu? Buka halaman <a href="/program" class="text-tc-accent hover:underline">program</a> dan <a href="/alur-pendaftaran" class="text-tc-accent hover:underline">alur pendaftaran</a>, lalu hubungi admin lewat <a href="/kontak" class="text-tc-accent hover:underline">halaman kontak</a>.
+            </p>
+          </section>
+
+          <section id="kata-pakar-alumni" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Kata Pakar dan Alumni?</h2>
+            <p>
+              Dr. Ir. Kiki Yuliati, M.Sc., Dirjen Pendidikan Vokasi Kemendikbudristek, menegaskan dalam Panduan PKL Kurikulum Merdeka bahwa PKL adalah penyelarasan akhir seluruh mata pelajaran untuk menguatkan etos kerja, soft skills, dan hard skills.
+            </p>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Siti Nurhaliza (Siswa PKL Bisnis Digital &amp; Pemasaran)</p>
+              <p class="text-tc-muted text-xs italic">"Waktu PKL di sini, praktik Digital Marketing-nya langsung ke kasus nyata. Riset keyword SEO dan pembuatan artikel beneran kepakai dan bikin portofolio saya makin berbobot!"</p>
+            </blockquote>
+            <p>
+              Surat permohonan PKL yang baik singkat, lengkap, dan ditandatangani pihak yang berwenang. Pakai template di atas, sesuaikan dengan format sekolah, lalu kirim sebagai PDF.
+            </p>
+            <p>
+              Gemilang Training melayani Malang untuk PKL siswa SMK jurusan RPL, TKJ, Bisnis Digital, dan lainnya. Kirim suratmu lewat WhatsApp admin di +62 819-4343-1484 dan mulai proses pengecekan kuota.
+            </p>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim redaksi Gemilang Training Malang untuk panduan administrasi, format surat permohonan PKL SMK, dan koordinasi Pokja PKL.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Kirim Scan PDF Surat Permohonan PKL</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Pastikan surat sudah ditandatangani dan distempel resmi sekolah sebelum dikirim ke WhatsApp admin di Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20mengirimkan%20surat%20permohonan%20PKL%20SMK%20untuk%20cek%20kuota." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Kirim via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Surat Permohonan PKL SMK</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah satu surat bisa untuk beberapa siswa?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Bisa. Daftar siswa ditulis berurutan dalam satu surat, dan pendaftaran kelompok berisi 2-5 siswa.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa saja yang dilampirkan bersama surat?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Lampiran yang umum adalah proposal PKL, biodata atau CV siswa, dan salinan rapor. Semuanya dikirim dalam format PDF.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Kapan surat sebaiknya dikirim?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Disarankan 2-4 minggu sebelum jadwal penerjunan siswa. Jeda ini memberi waktu untuk pengecekan kuota dan penerbitan surat balasan.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Koordinasi PKL SMK Malang</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Melayani RPL, TKJ, Bisnis Digital, Pemasaran, DKV &amp; Multimedia di Mojolangu, Lowokwaru, Kota Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20surat%20permohonan%20PKL." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/syarat-pendaftaran-magang-dan-pkl-1.webp" alt="Siswa SMK membawa map berkas surat permohonan PKL di ruang tata usaha" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Artikel Pilar • 19 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/syarat-pendaftaran-magang-dan-pkl">
+                    Syarat dan Berkas PKL dan Magang, Checklist Lengkap
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/cara-melamar-pkl-lewat-whatsapp-1.webp" alt="Siswa SMK mengetik pesan lamaran PKL lewat WhatsApp di ponsel" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Supporting 3 • 19 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/cara-melamar-pkl-lewat-whatsapp">
+                    Cara Melamar PKL Lewat WhatsApp, Contoh Pesannya
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>
