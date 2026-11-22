@@ -6,11 +6,22 @@ import Footer from '../components/Footer.astro';
 import { portofolios } from '../data/portofolioData';
 
 const formattedPortofolios = portofolios.map((item) => {
+  const rawImg = String(item.img || '');
+  const updatedImg = rawImg.toLowerCase().includes('yudharta.webp')
+    ? rawImg.replace(/yudharta\.webp/gi, 'poliwangi1.webp')
+    : rawImg;
+
   const isYudharta =
     item.title.toLowerCase().includes('yudharta') ||
-    item.mitra.toLowerCase().includes('yudharta');
+    item.mitra.toLowerCase().includes('yudharta') ||
+    rawImg.toLowerCase().includes('yudharta');
 
-  if (!isYudharta) return item;
+  if (!isYudharta) {
+    return {
+      ...item,
+      img: updatedImg,
+    };
+  }
 
   return {
     ...item,
@@ -19,6 +30,7 @@ const formattedPortofolios = portofolios.map((item) => {
     lokasi: 'Banyuwangi, Jawa Timur',
     title: 'Kemitraan Industri & Magang Mahasiswa Poliwangi',
     desc: 'Kolaborasi program magang mahasiswa Politeknik Negeri Banyuwangi (Poliwangi) dalam pengembangan website modern, optimasi SEO, dan proyek digital terapan bersama mentor industri.',
+    img: updatedImg || '/assets/img/poliwangi1.webp',
     tags: item.tags.map((t) =>
       t.toLowerCase().includes('yudharta') ? 'Poliwangi' : t
     ),
@@ -215,3 +227,4 @@ const formattedPortofolios = portofolios.map((item) => {
   initPortofolioFilter();
   document.addEventListener('astro:page-load', initPortofolioFilter);
 </script>
+```[cite: 25]

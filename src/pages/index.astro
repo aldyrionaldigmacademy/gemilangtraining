@@ -30,6 +30,33 @@ const jalurProgramBeranda = [
     alurLink: "/alur-pendaftaran?jalur=smk"
   }
 ];
+
+const portofolioBeranda = [
+  {
+    badge: "Media Digital",
+    mitra: "Jawa Pos Radar Kediri",
+    lokasi: "Kediri, Jawa Timur",
+    title: "Kemitraan Jurnalistik & Portal Media Digital",
+    desc: "Pengembangan strategi komunikasi media digital & portal berita komersial bersama Radar Kediri.",
+    img: "/assets/img/kka-radar-kediri.webp"
+  },
+  {
+    badge: "Vokasi & Pelatihan",
+    mitra: "SMK PGRI 1 Malang (SKARIGA)",
+    lokasi: "Malang, Jawa Timur",
+    title: "Pelatihan Kejuruan Terpadu & Sinkronisasi",
+    desc: "Program peningkatan kompetensi siswa SMK melalui sertifikasi keahlian terpadu lintas jurusan.",
+    img: "/assets/img/pelatihan-smk3pgri.webp"
+  },
+  {
+    badge: "Web & Fintech",
+    mitra: "Panitia QRIS Run",
+    lokasi: "Kota Malang",
+    title: "Sistem Registrasi Digital & Event Management",
+    desc: "Implementasi ticketing smart-presence dan lokasi live tracking untuk kegiatan event QRIS Run.",
+    img: "/assets/img/qris-run.webp"
+  }
+];
 ---
 
 <BaseLayout title="Tempat Magang & PKL Mahasiswa & SMK di Malang - Gemilang Training" isHome={true}>
@@ -184,71 +211,47 @@ const jalurProgramBeranda = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Item Portofolio 1 -->
-      <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl">
-        <div>
-          <div class="h-52 overflow-hidden relative border-b border-tc-border/60">
-            <img src="/assets/img/kka-radar-kediri.webp" alt="Media Digital Radar Kediri" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-            <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Media Digital</span>
-          </div>
-          <div class="p-6 space-y-2">
-            <div class="text-xs text-tc-accent font-semibold">📍 Jawa Pos Radar Kediri</div>
-            <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-              Kemitraan Jurnalistik & Portal Media Digital
-            </h3>
-            <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
-              Pengembangan strategi komunikasi media digital & portal berita komersial bersama Radar Kediri.
-            </p>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
-          <a href="/portofolio" class="text-tc-accent text-xs font-bold hover:underline">Lihat Case Study &rarr;</a>
-        </div>
-      </div>
+      {portofolioBeranda.map((item) => {
+        const waMessage = `Halo Admin Gemilang Training, saya tertarik dan ingin menanyakan detail mengenai proyek "${item.title}" (${item.mitra}).`;
+        const waUrl = `https://wa.me/6281943431484?text=${encodeURIComponent(waMessage)}`;
 
-      <!-- Item Portofolio 2 -->
-      <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl">
-        <div>
-          <div class="h-52 overflow-hidden relative border-b border-tc-border/60">
-            <img src="/assets/img/pelatihan-smk3pgri.webp" alt="Pelatihan SKARIGA Malang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-            <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Vokasi & Pelatihan</span>
+        return (
+          <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl">
+            <div>
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" class="block h-52 overflow-hidden relative border-b border-tc-border/60">
+                <img src={item.img} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
+                  {item.badge}
+                </span>
+              </a>
+              <div class="p-6 space-y-2">
+                <div class="flex justify-between items-center text-xs text-tc-accent font-semibold">
+                  <span>📍 {item.mitra}</span>
+                  <span class="text-tc-muted">{item.lokasi}</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href={waUrl} target="_blank" rel="noopener noreferrer" class="hover:text-tc-accent transition-colors">
+                    {item.title}
+                  </a>
+                </h3>
+                <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
+              <a 
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block w-full py-2.5 rounded-xl bg-tc-bg hover:bg-tc-accent hover:text-slate-950 text-center text-xs font-bold text-tc-accent border border-tc-border hover:border-tc-accent transition-all duration-300"
+              >
+                Konsultasi Proyek via WA &rarr;
+              </a>
+            </div>
           </div>
-          <div class="p-6 space-y-2">
-            <div class="text-xs text-tc-accent font-semibold">📍 SMK PGRI 1 Malang (SKARIGA)</div>
-            <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-              Pelatihan Kejuruan Terpadu & Sinkronisasi
-            </h3>
-            <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
-              Program peningkatan kompetensi siswa SMK melalui sertifikasi keahlian terpadu lintas jurusan.
-            </p>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
-          <a href="/portofolio" class="text-tc-accent text-xs font-bold hover:underline">Lihat Case Study &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Item Portofolio 3 -->
-      <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 group flex flex-col justify-between shadow-xl">
-        <div>
-          <div class="h-52 overflow-hidden relative border-b border-tc-border/60">
-            <img src="/assets/img/qris-run.webp" alt="QRIS Run System" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-            <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Web & Fintech</span>
-          </div>
-          <div class="p-6 space-y-2">
-            <div class="text-xs text-tc-accent font-semibold">📍 Panitia QRIS Run</div>
-            <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-              Sistem Registrasi Digital & Event Management
-            </h3>
-            <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
-              Implementasi ticketing smart-presence dan lokasi live tracking untuk kegiatan event QRIS Run.
-            </p>
-          </div>
-        </div>
-        <div class="px-6 pb-6 pt-3 border-t border-tc-border/40">
-          <a href="/portofolio" class="text-tc-accent text-xs font-bold hover:underline">Lihat Case Study &rarr;</a>
-        </div>
-      </div>
+        );
+      })}
     </div>
   </section>
 
