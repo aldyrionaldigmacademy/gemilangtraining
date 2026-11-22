@@ -5,22 +5,33 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const pageTitle = "Blog & Edukasi Karier Digital - Gemilang Training";
-const pageDesc = "Panduan tempat magang di Malang, cara memilih tempat magang, ciri tawaran magang mencurigakan, pelatihan kejuruan SKARIGA, portofolio, dan AI prompt dari Gemilang Training Kota Malang.";
+const pageDesc = "Panduan tempat magang di Malang, uang saku magang, model kerja WFH/hybrid/onsite, ciri tawaran magang mencurigakan, pelatihan kejuruan SKARIGA, portofolio, dan AI prompt dari Gemilang Training Kota Malang.";
 const pageUrl = "https://infomagangmalang.web.id/blog";
 const ogImageUrl = "https://infomagangmalang.web.id/assets/img/tempat-magang-malang-1.webp";
 
 // Database Artikel Blog Terstruktur (Pembaruan 22 November 2026)
 const articles = [
   {
-    slug: "tempat-magang-malang",
-    category: "Panduan Utama",
-    tag: "Panduan Magang",
+    slug: "magang-wfh-hybrid-onsite-malang",
+    category: "Panduan Magang",
+    tag: "WFH, Hybrid & Onsite",
     cluster: "Tempat Magang Malang",
-    title: "Tempat Magang di Malang 2027 dan Cara Memilihnya",
-    desc: "Temukan jenis tempat magang di Malang, cara memilih yang sesuai jurusan, dan checklist verifikasi sebelum mendaftar. Baca panduan lengkapnya dan mulai melamar.",
-    date: "22 Nov 2026",
-    img: "/assets/img/tempat-magang-malang-1.webp",
-    alt: "Daftar periksa sebelum mendaftar magang di Malang"
+    title: "Magang WFH, Hybrid atau Onsite untuk Mahasiswa dan Siswa SMK di Malang",
+    desc: "Bandingkan magang WFH, hybrid, dan onsite untuk mahasiswa dan siswa SMK di Malang, lengkap dengan biaya dan aturannya. Temukan model yang cocok untuk Anda.",
+    date: "22 Nov 2026 • 20:00 WIB",
+    img: "/assets/img/magang-wfh-hybrid-onsite-malang-1.webp",
+    alt: "Magang onsite di Malang"
+  },
+  {
+    slug: "apakah-magang-dibayar-uang-saku",
+    category: "Panduan Magang",
+    tag: "Uang Saku & Hak",
+    cluster: "Tempat Magang Malang",
+    title: "Hak dan Fasilitas Peserta Magang serta Cara Mengonfirmasinya",
+    desc: "Apakah magang dibayar? Pahami uang saku, bedanya dengan gaji, aturan dasarnya, dan cara menanyakannya dengan sopan. Baca panduan lengkapnya sekarang juga.",
+    date: "22 Nov 2026 • 16:00 WIB",
+    img: "/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp",
+    alt: "Peserta magang membaca perjanjian magang"
   },
   {
     slug: "ciri-tawaran-magang-perlu-diwaspadai",
@@ -29,9 +40,20 @@ const articles = [
     cluster: "Tempat Magang Malang",
     title: "Ciri Tawaran Magang Mencurigakan dan Cara Cek",
     desc: "Kenali ciri tawaran magang yang mencurigakan dan cara cek tempat magang terpercaya sebelum daftar. Simak langkah verifikasi dan lindungi data Anda sekarang.",
-    date: "22 Nov 2026",
-    img: "/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp",
+    date: "22 Nov 2026 • 12:00 WIB",
+    img: "/assets/img/ciri-tawaran-magang-perlu-diwaspadai-2.webp",
     alt: "Mahasiswa memeriksa tawaran magang mencurigakan di ponsel"
+  },
+  {
+    slug: "tempat-magang-malang",
+    category: "Panduan Utama",
+    tag: "Panduan Magang",
+    cluster: "Tempat Magang Malang",
+    title: "Tempat Magang di Malang 2027 dan Cara Memilihnya",
+    desc: "Temukan jenis tempat magang di Malang, cara memilih yang sesuai jurusan, dan checklist verifikasi sebelum mendaftar. Baca panduan lengkapnya dan mulai melamar.",
+    date: "22 Nov 2026 • 11:00 WIB",
+    img: "/assets/img/tempat-magang-malang-1.webp",
+    alt: "Daftar periksa sebelum mendaftar magang di Malang"
   },
   {
     slug: "pelatihan-kejuruan-terpadu-sinkronisasi-industri-skariga",

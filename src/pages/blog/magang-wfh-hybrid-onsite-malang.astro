@@ -1,0 +1,510 @@
+---
+// src/pages/blog/magang-wfh-hybrid-onsite-malang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang WFH, Hybrid atau Onsite untuk Mahasiswa dan Siswa SMK di Malang";
+const metaTitle = "Magang WFH Hybrid atau Onsite di Malang";
+const pageDesc = "Bandingkan magang WFH, hybrid, dan onsite untuk mahasiswa dan siswa SMK di Malang, lengkap dengan biaya dan aturannya. Temukan model yang cocok untuk Anda.";
+const publishDate = "2026-11-22";
+const publishIsoDate = "2026-11-22T20:00:00+07:00";
+const pageSlug = "/blog/magang-wfh-hybrid-onsite-malang";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/magang-wfh-hybrid-onsite-malang-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/magang-wfh-hybrid-onsite-malang-2.webp";
+const authorName = "Tim Redaksi Gemilang Training";
+const keywordsList = "magang WFH hybrid onsite Malang, perbandingan magang WFH dan onsite, magang online Malang, PKL SMK onsite Malang, model kerja magang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@id": pageUrl },
+      "headline": pageTitle,
+      "description": pageDesc,
+      "keywords": keywordsList,
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": pageUrl
+      },
+      "datePublished": publishIsoDate,
+      "dateModified": publishIsoDate,
+      "author": {
+        "@type": "Organization",
+        "name": authorName
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        ogImageUrl,
+        secondImageUrl
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah magang WFH tetap mendapat uang saku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa ya, bisa tidak. Model kerja tidak otomatis menentukan uang saku, sehingga tanyakan dan minta kesepakatan tertulis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah magang WFH cocok untuk pemula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cocok bila ada pembimbing yang responsif dan tugas terukur. Bagi pemula yang butuh arahan intensif, hybrid atau onsite biasanya lebih aman."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana memastikan magang WFH bukan penipuan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Verifikasi identitas penyelenggara, hindari tawaran yang hanya meminta absensi atau biaya awal, dan minta perjanjian tertulis."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={metaTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/magang-wfh-hybrid-onsite-malang-1.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Magang onsite di Malang bersama mentor" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Panduan Magang" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Panduan Magang</span>
+            <time datetime={publishIsoDate}>22 November 2026 • 20:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            {pageTitle}
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/magang-wfh-hybrid-onsite-malang-1.webp" 
+            alt="Magang onsite di Malang" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Magang onsite di Malang.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#ringkasan-inti" class="hover:text-tc-accent transition-colors">1. Ringkasan Inti</a></li>
+              <li><a href="#beda-model" class="hover:text-tc-accent transition-colors">2. Apa beda magang WFH, hybrid, dan onsite?</a></li>
+              <li><a href="#kelebihan-wfh" class="hover:text-tc-accent transition-colors">3. Apa kelebihan dan kekurangan magang WFH?</a></li>
+              <li><a href="#kelebihan-onsite" class="hover:text-tc-accent transition-colors">4. Apa kelebihan dan kekurangan magang onsite?</a></li>
+              <li><a href="#pilihan-hybrid" class="hover:text-tc-accent transition-colors">5. Kapan magang hybrid menjadi pilihan terbaik?</a></li>
+              <li><a href="#cocok-mahasiswa-smk" class="hover:text-tc-accent transition-colors">6. Mana yang cocok untuk mahasiswa dan siswa SMK di Malang?</a></li>
+              <li><a href="#izin-kampus" class="hover:text-tc-accent transition-colors">7. Apakah sekolah atau kampus mengizinkan magang WFH?</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">8. FAQ tentang Magang WFH, Hybrid, dan Onsite</a></li>
+              <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">9. Kesimpulan</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Magang WFH hybrid onsite</strong> berbeda lokasi kerja: WFH dari rumah, onsite di kantor, hybrid gabungan keduanya; pilih sesuai tugas, aturan kampus atau sekolah, dan biaya.
+          </p>
+
+          <section id="ringkasan-inti" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Ringkasan Inti</h2>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Onsite cocok untuk pekerjaan praktik langsung, WFH untuk tugas digital yang terukur, dan hybrid untuk keseimbangan bimbingan dan fleksibilitas.</li>
+              <li>Biaya transportasi dan kos di Malang sangat memengaruhi pilihan model kerja.</li>
+              <li>Siswa SMK dan mahasiswa kesehatan atau teknik umumnya membutuhkan praktik langsung.</li>
+              <li>Survei Universitas Tidar yang dimuat Koran Jakarta pada 19 Juni 2023 menemukan 53 persen dari 215 responden sering bekerja di luar jam kerja saat magang.</li>
+              <li>Pastikan kampus atau sekolah mengizinkan model kerja yang dipilih sebelum menyetujui tawaran.</li>
+            </ul>
+          </section>
+
+          <section id="beda-model" class="space-y-4">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa beda magang WFH, hybrid, dan onsite?</h2>
+            <p>
+              WFH berarti bekerja dari rumah, onsite berarti bekerja penuh di lokasi penyelenggara, dan hybrid berarti membagi hari kerja antara lokasi penyelenggara dan rumah.
+            </p>
+
+            <!-- Tabel Perbandingan -->
+            <div class="overflow-x-auto rounded-2xl border border-tc-border bg-tc-bg">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="border-b border-tc-border bg-tc-card/80 text-white">
+                    <th class="p-3.5 font-bold">Aspek</th>
+                    <th class="p-3.5 font-bold text-tc-accent">WFH</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Hybrid</th>
+                    <th class="p-3.5 font-bold text-tc-accent">Onsite</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Lokasi kerja</td>
+                    <td class="p-3.5">Rumah atau kos</td>
+                    <td class="p-3.5">Campuran</td>
+                    <td class="p-3.5">Kantor atau lokasi penyelenggara</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Bimbingan</td>
+                    <td class="p-3.5">Daring, terjadwal</td>
+                    <td class="p-3.5">Daring dan tatap muka</td>
+                    <td class="p-3.5">Tatap muka langsung</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Biaya transport</td>
+                    <td class="p-3.5">Rendah</td>
+                    <td class="p-3.5">Sedang</td>
+                    <td class="p-3.5">Tinggi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Cocok untuk</td>
+                    <td class="p-3.5">Desain, konten, pemrograman, riset</td>
+                    <td class="p-3.5">Administrasi, pemasaran, analisis</td>
+                    <td class="p-3.5">Teknik, kesehatan, pariwisata, praktik lapangan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3.5 font-semibold text-white">Risiko utama</td>
+                    <td class="p-3.5">Jam kerja kabur, bimbingan minim</td>
+                    <td class="p-3.5">Jadwal berubah-ubah</td>
+                    <td class="p-3.5">Biaya dan waktu tempuh</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/magang-wfh-hybrid-onsite-malang-2.webp" 
+              alt="Siswa SMK praktik langsung di tempat magang onsite" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Siswa SMK praktik langsung di tempat magang onsite.
+            </figcaption>
+          </figure>
+
+          <section id="kelebihan-wfh" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa kelebihan dan kekurangan magang WFH?</h2>
+            <p>
+              Magang WFH menghemat biaya transportasi dan waktu tempuh, tetapi bimbingan terbatas dan jam kerja mudah kabur sehingga perlu disiplin dan kesepakatan jam kerja tertulis.
+            </p>
+            <p class="font-semibold text-white">Kelebihan:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Menghemat biaya transport dan makan di luar.</li>
+              <li>Memungkinkan magang di perusahaan di luar kota tanpa pindah kos.</li>
+              <li>Fleksibel bagi mahasiswa yang masih memiliki jadwal kuliah.</li>
+            </ul>
+            <p class="font-semibold text-white pt-2">Kekurangan:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Bimbingan dan interaksi lebih sedikit.</li>
+              <li>Batas jam kerja mudah kabur. Survei Universitas Tidar tahun 2023 yang dimuat Koran Jakarta menemukan 53 persen dari 215 responden sering bekerja di luar jam kerja.</li>
+              <li>Membutuhkan internet dan perangkat yang memadai.</li>
+              <li>Penilaian sulit jika tugas tidak terukur.</li>
+            </ul>
+            <p>
+              Kemnaker juga mengingatkan dalam konteks Magang Nasional bahwa peserta tidak boleh hanya melakukan absensi tanpa kegiatan magang, sehingga tugas dan hasil kerja WFH harus terdokumentasi (dilaporkan detikFinance, 7 Juli 2026).
+            </p>
+          </section>
+
+          <section id="kelebihan-onsite" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa kelebihan dan kekurangan magang onsite?</h2>
+            <p>
+              Magang onsite memberi bimbingan langsung, akses alat, dan pengalaman lingkungan kerja nyata, tetapi menuntut biaya transportasi, waktu tempuh, dan jadwal yang harus disesuaikan dengan kuliah.
+            </p>
+            <p class="font-semibold text-white">Kelebihan:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Bimbingan dan umpan balik cepat dari pembimbing.</li>
+              <li>Akses alat, laboratorium, atau fasilitas yang tidak tersedia di rumah.</li>
+              <li>Peluang membangun jejaring dan kesan profesional.</li>
+            </ul>
+            <p class="font-semibold text-white pt-2">Kekurangan:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Biaya bensin atau transportasi online, kos, dan makan lebih tinggi.</li>
+              <li>Waktu tempuh di Malang Raya dapat bertambah saat jam sibuk.</li>
+              <li>Jadwal kuliah atau sekolah lebih sulit dipadukan.</li>
+            </ul>
+          </section>
+
+          <section id="pilihan-hybrid" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kapan magang hybrid menjadi pilihan terbaik?</h2>
+            <p>
+              Magang hybrid cocok ketika tugas memerlukan koordinasi tatap muka sesekali, tetapi sebagian pekerjaan bisa dilakukan mandiri, sehingga bimbingan tetap ada sementara biaya transport lebih terkendali.
+            </p>
+            <p>
+              Model ini umum untuk tugas pemasaran, analisis data, administrasi, dan pengelolaan konten. Pastikan jadwal hari di kantor tertulis dan tidak berubah sepihak, serta tentukan bagaimana laporan harian atau mingguan disampaikan.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/apakah-magang-dibayar-uang-saku" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA ARTIKEL TERKAIT</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Hak dan Fasilitas Peserta Magang serta Cara Mengonfirmasinya &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="cocok-mahasiswa-smk" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Mana yang cocok untuk mahasiswa dan siswa SMK di Malang?</h2>
+            <p>
+              Mahasiswa berjadwal padat dengan tugas digital cocok hybrid atau WFH, sedangkan siswa SMK dan mahasiswa kesehatan atau teknik umumnya cocok onsite karena butuh praktik langsung.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Mahasiswa informatika, DKV, komunikasi, dan ekonomi.</strong> WFH atau hybrid layak dipertimbangkan bila tugas terukur dan ada pembimbing yang responsif.</li>
+              <li><strong>Mahasiswa kesehatan, teknik, dan pariwisata.</strong> Onsite lebih sesuai karena kompetensi dinilai lewat praktik.</li>
+              <li><strong>Siswa SMK.</strong> Onsite umumnya lebih sesuai karena sekolah menekankan bimbingan, keselamatan kerja, dan penilaian industri. Libatkan orang tua dan guru pembimbing dalam keputusan.</li>
+              <li><strong>Perantau yang tinggal di kos.</strong> Hitung biaya kos dan transport. WFH atau hybrid dapat menekan biaya.</li>
+            </ul>
+          </section>
+
+          <section id="izin-kampus" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apakah sekolah atau kampus mengizinkan magang WFH?</h2>
+            <p>
+              Kampus dan sekolah dapat mengizinkan magang WFH atau hybrid jika ada pembimbing, tugas terukur, dan laporan, tetapi aturannya berbeda sehingga wajib dikonfirmasi ke koordinator magang.
+            </p>
+            <p>Tanyakan hal berikut ke kampus atau sekolah sebelum menerima tawaran:</p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Apakah magang jarak jauh diakui untuk konversi nilai atau sertifikat?</li>
+              <li>Berapa jam kerja minimal dan bagaimana presensi dicatat?</li>
+              <li>Apakah diperlukan kunjungan pembimbing atau pemantauan daring?</li>
+              <li>Dokumen apa yang dibutuhkan untuk laporan akhir?</li>
+            </ul>
+          </section>
+
+          <section id="kesimpulan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p>
+              Pilih magang WFH, hybrid, atau onsite sesuai tugas, aturan kampus atau sekolah, bimbingan, dan biaya, lalu pastikan jam kerja, hasil kerja, dan uang saku tertulis.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Onsite untuk praktik langsung, WFH untuk tugas digital, hybrid untuk keseimbangan.</li>
+              <li>Hitung biaya transport dan kos sebelum memilih.</li>
+              <li>Konfirmasi aturan model kerja ke kampus atau sekolah.</li>
+              <li>Pastikan jam kerja dan pembimbing jelas pada semua model.</li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            GT
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Tim redaksi Gemilang Training Malang untuk panduan pemilihan sistem kerja magang WFH, hybrid, dan onsite bagi mahasiswa dan siswa SMK.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Tentukan Model Magang Sesuai Jadwalmu</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Diskusikan pilihan sistem kerja WFH, hybrid, atau onsite Malang yang sesuai dengan ketentuan sekolah atau kampusmu bersama tim kami.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20mengenai%20model%20magang%20WFH%2C%20hybrid%2C%20atau%20onsite." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ tentang Magang WFH, Hybrid, dan Onsite</h3>
+          <p class="text-tc-muted text-xs md:text-sm leading-relaxed">
+            Jawaban berikut menjawab pertanyaan umum tentang pemilihan model kerja magang WFH, hybrid, dan onsite, serta dapat dipahami tanpa membaca bagian lain artikel.
+          </p>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah magang WFH tetap mendapat uang saku?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Bisa ya, bisa tidak. Model kerja tidak otomatis menentukan uang saku, sehingga tanyakan dan minta kesepakatan tertulis.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah magang WFH cocok untuk pemula?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Cocok bila ada pembimbing yang responsif dan tugas terukur. Bagi pemula yang butuh arahan intensif, hybrid atau onsite biasanya lebih aman.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana memastikan magang WFH bukan penipuan?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Verifikasi identitas penyelenggara, hindari tawaran yang hanya meminta absensi atau biaya awal, dan minta perjanjian tertulis.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Konsultasi Model Magang</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Diskusikan pilihan magang WFH, hybrid, atau onsite yang paling pas dengan jadwalmu.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20mengenai%20model%20magang%20WFH%2C%20hybrid%2C%20atau%20onsite." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi (2 Artikel Sebelumnya) -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/tempat-magang-malang-1.webp" alt="Daftar periksa sebelum mendaftar magang di Malang" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Artikel Pilar</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/tempat-magang-malang">
+                    Tempat Magang di Malang 2027 dan Cara Memilihnya
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp" alt="Peserta magang membaca perjanjian magang" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Panduan Magang</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/apakah-magang-dibayar-uang-saku">
+                    Hak dan Fasilitas Peserta Magang serta Cara Mengonfirmasinya
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>
