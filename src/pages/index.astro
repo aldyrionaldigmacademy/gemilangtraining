@@ -57,6 +57,39 @@ const portofolioBeranda = [
     img: "/assets/img/qris-run.webp"
   }
 ];
+
+const artikelBeranda = [
+  {
+    href: "/blog/tempat-magang-malang",
+    img: "/assets/img/tempat-magang-malang-1.webp",
+    alt: "Daftar periksa sebelum mendaftar magang di Malang",
+    category: "Panduan Utama",
+    tag: "Panduan Magang",
+    title: "Tempat Magang di Malang 2027 dan Cara Memilihnya",
+    desc: "Temukan jenis tempat magang di Malang, cara memilih yang sesuai jurusan, dan checklist verifikasi sebelum mendaftar.",
+    date: "22 Nov 2026"
+  },
+  {
+    href: "/blog/ciri-tawaran-magang-perlu-diwaspadai",
+    img: "/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp",
+    alt: "Mahasiswa memeriksa tawaran magang mencurigakan di ponsel",
+    category: "Keamanan & Cek",
+    tag: "Anti-Penipuan",
+    title: "Ciri Tawaran Magang Mencurigakan dan Cara Cek",
+    desc: "Kenali ciri tawaran magang yang mencurigakan dan cara cek tempat magang terpercaya sebelum daftar agar data tetap aman.",
+    date: "22 Nov 2026"
+  },
+  {
+    href: "/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran",
+    img: "/assets/img/artikel3a.webp",
+    alt: "Pelatihan AI dan Prompt Marketing",
+    category: "AI & Prompt",
+    tag: "AI & Marketing",
+    title: "Pelatihan AI dan Prompt untuk Bisnis, Marketing, dan Pemasaran",
+    desc: "Panduan pelatihan AI dan prompt engineering untuk bisnis dan marketing: struktur prompt yang terarah & etika penggunaannya.",
+    date: "03 Nov 2026"
+  }
+];
 ---
 
 <BaseLayout title="Tempat Magang & PKL Mahasiswa & SMK di Malang - Gemilang Training" isHome={true}>
@@ -267,86 +300,37 @@ const portofolioBeranda = [
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Artikel 1 -->
-        <article class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group shadow-xl">
-          <div>
-            <div class="h-48 overflow-hidden relative border-b border-tc-border/60">
-              <img src="/assets/img/tempat-magang-malang-1.webp" alt="Daftar periksa sebelum mendaftar magang di Malang" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Panduan Utama</span>
+        {artikelBeranda.map((post) => (
+          <article class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group shadow-xl">
+            <div>
+              <a href={post.href} class="block h-48 overflow-hidden relative border-b border-tc-border/60">
+                <img src={post.img} alt={post.alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">
+                  {post.category}
+                </span>
+              </a>
+              <div class="p-6 space-y-3">
+                <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">
+                  {post.tag}
+                </span>
+                <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href={post.href}>
+                    {post.title}
+                  </a>
+                </h3>
+                <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
+                  {post.desc}
+                </p>
+              </div>
             </div>
-            <div class="p-6 space-y-3">
-              <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">Panduan Magang</span>
-              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-                <a href="/blog/tempat-magang-malang">
-                  Tempat Magang di Malang 2027 dan Cara Memilihnya
-                </a>
-              </h3>
-              <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
-                Temukan jenis tempat magang di Malang, cara memilih yang sesuai jurusan, dan checklist verifikasi sebelum mendaftar.
-              </p>
+            <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between">
+              <span class="text-xs font-mono text-tc-muted">{post.date}</span>
+              <a href={post.href} class="text-xs font-bold text-tc-accent hover:text-white transition-colors">
+                Baca Selengkapnya &rarr;
+              </a>
             </div>
-          </div>
-          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between">
-            <span class="text-xs font-mono text-tc-muted">22 Nov 2026</span>
-            <a href="/blog/tempat-magang-malang" class="text-xs font-bold text-tc-accent hover:text-white transition-colors">
-              Baca Selengkapnya &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- Artikel 2 -->
-        <article class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group shadow-xl">
-          <div>
-            <div class="h-48 overflow-hidden relative border-b border-tc-border/60">
-              <img src="/assets/img/ciri-tawaran-magang-perlu-diwaspadai-1.webp" alt="Mahasiswa memeriksa tawaran magang mencurigakan di ponsel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">Keamanan & Cek</span>
-            </div>
-            <div class="p-6 space-y-3">
-              <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">Anti-Penipuan</span>
-              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-                <a href="/blog/ciri-tawaran-magang-perlu-diwaspadai">
-                  Ciri Tawaran Magang Mencurigakan dan Cara Cek
-                </a>
-              </h3>
-              <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
-                Kenali ciri tawaran magang yang mencurigakan dan cara cek tempat magang terpercaya sebelum daftar agar data tetap aman.
-              </p>
-            </div>
-          </div>
-          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between">
-            <span class="text-xs font-mono text-tc-muted">22 Nov 2026</span>
-            <a href="/blog/ciri-tawaran-magang-perlu-diwaspadai" class="text-xs font-bold text-tc-accent hover:text-white transition-colors">
-              Baca Selengkapnya &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- Artikel 3 -->
-        <article class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group shadow-xl">
-          <div>
-            <div class="h-48 overflow-hidden relative border-b border-tc-border/60">
-              <img src="/assets/img/artikel3a.webp" alt="Pelatihan AI dan Prompt Marketing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full backdrop-blur-md">AI & Prompt</span>
-            </div>
-            <div class="p-6 space-y-3">
-              <span class="bg-tc-bg border border-tc-border text-tc-accent text-xs font-semibold px-3 py-1 rounded-full inline-block">Tech & Growth</span>
-              <h3 class="text-lg font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
-                <a href="/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran">
-                  Pelatihan AI dan Prompt untuk Bisnis, Marketing, dan Pemasaran
-                </a>
-              </h3>
-              <p class="text-tc-muted text-xs leading-relaxed line-clamp-2">
-                Panduan pelatihan AI dan prompt engineering untuk bisnis dan marketing: struktur prompt yang terarah & etika penggunaannya.
-              </p>
-            </div>
-          </div>
-          <div class="px-6 pb-6 pt-3 border-t border-tc-border/60 flex items-center justify-between">
-            <span class="text-xs font-mono text-tc-muted">03 Nov 2026</span>
-            <a href="/blog/pelatihan-ai-dan-prompt-untuk-bisnis-marketing-pemasaran" class="text-xs font-bold text-tc-accent hover:text-white transition-colors">
-              Baca Selengkapnya &rarr;
-            </a>
-          </div>
-        </article>
+          </article>
+        ))}
       </div>
     </div>
   </section>
