@@ -1,0 +1,427 @@
+---
+// src/pages/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Web Developer untuk Pemula Bekal dan Tugas";
+const pageDesc = "Magang web developer untuk pemula: lihat bekal minimal, rencana tugas bertahap, kesalahan umum, dan cara belajar cepat. Mulai persiapkan dirimu hari ini.";
+const pageUrl = "https://infomagangmalang.web.id/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-1.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula#article",
+      "headline": "Siap Magang Jadi Web Developer Walau Masih Pemula",
+      "description": "Magang web developer untuk pemula: lihat bekal minimal, rencana tugas bertahap, kesalahan umum, dan cara belajar cepat. Mulai persiapkan dirimu hari ini.",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula",
+      "image": "https://infomagangmalang.web.id/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-1.webp",
+      "datePublished": "2026-11-23T20:00:00+07:00",
+      "dateModified": "2026-11-23T20:00:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Info Magang Malang (Gemilang Training)",
+        "url": "https://infomagangmalang.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/logo.webp"
+        }
+      },
+      "keywords": "magang web developer untuk pemula, bekal magang web developer, belajar bootstrap 5 pemula, tugas magang web developer"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah magang web developer bisa diikuti tanpa pengalaman coding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa, selama kamu bersedia mempelajari dasar HTML dan CSS lebih dulu. Mentor membimbing bertahap, tetapi pemahaman awal mempercepat adaptasi pada minggu pertama."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama waktu belajar dasar sebelum magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lamanya bervariasi pada tiap orang, tergantung waktu belajar harian. Jadikan kemampuan membuat satu halaman responsif sederhana sebagai tolok ukur kesiapan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah harus memakai laptop sendiri?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Umumnya peserta membawa laptop sendiri untuk menulis kode, terutama pada sistem WFH atau hybrid. Konfirmasikan kebutuhan perangkat kepada penyelenggara sebelum mulai."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://infomagangmalang.web.id/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Siap Magang Jadi Web Developer Walau Masih Pemula",
+          "item": "https://infomagangmalang.web.id/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-1.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="magang web developer untuk pemula, bekal magang web developer, belajar bootstrap 5 pemula, tugas magang web developer" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- BREADCRUMB -->
+    <nav class="text-xs text-tc-muted mb-6 flex flex-wrap items-center gap-2">
+      <a href="/" class="hover:text-tc-accent transition-colors">Beranda</a>
+      <span>/</span>
+      <a href="/blog" class="hover:text-tc-accent transition-colors">Blog</a>
+      <span>/</span>
+      <span class="text-white truncate max-w-xs md:max-w-md">Siap Magang Jadi Web Developer Walau Masih Pemula</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Panduan Pemula
+            </span>
+            <span class="text-tc-muted font-mono">23 Nov 2026 • 20:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Sholikhatun Nikmah</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Siap Magang Jadi Web Developer Walau Masih Pemula
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Magang web developer untuk pemula: lihat bekal minimal, rencana tugas bertahap, kesalahan umum, dan cara belajar cepat. Mulai persiapkan dirimu hari ini.
+          </p>
+        </header>
+
+        <!-- GAMBAR UTAMA -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-1.webp" 
+            alt="Peserta magang pemula menulis kode HTML dan CSS di laptop saat praktik web developer" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Peserta magang pemula menulis kode HTML dan CSS di laptop saat praktik web developer
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#ringkasan-inti" class="hover:text-tc-accent transition-colors">1. Ringkasan Inti Persiapan Pemula</a></li>
+            <li><a href="#bekal-minimal" class="hover:text-tc-accent transition-colors">2. Apa Bekal Minimal untuk Magang Web Developer?</a></li>
+            <li><a href="#rencana-tugas-bertahap" class="hover:text-tc-accent transition-colors">3. Contoh Tugas Bertahap untuk Pemula dan Minggu Pertama</a></li>
+            <li><a href="#kesalahan-dan-belajar-cepat" class="hover:text-tc-accent transition-colors">4. Kesalahan Umum Pemula dan Cara Belajar Cepat</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">5. Pertanyaan yang Sering Diajukan (FAQ)</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">6. Kesimpulan</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          <div class="space-y-4">
+            <p>Magang web developer untuk pemula bisa dimulai dengan modal HTML, CSS, Bootstrap 5, dan Git dasar, lalu tugas ditingkatkan bertahap bersama mentor.</p>
+          </div>
+
+          <section id="ringkasan-inti" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Ringkasan Inti Persiapan Pemula</h2>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Bekal minimal adalah HTML, CSS, Bootstrap 5, dan Git dasar.</li>
+              <li>Portofolio tidak wajib dimiliki sebelum magang.</li>
+              <li>Rencana tugas sebaiknya bertahap dan dikonfirmasi langsung ke mentor.</li>
+              <li>Materi program memadukan sekitar 70 persen pembuatan website dan 30 persen SEO dasar (Gemilang Training, 2026).</li>
+              <li>Belajar cepat bergantung pada praktik harian dan umpan balik rutin.</li>
+            </ul>
+          </section>
+
+          <section id="bekal-minimal" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Bekal Minimal untuk Magang Web Developer?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Bekal minimal terdiri dari HTML untuk struktur, CSS untuk tampilan, Bootstrap 5 untuk tata letak responsif, dan Git dasar untuk menyimpan versi kode.
+            </p>
+            <p>HTML dan CSS adalah fondasi semua halaman web, sehingga memahaminya mempercepat tugas berikutnya. Bootstrap 5 membantu pemula menyusun tampilan rapi di ponsel dan desktop tanpa menulis seluruh gaya dari nol.</p>
+            <p>Peserta tidak perlu menguasai framework lanjutan sebelum mulai. Pada program Gemilang Training, materi seperti Astro JS, format gambar WebP, dan deploy melalui Vercel diperkenalkan bertahap.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Perlukah Pemula Punya Portofolio Dulu?</h3>
+            <p>Pemula tidak wajib punya portofolio sebelum magang, karena portofolio pertama justru dibangun selama magang lewat proyek nyata yang dikerjakan bersama mentor.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 1 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/magang-mahasiswa-informatika-malang1" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Panduan Lengkap Magang Mahasiswa Informatika di Malang Jalur Web Engineering Skill &rarr;
+            </a>
+          </div>
+
+          <section id="rencana-tugas-bertahap" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Contoh Tugas Bertahap untuk Pemula dan Minggu Pertama</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Tugas bertahap untuk pemula biasanya bergerak dari halaman statis, ke tata letak responsif, lalu publikasi situs dan SEO dasar, dengan rincian akhir dari mentor.
+            </p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Tahap awal: membuat halaman HTML dan CSS sesuai contoh atau desain yang diberikan.</li>
+              <li>Tahap lanjutan: menyusun tata letak responsif memakai komponen Bootstrap 5.</li>
+              <li>Tahap optimasi: mengompres gambar ke format WebP agar halaman ringan.</li>
+              <li>Tahap publikasi: menayangkan situs dan memeriksa tampilannya di berbagai perangkat.</li>
+              <li>Tahap SEO dasar: menulis judul, deskripsi, dan struktur heading yang jelas.</li>
+            </ul>
+
+            <!-- GAMBAR PENDUKUNG CLUSTER 2 -->
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-2.webp" 
+                alt="Halaman responsif dengan komponen Bootstrap 5 hasil latihan pemula magang web developer" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Halaman responsif dengan komponen Bootstrap 5 hasil latihan pemula magang web developer
+              </figcaption>
+            </figure>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Apa yang Dikerjakan di Minggu Pertama?</h3>
+            <p>Minggu pertama sebaiknya dipakai mengenal proyek, menyiapkan tools, dan menyelesaikan tugas kecil yang hasilnya bisa langsung ditinjau mentor sebelum masuk ke pekerjaan yang lebih besar.</p>
+          </section>
+
+          <section id="kesalahan-dan-belajar-cepat" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesalahan Umum Pemula dan Cara Belajar Cepat</h2>
+            <p>Kesalahan umum pemula meliputi menyalin kode tanpa paham, malas mencatat logbook, takut bertanya, dan mengabaikan tampilan di ponsel saat menguji halaman.</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Bangun satu halaman nyata, lalu perbaiki sedikit setiap hari.</li>
+              <li>Jadikan dokumentasi resmi HTML, CSS, dan Bootstrap 5 sebagai rujukan pertama.</li>
+              <li>Catat setiap kendala beserta solusinya agar tidak mengulang kesalahan.</li>
+              <li>Minta mentor meninjau hasil kerja secara berkala.</li>
+            </ul>
+            <p>Untuk gambaran jalur belajar yang lebih luas, kunjungi halaman <a href="/program" class="text-tc-accent underline hover:text-white">program magang informatika</a>.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 2 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/ciri-magang-berbasis-proyek-nyata" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Mengenali Magang Berbasis Proyek Nyata dan Hasil yang Bisa Kamu Bawa Pulang &rarr;
+            </a>
+          </div>
+
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent">
+              Pemula dapat memulai magang web developer dengan bekal HTML, CSS, Bootstrap 5, dan Git dasar, tanpa portofolio awal.
+            </p>
+            <p>Mintalah daftar tugas nyata dari mentor, kerjakan bertahap, catat logbook, dan prioritaskan karya yang bersih dan responsif.</p>
+          </section>
+
+          <!-- SECTION FAQ -->
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah magang web developer bisa diikuti tanpa pengalaman coding?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Bisa, selama kamu bersedia mempelajari dasar HTML dan CSS lebih dulu. Mentor membimbing bertahap, tetapi pemahaman awal mempercepat adaptasi pada minggu pertama.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Berapa lama waktu belajar dasar sebelum magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Lamanya bervariasi pada tiap orang, tergantung waktu belajar harian. Jadikan kemampuan membuat satu halaman responsif sederhana sebagai tolok ukur kesiapan.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah harus memakai laptop sendiri?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Umumnya peserta membawa laptop sendiri untuk menulis kode, terutama pada sistem WFH atau hybrid. Konfirmasikan kebutuhan perangkat kepada penyelenggara sebelum mulai.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <!-- AUTHOR BIO & INFO ARTIKEL -->
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Sholikhatun Nikmah</p>
+              <p class="text-tc-muted mt-1">
+                Tim Redaksi Info Magang Malang (Gemilang Training) menyusun panduan magang mahasiswa Informatika dan jalur Web Engineering Skill berdasarkan pendampingan proyek nyata di Malang.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 flex flex-wrap gap-4 text-xs text-tc-muted">
+              <span>Tanggal Publish: <strong class="text-white">23 November 2026</strong></span>
+              <span>Terakhir Diupdate: <strong class="text-white">23 November 2026</strong></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            Ramah Pemula
+          </span>
+          <h3 class="text-lg font-bold text-white">Belajar Web Dev dari Dasar</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Mulai dari HTML, CSS, Bootstrap 5, hingga Astro JS dan deploy Vercel dengan bimbingan mentor step-by-step.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20pemula%20dan%20ingin%20tanya%20program%20magang%20web%20developer." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Konsultasi via WhatsApp
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL TERHUBUNG) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-3.5">
+            <a href="/blog/magang-mahasiswa-informatika-malang1" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/magang-mahasiswa-informatika-malang-1a.webp" 
+                alt="Mahasiswa informatika mengerjakan proyek website saat magang Web Engineering di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 05:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Mahasiswa Informatika Malang Jalur dan Cara Daftar
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/aturan-semester-sks-magang-informatika" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/aturan-semester-sks-magang-informatika-1.webp" 
+                alt="Suasana kantor magang informatika dan diskusi perencanaan semester SKS di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 09:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Informatika Semester Berapa Cek Aturan Kampus
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/ciri-magang-berbasis-proyek-nyata" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/ciri-magang-berbasis-proyek-nyata-1.webp" 
+                alt="Peserta magang membuat desain dan struktur proyek website nyata dengan arahan mentor" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 22:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Berbasis Proyek Nyata Ciri dan Hasilnya
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>

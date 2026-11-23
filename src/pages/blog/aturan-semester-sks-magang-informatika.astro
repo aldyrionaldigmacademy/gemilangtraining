@@ -1,0 +1,417 @@
+---
+// src/pages/blog/aturan-semester-sks-magang-informatika.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Informatika Semester Berapa Cek Aturan Kampus";
+const pageDesc = "Magang informatika semester berapa? Cek cara membaca aturan semester, durasi, dan konversi SKS di kampusmu. Pelajari langkahnya sebelum mengajukan magang.";
+const pageUrl = "https://infomagangmalang.web.id/blog/aturan-semester-sks-magang-informatika";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/aturan-semester-sks-magang-informatika-1.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/aturan-semester-sks-magang-informatika#article",
+      "headline": "Kapan Mahasiswa Informatika Boleh Magang dan Cara Cek Aturan SKS di Kampus",
+      "description": "Magang informatika semester berapa? Cek cara membaca aturan semester, durasi, dan konversi SKS di kampusmu. Pelajari langkahnya sebelum mengajukan magang.",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/aturan-semester-sks-magang-informatika",
+      "image": "https://infomagangmalang.web.id/assets/img/aturan-semester-sks-magang-informatika-1.webp",
+      "datePublished": "2026-11-23T09:00:00+07:00",
+      "dateModified": "2026-11-23T09:00:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Info Magang Malang (Gemilang Training)",
+        "url": "https://infomagangmalang.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/logo.webp"
+        }
+      },
+      "keywords": "magang informatika semester berapa, konversi sks magang informatika, aturan magang mahasiswa informatika, syarat krs magang"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/aturan-semester-sks-magang-informatika#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah mahasiswa semester awal boleh magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boleh atau tidaknya bergantung pada aturan kampus dan program. Magang mandiri di luar kurikulum biasanya lebih fleksibel, tetapi konversi SKS umumnya mensyaratkan mata kuliah terkait."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah magang di luar mitra kampus bisa diakui?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa, bila program studi menyetujui dan kegiatan memenuhi syarat dokumen penilaian. Konfirmasi tertulis dari prodi sebelum mulai akan mencegah masalah pengakuan di akhir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Lebih baik magang satu semester penuh atau lebih singkat?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pilihan bergantung pada syarat minimum konversi di kampus. Durasi yang memenuhi syarat prodi dan cukup untuk menyelesaikan proyek nyata umumnya lebih bermanfaat."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://infomagangmalang.web.id/blog/aturan-semester-sks-magang-informatika#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kapan Mahasiswa Informatika Boleh Magang dan Cara Cek Aturan SKS di Kampus",
+          "item": "https://infomagangmalang.web.id/blog/aturan-semester-sks-magang-informatika"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/aturan-semester-sks-magang-informatika-1.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="magang informatika semester berapa, konversi sks magang informatika, aturan magang mahasiswa informatika, syarat krs magang" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- BREADCRUMB -->
+    <nav class="text-xs text-tc-muted mb-6 flex flex-wrap items-center gap-2">
+      <a href="/" class="hover:text-tc-accent transition-colors">Beranda</a>
+      <span>/</span>
+      <a href="/blog" class="hover:text-tc-accent transition-colors">Blog</a>
+      <span>/</span>
+      <span class="text-white truncate max-w-xs md:max-w-md">Kapan Mahasiswa Informatika Boleh Magang dan Cara Cek Aturan SKS di Kampus</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Panduan Akademik
+            </span>
+            <span class="text-tc-muted font-mono">23 Nov 2026 • 09:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Sholikhatun Nikmah</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Kapan Mahasiswa Informatika Boleh Magang dan Cara Cek Aturan SKS di Kampus
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Magang informatika semester berapa? Cek cara membaca aturan semester, durasi, dan konversi SKS di kampusmu. Pelajari langkahnya sebelum mengajukan magang.
+          </p>
+        </header>
+
+        <!-- GAMBAR UTAMA -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/aturan-semester-sks-magang-informatika-1.webp" 
+            alt="Suasana kantor magang informatika dan diskusi perencanaan semester SKS di Malang" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Suasana kantor magang informatika dan diskusi perencanaan semester SKS di Malang
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#ringkasan-inti" class="hover:text-tc-accent transition-colors">1. Ringkasan Inti Aturan Semester & SKS</a></li>
+            <li><a href="#batas-semester-durasi" class="hover:text-tc-accent transition-colors">2. Batas Semester Minimal dan Durasi Magang yang Lazim</a></li>
+            <li><a href="#konversi-sks-krs" class="hover:text-tc-accent transition-colors">3. Apakah Magang Wajib Dikonversi Menjadi SKS dan Harus Ada di KRS?</a></li>
+            <li><a href="#waktu-terbaik-dan-dosen" class="hover:text-tc-accent transition-colors">4. Waktu Terbaik Mencari Tempat Magang dan Pertanyaan ke Dosen PA</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">5. Pertanyaan yang Sering Diajukan (FAQ)</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">6. Kesimpulan</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          <div class="space-y-4">
+            <p>Magang informatika semester berapa tidak punya jawaban tunggal nasional; aturan semester dan SKS mengikuti kebijakan kampus, prodi, atau program magang yang dituju.</p>
+          </div>
+
+          <section id="ringkasan-inti" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Ringkasan Inti Aturan Semester & SKS</h2>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Tidak ada satu angka semester resmi yang berlaku bagi semua mahasiswa informatika.</li>
+              <li>Durasi magang tidak memiliki ketentuan baku nasional, sehingga mengikuti kampus dan penyelenggara.</li>
+              <li>Konversi SKS terjadi bila program studi mengizinkan dan dokumen penilaian lengkap.</li>
+              <li>Program nasional tertentu mensyaratkan mata kuliah magang atau PKL ada di KRS.</li>
+              <li>Angka semester program nasional perlu diverifikasi ke situs resmi Simbelmawa.</li>
+            </ul>
+          </section>
+
+          <section id="batas-semester-durasi" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Batas Semester Minimal dan Durasi Magang yang Lazim</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Batas semester minimal ditentukan oleh kurikulum prodi dan ketentuan tiap program magang, sehingga tidak ada satu angka resmi yang berlaku untuk semua mahasiswa informatika.
+            </p>
+            <p>Kurikulum disusun setiap kampus secara mandiri. Sebagian kampus membuka mata kuliah magang atau PKL pada tahun ketiga, sedangkan kampus lain memberi jalur yang lebih fleksibel melalui kegiatan di luar kampus.</p>
+            <p>Tidak ada durasi baku nasional untuk magang; kampus dan penyelenggara menetapkan lamanya, sehingga mahasiswa perlu mencocokkannya dengan kalender akademik dan syarat konversi SKS. Gemilang Training menyediakan durasi standar 3 sampai 6 bulan yang disesuaikan dengan kalender kampus (informasi program Gemilang Training, 2026).</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 1 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/magang-mahasiswa-informatika-malang1" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Panduan Lengkap Magang Mahasiswa Informatika di Malang Jalur Web Engineering Skill &rarr;
+            </a>
+          </div>
+
+          <section id="konversi-sks-krs" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apakah Magang Wajib Dikonversi Menjadi SKS dan Harus Ada di KRS?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Magang tidak otomatis menjadi SKS; konversi hanya berlaku bila program studi mengizinkan dan peserta melengkapi dokumen penilaian yang diminta kampus.
+            </p>
+            <p>Dalam praktik, konversi membutuhkan bukti kegiatan seperti logbook, sertifikat, dan lembar penilaian dari tempat magang. Tempat magang yang menyediakan dokumen tersebut mempermudah proses pengakuan.</p>
+            <p>Sebagian program magang nasional mensyaratkan mata kuliah PKL atau magang sudah tercantum di KRS, sehingga pengisian KRS perlu direncanakan sebelum mendaftar.</p>
+
+            <!-- GAMBAR PENDUKUNG CLUSTER 1 -->
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/aturan-semester-sks-magang-informatika-2.webp" 
+                alt="Magang informatika onsite di Malang dengan pendampingan dokumen logbook dan penilaian SKS" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Magang informatika onsite di Malang dengan pendampingan dokumen logbook dan penilaian SKS
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="waktu-terbaik-dan-dosen" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Waktu Terbaik Mencari Tempat Magang dan Daftar Pertanyaan ke Dosen PA</h2>
+            <p>Waktu terbaik mulai mencari tempat magang adalah sekitar satu semester sebelum jadwal kegiatan, supaya surat pengantar, persetujuan prodi, dan seleksi tidak terburu-buru.</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Pada semester berapa mata kuliah magang atau PKL dibuka?</li>
+              <li>Berapa minimal durasi atau jam kegiatan agar dapat dikonversi SKS?</li>
+              <li>Dokumen apa yang harus disiapkan, seperti surat pengantar, logbook, dan lembar penilaian?</li>
+              <li>Apakah tempat magang di luar daftar mitra kampus diizinkan?</li>
+              <li>Siapa dosen pembimbing dan bagaimana mekanisme penilaiannya?</li>
+            </ul>
+            <p>Setelah aturan jelas, ajukan berkas sesuai prosedur pada halaman <a href="/program" class="text-tc-accent underline hover:text-white">program magang mahasiswa</a> dan <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran</a>. Untuk program magang nasional, verifikasi langsung ke situs resmi Simbelmawa Kemdiktisaintek.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 2 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Siap Magang Jadi Web Developer Walau Masih Pemula &rarr;
+            </a>
+          </div>
+
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent">
+              Tidak ada satu angka semester yang berlaku untuk semua mahasiswa informatika. Ketentuan ditetapkan kampus, prodi, dan program magang masing-masing.
+            </p>
+            <p>Langkah aman: tanyakan ke dosen PA, pastikan konversi SKS diizinkan, cek syarat KRS untuk program nasional, verifikasi ke Simbelmawa, dan mulai mencari tempat sekitar satu semester sebelumnya.</p>
+          </section>
+
+          <!-- SECTION FAQ -->
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah mahasiswa semester awal boleh magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Boleh atau tidaknya bergantung pada aturan kampus dan program. Magang mandiri di luar kurikulum biasanya lebih fleksibel, tetapi konversi SKS umumnya mensyaratkan mata kuliah terkait.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah magang di luar mitra kampus bisa diakui?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Bisa, bila program studi menyetujui dan kegiatan memenuhi syarat dokumen penilaian. Konfirmasi tertulis dari prodi sebelum mulai akan mencegah masalah pengakuan di akhir.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Lebih baik magang satu semester penuh atau lebih singkat?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Pilihan bergantung pada syarat minimum konversi di kampus. Durasi yang memenuhi syarat prodi dan cukup untuk menyelesaikan proyek nyata umumnya lebih bermanfaat.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <!-- AUTHOR BIO & INFO ARTIKEL -->
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Sholikhatun Nikmah</p>
+              <p class="text-tc-muted mt-1">
+                Tim Redaksi Info Magang Malang (Gemilang Training) menyusun panduan magang mahasiswa Informatika dan jalur Web Engineering Skill berdasarkan pendampingan proyek nyata di Malang.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 flex flex-wrap gap-4 text-xs text-tc-muted">
+              <span>Tanggal Publish: <strong class="text-white">23 November 2026</strong></span>
+              <span>Terakhir Diupdate: <strong class="text-white">23 November 2026</strong></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            Panduan Akademik & SKS
+          </span>
+          <h3 class="text-lg font-bold text-white">Siapkan Berkas & Jadwal Magang</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Konsultasikan durasi 3-6 bulan, surat balasan instansi, logbook, dan lembar penilaian kampus bersama tim admin.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20tanya%20aturan%20durasi%20dan%20dokumen%20penilaian%20magang%20Informatika." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Konsultasi via WhatsApp
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL TERHUBUNG) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-3.5">
+            <a href="/blog/magang-mahasiswa-informatika-malang1" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/magang-mahasiswa-informatika-malang-1a.webp" 
+                alt="Mahasiswa informatika mengerjakan proyek website saat magang Web Engineering di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 05:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Mahasiswa Informatika Malang Jalur dan Cara Daftar
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-1.webp" 
+                alt="Peserta magang pemula menulis kode HTML dan CSS di laptop saat praktik web developer" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 20:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Web Developer untuk Pemula Bekal dan Tugas
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/ciri-magang-berbasis-proyek-nyata" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/ciri-magang-berbasis-proyek-nyata-1.webp" 
+                alt="Peserta magang membuat desain dan struktur proyek website nyata dengan arahan mentor" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 22:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Berbasis Proyek Nyata Ciri dan Hasilnya
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>

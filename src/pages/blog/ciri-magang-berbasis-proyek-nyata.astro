@@ -1,0 +1,422 @@
+---
+// src/pages/blog/ciri-magang-berbasis-proyek-nyata.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Berbasis Proyek Nyata Ciri dan Hasilnya";
+const pageDesc = "Magang berbasis proyek nyata: kenali ciri, bedanya dengan magang administratif, pertanyaan untuk mentor, dan hasil yang dibawa pulang. Cek sebelum mendaftar.";
+const pageUrl = "https://infomagangmalang.web.id/blog/ciri-magang-berbasis-proyek-nyata";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/ciri-magang-berbasis-proyek-nyata-1.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/ciri-magang-berbasis-proyek-nyata#article",
+      "headline": "Mengenali Magang Berbasis Proyek Nyata dan Hasil yang Bisa Kamu Bawa Pulang",
+      "description": "Magang berbasis proyek nyata: kenali ciri, bedanya dengan magang administratif, pertanyaan untuk mentor, dan hasil yang dibawa pulang. Cek sebelum mendaftar.",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/ciri-magang-berbasis-proyek-nyata",
+      "image": "https://infomagangmalang.web.id/assets/img/ciri-magang-berbasis-proyek-nyata-1.webp",
+      "datePublished": "2026-11-23T22:00:00+07:00",
+      "dateModified": "2026-11-23T22:00:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Info Magang Malang (Gemilang Training)",
+        "url": "https://infomagangmalang.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/logo.webp"
+        }
+      },
+      "keywords": "magang berbasis proyek nyata, ciri magang proyek nyata, hasil magang jadi portofolio, magang project based learning malang"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/ciri-magang-berbasis-proyek-nyata#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah magang berbasis proyek cocok untuk pemula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cocok, selama ada mentor yang membimbing bertahap. Tugas dimulai dari tingkat dasar sehingga pemula dapat berkembang sambil menghasilkan karya pertama."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah karya hasil magang boleh masuk portofolio pribadi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Umumnya boleh, tetapi ketentuannya perlu disepakati dengan penyelenggara, terutama bila proyek melibatkan pihak ketiga. Tanyakan aturan ini sebelum mulai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah magang berbasis proyek bisa dikonversi SKS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa, bila program studi mengizinkan. Sertifikat, logbook, dan lembar penilaian membantu proses pengajuan konversi ke kampus."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://infomagangmalang.web.id/blog/ciri-magang-berbasis-proyek-nyata#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Mengenali Magang Berbasis Proyek Nyata dan Hasil yang Bisa Kamu Bawa Pulang",
+          "item": "https://infomagangmalang.web.id/blog/ciri-magang-berbasis-proyek-nyata"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/ciri-magang-berbasis-proyek-nyata-1.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="magang berbasis proyek nyata, ciri magang proyek nyata, hasil magang jadi portofolio, magang project based learning malang" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- BREADCRUMB -->
+    <nav class="text-xs text-tc-muted mb-6 flex flex-wrap items-center gap-2">
+      <a href="/" class="hover:text-tc-accent transition-colors">Beranda</a>
+      <span>/</span>
+      <a href="/blog" class="hover:text-tc-accent transition-colors">Blog</a>
+      <span>/</span>
+      <span class="text-white truncate max-w-xs md:max-w-md">Mengenali Magang Berbasis Proyek Nyata dan Hasil yang Bisa Kamu Bawa Pulang</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Project-Based Learning
+            </span>
+            <span class="text-tc-muted font-mono">23 Nov 2026 • 22:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Sholikhatun Nikmah</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Mengenali Magang Berbasis Proyek Nyata dan Hasil yang Bisa Kamu Bawa Pulang
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Magang berbasis proyek nyata: kenali ciri, bedanya dengan magang administratif, pertanyaan untuk mentor, dan hasil yang dibawa pulang. Cek sebelum mendaftar.
+          </p>
+        </header>
+
+        <!-- GAMBAR UTAMA -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/ciri-magang-berbasis-proyek-nyata-1.webp" 
+            alt="Peserta magang membuat desain dan struktur proyek website nyata dengan arahan mentor" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Peserta magang membuat desain dan struktur proyek website nyata dengan arahan mentor
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#ringkasan-inti" class="hover:text-tc-accent transition-colors">1. Ringkasan Inti Magang Berbasis Proyek</a></li>
+            <li><a href="#apa-itu-dan-ciri" class="hover:text-tc-accent transition-colors">2. Apa Itu Magang Berbasis Proyek Nyata dan Ciri Utamanya?</a></li>
+            <li><a href="#bedanya-dengan-administratif" class="hover:text-tc-accent transition-colors">3. Bedanya dengan Magang Administratif dan Pertanyaan untuk Mentor</a></li>
+            <li><a href="#output-dan-portofolio" class="hover:text-tc-accent transition-colors">4. Contoh Output dan Cara Menjadikannya Portofolio</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">5. Pertanyaan yang Sering Diajukan (FAQ)</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">6. Kesimpulan</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          <div class="space-y-4">
+            <p>Magang berbasis proyek nyata berarti peserta mengerjakan produk sungguhan dengan bimbingan mentor dan pulang membawa karya, bukan hanya mengurus berkas atau arsip.</p>
+          </div>
+
+          <section id="ringkasan-inti" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Ringkasan Inti Magang Berbasis Proyek</h2>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Magang berbasis proyek memakai pekerjaan sungguhan sebagai media belajar.</li>
+              <li>Magang administratif umumnya berfokus pada tugas pendukung tanpa produk akhir.</li>
+              <li>Ciri utamanya adalah target karya jelas, mentor praktisi, dan evaluasi berkala.</li>
+              <li>Output dapat berupa website live, artikel SEO, video, sertifikat, dan logbook.</li>
+              <li>Calon peserta sebaiknya menanyakan tugas dan output sebelum menyetujui.</li>
+            </ul>
+          </section>
+
+          <section id="apa-itu-dan-ciri" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu Magang Berbasis Proyek Nyata dan Ciri Utamanya?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Magang berbasis proyek nyata memakai pekerjaan sungguhan sebagai media belajar, sehingga peserta menghasilkan karya yang dipakai pihak lain dan layak masuk portofolio.
+            </p>
+            <p>Konsep ini mengacu pada Project-Based Learning: peserta belajar sambil menyelesaikan masalah nyata. Gemilang Training menerapkannya melalui pembuatan website, optimasi SEO, dan konten kreatif dengan bimbingan mentor praktisi selama 3 sampai 6 bulan (informasi program Gemilang Training, 2026).</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Ada daftar tugas atau target karya yang bisa dijelaskan oleh mentor.</li>
+              <li>Mentor memberi umpan balik langsung pada hasil kerja.</li>
+              <li>Peserta mengerjakan produk yang benar dipakai, bukan latihan semu.</li>
+              <li>Tersedia logbook, sertifikat, dan lembar penilaian sebagai bukti kegiatan.</li>
+              <li>Hasil kerja dapat dilampirkan pada CV dan profil profesional.</li>
+            </ul>
+          </section>
+
+          <!-- KOTAK BACA JUGA 1 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/magang-mahasiswa-informatika-malang1" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Panduan Lengkap Magang Mahasiswa Informatika di Malang Jalur Web Engineering Skill &rarr;
+            </a>
+          </div>
+
+          <section id="bedanya-dengan-administratif" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bedanya dengan Magang Administratif dan Pertanyaan untuk Mentor</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Perbedaan magang berbasis proyek dan administratif ada pada produk akhir: yang pertama menghasilkan karya yang bisa dipamerkan, yang kedua berfokus pada pekerjaan pendukung.
+            </p>
+            <p>Mahasiswa informatika yang ingin membuktikan kemampuan teknis memerlukan karya yang dapat diperiksa, bukan hanya keterangan pernah bekerja. Sebelum mendaftar, ajukan lima pertanyaan berikut kepada mentor atau admin:</p>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Proyek apa yang akan saya kerjakan pada bulan pertama?</li>
+              <li>Siapa mentor yang membimbing dan seberapa sering evaluasi dilakukan?</li>
+              <li>Karya apa yang akan saya bawa pulang di akhir program?</li>
+              <li>Dokumen apa yang diberikan untuk kebutuhan kampus?</li>
+              <li>Bolehkah saya melihat contoh hasil kerja alumni?</li>
+            </ol>
+
+            <!-- GAMBAR PENDUKUNG CLUSTER 3 -->
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/ciri-magang-berbasis-proyek-nyata-2.webp" 
+                alt="Peserta magang mengerjakan karya digital dan aset website untuk portofolio" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Peserta magang mengerjakan karya digital dan aset website untuk portofolio
+              </figcaption>
+            </figure>
+          </section>
+
+          <section id="output-dan-portofolio" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Contoh Output yang Bisa Dibawa Pulang dan Cara Menjadikannya Portofolio</h2>
+            <p>Output magang berbasis proyek dapat berupa website live, artikel SEO, atau video konten, ditambah sertifikat, logbook, dan lembar penilaian untuk kebutuhan kampus.</p>
+            <p>Tulis ringkasan singkat untuk setiap karya: masalah yang dikerjakan, peran kamu, alat yang dipakai, dan hasil akhirnya. Sertakan tautan website atau tangkapan layar yang jelas. Lihat gambaran standar karya pada halaman <a href="/program" class="text-tc-accent underline hover:text-white">program & portofolio karya alumni</a>.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 2 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Siap Magang Jadi Web Developer Walau Masih Pemula &rarr;
+            </a>
+          </div>
+
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent">
+              Magang berbasis proyek nyata menekankan karya yang dipakai, bimbingan mentor, dan output yang bisa dipamerkan. Pola ini berbeda dari magang administratif yang berfokus pada tugas pendukung.
+            </p>
+            <p>Sebelum mendaftar, tanyakan contoh tugas, target karya, mentor, dan dokumen penilaian. Bandingkan beberapa tempat agar pilihanmu sesuai tujuan karier.</p>
+          </section>
+
+          <!-- SECTION FAQ -->
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah magang berbasis proyek cocok untuk pemula?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Cocok, selama ada mentor yang membimbing bertahap. Tugas dimulai dari tingkat dasar sehingga pemula dapat berkembang sambil menghasilkan karya pertama.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah karya hasil magang boleh masuk portofolio pribadi?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Umumnya boleh, tetapi ketentuannya perlu disepakati dengan penyelenggara, terutama bila proyek melibatkan pihak ketiga. Tanyakan aturan ini sebelum mulai.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah magang berbasis proyek bisa dikonversi SKS?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Bisa, bila program studi mengizinkan. Sertifikat, logbook, dan lembar penilaian membantu proses pengajuan konversi ke kampus.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <!-- AUTHOR BIO & INFO ARTIKEL -->
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Sholikhatun Nikmah</p>
+              <p class="text-tc-muted mt-1">
+                Tim Redaksi Info Magang Malang (Gemilang Training) menyusun panduan magang mahasiswa Informatika dan jalur Web Engineering Skill berdasarkan pendampingan proyek nyata di Malang.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 flex flex-wrap gap-4 text-xs text-tc-muted">
+              <span>Tanggal Publish: <strong class="text-white">23 November 2026</strong></span>
+              <span>Terakhir Diupdate: <strong class="text-white">23 November 2026</strong></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            Project-Based Learning
+          </span>
+          <h3 class="text-lg font-bold text-white">Pulang Membawa Karya Nyata</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Dapatkan website live, artikel teroptimasi SEO, logbook terarah, serta sertifikat resmi di Info Magang Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20tanya%20program%20magang%20berbasis%20proyek%20nyata." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Konsultasi via WhatsApp
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL TERHUBUNG) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-3.5">
+            <a href="/blog/magang-mahasiswa-informatika-malang1" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/magang-mahasiswa-informatika-malang-1a.webp" 
+                alt="Mahasiswa informatika mengerjakan proyek website saat magang Web Engineering di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 05:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Mahasiswa Informatika Malang Jalur dan Cara Daftar
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/aturan-semester-sks-magang-informatika" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/aturan-semester-sks-magang-informatika-1.webp" 
+                alt="Suasana kantor magang informatika dan diskusi perencanaan semester SKS di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 09:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Informatika Semester Berapa Cek Aturan Kampus
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-1.webp" 
+                alt="Peserta magang pemula menulis kode HTML dan CSS di laptop saat praktik web developer" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">23 Nov 2026 • 20:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Web Developer untuk Pemula Bekal dan Tugas
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>
