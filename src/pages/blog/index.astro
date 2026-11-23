@@ -5,12 +5,56 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 const pageTitle = "Blog & Edukasi Karier Digital - Gemilang Training";
-const pageDesc = "Panduan tempat magang di Malang, syarat dan berkas PKL/magang, contoh surat permohonan & lamaran, melamar lewat WhatsApp, magang mahasiswa Informatika Web Engineering, pelatihan kejuruan SKARIGA, portofolio, dan AI prompt dari Gemilang Training Kota Malang.";
+const pageDesc = "Panduan tempat magang di Malang, tempat PKL SMK RPL, contoh laporan & ide project PKL RPL, syarat dan berkas PKL/magang, contoh surat permohonan & lamaran, melamar lewat WhatsApp, magang mahasiswa Informatika Web Engineering, pelatihan kejuruan SKARIGA, portofolio, dan AI prompt dari Gemilang Training Kota Malang.";
 const pageUrl = "https://infomagangmalang.web.id/blog";
 const ogImageUrl = "https://infomagangmalang.web.id/assets/img/tempat-magang-malang-1.webp";
 
 // Database Artikel Blog Terstruktur (Terurut Terbaru ke Terlama)
 const articles = [
+  {
+    slug: "contoh-laporan-pkl-rpl",
+    category: "Laporan & Evaluasi PKL",
+    tag: "Laporan PKL RPL",
+    cluster: "PKL SMK RPL",
+    title: "Contoh Laporan PKL RPL Lengkap dengan Struktur Bab",
+    desc: "Contoh laporan PKL RPL lengkap dengan struktur bab, isi tiap bab, lampiran, dan penilaian. Cari tempat PKL RPL berproyek nyata di Malang. Cek sekarang",
+    date: "23 Nov 2026 • 17:00 WIB",
+    img: "/assets/img/Siswa-SMK-RPL-mengerjakan-proyek-website.webp",
+    alt: "Contoh laporan PKL RPL lengkap dengan struktur bab untuk siswa SMK jurusan RPL"
+  },
+  {
+    slug: "ide-project-pkl-rpl-portofolio",
+    category: "Portofolio & Project",
+    tag: "15 Ide Project RPL",
+    cluster: "PKL SMK RPL",
+    title: "15 Ide Project PKL RPL yang Layak Masuk Portofolio",
+    desc: "Temukan 15 ide project PKL RPL untuk portofolio SMK dan mahasiswa, lengkap estimasi waktu plus cara dokumentasi. Daftar PKL RPL di Info Magang Malang.",
+    date: "23 Nov 2026 • 14:00 WIB",
+    img: "/assets/img/Daftar-ide-project-PKL-RPL.webp",
+    alt: "Daftar ide project PKL RPL untuk portofolio siswa SMK berupa website profil, landing page, dan blog"
+  },
+  {
+    slug: "apa-yang-dikerjakan-anak-rpl-saat-pkl",
+    category: "PKL SMK RPL",
+    tag: "Tugas & Timeline RPL",
+    cluster: "PKL SMK RPL",
+    title: "Apa yang Dikerjakan Anak RPL saat PKL dan Tugasnya",
+    desc: "Apa yang dikerjakan anak RPL saat PKL? Simak tugasnya dari minggu pertama hingga akhir, lalu konsultasi PKL SMK RPL Malang bersama Info Magang Malang.",
+    date: "23 Nov 2026 • 12:00 WIB",
+    img: "/assets/img/apa-yang-dikerjakan-anak-rpl-saat-pkl.webp",
+    alt: "Apa yang dikerjakan anak RPL saat PKL, siswa SMK menyusun halaman website dengan HTML dan CSS di Malang"
+  },
+  {
+    slug: "tempat-pkl-smk-rpl-malang",
+    category: "PKL SMK RPL",
+    tag: "PKL RPL Malang",
+    cluster: "PKL SMK RPL",
+    title: "Tempat PKL SMK RPL Malang, Tugas dan Syarat Daftar",
+    desc: "Tempat PKL SMK RPL Malang berbasis proyek nyata dengan 70% web dan 30% SEO. Lihat tugas, tools, portofolio, lalu daftar lewat admin Gemilang Training.",
+    date: "23 Nov 2026 • 08:00 WIB",
+    img: "/assets/img/tempat-pkl-smk-rpl-malang.webp",
+    alt: "Siswa SMK RPL praktik membuat website di tempat PKL SMK RPL Malang Gemilang Training"
+  },
   {
     slug: "magang-wfh-hybrid-onsite-malang",
     category: "Panduan Magang",
@@ -281,12 +325,12 @@ const schemaBlogIndex = {
         Blog & Warta Edukasi Magang
       </h1>
       <p class="text-tc-muted text-base md:text-lg">
-        Artikel edukatif, panduan memilih tempat magang, syarat berkas & contoh surat PKL/magang, magang mahasiswa Informatika Web Engineering, pelatihan kejuruan, dan kabar program terkini Gemilang Training Kota Malang.
+        Artikel edukatif, panduan memilih tempat magang, tempat PKL SMK RPL, syarat berkas & contoh surat PKL/magang, magang mahasiswa Informatika Web Engineering, pelatihan kejuruan, dan kabar program terkini Gemilang Training Kota Malang.
       </p>
     </div>
 
     <!-- FITUR SEARCH BAR & FILTER KLASTER -->
-    <div class="max-w-3xl mx-auto space-y-4">
+    <div class="max-w-4xl mx-auto space-y-4">
       <div class="relative">
         <input 
           type="text" 
@@ -302,6 +346,9 @@ const schemaBlogIndex = {
       <div class="flex flex-wrap items-center justify-center gap-2">
         <button type="button" data-cluster="all" class="cluster-btn bg-tc-accent text-slate-950 font-bold text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
           Semua Artikel
+        </button>
+        <button type="button" data-cluster="PKL SMK RPL" class="cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
+          PKL SMK RPL
         </button>
         <button type="button" data-cluster="Tempat Magang Malang" class="cluster-btn bg-tc-card hover:border-tc-accent text-tc-muted hover:text-white border border-tc-border text-xs px-4 py-1.5 rounded-full cursor-pointer transition-all">
           Panduan Magang Malang

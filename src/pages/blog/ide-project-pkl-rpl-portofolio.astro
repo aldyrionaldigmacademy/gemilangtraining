@@ -1,0 +1,674 @@
+---
+// src/pages/blog/ide-project-pkl-rpl-portofolio.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "15 Ide Project PKL RPL yang Layak Masuk Portofolio";
+const pageDesc = "Temukan 15 ide project PKL RPL untuk portofolio SMK dan mahasiswa, lengkap estimasi waktu plus cara dokumentasi. Daftar PKL RPL di Info Magang Malang.";
+const pageUrl = "https://infomagangmalang.web.id/blog/ide-project-pkl-rpl-portofolio";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/Daftar-ide-project-PKL-RPL.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/ide-project-pkl-rpl-portofolio#article",
+      "headline": "15 Ide Project PKL RPL yang Layak Masuk Portofolio",
+      "description": "Temukan 15 ide project PKL RPL untuk portofolio SMK dan mahasiswa, lengkap estimasi waktu plus cara dokumentasi. Daftar PKL RPL di Info Magang Malang.",
+      "inLanguage": "id",
+      "datePublished": "2026-11-23T14:00:00+07:00",
+      "dateModified": "2026-11-23T14:00:00+07:00",
+      "image": "https://infomagangmalang.web.id/assets/img/Daftar-ide-project-PKL-RPL.webp",
+      "author": {
+        "@type": "Organization",
+        "name": "Info Magang Malang",
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Info Magang Malang",
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/ide-project-pkl-rpl-portofolio",
+      "keywords": "ide project pkl rpl, contoh project pkl rpl, tugas pkl jurusan rpl, portofolio pkl rpl, project website untuk pkl smk rpl, dokumentasi project pkl, tempat pkl rpl malang"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://infomagangmalang.web.id/blog/ide-project-pkl-rpl-portofolio#itemlist",
+      "name": "15 Ide Project PKL RPL yang Layak Masuk Portofolio",
+      "numberOfItems": 15,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Website Profil UMKM Kuliner Lokal" },
+        { "@type": "ListItem", "position": 2, "name": "Website Profil Sekolah atau Lembaga Kursus" },
+        { "@type": "ListItem", "position": 3, "name": "Website Profil Jasa Wisata dan Outbound" },
+        { "@type": "ListItem", "position": 4, "name": "Website Profil Klinik atau Apotek Daerah" },
+        { "@type": "ListItem", "position": 5, "name": "Website Profil Komunitas atau Organisasi Pemuda" },
+        { "@type": "ListItem", "position": 6, "name": "Landing Page Pendaftaran Event atau Webinar" },
+        { "@type": "ListItem", "position": 7, "name": "Landing Page Katalog Produk Hampers dan Souvenir" },
+        { "@type": "ListItem", "position": 8, "name": "Landing Page Penawaran Jasa Digital Marketing" },
+        { "@type": "ListItem", "position": 9, "name": "Landing Page Pre-Order Produk Lokal" },
+        { "@type": "ListItem", "position": 10, "name": "Landing Page Pendaftaran Program Magang" },
+        { "@type": "ListItem", "position": 11, "name": "Blog Edukasi Pemrograman untuk Pemula" },
+        { "@type": "ListItem", "position": 12, "name": "Portal Informasi Lowongan Kerja dan Magang Lokal" },
+        { "@type": "ListItem", "position": 13, "name": "Blog Direktori Wisata dan Kuliner Daerah" },
+        { "@type": "ListItem", "position": 14, "name": "Portal Dokumentasi dan Knowledge Base Internal" },
+        { "@type": "ListItem", "position": 15, "name": "Blog Majalah Dinding Digital Sekolah" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/ide-project-pkl-rpl-portofolio#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa ide project PKL RPL yang paling mudah untuk pemula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ide project PKL RPL paling mudah untuk pemula adalah landing page dan website profil statis berbasis HTML, CSS, dan JavaScript. Contohnya landing page pendaftaran event atau website profil UMKM kuliner. Keduanya selesai dalam 1 sampai 4 minggu, memiliki pengguna nyata, dan mudah dipublikasikan sebagai live demo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama waktu mengerjakan project PKL RPL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Satu project website selama PKL RPL memakan waktu 1 minggu sampai 2 bulan, tergantung jenisnya. Landing page selesai dalam 1 sampai 2 minggu, website profil dalam 3 sampai 4 minggu, dan blog atau portal dalam 1 sampai 2 bulan. Sisakan 2 minggu terakhir PKL untuk dokumentasi dan revisi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah project PKL RPL wajib memakai framework?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project PKL RPL tidak wajib memakai framework. Website statis dari HTML, CSS, dan JavaScript sudah cukup selama menjawab masalah nyata, tampil responsif, dan terdokumentasi. Framework atau CMS baru relevan untuk blog dan portal yang kontennya sering diperbarui sehingga membutuhkan pengelolaan konten dinamis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara memasukkan project PKL ke portofolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unggah kode ke repositori GitHub dengan README lengkap, publikasikan live demo lewat hosting gratis, lalu tulis ringkasan studi kasus berisi masalah, solusi, teknologi, dan peran siswa. Tautkan ketiganya pada halaman portofolio. Cantumkan hanya hasil yang bisa dibuktikan, seperti fitur, tautan demo, dan durasi pengerjaan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana tempat PKL RPL di Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Siswa SMK dan mahasiswa dapat mengikuti program PKL RPL dan magang di Info Magang Malang, beralamat di Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang. Program menyediakan jalur SMK dan jalur mahasiswa dengan bimbingan mentor industri serta project nyata."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bolehkah menulis dampak bisnis di portofolio PKL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dampak bisnis boleh ditulis hanya jika ada data tertulis dari pemilik usaha atau instansi, misalnya laporan analitik. Tanpa dokumen pendukung, tulis hasil terukur dari sisi pengerjaan, seperti jumlah halaman, fitur yang berjalan, dan tautan demo. Klaim tanpa bukti menurunkan kepercayaan rekruter."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://infomagangmalang.web.id/blog/ide-project-pkl-rpl-portofolio#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "15 Ide Project PKL RPL yang Layak Masuk Portofolio",
+          "item": "https://infomagangmalang.web.id/blog/ide-project-pkl-rpl-portofolio"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/Daftar-ide-project-PKL-RPL.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="ide project pkl rpl, contoh project pkl rpl, tugas pkl jurusan rpl, portofolio pkl rpl, project website untuk pkl smk rpl, dokumentasi project pkl, tempat pkl rpl malang" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- BREADCRUMB -->
+    <nav class="text-xs text-tc-muted mb-6 flex flex-wrap items-center gap-2">
+      <a href="/" class="hover:text-tc-accent transition-colors">Beranda</a>
+      <span>/</span>
+      <a href="/blog" class="hover:text-tc-accent transition-colors">Blog</a>
+      <span>/</span>
+      <span class="text-white truncate max-w-xs md:max-w-md">15 Ide Project PKL RPL yang Layak Masuk Portofolio</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Portofolio & Project
+            </span>
+            <span class="text-tc-muted font-mono">23 Nov 2026 • 14:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Yolanda Deva Apriliana Putri (YUL)</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            15 Ide Project PKL RPL yang Layak Masuk Portofolio
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Ide project PKL RPL terbaik adalah website profil, landing page, dan blog yang menjawab masalah nyata, selesai dalam 3 hingga 6 bulan, dan bisa didemokan.
+          </p>
+        </header>
+
+        <!-- GAMBAR UTAMA (KOTAK UNGU #1) -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/Daftar-ide-project-PKL-RPL.webp" 
+            alt="Daftar ide project PKL RPL untuk portofolio siswa SMK berupa website profil, landing page, dan blog" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Daftar ide project PKL RPL untuk portofolio siswa SMK berupa website profil, landing page, dan blog
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#kriteria-project" class="hover:text-tc-accent transition-colors">1. Kriteria Project PKL RPL yang Layak Masuk Portofolio</a></li>
+            <li><a href="#daftar-15-ide" class="hover:text-tc-accent transition-colors">2. 15 Ide Project PKL RPL Berdasarkan Kategori</a></li>
+            <li><a href="#estimasi-waktu" class="hover:text-tc-accent transition-colors">3. Estimasi Waktu Pengerjaan yang Realistis Selama PKL</a></li>
+            <li><a href="#cara-dokumentasi" class="hover:text-tc-accent transition-colors">4. Cara Mendokumentasikan Project PKL agar Siap Masuk Portofolio</a></li>
+            <li><a href="#program-pkl-malang" class="hover:text-tc-accent transition-colors">5. Ingin Mengerjakan Project Nyata Saat PKL RPL di Malang</a></li>
+            <li><a href="#cara-daftar-program" class="hover:text-tc-accent transition-colors">6. Cara Daftar Program Magang untuk Siswa SMK dan Mahasiswa</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">7. Pertanyaan yang Sering Diajukan tentang Ide Project PKL RPL</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">8. Kesimpulan</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          
+          <div class="space-y-4">
+            <p>Ide project PKL RPL yang tepat mengubah masa PKL dari sekadar tugas formalitas menjadi karya yang bisa dibuka rekruter.</p>
+            <p>Panduan ini memuat 15 contoh project PKL RPL, estimasi waktu pengerjaan, dan cara mendokumentasikannya untuk portofolio.</p>
+            <p>Panduan disusun oleh Info Magang Malang, penyedia program PKL dan magang bidang teknologi di Malang.</p>
+            <p>Tugas PKL jurusan RPL yang paling bernilai adalah tugas yang menghasilkan website nyata dengan pengguna nyata.</p>
+            <p>Setiap ide di bawah dilengkapi fitur inti sehingga siswa SMK dan mahasiswa informatika tingkat awal dapat langsung memilih satu ide dan memulai.</p>
+          </div>
+
+          <!-- SECTION 1 -->
+          <section id="kriteria-project" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kriteria Project PKL RPL yang Layak Masuk Portofolio</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Project PKL RPL layak masuk portofolio jika menjawab masalah nyata, selesai dalam 3 sampai 6 bulan, tampil responsif, dan memiliki bukti dokumentasi yang bisa diverifikasi.
+            </p>
+            <p>Pembimbing sekolah umumnya menilai kesesuaian project dengan kompetensi keahlian RPL, sedangkan rekruter industri cenderung melihat hasil kerja yang bisa dibuka langsung lewat tautan.</p>
+            <p>Kedua sudut pandang tersebut dirangkum dalam Kerangka 4 Uji Portofolio PKL RPL berikut.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Uji</th>
+                    <th class="p-3 font-bold">Pertanyaan penentu</th>
+                    <th class="p-3 font-bold">Tanda project lulus uji</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Uji Masalah</td>
+                    <td class="p-3">Apakah project melayani kebutuhan pengguna nyata?</td>
+                    <td class="p-3">Ada pengguna yang bisa disebutkan, misalnya pemilik UMKM atau pengurus sekolah.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Uji Waktu</td>
+                    <td class="p-3">Apakah fitur inti selesai dalam sisa masa PKL?</td>
+                    <td class="p-3">Fitur inti rampung dengan cadangan sekitar 2 minggu untuk dokumentasi.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Uji Demo</td>
+                    <td class="p-3">Apakah hasil bisa dibuka lewat tautan publik?</td>
+                    <td class="p-3">Live demo berjalan dan tampil rapi di ponsel, tablet, dan laptop.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Uji Bukti</td>
+                    <td class="p-3">Apakah proses dan hasil terdokumentasi?</td>
+                    <td class="p-3">Repositori GitHub, README, tangkapan layar, dan ringkasan studi kasus tersedia.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Menjawab Masalah Nyata di Industri atau Masyarakat</h3>
+            <p>Project bermasalah nyata memiliki calon pengguna yang bisa disebutkan, seperti pemilik usaha kuliner yang belum punya halaman menu daring atau komunitas pemuda yang agendanya hanya tersebar lewat pesan singkat.</p>
+            <p>Project seperti ini menunjukkan kemampuan menerjemahkan kebutuhan menjadi fitur, kemampuan yang dicari industri.</p>
+            <p>Salinan template tanpa pengguna yang jelas menghasilkan portofolio yang sulit dibedakan dari portofolio siswa lain.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Realistis Diselesaikan dalam Durasi 3 hingga 6 Bulan</h3>
+            <p>Pedoman PKL SMK dari Kemendikbudristek menjadi acuan durasi PKL yang umumnya berkisar 3 sampai 6 bulan.</p>
+            <p>Sebagian waktu tersita untuk adaptasi, tugas harian, dan revisi, sehingga fitur inti project sebaiknya selesai dalam 2 sampai 8 minggu.</p>
+            <p>Project kecil yang rampung dan terdokumentasi lebih bernilai daripada sistem besar yang berhenti di tengah jalan.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Memiliki Tampilan Responsif dan Bisa Didemokan Langsung</h3>
+            <p>Tampilan responsif adalah tata letak website yang menyesuaikan lebar layar ponsel, tablet, dan laptop.</p>
+            <p>Uji project pada ketiga ukuran layar tersebut sebelum dipublikasikan agar siapa pun yang membuka tautan melihat hasil yang rapi.</p>
+            <p>Live demo yang bisa dibuka tanpa login membuat pembimbing dan rekruter menilai hasil kerja dalam hitungan detik.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 1 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/apa-yang-dikerjakan-anak-rpl-saat-pkl" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Apa yang Dikerjakan Anak RPL saat PKL dan Tugasnya &rarr;
+            </a>
+          </div>
+
+          <!-- SECTION 2 -->
+          <section id="daftar-15-ide" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">15 Ide Project PKL RPL Berdasarkan Kategori</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Ide project PKL RPL terbagi dalam tiga kategori, yaitu website profil bisnis atau instansi, landing page promosi, dan blog atau portal informasi, masing-masing lima ide.
+            </p>
+            <p>Berikut contoh project PKL RPL yang bisa dikerjakan sebagai project website untuk PKL SMK RPL. Setiap ide menyebut fitur inti yang cukup untuk dinilai pembimbing dan ditampilkan di portofolio PKL RPL.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Kategori Website Profil untuk Bisnis dan Instansi</h3>
+            <p>Website profil adalah website yang memperkenalkan sebuah usaha atau lembaga melalui halaman beranda, layanan, galeri, dan kontak.</p>
+
+            <!-- GAMBAR PENDUKUNG (KOTAK UNGU #2) -->
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/Contoh-project-PKL-RPL.webp" 
+                alt="Contoh project PKL RPL berupa website profil UMKM kuliner lokal yang responsif di layar ponsel dan laptop" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Contoh project PKL RPL berupa website profil UMKM kuliner lokal yang responsif di layar ponsel dan laptop
+              </figcaption>
+            </figure>
+
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Website Profil UMKM Kuliner Lokal — Halaman beranda, daftar menu berfoto, lokasi pada peta, dan tombol pesan lewat WhatsApp penjual. Cocok sebagai contoh project PKL RPL pertama karena kebutuhan penggunanya sangat jelas.</li>
+              <li>Website Profil Sekolah atau Lembaga Kursus — Halaman program, jadwal, profil pengajar, dan formulir kontak calon peserta.</li>
+              <li>Website Profil Jasa Wisata dan Outbound — Katalog paket kegiatan, galeri foto, dan alur reservasi yang dijelaskan langkah demi langkah.</li>
+              <li>Website Profil Klinik atau Apotek Daerah — Daftar layanan, jam operasional, dan lokasi. Project ini hanya memuat informasi layanan, tanpa klaim kesehatan.</li>
+              <li>Website Profil Komunitas atau Organisasi Pemuda — Agenda kegiatan, struktur pengurus, dan galeri dokumentasi kegiatan komunitas.</li>
+            </ol>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Kategori Landing Page untuk Promosi dan Konversi</h3>
+            <p>Landing page adalah halaman tunggal yang dirancang untuk satu tujuan, seperti pendaftaran atau pemesanan.</p>
+            <p>Cara membuat landing page yang rapi adalah menyusun lima bagian berurutan, yaitu judul utama dengan tombol aksi, manfaat, bukti atau galeri, formulir singkat, dan penutup.</p>
+            <ol start="6" class="list-decimal pl-6 space-y-2">
+              <li>Landing Page Pendaftaran Event atau Webinar — Satu halaman berisi jadwal, pembicara, hitung mundur, dan formulir pendaftaran.</li>
+              <li>Landing Page Katalog Produk Hampers dan Souvenir — Katalog produk dengan foto, deskripsi, rentang harga, dan tombol pemesanan.</li>
+              <li>Landing Page Penawaran Jasa Digital Marketing — Penjelasan layanan, paket, contoh kerja, dan formulir konsultasi.</li>
+              <li>Landing Page Pre-Order Produk Lokal — Informasi produk, periode pre-order, dan formulir pemesanan yang rapi.</li>
+              <li>Landing Page Pendaftaran Program Magang — Halaman berisi syarat, alur seleksi, dan tombol pendaftaran untuk calon peserta magang.</li>
+            </ol>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Kategori Blog dan Portal Informasi</h3>
+            <p>Blog dan portal informasi adalah website dengan konten yang terus bertambah dan dikelola melalui sistem administrasi.</p>
+            <p>Kategori ini menuntut waktu lebih panjang, tetapi menunjukkan kemampuan basis data dan manajemen konten.</p>
+            <ol start="11" class="list-decimal pl-6 space-y-2">
+              <li>Blog Edukasi Pemrograman untuk Pemula — Artikel dengan kategori, kolom pencarian, dan halaman penulis. Cocok untuk belajar CMS.</li>
+              <li>Portal Informasi Lowongan Kerja dan Magang Lokal — Daftar lowongan dengan filter bidang dan lokasi serta halaman detail setiap lowongan.</li>
+              <li>Blog Direktori Wisata dan Kuliner Daerah — Direktori tempat dengan foto, alamat, jam buka, dan peta.</li>
+              <li>Portal Dokumentasi dan Knowledge Base Internal — Kumpulan panduan kerja dengan navigasi berjenjang dan pencarian.</li>
+              <li>Blog Majalah Dinding Digital Sekolah — Rubrik karya siswa, pengumuman, dan agenda sekolah yang dikelola melalui panel admin.</li>
+            </ol>
+          </section>
+
+          <!-- SECTION 3 -->
+          <section id="estimasi-waktu" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Estimasi Waktu Pengerjaan yang Realistis Selama PKL</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Dalam PKL RPL, landing page selesai dalam 1 sampai 2 minggu, website profil 3 sampai 4 minggu, dan blog atau portal 1 sampai 2 bulan.
+            </p>
+            <p>Estimasi berikut berlaku untuk siswa tingkat pemula yang mengerjakan project sambil menjalankan tugas harian PKL.</p>
+            <p>Durasi PKL SMK yang umumnya 3 sampai 6 bulan menjadi patokan pembagian timeline.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Jenis project</th>
+                    <th class="p-3 font-bold">Estimasi waktu</th>
+                    <th class="p-3 font-bold">Contoh dari daftar ide</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Landing page</td>
+                    <td class="p-3">1 sampai 2 minggu</td>
+                    <td class="p-3">Pendaftaran event, katalog hampers, pre-order produk lokal</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Website profil</td>
+                    <td class="p-3">3 sampai 4 minggu</td>
+                    <td class="p-3">Profil UMKM kuliner, sekolah, jasa wisata, komunitas</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Blog atau portal</td>
+                    <td class="p-3">1 sampai 2 bulan</td>
+                    <td class="p-3">Blog edukasi, portal lowongan, direktori wisata</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Project Jangka Pendek 2 hingga 4 Minggu (Landing Page dan Profil Statis)</h3>
+            <p>Project jangka pendek memakai HTML, CSS, dan JavaScript tanpa basis data, sehingga fokus pengerjaan ada pada struktur, tampilan responsif, dan kerapian kode.</p>
+            <p>Pada PKL 3 bulan, kombinasi satu website profil dan satu landing page memenuhi Uji Waktu dan menyisakan ruang untuk dokumentasi.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Project Jangka Menengah 1 hingga 3 Bulan (Blog Dinamis dan Sistem CMS)</h3>
+            <p>CMS (Content Management System) adalah sistem untuk mengelola konten website tanpa mengubah kode secara langsung.</p>
+            <p>Blog dinamis dan portal berbasis CMS memerlukan perancangan basis data, panel admin, dan pengujian.</p>
+            <p>Pada PKL 6 bulan, satu blog atau portal dapat berjalan berdampingan dengan satu website profil dan satu landing page.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 2 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/tempat-pkl-smk-rpl-malang" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Tempat PKL SMK RPL Malang, Tugas dan Syarat Daftar &rarr;
+            </a>
+          </div>
+
+          <!-- SECTION 4 -->
+          <section id="cara-dokumentasi" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Cara Mendokumentasikan Project PKL agar Siap Masuk Portofolio</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Dokumentasi project PKL siap portofolio terdiri dari repositori GitHub dengan README lengkap, live demo publik, ringkasan studi kasus objektif, dan hasil yang terbukti.
+            </p>
+            <p>Dokumentasi project PKL mengubah kode yang selesai menjadi bukti kerja yang mudah dinilai.</p>
+            <p>Contoh hasil yang didokumentasikan dengan format ini dapat dilihat pada halaman <a href="/program" class="text-tc-accent underline hover:text-white">contoh portofolio project nyata</a>.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Rapikan Repositori GitHub dan File README</h3>
+            <p>README adalah file pengantar repositori yang menurut GitHub Docs menjelaskan alasan project berguna, hal yang bisa dilakukan project, dan cara menggunakannya. Susun README PKL dengan unsur berikut.</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Judul project dan deskripsi satu kalimat</li>
+              <li>Tangkapan layar tampilan desktop dan ponsel</li>
+              <li>Daftar teknologi yang dipakai</li>
+              <li>Daftar fitur yang benar-benar berjalan</li>
+              <li>Cara menjalankan project di komputer lokal</li>
+              <li>Tautan live demo dan peran siswa dalam project</li>
+            </ul>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Publikasikan Live Demo Menggunakan Hosting Gratis</h3>
+            <p>Live demo adalah versi website yang bisa dibuka publik lewat tautan. Website statis berbasis HTML, CSS, dan JavaScript dapat dipublikasikan gratis melalui GitHub Pages langsung dari repositori.</p>
+            <p>Project dinamis yang membutuhkan server dapat memakai hosting PHP gratis atau berbiaya rendah. Bila server tidak tersedia, lampirkan video demo dan tangkapan layar sebagai bukti.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Tulis Ringkasan Studi Kasus Secara Objektif</h3>
+            <p>Studi kasus portofolio cukup satu halaman dengan enam bagian, yaitu masalah, solusi, teknologi, peran, hasil, dan pembelajaran.</p>
+            <p>Contoh kalimat yang jujur dan terukur: "Membangun website profil usaha kuliner berbasis HTML, CSS, dan JavaScript dengan empat halaman, dikerjakan dalam tiga minggu, tersedia melalui tautan demo."</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Hindari Klaim Hasil yang Tidak Terdokumentasi</h3>
+            <p>Klaim hasil yang tidak terdokumentasi, seperti kenaikan trafik, penjualan, atau konversi, menurunkan kepercayaan rekruter.</p>
+            <p>Tulis angka dampak bisnis hanya bila pemilik usaha atau instansi menyediakan data tertulis.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Kalimat yang dihindari</th>
+                    <th class="p-3 font-bold">Kalimat yang aman dan terukur</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3">Website ini meningkatkan penjualan usaha secara signifikan.</td>
+                    <td class="p-3">Website memuat katalog produk dan tombol pemesanan yang berjalan di ponsel.</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3">Project ini sempurna dan siap dipakai skala besar.</td>
+                    <td class="p-3">Fitur inti berjalan dan tersedia melalui tautan demo.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- KOTAK BACA JUGA 3 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/contoh-laporan-pkl-rpl" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Contoh Laporan PKL RPL Lengkap dengan Struktur Bab &rarr;
+            </a>
+          </div>
+
+          <!-- SECTION 5 -->
+          <section id="program-pkl-malang" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Ingin Mengerjakan Project Nyata Saat PKL RPL di Malang</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Info Magang Malang menyediakan program PKL RPL dan magang di Malang dengan bimbingan mentor industri bagi siswa SMK dan mahasiswa yang ingin mengerjakan project nyata.
+            </p>
+            <p>Siswa yang mencari tempat PKL RPL Malang dengan project nyata dapat memilih <a href="/program" class="text-tc-accent underline hover:text-white">program PKL RPL dan magang</a> dari Info Magang Malang.</p>
+            <p>Pengerjaan project didampingi mentor industri sehingga hasilnya siap masuk portofolio, lengkap dengan dokumentasi yang rapi.</p>
+            <p>Alamat Info Magang Malang adalah Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141.</p>
+            <p>Calon peserta dapat <a href="/kontak" class="text-tc-accent underline hover:text-white">hubungi tim Info Magang Malang</a> untuk bertanya seputar jalur, jadwal, dan pemilihan project.</p>
+          </section>
+
+          <!-- SECTION 6 -->
+          <section id="cara-daftar-program" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Cara Daftar Program Magang untuk Siswa SMK dan Mahasiswa</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Pendaftaran program magang mengikuti tiga langkah sesuai jalur peserta.
+            </p>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Buka halaman <a href="/program" class="text-tc-accent underline hover:text-white">program PKL RPL dan magang</a> untuk membaca pilihan program.</li>
+              <li>Ikuti <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran PKL jalur SMK</a> bagi siswa SMK, atau <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran magang jalur mahasiswa</a> bagi mahasiswa.</li>
+              <li>Tanyakan kebutuhan lebih lanjut melalui <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20tanya%20program%20PKL%20RPL." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">WhatsApp resmi Info Magang Malang</a>.</li>
+            </ol>
+          </section>
+
+          <!-- SECTION 7: FAQ -->
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pertanyaan yang Sering Diajukan tentang Ide Project PKL RPL</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa ide project PKL RPL yang paling mudah untuk pemula?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Ide project PKL RPL paling mudah untuk pemula adalah landing page dan website profil statis berbasis HTML, CSS, dan JavaScript. Contohnya landing page pendaftaran event atau website profil UMKM kuliner. Keduanya selesai dalam 1 sampai 4 minggu, memiliki pengguna nyata, dan mudah dipublikasikan sebagai live demo.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Berapa lama waktu mengerjakan project PKL RPL?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Satu project website selama PKL RPL memakan waktu 1 minggu sampai 2 bulan, tergantung jenisnya. Landing page selesai dalam 1 sampai 2 minggu, website profil dalam 3 sampai 4 minggu, dan blog atau portal dalam 1 sampai 2 bulan. Sisakan 2 minggu terakhir PKL untuk dokumentasi dan revisi.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah project PKL RPL wajib memakai framework?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Project PKL RPL tidak wajib memakai framework. Website statis dari HTML, CSS, dan JavaScript sudah cukup selama menjawab masalah nyata, tampil responsif, dan terdokumentasi. Framework atau CMS baru relevan untuk blog dan portal yang kontennya sering diperbarui sehingga membutuhkan pengelolaan konten dinamis.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bagaimana cara memasukkan project PKL ke portofolio?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Unggah kode ke repositori GitHub dengan README lengkap, publikasikan live demo lewat hosting gratis, lalu tulis ringkasan studi kasus berisi masalah, solusi, teknologi, dan peran siswa. Tautkan ketiganya pada halaman portofolio. Cantumkan hanya hasil yang bisa dibuktikan, seperti fitur, tautan demo, dan durasi pengerjaan.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Di mana tempat PKL RPL di Malang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Siswa SMK dan mahasiswa dapat mengikuti program PKL RPL dan magang di Info Magang Malang, beralamat di Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang. Program menyediakan jalur SMK dan jalur mahasiswa dengan bimbingan mentor industri serta project nyata.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bolehkah menulis dampak bisnis di portofolio PKL?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Dampak bisnis boleh ditulis hanya jika ada data tertulis dari pemilik usaha atau instansi, misalnya laporan analitik. Tanpa dokumen pendukung, tulis hasil terukur dari sisi pengerjaan, seperti jumlah halaman, fitur yang berjalan, dan tautan demo. Klaim tanpa bukti menurunkan kepercayaan rekruter.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <!-- SECTION 8: KESIMPULAN -->
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent">
+              Pilih satu ide project PKL RPL yang realistis, dokumentasikan di GitHub lengkap dengan live demo, lalu daftar program magang terarah di Info Magang Malang.
+            </p>
+            <p>Ide project PKL RPL yang menjawab masalah nyata, selesai tepat waktu, dan terdokumentasi menjadikan portofolio siswa kuat di mata pembimbing dan rekruter.</p>
+            <p>Mulailah dari project jangka pendek, lalu naikkan kompleksitas bersama mentor.</p>
+            <p>Siap mengerjakan project nyata? Lihat detail <a href="/program" class="text-tc-accent underline hover:text-white">program PKL RPL dan magang</a> di Info Magang Malang, lalu daftar lewat <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran PKL jalur SMK</a> atau <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran magang jalur mahasiswa</a>.</p>
+          </section>
+
+          <!-- AUTHOR BIO & SUMBER -->
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Yolanda Deva Apriliana Putri (YUL)</p>
+              <p class="text-tc-muted mt-1">
+                Tim redaksi Info Magang Malang menyusun panduan magang dan PKL bidang teknologi bagi siswa SMK dan mahasiswa di Malang. Isi panduan merujuk pada pedoman PKL SMK Kemendikbudristek dan dokumentasi resmi GitHub.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 space-y-1 text-xs text-tc-muted">
+              <div class="flex flex-wrap gap-4">
+                <span>Tanggal Publish: <strong class="text-white">23 November 2026</strong></span>
+                <span>Terakhir Diupdate: <strong class="text-white">23 November 2026</strong></span>
+              </div>
+              <p class="pt-1">Sumber Acuan: Pedoman Praktik Kerja Lapangan (PKL) SMK Kemendikbudristek; GitHub Docs (About READMEs & GitHub Pages).</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            Bangun Portofolio Nyata
+          </span>
+          <h3 class="text-lg font-bold text-white">Garap Project Web Saat PKL</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Dari landing page, website profil UMKM, hingga portal informasi dengan bimbingan mentor praktisi di Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20tanya%20program%20PKL%20RPL%20berbasis%20proyek." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Tanya Program via WhatsApp
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL LAINNYA) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-4">
+            <a href="/blog/tempat-pkl-smk-rpl-malang" class="block group">
+              <span class="text-[11px] text-tc-accent font-mono">23 Nov 2026 • 08:00 WIB</span>
+              <h4 class="text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5">
+                Tempat PKL SMK RPL Malang, Tugas dan Syarat Daftar
+              </h4>
+            </a>
+            <a href="/blog/apa-yang-dikerjakan-anak-rpl-saat-pkl" class="block group border-t border-tc-border/60 pt-3">
+              <span class="text-[11px] text-tc-accent font-mono">23 Nov 2026 • 12:00 WIB</span>
+              <h4 class="text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5">
+                Apa yang Dikerjakan Anak RPL saat PKL dan Tugasnya
+              </h4>
+            </a>
+            <a href="/blog/contoh-laporan-pkl-rpl" class="block group border-t border-tc-border/60 pt-3">
+              <span class="text-[11px] text-tc-accent font-mono">23 Nov 2026 • 17:00 WIB</span>
+              <h4 class="text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5">
+                Contoh Laporan PKL RPL Lengkap dengan Struktur Bab
+              </h4>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>

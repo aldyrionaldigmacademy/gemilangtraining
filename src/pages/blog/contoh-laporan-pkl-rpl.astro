@@ -1,0 +1,644 @@
+---
+// src/pages/blog/contoh-laporan-pkl-rpl.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Contoh Laporan PKL RPL Lengkap dengan Struktur Bab";
+const pageDesc = "Contoh laporan PKL RPL lengkap dengan struktur bab, isi tiap bab, lampiran, dan penilaian. Cari tempat PKL RPL berproyek nyata di Malang. Cek sekarang";
+const pageUrl = "https://infomagangmalang.web.id/blog/contoh-laporan-pkl-rpl";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/Siswa-SMK-RPL-mengerjakan-proyek-website.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/contoh-laporan-pkl-rpl#article",
+      "headline": "Contoh Laporan PKL RPL Lengkap dengan Struktur Bab",
+      "description": "Contoh laporan PKL RPL lengkap dengan struktur bab, isi tiap bab, lampiran, dan penilaian. Cari tempat PKL RPL berproyek nyata di Malang. Cek sekarang",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/contoh-laporan-pkl-rpl",
+      "image": "https://infomagangmalang.web.id/assets/img/Siswa-SMK-RPL-mengerjakan-proyek-website.webp",
+      "datePublished": "2026-11-23T17:00:00+07:00",
+      "dateModified": "2026-11-23T17:00:00+07:00",
+      "author": {
+        "@type": "Organization",
+        "name": "Tim Editorial Info Magang Malang",
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Info Magang Malang (Gemilang Training)",
+        "url": "https://infomagangmalang.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/logo.webp"
+        }
+      },
+      "keywords": "contoh laporan pkl rpl, struktur laporan pkl rpl, susunan bab laporan pkl smk rpl, contoh daftar isi laporan pkl rpl"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/contoh-laporan-pkl-rpl#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Bagaimana struktur laporan PKL RPL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Struktur laporan PKL RPL terdiri dari bagian awal (halaman judul, lembar pengesahan, kata pengantar, daftar isi), Bab I Pendahuluan, Bab II Gambaran Umum Tempat PKL, Bab III Pelaksanaan dan Hasil PKL, Bab IV Penutup, daftar pustaka, dan lampiran. Urutan akhir mengikuti pedoman PKL masing-masing sekolah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa isi tiap bab laporan PKL RPL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bab I memuat latar belakang, tujuan, manfaat, serta waktu dan tempat PKL. Bab II memuat profil, struktur organisasi, dan bidang usaha tempat PKL. Bab III memuat uraian kegiatan, proyek aplikasi, tools, bahasa pemrograman, kendala, dan solusi. Bab IV memuat kesimpulan dan saran. Lampiran berisi jurnal, daftar hadir, dokumentasi, dan lembar penilaian."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang dinilai dalam laporan dan asesmen akhir PKL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Panduan PKL Kemdikbudristek menempatkan tiga komponen dalam asesmen akhir PKL: penilaian instruktur dunia kerja, penyusunan laporan, dan presentasi hasil PKL. Penilaian instruktur mengukur sikap dan keterampilan kerja, laporan mengukur kelengkapan serta kerapian, dan presentasi mengukur kemampuan menjelaskan proyek secara lisan di depan penilai."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://infomagangmalang.web.id/blog/contoh-laporan-pkl-rpl#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Contoh Laporan PKL RPL Lengkap dengan Struktur Bab",
+          "item": "https://infomagangmalang.web.id/blog/contoh-laporan-pkl-rpl"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/Siswa-SMK-RPL-mengerjakan-proyek-website.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="contoh laporan pkl rpl, struktur laporan pkl rpl, susunan bab laporan pkl smk rpl, contoh daftar isi laporan pkl rpl, isi bab laporan pkl rekayasa perangkat lunak, lampiran laporan pkl smk, penilaian laporan pkl kemdikbud" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- BREADCRUMB -->
+    <nav class="text-xs text-tc-muted mb-6 flex flex-wrap items-center gap-2">
+      <a href="/" class="hover:text-tc-accent transition-colors">Beranda</a>
+      <span>/</span>
+      <a href="/blog" class="hover:text-tc-accent transition-colors">Blog</a>
+      <span>/</span>
+      <span class="text-white truncate max-w-xs md:max-w-md">Contoh Laporan PKL RPL Lengkap dengan Struktur Bab</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Laporan & Evaluasi PKL
+            </span>
+            <span class="text-tc-muted font-mono">23 Nov 2026 • 17:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Yolanda Deva Apriliana Putri (YUL)</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Contoh Laporan PKL RPL Lengkap dengan Struktur Bab
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Contoh laporan PKL RPL terdiri dari empat bagian utama: gambaran umum tempat PKL, hasil pelaksanaan proyek, penutup, dan lampiran pendukung.
+          </p>
+        </header>
+
+        <!-- GAMBAR UTAMA (KOTAK MERAH #1) -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/Siswa-SMK-RPL-mengerjakan-proyek-website.webp" 
+            alt="Contoh laporan PKL RPL lengkap dengan struktur bab untuk siswa SMK jurusan RPL" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Contoh laporan PKL RPL lengkap dengan struktur bab untuk siswa SMK jurusan RPL
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#struktur-umum" class="hover:text-tc-accent transition-colors">1. Apa Struktur Umum dalam Contoh Laporan PKL RPL?</a></li>
+            <li><a href="#isi-tiap-bab" class="hover:text-tc-accent transition-colors">2. Apa Isi Tiap Bab Laporan PKL RPL?</a></li>
+            <li><a href="#contoh-daftar-isi" class="hover:text-tc-accent transition-colors">3. Bagaimana Contoh Daftar Isi Laporan PKL RPL?</a></li>
+            <li><a href="#lampiran-wajib" class="hover:text-tc-accent transition-colors">4. Lampiran Apa yang Wajib Ada dalam Laporan PKL SMK RPL?</a></li>
+            <li><a href="#komponen-penilaian" class="hover:text-tc-accent transition-colors">5. Apa yang Dinilai dalam Laporan dan Asesmen Akhir PKL?</a></li>
+            <li><a href="#laporan-berbobot" class="hover:text-tc-accent transition-colors">6. Bagaimana Membuat Isi Laporan PKL RPL Lebih Berbobot?</a></li>
+            <li><a href="#rekomendasi-program" class="hover:text-tc-accent transition-colors">7. Rekomendasi Program PKL RPL Terstruktur di Malang</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">8. FAQ</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">9. Kesimpulan dan Langkah Selanjutnya</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          
+          <div class="space-y-4">
+            <p>Siswa SMK jurusan Rekayasa Perangkat Lunak (RPL) atau Pengembangan Perangkat Lunak dan Gim (PPLG) menyusun contoh laporan PKL RPL dengan struktur bab yang jelas: pendahuluan, gambaran umum tempat PKL, pelaksanaan dan hasil PKL, penutup, serta lampiran.</p>
+            <p>Panduan ini membahas isi tiap bab, contoh daftar isi, lampiran, dan komponen penilaian.</p>
+            <p>Panduan ini disusun oleh tim Info Magang Malang, penyedia program PKL dan magang berbasis proyek nyata di Malang.</p>
+          </div>
+
+          <!-- SECTION 1 -->
+          <section id="struktur-umum" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Struktur Umum dalam Contoh Laporan PKL RPL?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Struktur umum laporan PKL SMK RPL memuat bagian awal, empat bab inti, daftar pustaka, dan lampiran, dengan urutan akhir mengikuti pedoman masing-masing sekolah.
+            </p>
+            <p>Menurut Liputan6, laporan PKL secara umum memuat gambaran umum tempat PKL, hasil PKL, penutup, dan lampiran.</p>
+            <p>Pada jurusan RPL, bagian hasil PKL berisi proyek perangkat lunak yang dikerjakan siswa, sehingga bagian inilah yang paling menentukan bobot laporan.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Komponen Wajib dalam Laporan PKL</h3>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Gambaran umum: profil tempat PKL, struktur organisasi, dan bidang usaha.</li>
+              <li>Hasil PKL: uraian kegiatan, proyek atau aplikasi yang dikerjakan, tools dan bahasa pemrograman, serta kendala dan solusi.</li>
+              <li>Penutup: kesimpulan dan saran.</li>
+              <li>Lampiran: jurnal harian, daftar hadir, dokumentasi proyek, dan lembar penilaian.</li>
+            </ul>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Catatan Penting: Menyesuaikan Urutan Bab dengan Pedoman Sekolah</h3>
+            <p>Penomoran dan urutan bab laporan PKL dapat berbeda antar sekolah karena setiap SMK wajib mengikuti pedoman resminya sendiri.</p>
+            <p>Liputan6 juga mencatat bahwa format laporan PKL berbeda di tiap sekolah atau perguruan tinggi.</p>
+            <p>Misalnya, sebuah sekolah memisahkan landasan teori menjadi bab tersendiri sehingga gambaran umum tempat PKL bergeser menjadi Bab III.</p>
+            <p>Siswa RPL cukup memetakan template di artikel ini ke format yang ditetapkan guru pembimbing.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 1 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/apa-yang-dikerjakan-anak-rpl-saat-pkl" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Apa yang Dikerjakan Anak RPL saat PKL dan Tugasnya &rarr;
+            </a>
+          </div>
+
+          <!-- SECTION 2 -->
+          <section id="isi-tiap-bab" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Isi Tiap Bab Laporan PKL RPL?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Isi tiap bab laporan PKL RPL: Bab I pendahuluan, Bab II profil tempat PKL, Bab III uraian proyek dan hasil, Bab IV kesimpulan serta saran.
+            </p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bagian Awal: Halaman Judul, Lembar Pengesahan, Kata Pengantar, dan Daftar Isi</h3>
+            <p>Halaman judul memuat judul laporan, logo sekolah, nama siswa, NIS, kelas, program keahlian, dan tahun pelajaran. Lembar pengesahan memuat tanda tangan guru pembimbing, instruktur dunia kerja, dan pihak sekolah.</p>
+            <p>Kata pengantar dan daftar isi melengkapi bagian awal, ditambah daftar gambar atau tabel bila laporan memuat banyak screenshot.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bab I Pendahuluan: Latar Belakang, Tujuan, Manfaat, Waktu dan Tempat PKL</h3>
+            <p>Latar belakang menjelaskan PKL sebagai mata pelajaran di SMK. Panduan PKL Kemdikbudristek, sebagaimana dikutip dalam kajian jurnal Universitas Negeri Jakarta, menetapkan beban PKL sebanyak 792 jam pelajaran untuk SMK program tiga tahun. Angka tersebut menjadi dasar yang kuat untuk paragraf latar belakang.</p>
+            <p>Tujuan dan manfaat PKL ditulis spesifik untuk RPL, misalnya menerapkan kompetensi pemrograman pada proyek nyata. Waktu dan tempat PKL memuat tanggal mulai, tanggal selesai, serta alamat lengkap.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bab II Gambaran Umum Tempat PKL: Profil, Struktur Organisasi, Bidang Usaha</h3>
+            <p>Bab II menguraikan profil tempat PKL, struktur organisasi, dan bidang usaha. Untuk siswa RPL, tambahkan teknologi yang dipakai tempat PKL (misalnya framework web atau sistem manajemen versi Git) dan alur kerja tim pengembangan.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bab III Pelaksanaan dan Hasil PKL RPL: Kegiatan, Proyek, Tools, Kendala</h3>
+            <p>Bab III adalah inti laporan PKL RPL dan sebaiknya memuat empat sub-bab berikut.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Sub-bab</th>
+                    <th class="p-3 font-bold">Isi yang ditulis</th>
+                    <th class="p-3 font-bold">Contoh isian</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">3.1 Uraian Kegiatan</td>
+                    <td class="p-3">Kegiatan per minggu atau per bulan selama PKL</td>
+                    <td class="p-3">Minggu 1 sampai 2: pengenalan alur kerja dan setup lingkungan pengembangan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">3.2 Proyek/Aplikasi</td>
+                    <td class="p-3">Nama proyek, tujuan, fitur, dan peran siswa</td>
+                    <td class="p-3">Pembuatan halaman website responsif dengan fitur formulir kontak</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">3.3 Tools dan Bahasa Pemrograman</td>
+                    <td class="p-3">Daftar teknologi beserta fungsinya</td>
+                    <td class="p-3">HTML, CSS, JavaScript, Bootstrap, Git, dan editor kode</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">3.4 Kendala dan Solusi</td>
+                    <td class="p-3">Masalah teknis dan cara penyelesaiannya</td>
+                    <td class="p-3">Tampilan tidak responsif di ponsel, diselesaikan dengan sistem grid</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bab IV Penutup: Kesimpulan dan Saran</h3>
+            <p>Kesimpulan menjawab tujuan PKL satu per satu berdasarkan hasil di Bab III. Saran ditujukan kepada tiga pihak: sekolah, tempat PKL, dan siswa angkatan berikutnya.</p>
+          </section>
+
+          <!-- SECTION 3 -->
+          <section id="contoh-daftar-isi" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Contoh Daftar Isi Laporan PKL RPL?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Contoh daftar isi laporan PKL RPL memakai format empat bab: pendahuluan, gambaran umum tempat PKL, pelaksanaan dan hasil PKL, serta penutup, ditambah lampiran.
+            </p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Template Susunan Daftar Isi Siap Pakai (Format 4 Bab)</h3>
+            <p>Template berikut dapat disalin ke Microsoft Word atau Google Docs, lalu disesuaikan dengan pedoman sekolah.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Bagian</th>
+                    <th class="p-3 font-bold">Sub-bab</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Bagian Awal</td>
+                    <td class="p-3">Halaman Judul, Lembar Pengesahan, Kata Pengantar, Daftar Isi, Daftar Gambar, Daftar Tabel</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">BAB I PENDAHULUAN</td>
+                    <td class="p-3">1.1 Latar Belakang; 1.2 Tujuan PKL; 1.3 Manfaat PKL; 1.4 Waktu dan Tempat Pelaksanaan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">BAB II GAMBARAN UMUM TEMPAT PKL</td>
+                    <td class="p-3">2.1 Profil Tempat PKL; 2.2 Struktur Organisasi; 2.3 Bidang Usaha dan Layanan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">BAB III PELAKSANAAN DAN HASIL PKL</td>
+                    <td class="p-3">3.1 Uraian Kegiatan; 3.2 Proyek/Aplikasi yang Dikerjakan; 3.3 Tools dan Bahasa Pemrograman; 3.4 Kendala dan Solusi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">BAB IV PENUTUP</td>
+                    <td class="p-3">4.1 Kesimpulan; 4.2 Saran</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Bagian Akhir</td>
+                    <td class="p-3">Daftar Pustaka; Lampiran 1 Jurnal Harian; Lampiran 2 Daftar Hadir; Lampiran 3 Dokumentasi Proyek dan Screenshot Aplikasi; Lampiran 4 Lembar Penilaian</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- KOTAK BACA JUGA 2 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/ide-project-pkl-rpl-portofolio" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              15 Ide Project PKL RPL yang Layak Masuk Portofolio &rarr;
+            </a>
+          </div>
+
+          <!-- SECTION 4 -->
+          <section id="lampiran-wajib" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Lampiran Apa yang Wajib Ada dalam Laporan PKL SMK RPL?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Lampiran laporan PKL SMK RPL mencakup jurnal harian, daftar hadir, dokumentasi proyek berupa screenshot aplikasi, dan lembar penilaian dari instruktur dunia kerja.
+            </p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Jurnal Harian, Daftar Hadir, Dokumentasi Proyek, dan Lembar Penilaian</h3>
+            <p>Setiap lampiran berfungsi sebagai bukti bahwa isi Bab III benar-benar dikerjakan. Sebagian sekolah juga meminta surat pengantar atau sertifikat PKL, sehingga daftar final mengikuti pedoman sekolah.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Lampiran</th>
+                    <th class="p-3 font-bold">Fungsi</th>
+                    <th class="p-3 font-bold">Tips untuk siswa RPL</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Jurnal harian PKL</td>
+                    <td class="p-3">Mencatat kegiatan dan hasil kerja setiap hari</td>
+                    <td class="p-3">Tulis nama fitur atau halaman yang dikerjakan, bukan hanya "membuat website"</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Daftar hadir</td>
+                    <td class="p-3">Membuktikan kehadiran selama PKL</td>
+                    <td class="p-3">Minta paraf instruktur dunia kerja secara rutin</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Dokumentasi proyek</td>
+                    <td class="p-3">Bukti visual hasil kerja</td>
+                    <td class="p-3">Sertakan screenshot aplikasi, tautan website, dan tampilan kode</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Lembar penilaian</td>
+                    <td class="p-3">Nilai dari instruktur dunia kerja</td>
+                    <td class="p-3">Pastikan tanda tangan dan stempel lengkap sebelum dijilid</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- SECTION 5 -->
+          <section id="komponen-penilaian" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa yang Dinilai dalam Laporan dan Asesmen Akhir PKL?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Asesmen akhir PKL menurut Panduan PKL Kemdikbudristek mencakup penilaian instruktur dunia kerja, penyusunan laporan, dan presentasi hasil PKL oleh siswa.
+            </p>
+            <p>Panduan PKL Kemdikbudristek menyerahkan cara pengukuran capaian kompetensi kepada SMK dan dunia kerja, yang mencakup aspek sikap, pengetahuan, dan keterampilan.</p>
+            <p>Kajian jurnal Universitas Negeri Jakarta mencatat bahwa sekolah memakai jurnal PKL, laporan, presentasi, dan uji kompetensi sebagai komponen penilaian.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Penilaian Instruktur Dunia Kerja (DUDI)</h3>
+            <p>Instruktur dunia kerja menilai sikap kerja, kemampuan teknis, dan hasil pekerjaan siswa selama PKL. Hasil penilaian tercatat di lembar penilaian yang menjadi lampiran laporan.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Kelengkapan dan Kerapian Laporan PKL</h3>
+            <p>Guru pembimbing memeriksa kelengkapan bab, kesesuaian dengan pedoman sekolah, konsistensi format, dan kebenaran data. Laporan yang bab-babnya lengkap dan lampirannya terisi rapi lebih mudah dinilai.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Presentasi atau Sidang Hasil PKL</h3>
+            <p>Presentasi menilai kemampuan siswa menjelaskan proyeknya. Struktur yang efektif untuk siswa RPL: masalah yang dihadapi, solusi yang dibangun, demonstrasi aplikasi, hasil, dan pelajaran yang diperoleh.</p>
+          </section>
+
+          <!-- SECTION 6 -->
+          <section id="laporan-berbobot" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Membuat Isi Laporan PKL RPL Lebih Berbobot?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Isi laporan PKL RPL lebih berbobot bila Bab III memuat proyek nyata yang lengkap dengan kegiatan, artefak, dan refleksi di setiap uraian.
+            </p>
+            <p>Kerangka KAR (Kegiatan, Artefak, Refleksi) adalah pendekatan penulisan Bab III yang diusulkan artikel ini agar setiap uraian proyek punya bukti dan pembelajaran yang jelas.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Unsur KAR</th>
+                    <th class="p-3 font-bold">Pertanyaan yang dijawab</th>
+                    <th class="p-3 font-bold">Contoh pada proyek website</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Kegiatan</td>
+                    <td class="p-3">Apa yang dikerjakan, kapan, dan sebagai apa?</td>
+                    <td class="p-3">Membangun halaman artikel dan menata struktur heading pada minggu ke-4</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Artefak</td>
+                    <td class="p-3">Apa bukti hasil kerjanya?</td>
+                    <td class="p-3">Screenshot halaman, tautan website live, dan riwayat commit Git</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Refleksi</td>
+                    <td class="p-3">Apa kendala, solusi, dan pelajarannya?</td>
+                    <td class="p-3">Skor kecepatan halaman rendah, gambar dikompres dan diganti format WebP</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>Proyek nyata menghasilkan artefak yang bisa diverifikasi, sehingga Bab III tidak berhenti pada kalimat umum seperti "belajar membuat website". Tempat PKL yang memberi proyek berjalan, bukan tugas administratif, membuat ketiga unsur KAR mudah terisi.</p>
+          </section>
+
+          <!-- KOTAK BACA JUGA 3 -->
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/tempat-pkl-smk-rpl-malang" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Tempat PKL SMK RPL Malang, Tugas dan Syarat Daftar &rarr;
+            </a>
+          </div>
+
+          <!-- SECTION 7 -->
+          <section id="rekomendasi-program" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Rekomendasi Program PKL RPL Terstruktur di Malang</h2>
+            <p>Info Magang Malang (Gemilang Training) menyelenggarakan PKL siswa SMK berbasis proyek nyata di Mojolangu, Lowokwaru, Kota Malang.</p>
+            <p>Siswa dibimbing bertahap dari dasar oleh mentor praktisi untuk membuat website dengan Astro, Bootstrap, dan Blogspot, serta menulis artikel dan mengoptimasi SEO.</p>
+
+            <!-- GAMBAR PENDUKUNG (KOTAK MERAH #2) -->
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/Siswa-SMK-RPL-mengerjakan-laporan-akhir.webp" 
+                alt="Siswa SMK RPL mengerjakan proyek website sebagai bahan contoh laporan PKL RPL di Malang" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Siswa SMK RPL mengerjakan proyek website sebagai bahan contoh laporan PKL RPL di Malang
+              </figcaption>
+            </figure>
+
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Pendampingan laporan: guru pembimbing dapat memantau kemajuan siswa, dan peserta mengisi jurnal PKL selama program berjalan.</li>
+              <li>Portofolio nyata: karya peserta terdokumentasi sebagai bahan Bab III dan lampiran dokumentasi proyek.</li>
+              <li>Durasi dan sistem: durasi standar 3 sampai 6 bulan dengan sistem WFH, hybrid, atau onsite di Malang sesuai ketentuan sekolah.</li>
+              <li>Sertifikat resmi: peserta yang menyelesaikan program menerima sertifikat kelulusan beserta penilaian.</li>
+            </ul>
+
+            <p>Panduan memilih tempat PKL yang aman tersedia di artikel <a href="/blog/tempat-magang-malang" class="text-tc-accent underline hover:text-white">cara memilih tempat magang di Malang</a>. Pilihan program lengkap ada di halaman <a href="/program" class="text-tc-accent underline hover:text-white">program PKL dan magang RPL di Malang</a>.</p>
+          </section>
+
+          <!-- SECTION 8: FAQ -->
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">FAQ</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bagaimana struktur laporan PKL RPL?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Struktur laporan PKL RPL terdiri dari bagian awal (halaman judul, lembar pengesahan, kata pengantar, daftar isi), Bab I Pendahuluan, Bab II Gambaran Umum Tempat PKL, Bab III Pelaksanaan dan Hasil PKL, Bab IV Penutup, daftar pustaka, dan lampiran. Urutan akhir mengikuti pedoman PKL masing-masing sekolah.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa isi tiap bab laporan PKL RPL?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Bab I memuat latar belakang, tujuan, manfaat, serta waktu dan tempat PKL. Bab II memuat profil, struktur organisasi, dan bidang usaha tempat PKL. Bab III memuat uraian kegiatan, proyek aplikasi, tools, bahasa pemrograman, kendala, dan solusi. Bab IV memuat kesimpulan dan saran. Lampiran berisi jurnal, daftar hadir, dokumentasi, dan lembar penilaian.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa yang dinilai dalam laporan dan asesmen akhir PKL?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Panduan PKL Kemdikbudristek menempatkan tiga komponen dalam asesmen akhir PKL: penilaian instruktur dunia kerja, penyusunan laporan, dan presentasi hasil PKL. Penilaian instruktur mengukur sikap dan keterampilan kerja, laporan mengukur kelengkapan serta kerapian, dan presentasi mengukur kemampuan menjelaskan proyek secara lisan di depan penilai.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah susunan bab laporan PKL RPL di setiap sekolah sama?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Susunan bab laporan PKL RPL tidak selalu sama. Penomoran dan urutan bab dapat berbeda antar sekolah karena setiap SMK memiliki pedoman penyusunan laporan sendiri. Siswa wajib mengikuti buku pedoman PKL dari sekolah, lalu memetakan template empat bab ke format yang ditetapkan guru pembimbing.
+                </p>
+              </details>
+
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Lampiran apa saja yang wajib dimasukkan ke dalam laporan PKL SMK?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Lampiran yang umum diminta adalah jurnal harian PKL, daftar hadir, dokumentasi kegiatan dan proyek (termasuk screenshot aplikasi untuk siswa RPL), serta lembar penilaian dari instruktur dunia kerja. Sebagian sekolah menambahkan surat pengantar atau sertifikat PKL, sehingga daftar final mengikuti pedoman sekolah.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <!-- SECTION 9: KESIMPULAN -->
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan dan Langkah Selanjutnya</h2>
+            <p class="font-medium text-tc-accent">
+              Laporan PKL RPL yang baik mengikuti pedoman sekolah dan memuat proyek nyata; Info Magang Malang menyediakan PKL berbasis proyek di Malang.
+            </p>
+            <p>Struktur empat bab, lampiran lengkap, dan Bab III yang memakai kerangka KAR membuat laporan PKL RPL siap dinilai oleh instruktur dunia kerja dan guru pembimbing.</p>
+            <p>Pilih tempat PKL yang memberi proyek nyata agar isi laporan dan portofolio sama-sama berbobot.</p>
+            <p>Sedang mencari tempat PKL RPL di Malang yang memberikan proyek nyata sehingga isi laporan dan portofoliomu lebih berbobot? Lihat <a href="/program" class="text-tc-accent underline hover:text-white">pilihan program PKL dan magang RPL di Malang</a>, cek <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran PKL jalur SMK</a>, <a href="/kontak" class="text-tc-accent underline hover:text-white">hubungi tim Info Magang Malang</a>, atau <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20konsultasi%20penempatan%20PKL%20RPL." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">konsultasi penempatan PKL via WhatsApp</a>.</p>
+            <p>Kunjungi kantor kami di Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141. Untuk jenjang kuliah, tersedia <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">jalur pendaftaran magang mahasiswa</a>.</p>
+          </section>
+
+          <!-- AUTHOR BIO & SUMBER -->
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Yolanda Deva Apriliana Putri (YUL)</p>
+              <p class="text-tc-muted mt-1">
+                Tim Editorial Info Magang Malang menyusun panduan PKL dan magang berdasarkan pendampingan siswa SMK jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia di Malang. Isi panduan merujuk pada Panduan PKL Kemdikbudristek dan program berbasis proyek nyata di Info Magang Malang.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 space-y-1 text-xs text-tc-muted">
+              <div class="flex flex-wrap gap-4">
+                <span>Tanggal Publish: <strong class="text-white">23 November 2026</strong></span>
+                <span>Terakhir Diupdate: <strong class="text-white">23 November 2026</strong></span>
+              </div>
+              <p class="pt-1">Sumber: Direktorat Jenderal Pendidikan Vokasi, Kemdikbudristek (2024) Panduan Praktik Kerja Lapangan sebagai Mata Pelajaran dalam Implementasi Kurikulum Merdeka; Liputan6; Kajian jurnal Universitas Negeri Jakarta; Halaman program dan pendaftaran Info Magang Malang.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            PKL Berbasis Proyek Nyata
+          </span>
+          <h3 class="text-lg font-bold text-white">Bahan Laporan & Portofolio Siap</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Kerjakan proyek website nyata selama PKL di Malang agar Bab III dan lampiran dokumentasi proyekmu penuh artefak terukur.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20tanya%20program%20PKL%20SMK%20RPL." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Konsultasi via WhatsApp
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL LAINNYA) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-4">
+            <a href="/blog/tempat-pkl-smk-rpl-malang" class="block group">
+              <span class="text-[11px] text-tc-accent font-mono">23 Nov 2026 • 08:00 WIB</span>
+              <h4 class="text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5">
+                Tempat PKL SMK RPL Malang, Tugas dan Syarat Daftar
+              </h4>
+            </a>
+            <a href="/blog/apa-yang-dikerjakan-anak-rpl-saat-pkl" class="block group border-t border-tc-border/60 pt-3">
+              <span class="text-[11px] text-tc-accent font-mono">23 Nov 2026 • 12:00 WIB</span>
+              <h4 class="text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5">
+                Apa yang Dikerjakan Anak RPL saat PKL dan Tugasnya
+              </h4>
+            </a>
+            <a href="/blog/ide-project-pkl-rpl-portofolio" class="block group border-t border-tc-border/60 pt-3">
+              <span class="text-[11px] text-tc-accent font-mono">23 Nov 2026 • 14:00 WIB</span>
+              <h4 class="text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5">
+                15 Ide Project PKL RPL yang Layak Masuk Portofolio
+              </h4>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>
