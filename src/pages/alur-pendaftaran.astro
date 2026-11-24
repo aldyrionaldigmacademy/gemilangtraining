@@ -169,12 +169,95 @@ const alurSmk = [
     note: "Setiap siswa lulus PKL dengan membawa portofolio website online dan sertifikat resmi."
   }
 ];
+
+const alurPariwisata = [
+  {
+    step: "1",
+    badge: "TAHAP 1",
+    target: "Magang & PKL Pariwisata",
+    title: "Cek Kesesuaian Jurusan & Kuota Katun Outbound Malang",
+    desc: "Mahasiswa jurusan MBP (Manajemen Bisnis Pariwisata), DEP (Destinasi Pariwisata), Pariwisata, maupun siswa SMK (Sekolah Menengah Kejuruan) Jurusan Pariwisata mengecek ketersediaan kuota dan periode program (3 – 6 bulan) dengan penempatan di Katun Outbound Malang.",
+    pic: "Calon Peserta / Pihak Kampus & Sekolah",
+    estimasi: "1 - 2 Hari",
+    note: "Tentukan rencana tanggal mulai dan durasi program sesuai jadwal akademik kampus atau sekolah."
+  },
+  {
+    step: "2",
+    badge: "TAHAP 2",
+    target: "Magang & PKL Pariwisata",
+    title: "Siapkan Surat Pengantar / Permohonan Magang atau PKL",
+    desc: "Mengurus surat permohonan resmi magang mahasiswa atau PKL (Praktik Kerja Lapangan) siswa SMK dari program studi, fakultas, maupun sekolah yang mencantumkan data peserta dan durasi praktik.",
+    pic: "Peserta & Bagian Akademik Kampus / Sekolah",
+    estimasi: "2 - 5 Hari Kerja",
+    note: "Pengajuan dapat dilakukan secara individu maupun berkelompok dalam satu surat pengantar."
+  },
+  {
+    step: "3",
+    badge: "TAHAP 3",
+    target: "Magang & PKL Pariwisata",
+    title: "Kirim Berkas & Konfirmasi Jadwal via WhatsApp Admin",
+    desc: "Mengirimkan salinan PDF surat pengantar kampus/sekolah dan biodata singkat melalui WhatsApp Admin untuk pengecekan kuota penempatan di Katun Outbound Malang.",
+    pic: "Peserta & Admin",
+    estimasi: "15 - 30 Menit",
+    note: "Sertakan keterangan jurusan (MBP / DEP / Pariwisata) dan jumlah peserta yang diajukan."
+  },
+  {
+    step: "4",
+    badge: "TAHAP 4",
+    target: "Magang & PKL Pariwisata",
+    title: "Penerbitan Surat Balasan Resmi Kampus / Sekolah",
+    desc: "Setelah kuota dan jadwal disepakati, admin menerbitkan Surat Balasan Resmi Penerimaan Magang / PKL untuk diserahkan peserta kepada pihak kampus atau sekolah sebagai syarat administrasi akademik.",
+    pic: "Admin & Peserta",
+    estimasi: "1 - 2 Hari Kerja",
+    note: "Simpan salinan surat balasan resmi untuk arsip prodi, fakultas, atau Pokja PKL sekolah."
+  },
+  {
+    step: "5",
+    badge: "TAHAP 5",
+    target: "Magang & PKL Pariwisata",
+    title: "Briefing Awal, Grooming & Pemetaan Penempatan",
+    desc: "Sesi pengarahan awal mengenai tata tertib lapangan, standar penampilan (grooming), sapaan tamu (greeting), etika komunikasi, serta pembagian jadwal kegiatan di Katun Outbound Malang.",
+    pic: "Koordinator Lapangan & Peserta",
+    estimasi: "1 - 2 Hari Kerja",
+    note: "Kedisiplinan waktu dan kesiapan fisik/komunikasi menjadi poin penting sebelum turun lapangan."
+  },
+  {
+    step: "6",
+    badge: "TAHAP 6",
+    target: "Magang & PKL Pariwisata",
+    title: "Orientasi Lapangan & Pengenalan SOP (Standard Operating Procedure)",
+    desc: "Peserta mulai masuk hari pertama untuk mengenal alur operasional kegiatan outbound, wisata, dan event, termasuk standar pelayanan tamu serta keamanan kegiatan lapangan.",
+    pic: "Peserta & Tim Lapangan Katun Outbound",
+    estimasi: "Minggu Pertama",
+    note: null
+  },
+  {
+    step: "7",
+    badge: "TAHAP 7",
+    target: "Magang & PKL Pariwisata",
+    title: "Praktik 5 Bidang Utama Pariwisata di Lapangan",
+    desc: "Peserta terjun langsung mempraktikkan peran di Bagian Bisnis EO (Event Organizer), LO (Leader Organizer), PIC (Person In Charge) Kegiatan Outbound, Tour Guide (Pemandu Wisata), dan Tour Leader (Pemimpin Rombongan Wisata).",
+    pic: "Peserta & Pembimbing Lapangan",
+    estimasi: "Selama Masa Praktik",
+    note: "Jadwal dan pembagian peran menyesuaikan agenda kegiatan event, gathering, dan perjalanan wisata."
+  },
+  {
+    step: "8",
+    badge: "TAHAP 8",
+    target: "Magang & PKL Pariwisata",
+    title: "Monitoring, Penilaian Akhir & Penerbitan Sertifikat",
+    desc: "Evaluasi performa lapangan secara berkala, pendampingan monitoring dosen/guru pembimbing, pengisian jurnal/logbook dan lembar nilai kampus/sekolah, serta penerbitan Sertifikat Selesai Magang / PKL.",
+    pic: "Peserta, Pembimbing Lapangan & Dosen/Guru",
+    estimasi: "3 - 6 Bulan (Sesuai Periode)",
+    note: "Menjadi bukti pengalaman kerja nyata di industri pariwisata, event organizer, dan outbound."
+  }
+];
 ---
 
 <BaseLayout 
-  title="Alur & Prosedur Pendaftaran Magang Mahasiswa & PKL SMK - Gemilang Training Malang" 
-  description="Panduan lengkap 8 tahapan pendaftaran Magang Mahasiswa Informatika dan PKL Siswa SMK di Gemilang Training Malang mulai dari persiapan berkas hingga penerbitan sertifikat resmi."
-  keywords="alur pendaftaran magang malang, cara daftar pkl smk malang, syarat magang mahasiswa malang, surat pengantar pkl smk malang, gemilang training malang"
+  title="Alur & Prosedur Pendaftaran Magang Mahasiswa, PKL SMK & Pariwisata - Gemilang Training Malang" 
+  description="Panduan lengkap 8 tahapan pendaftaran Magang Mahasiswa Informatika, PKL Siswa SMK, dan Magang/PKL Pariwisata (Katun Outbound Malang) mulai dari persiapan berkas hingga penerbitan sertifikat resmi."
+  keywords="alur pendaftaran magang malang, cara daftar pkl smk malang, magang pariwisata malang, katun outbound malang, syarat magang mahasiswa malang, surat balasan kampus malang"
   isHome={false}
 >
   <Navbar slot="header" />
@@ -192,7 +275,7 @@ const alurSmk = [
         Alur & Prosedur <span class="text-tc-accent">Pendaftaran</span>
       </h1>
       <p class="text-tc-muted text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
-        Pilih jalur pendaftaran di bawah ini untuk melihat langkah-langkah terstruktur dari persiapan berkas hingga penerbitan sertifikat resmi.
+        Pilih jalur pendaftaran di bawah ini untuk melihat langkah-langkah terstruktur dari persiapan berkas, surat balasan kampus/sekolah, hingga penerbitan sertifikat resmi.
       </p>
     </div>
   </section>
@@ -231,6 +314,13 @@ const alurSmk = [
               class="jalur-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold text-tc-muted hover:text-white transition-all cursor-pointer"
             >
               Alur PKL Siswa SMK
+            </button>
+            <button 
+              type="button"
+              data-jalur-btn="pariwisata"
+              class="jalur-btn px-5 py-2.5 rounded-xl text-xs md:text-sm font-semibold text-tc-muted hover:text-white transition-all cursor-pointer"
+            >
+              Alur Magang & PKL Pariwisata
             </button>
           </div>
         </div>
@@ -329,6 +419,53 @@ const alurSmk = [
           ))}
         </div>
 
+        <!-- PANEL 3: TIMELINE MAGANG & PKL PARIWISATA -->
+        <div id="panel-pariwisata" class="alur-panel hidden space-y-6 relative before:absolute before:left-5 before:top-4 before:bottom-4 before:w-0.5 before:bg-tc-border">
+          {alurPariwisata.map((item) => (
+            <div class="relative pl-14">
+              <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-tc-accent text-slate-950 font-extrabold text-sm flex items-center justify-center shadow-lg">
+                {item.step}
+              </div>
+
+              <div class="bg-tc-card p-6 md:p-7 rounded-2xl border border-tc-border hover:border-tc-accent/70 transition-all shadow-lg">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                  <span class="text-[11px] font-mono text-tc-muted uppercase tracking-wider font-semibold">
+                    {item.badge}
+                  </span>
+                  <span class="text-[11px] font-semibold text-tc-accent bg-tc-bg border border-tc-border px-2.5 py-0.5 rounded-full">
+                    {item.target}
+                  </span>
+                </div>
+
+                <h3 class="text-lg md:text-xl font-bold text-white mb-2.5">
+                  {item.title}
+                </h3>
+                <p class="text-tc-muted text-sm leading-relaxed mb-4">
+                  {item.desc}
+                </p>
+
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs pt-3 border-t border-tc-border/60">
+                  <div>
+                    <span class="text-tc-muted">Penanggung Jawab: </span>
+                    <span class="text-white font-semibold">{item.pic}</span>
+                  </div>
+                  <div>
+                    <span class="text-tc-muted">Estimasi Waktu: </span>
+                    <span class="text-tc-accent font-semibold">{item.estimasi}</span>
+                  </div>
+                </div>
+
+                {item.note && (
+                  <div class="mt-4 bg-tc-bg/90 border border-tc-border rounded-xl px-4 py-2.5 text-xs flex items-start gap-2.5">
+                    <span class="text-tc-accent font-bold shrink-0">ⓘ</span>
+                    <span class="text-tc-muted leading-relaxed">{item.note}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
 
       <!-- KOLOM KANAN: STICKY SIDEBAR 3 KARTU (4 Kolom) -->
@@ -340,7 +477,7 @@ const alurSmk = [
             Siap Mendaftar Sekarang?
           </h3>
           <p class="text-tc-muted text-xs leading-relaxed mb-5">
-            Pastikan berkas surat pengantar sekolah/kampus sudah siap, lalu hubungi admin kami untuk konfirmasi kuota dan jadwal masuk.
+            Pastikan berkas surat pengantar sekolah/kampus sudah siap, lalu hubungi admin kami untuk konfirmasi kuota, surat balasan, dan jadwal masuk.
           </p>
           <a 
             id="sidebar-wa-btn"
@@ -406,7 +543,7 @@ const alurSmk = [
           Sudah Memahami Alur dan Persyaratannya?
         </h2>
         <p class="text-tc-muted text-sm md:text-base">
-          Pilih jalur program yang sesuai dengan jurusanmu dan mulai langkah praktik kerja digital di Gemilang Training Malang sekarang.
+          Pilih jalur program yang sesuai dengan jurusanmu dan mulai langkah praktik kerja lapangan di Malang sekarang.
         </p>
       </div>
       <a 
@@ -428,14 +565,15 @@ const alurSmk = [
     const btns = document.querySelectorAll('.jalur-btn');
     const panelMahasiswa = document.getElementById('panel-mahasiswa');
     const panelSmk = document.getElementById('panel-smk');
+    const panelPariwisata = document.getElementById('panel-pariwisata');
     const heading = document.getElementById('alur-heading');
     const subdesc = document.getElementById('alur-subdesc');
     const waBtn = document.getElementById('sidebar-wa-btn') as HTMLAnchorElement | null;
 
-    if (!btns.length || !panelMahasiswa || !panelSmk) return;
+    if (!btns.length || !panelMahasiswa || !panelSmk || !panelPariwisata) return;
 
     const switchJalur = (jalur: string, updateUrl = false) => {
-      const activeJalur = jalur === 'smk' ? 'smk' : 'mahasiswa';
+      const activeJalur = jalur === 'smk' ? 'smk' : jalur === 'pariwisata' ? 'pariwisata' : 'mahasiswa';
 
       btns.forEach((b) => {
         const isTarget = b.getAttribute('data-jalur-btn') === activeJalur;
@@ -448,8 +586,11 @@ const alurSmk = [
         }
       });
 
+      panelMahasiswa.classList.add('hidden');
+      panelSmk.classList.add('hidden');
+      panelPariwisata.classList.add('hidden');
+
       if (activeJalur === 'smk') {
-        panelMahasiswa.classList.add('hidden');
         panelSmk.classList.remove('hidden');
         if (heading) heading.textContent = 'Tahapan Pendaftaran PKL Siswa SMK';
         if (subdesc) {
@@ -460,8 +601,18 @@ const alurSmk = [
           waBtn.href =
             'https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20sudah%20membaca%20alur%20pendaftaran%20dan%20ingin%20mendaftar%20PKL%20Siswa%20SMK.';
         }
+      } else if (activeJalur === 'pariwisata') {
+        panelPariwisata.classList.remove('hidden');
+        if (heading) heading.textContent = 'Tahapan Pendaftaran Magang & PKL Pariwisata';
+        if (subdesc) {
+          subdesc.textContent =
+            'Panduan lengkap pengajuan magang & PKL jurusan MBP (Manajemen Bisnis Pariwisata), DEP (Destinasi Pariwisata), Pariwisata, serta SMK Jurusan Pariwisata dengan penempatan di Katun Outbound Malang.';
+        }
+        if (waBtn) {
+          waBtn.href =
+            'https://wa.me/6281943431484?text=Halo%20Admin%2C%20saya%20sudah%20membaca%20alur%20pendaftaran%20dan%20ingin%20mendaftar%20Magang%20%2F%20PKL%20Pariwisata%20(Katun%20Outbound%20Malang).';
+        }
       } else {
-        panelSmk.classList.add('hidden');
         panelMahasiswa.classList.remove('hidden');
         if (heading) heading.textContent = 'Tahapan Pendaftaran Magang Mahasiswa';
         if (subdesc) {
@@ -481,7 +632,7 @@ const alurSmk = [
       }
     };
 
-    // Cek parameter URL saat halaman dibuka (?jalur=smk atau ?jalur=mahasiswa)
+    // Cek parameter URL saat halaman dibuka (?jalur=smk, ?jalur=pariwisata, atau ?jalur=mahasiswa)
     const params = new URLSearchParams(window.location.search);
     const initialJalur = params.get('jalur') || 'mahasiswa';
     switchJalur(initialJalur, false);

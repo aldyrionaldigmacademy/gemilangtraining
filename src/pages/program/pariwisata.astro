@@ -1,0 +1,554 @@
+---
+// src/pages/program/pariwisata.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const waUrl = "https://wa.me/6281943431484?text=Halo%20Admin%2C%20saya%20tertarik%20mendaftar%20program%20Magang%20%2F%20PKL%20Jurusan%20Pariwisata%20(penempatan%20Katun%20Outbound%20Malang).%20Mohon%20info%20kuota%2C%20syarat%2C%20dan%20surat%20balasan%20kampus.";
+
+const alurPariwisata = [
+  {
+    step: "1",
+    badge: "TAHAP PENDAFTARAN",
+    title: "Konsultasi Kuota & Pengajuan Surat Permohonan",
+    desc: "Mahasiswa atau siswa bersama pihak kampus/sekolah menghubungi admin via WhatsApp untuk mengecek ketersediaan kuota penempatan di Katun Outbound Malang serta mengirimkan surat permohonan magang/PKL (Praktik Kerja Lapangan).",
+    note: "Sertakan jumlah peserta, jurusan (MBP (Manajemen Bisnis Pariwisata) / DEP (Destinasi Pariwisata) / Pariwisata), dan periode waktu pelaksanaan."
+  },
+  {
+    step: "2",
+    badge: "SURAT BALASAN KAMPUS",
+    title: "Penerbitan Surat Balasan Resmi Kampus / Sekolah",
+    desc: "Setelah kuota dan jadwal dikonfirmasi, admin menerbitkan surat balasan resmi penerimaan magang/PKL sebagai dokumen balasan untuk kampus atau sekolah guna keperluan administrasi akademik.",
+    note: "Surat balasan disesuaikan dengan data peserta, periode, dan penempatan Katun Outbound Malang."
+  },
+  {
+    step: "3",
+    badge: "VERIFIKASI & PENEMPATAN",
+    title: "Briefing Awal & Pemetaan Bidang Praktik",
+    desc: "Sesi pengenalan alur kerja lapangan, penyesuaian jadwal kegiatan event/outbound/wisata, serta pembagian rotasi bidang praktik sesuai kebutuhan operasional.",
+    note: "Peserta dibimbing langsung saat terjun di lapangan bersama tim."
+  },
+  {
+    step: "4",
+    badge: "MINGGU 1",
+    title: "Orientasi Lapangan, Grooming & Greeting",
+    desc: "Pengarahan standar penampilan (grooming), sapaan tamu (greeting), etika pelayanan, serta pengenalan SOP (Standard Operating Procedure) dan K3 (Keselamatan dan Kesehatan Kerja) di area kegiatan.",
+    note: "Kedisiplinan waktu dan sikap ramah menjadi poin utama sejak hari pertama."
+  },
+  {
+    step: "5",
+    badge: "BULAN 1 - 2",
+    title: "Praktik Bisnis EO (Event Organizer), LO (Leader Organizer) & PIC (Person In Charge) Outbound",
+    desc: "Terlibat langsung dalam penyusunan rundown acara, pendampingan tamu/rombongan sebagai LO (Leader Organizer), serta pengawalan teknis permainan dan perlengkapan sebagai PIC (Person In Charge) kegiatan outbound.",
+    note: "Dilaksanakan sesuai jadwal event, gathering, atau paket outbound yang berjalan."
+  },
+  {
+    step: "6",
+    badge: "BULAN 2 - 6",
+    title: "Praktik Tour Guide (Pemandu Wisata) & Tour Leader (Pemimpin Rombongan Wisata)",
+    desc: "Melatih pemanduan destinasi wisata secara komunikatif dan menarik sebagai Tour Guide (Pemandu Wisata), sekaligus mengkoordinasikan perjalanan rombongan mulai titik kumpul hingga alur itinerary sebagai Tour Leader (Pemimpin Rombongan Wisata).",
+    note: "Disesuaikan dengan jadwal perjalanan wisata dan rombongan peserta."
+  },
+  {
+    step: "7",
+    badge: "RUTIN MINGGUAN",
+    title: "Evaluasi Lapangan & Monitoring Dosen / Guru Pembimbing",
+    desc: "Pengecekan performa lapangan secara berkala, pengisian logbook/jurnal kegiatan, serta pendampingan saat kunjungan monitoring dari dosen atau guru pembimbing.",
+    note: "Membantu kelengkapan berkas administrasi dari kampus atau sekolah."
+  },
+  {
+    step: "8",
+    badge: "AKHIR PERIODE",
+    title: "Penilaian Akhir, Rekap Pengalaman & Sertifikat",
+    desc: "Penyelesaian form penilaian kampus/sekolah, rekap pengalaman praktik di 5 bidang lapangan, serta penerbitan surat keterangan/sertifikat selesai magang atau PKL.",
+    note: "Menjadi bekal pengalaman nyata di bidang pariwisata, event, dan outbound."
+  }
+];
+
+const bidangPraktik = [
+  {
+    no: "01",
+    badge: "Event & Konsep",
+    title: "Bagian Bisnis EO (Event Organizer)",
+    desc: "Mempelajari perencanaan konsep acara, penyusunan rundown kegiatan, koordinasi perlengkapan, hingga alur pelayanan klien event & wisata.",
+    img: "/assets/img/Bisnis-EO.webp",
+    programValue: "Bisnis EO (Event Organizer) - Katun Outbound Malang"
+  },
+  {
+    no: "02",
+    badge: "Pendampingan Tamu",
+    title: "LO (Leader Organizer)",
+    desc: "Mendampingi rombongan peserta atau tamu selama kegiatan berlangsung agar jadwal, alur koordinasi, dan kebutuhan lapangan berjalan tertib.",
+    img: "/assets/img/lo.webp",
+    programValue: "LO (Leader Organizer) - Katun Outbound Malang"
+  },
+  {
+    no: "03",
+    badge: "Operasional Lapangan",
+    title: "PIC (Person In Charge) Kegiatan Outbound",
+    desc: "Bertanggung jawab mengawal teknis sesi kegiatan outbound, keamanan peserta, kelengkapan alat, serta kelancaran alur permainan/aktivitas lapangan.",
+    img: "/assets/img/pic.webp",
+    programValue: "PIC (Person In Charge) Kegiatan Outbound - Katun Outbound Malang"
+  },
+  {
+    no: "04",
+    badge: "Pemanduan Destinasi",
+    title: "Tour Guide (Pemandu Wisata)",
+    desc: "Memandu peserta atau rombongan wisata di lokasi, menyampaikan informasi destinasi secara menarik, serta menjaga kenyamanan perjalanan.",
+    img: "/assets/img/Tour-Guide.webp",
+    programValue: "Tour Guide (Pemandu Wisata) - Katun Outbound Malang"
+  },
+  {
+    no: "05",
+    badge: "Koordinasi Perjalanan",
+    title: "Tour Leader (Pemimpin Rombongan Wisata)",
+    desc: "Mengkoordinasikan keseluruhan perjalanan rombongan mulai dari titik kumpul, alur itinerary, hingga komunikasi antar-tim lapangan.",
+    img: "/assets/img/tourleader.webp",
+    programValue: "Tour Leader (Pemimpin Rombongan Wisata) - Katun Outbound Malang"
+  }
+];
+
+const skillsDibutuhkan = [
+  {
+    title: "Grooming",
+    desc: "Penampilan rapi, bersih, proporsional, dan mencerminkan profesionalitas industri pariwisata & hospitality."
+  },
+  {
+    title: "Greeting",
+    desc: "Sambutan hangat, ramah, dan sopan kepada tamu, peserta outbound, maupun mitra kegiatan sejak kontak pertama."
+  },
+  {
+    title: "Komunikasi",
+    desc: "Kemampuan menyampaikan instruksi dan informasi dengan jelas, empatik, serta responsif saat berkoordinasi di lapangan."
+  },
+  {
+    title: "Public Speaking",
+    desc: "Kepercayaan diri berbicara di depan rombongan atau kelompok besar saat briefing, pemanduan wisata, maupun memimpin sesi acara."
+  }
+];
+---
+
+<BaseLayout 
+  title="Magang Mahasiswa & PKL SMK Pariwisata di Katun Outbound Malang" 
+  description="Program magang mahasiswa dan PKL siswa SMK jurusan MBP (Manajemen Bisnis Pariwisata), DEP (Destinasi Pariwisata), dan Pariwisata dengan penempatan di Katun Outbound Malang: Bisnis EO (Event Organizer), LO (Leader Organizer), PIC (Person In Charge) Outbound, Tour Guide & Tour Leader."
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <!-- 1. HERO HEADER BANNER (Rata Tengah) -->
+  <section class="relative bg-tc-card/80 border-b border-tc-border overflow-hidden">
+    <div class="absolute inset-0 opacity-15">
+      <img src="/assets/img/beranda1.webp" alt="Magang Pariwisata di Katun Outbound Malang" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20 text-center">
+      <span class="inline-block text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-bg/90 px-4 py-1.5 rounded-full border border-tc-border mb-4">
+        Penempatan: Katun Outbound Malang
+      </span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+        Magang Mahasiswa & PKL SMK <span class="text-tc-accent">Pariwisata</span>
+      </h1>
+      <p class="text-tc-muted text-sm md:text-lg max-w-3xl mx-auto leading-relaxed mb-8">
+        Program praktik lapangan khusus jurusan <strong class="text-white">MBP (Manajemen Bisnis Pariwisata)</strong>, <strong class="text-white">DEP (Destinasi Pariwisata)</strong>, <strong class="text-white">Pariwisata</strong>, serta <strong class="text-white">SMK (Sekolah Menengah Kejuruan) Jurusan Pariwisata</strong> dengan penempatan di <strong class="text-white">Katun Outbound Malang</strong>.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a 
+          href="/pendaftaran?jalur=pariwisata"
+          class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-sm px-6 py-3.5 rounded-xl transition-all shadow-lg"
+        >
+          Daftar Program Pariwisata &rarr;
+        </a>
+        <a 
+          href="/alur-pendaftaran?jalur=pariwisata"
+          class="bg-tc-bg hover:border-tc-accent border border-tc-border text-white font-semibold text-sm px-6 py-3.5 rounded-xl transition-all"
+        >
+          Lihat Alur Pendaftaran
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MAIN CONTENT (2 KOLOM: KONTEN KIRI + STICKY SIDEBAR KANAN) -->
+  <section class="py-14 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM KIRI (8 Kolom) -->
+      <div class="lg:col-span-8 space-y-16">
+        
+        <!-- A. Ringkasan Program Pariwisata -->
+        <div class="bg-tc-card p-6 md:p-8 rounded-2xl border border-tc-border">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Tentang Program</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            Ringkasan Program Magang & PKL Pariwisata
+          </h2>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed mb-6">
+            Program praktik lapangan dengan penempatan di <strong class="text-white">Katun Outbound Malang</strong> dirancang untuk mahasiswa jurusan <strong class="text-white">MBP (Manajemen Bisnis Pariwisata)</strong>, <strong class="text-white">DEP (Destinasi Pariwisata)</strong>, <strong class="text-white">Pariwisata</strong>, serta siswa <strong class="text-white">SMK (Sekolah Menengah Kejuruan)</strong> jurusan Pariwisata. Peserta akan terlibat langsung pada kegiatan lapangan meliputi <strong class="text-white">Bisnis EO (Event Organizer)</strong>, <strong class="text-white">LO (Leader Organizer)</strong>, <strong class="text-white">PIC (Person In Charge) Kegiatan Outbound</strong>, <strong class="text-white">Tour Guide (Pemandu Wisata)</strong>, dan <strong class="text-white">Tour Leader (Pemimpin Rombongan Wisata)</strong>.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Fokus Jurusan Pariwisata</div>
+              <p class="text-xs text-tc-muted">Untuk mahasiswa MBP (Manajemen Bisnis Pariwisata), DEP (Destinasi Pariwisata), Pariwisata, & siswa SMK Pariwisata.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Lokasi Praktik Lapangan</div>
+              <p class="text-xs text-tc-muted">Penempatan di Katun Outbound Malang pada kegiatan outbound, wisata, dan event lapangan.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Waktu Program 3 – 6 Bulan</div>
+              <p class="text-xs text-tc-muted">Durasi 3 hingga 6 bulan menyesuaikan jadwal akademik kampus atau sekolah dan kebutuhan lapangan.</p>
+            </div>
+            <div class="bg-tc-bg/80 p-4 rounded-xl border border-tc-border">
+              <div class="text-xs font-bold text-tc-accent uppercase mb-1">Dukungan Surat Balasan Kampus</div>
+              <p class="text-xs text-tc-muted">Tersedia surat balasan penerimaan magang/PKL untuk keperluan administrasi kampus atau sekolah.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- B. Tabel Persyaratan & Dokumen Wajib -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Administrasi & Ketentuan</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">
+            Persyaratan & Surat Balasan Kampus / Sekolah
+          </h2>
+          <p class="text-tc-muted text-sm mb-6">
+            Berikut ketentuan administrasi dan dokumen pendukung untuk program magang/PKL pariwisata di Katun Outbound Malang:
+          </p>
+
+          <div class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden">
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse text-sm">
+                <thead>
+                  <tr class="bg-tc-bg/90 border-b border-tc-border text-tc-accent text-xs uppercase tracking-wider">
+                    <th class="py-3.5 px-5 font-semibold">Persyaratan</th>
+                    <th class="py-3.5 px-5 font-semibold">Keterangan Lengkap</th>
+                    <th class="py-3.5 px-5 font-semibold text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 text-tc-muted">
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Surat Permohonan Kampus / Sekolah</td>
+                    <td class="py-4 px-5">Surat pengantar resmi magang mahasiswa atau PKL (Praktik Kerja Lapangan) siswa SMK dari institusi terkait</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Wajib</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Surat Balasan Kampus / Sekolah</td>
+                    <td class="py-4 px-5">Diterbitkan surat balasan penerimaan setelah konfirmasi kuota dan jadwal untuk diserahkan ke kampus atau sekolah</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Difasilitasi</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Jurusan Terkait</td>
+                    <td class="py-4 px-5">MBP (Manajemen Bisnis Pariwisata), DEP (Destinasi Pariwisata), Pariwisata, dan SMK (Sekolah Menengah Kejuruan) Jurusan Pariwisata</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Wajib</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Durasi Waktu Program</td>
+                    <td class="py-4 px-5">3 – 6 bulan mengikuti kalender akademik kampus atau sekolah serta kebutuhan lapangan</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-bg text-white border border-tc-border text-[11px] font-semibold px-2.5 py-0.5 rounded-full">3 – 6 Bulan</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-4 px-5 font-semibold text-white">Kesiapan Lapangan & Sikap</td>
+                    <td class="py-4 px-5">Menjaga grooming, greeting, komunikasi, dan public speaking saat mendampingi tamu atau kegiatan lapangan</td>
+                    <td class="py-4 px-5 text-right">
+                      <span class="inline-block bg-tc-accent/15 text-tc-accent border border-tc-accent/30 text-[11px] font-semibold px-2.5 py-0.5 rounded-full">Wajib</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <p class="text-xs text-tc-muted mt-3">
+            * Pendaftaran dapat dilakukan perorangan maupun berkelompok sesuai ketentuan kampus atau sekolah.
+          </p>
+        </div>
+
+        <!-- C. Kategori Jurusan & Penempatan -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Sasaran Peserta</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Kategori Mahasiswa & Siswa SMK Pariwisata
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+              <div class="w-10 h-10 rounded-xl bg-tc-bg border border-tc-border text-tc-accent font-bold flex items-center justify-center mb-4">
+                01
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Mahasiswa MBP, DEP & Pariwisata</h3>
+              <p class="text-xs md:text-sm text-tc-muted leading-relaxed">
+                Mahasiswa jurusan <strong class="text-white">MBP (Manajemen Bisnis Pariwisata)</strong>, <strong class="text-white">DEP (Destinasi Pariwisata)</strong>, dan <strong class="text-white">Pariwisata</strong> yang membutuhkan praktik lapangan pada pengelolaan event, pendampingan rombongan, pemanduan wisata, serta operasional outbound.
+              </p>
+            </div>
+
+            <div class="bg-tc-card p-6 rounded-2xl border border-tc-border">
+              <div class="w-10 h-10 rounded-xl bg-tc-bg border border-tc-border text-tc-accent font-bold flex items-center justify-center mb-4">
+                02
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2">Siswa SMK Jurusan Pariwisata</h3>
+              <p class="text-xs md:text-sm text-tc-muted leading-relaxed">
+                Siswa <strong class="text-white">SMK (Sekolah Menengah Kejuruan)</strong> jurusan Pariwisata yang menjalani PKL (Praktik Kerja Lapangan) dengan bimbingan di lapangan di <strong class="text-white">Katun Outbound Malang</strong> serta dukungan surat balasan sekolah.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- D. Timeline Alur Pelaksanaan (Langkah 1 - 8) -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Alur Pelaksanaan</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">
+            Tahapan Magang & PKL Pariwisata
+          </h2>
+
+          <div class="space-y-5 relative before:absolute before:left-5 before:top-4 before:bottom-4 before:w-0.5 before:bg-tc-border">
+            {alurPariwisata.map((item) => (
+              <div class="relative pl-14">
+                <!-- Bulatan Nomor -->
+                <div class="absolute left-0 top-1 w-10 h-10 rounded-full bg-tc-accent text-slate-950 font-extrabold text-sm flex items-center justify-center shadow-md">
+                  {item.step}
+                </div>
+
+                <!-- Card Tahapan -->
+                <div class="bg-tc-card p-6 rounded-2xl border border-tc-border hover:border-tc-accent/60 transition-colors">
+                  <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                    <span class="text-[11px] font-mono text-tc-accent uppercase tracking-wider font-semibold">
+                      {item.badge}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+                  <p class="text-sm text-tc-muted leading-relaxed">{item.desc}</p>
+
+                  {item.note && (
+                    <div class="mt-4 bg-tc-bg/90 border border-tc-border/80 rounded-xl px-4 py-2.5 text-xs text-tc-accent flex items-center gap-2">
+                      <span class="font-bold">Catatan:</span>
+                      <span class="text-tc-muted">{item.note}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- E. FAQ Khusus Pariwisata & Surat Balasan Kampus -->
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Tanya Jawab</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Pertanyaan Umum Magang & PKL Pariwisata
+          </h2>
+
+          <div class="space-y-3">
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah disediakan surat balasan untuk kampus atau sekolah?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Ya, surat balasan resmi penerimaan magang atau PKL diterbitkan setelah kuota dan jadwal disepakati sehingga dapat digunakan untuk keperluan administrasi kampus maupun sekolah.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Di mana lokasi praktik lapangan program pariwisata ini?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Penempatan praktik lapangan berada di <strong class="text-white">Katun Outbound Malang</strong> dengan kegiatan yang menyesuaikan jadwal event, outbound, dan wisata yang berjalan.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa saja peran yang dipelajari selama di lapangan?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Peserta berkesempatan praktik di <strong class="text-white">Bagian Bisnis EO (Event Organizer)</strong>, <strong class="text-white">LO (Leader Organizer)</strong>, <strong class="text-white">PIC (Person In Charge) Kegiatan Outbound</strong>, <strong class="text-white">Tour Guide (Pemandu Wisata)</strong>, dan <strong class="text-white">Tour Leader (Pemimpin Rombongan Wisata)</strong>.
+              </p>
+            </details>
+
+            <details class="bg-tc-card p-5 rounded-2xl border border-tc-border group cursor-pointer">
+              <summary class="text-sm md:text-base font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Bagaimana cara memastikan kuota dan waktu program 3 – 6 bulan?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-sm mt-3 pt-3 border-t border-tc-border leading-relaxed">
+                Silakan hubungi admin melalui formulir pendaftaran atau WhatsApp dengan mencantumkan jurusan, jumlah peserta, serta rencana tanggal mulai dan durasi program (3 – 6 bulan).
+              </p>
+            </details>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- KOLOM KANAN: STICKY SIDEBAR (4 Kolom) -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-28">
+        
+        <!-- Card 1: Kotak Pendaftaran -->
+        <div class="bg-tc-card p-6 rounded-2xl border border-tc-border shadow-xl">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Kuota Katun Outbound Malang</span>
+          <h3 class="text-xl font-bold text-white mb-2">Daftar Magang / PKL Pariwisata</h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-5">
+            Tanyakan kuota, jadwal periode (3 – 6 bulan), dan penempatan untuk jurusan MBP (Manajemen Bisnis Pariwisata), DEP (Destinasi Pariwisata), Pariwisata, atau SMK Pariwisata.
+          </p>
+          <a 
+            href="/pendaftaran?jalur=pariwisata" 
+            class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-sm py-3.5 rounded-xl transition-all shadow-md hover:scale-[1.02]"
+          >
+            Daftar Program &rarr;
+          </a>
+          <a 
+            href={waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white font-semibold text-xs py-3 rounded-xl transition-all mt-2.5"
+          >
+            Konsultasi via WhatsApp &rarr;
+          </a>
+          <p class="text-[11px] text-tc-muted text-center mt-3">
+            Melayani pendaftaran individu maupun kelompok kampus/sekolah
+          </p>
+        </div>
+
+        <!-- Card 2: Kotak Butuh Surat Balasan Kampus & Alur Pendaftaran -->
+        <div class="bg-gradient-to-br from-tc-card to-tc-bg p-6 rounded-2xl border border-tc-accent/40 shadow-xl">
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-1">Administrasi Akademik</span>
+          <h3 class="text-lg font-bold text-white mb-2">Butuh Surat Balasan Kampus/Sekolah?</h3>
+          <p class="text-tc-muted text-xs leading-relaxed mb-4">
+            Butuh surat balasan penerimaan magang/PKL untuk diserahkan ke kampus atau sekolah? Lihat alur pengajuannya atau konfirmasikan kuota bersama admin.
+          </p>
+          <div class="space-y-2.5">
+            <a 
+              href="/alur-pendaftaran?jalur=pariwisata" 
+              class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-tc-accent font-semibold text-xs py-3 rounded-xl transition-all"
+            >
+              Lihat Alur Pendaftaran &rarr;
+            </a>
+            <a 
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white hover:text-tc-accent font-semibold text-xs py-3 rounded-xl transition-all"
+            >
+              Ajukan Surat Balasan via WA &rarr;
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- 3. 5 BIDANG PRAKTIK DI LAPANGAN (GAMBAR 16:9) -->
+  <section class="py-20 bg-tc-card/40 border-y border-tc-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+        <div>
+          <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">Ruang Lingkup Kegiatan</span>
+          <h2 class="text-2xl md:text-4xl font-extrabold text-white">
+            5 Bidang Praktik di Lapangan
+          </h2>
+        </div>
+        <p class="text-tc-muted text-sm max-w-md">
+          Bidang praktik langsung di lapangan dengan penempatan di Katun Outbound Malang.
+        </p>
+      </div>
+
+      <!-- Grid Cards (Rasio 16:9) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {bidangPraktik.map((item) => (
+          <div 
+            class="bg-tc-card rounded-2xl border border-tc-border overflow-hidden hover:border-tc-accent transition-all duration-300 flex flex-col justify-between group"
+          >
+            <div>
+              <div class="aspect-video w-full overflow-hidden relative border-b border-tc-border/60">
+                <img src={item.img} alt={item.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                <span class="absolute top-3 left-3 bg-tc-bg/90 border border-tc-border text-tc-accent text-[11px] font-semibold px-3 py-1 rounded-full">
+                  Bidang {item.no} • {item.badge}
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="text-lg font-bold text-white mb-2">{item.title}</h3>
+                <p class="text-tc-muted text-xs leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-3 border-t border-tc-border/60">
+              <a 
+                href={`/pendaftaran?jalur=pariwisata&program=${encodeURIComponent(item.programValue)}`}
+                class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 text-xs font-bold py-2.5 rounded-xl transition-all shadow-md"
+              >
+                Daftar Bidang Ini &rarr;
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/alur-pendaftaran?jalur=pariwisata" class="inline-flex items-center gap-2 bg-tc-card hover:border-tc-accent border border-tc-border text-white text-xs font-semibold px-6 py-3 rounded-xl transition-all">
+          Lihat Alur Pendaftaran Lengkap &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SKILL YANG DIBUTUHKAN & CTA BANNER BAWAH -->
+  <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div>
+      <div class="mb-8">
+        <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">
+          Kompetensi Utama
+        </span>
+        <h2 class="text-2xl md:text-4xl font-extrabold text-white">
+          Skill yang Dibutuhkan
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {skillsDibutuhkan.map((sk) => (
+          <div class="bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h3 class="text-lg font-bold text-tc-accent mb-2">{sk.title}</h3>
+            <p class="text-sm text-tc-muted leading-relaxed">{sk.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="bg-tc-card border border-tc-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl">
+      <div class="max-w-xl text-center md:text-left">
+        <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-3">
+          Siap Magang Pariwisata di Katun Outbound Malang?
+        </h2>
+        <p class="text-tc-muted text-sm md:text-base">
+          Daftar sekarang atau hubungi admin via WhatsApp untuk menanyakan jadwal, kuota, surat balasan kampus, dan penempatan Katun Outbound Malang.
+        </p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3 shrink-0">
+        <a 
+          href="/pendaftaran?jalur=pariwisata" 
+          class="bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-7 py-4 rounded-xl transition-all shadow-lg hover:scale-105"
+        >
+          Daftar Program Sekarang &rarr;
+        </a>
+        <a 
+          href={waUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-tc-bg hover:border-tc-accent border border-tc-border text-white font-semibold px-6 py-4 rounded-xl transition-all"
+        >
+          WhatsApp Admin
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
