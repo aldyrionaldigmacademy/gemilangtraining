@@ -1,0 +1,582 @@
+---
+// src/pages/blog/perjanjian-kerja-sama-magang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Perjanjian Kerja Sama Magang dan Isi yang Wajib Dicek";
+const pageDesc = "Perjanjian kerja sama magang wajib memuat 7 elemen inti. Cek isi, uang saku, dan perlindungannya, lalu pilih program magang di Malang yang transparan.";
+const pageUrl = "https://infomagangmalang.web.id/blog/perjanjian-kerja-sama-magang";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/perjanjian-kerja-sama-magang.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/perjanjian-kerja-sama-magang#article",
+      "headline": "Perjanjian Kerja Sama Magang dan Isi yang Wajib Dicek",
+      "description": "Perjanjian kerja sama magang wajib memuat 7 elemen inti. Cek isi, uang saku, dan perlindungannya, lalu pilih program magang di Malang yang transparan.",
+      "inLanguage": "id",
+      "datePublished": "2026-11-24T08:00:00+07:00",
+      "dateModified": "2026-11-24T08:00:00+07:00",
+      "image": "https://infomagangmalang.web.id/assets/img/perjanjian-kerja-sama-magang.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Yolanda Deva Apriliana Putri (YUL)"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/perjanjian-kerja-sama-magang",
+      "keywords": "perjanjian kerja sama magang, isi perjanjian magang, kontrak magang mahasiswa, hak peserta magang, uang saku magang tertulis, Permendikbudristek 63/2024 magang, perjanjian pemagangan UU 13/2003, perlindungan peserta magang"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa saja isi perjanjian kerja sama magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Perjanjian magang mahasiswa menurut Pasal 15 ayat (2) Permendikbudristek 63/2024 memuat tujuh elemen: ruang lingkup, jangka waktu dan beban jam, pelindungan, hak dan kewajiban, besaran uang saku, pembiayaan, serta penyelesaian sengketa. Peserta sebaiknya memastikan setiap elemen tertulis spesifik sebelum menandatangani dokumen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah uang saku magang harus tertulis dalam perjanjian?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Besaran uang saku termasuk tujuh elemen wajib dalam perjanjian magang mahasiswa menurut Pasal 15 ayat (2) Permendikbudristek 63/2024. Peraturan tidak menetapkan nominal minimum, sehingga jumlah, rincian transportasi, makan, dan insentif, serta jadwal pembayaran perlu dicantumkan agar dapat ditagih jika terjadi keterlambatan atau perbedaan dari kesepakatan awal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang dilindungi dalam perjanjian magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pasal 28 dan 29 Permendikbudristek 63/2024 merinci pelindungan peserta magang berupa keselamatan dan kesehatan kerja (K3), asuransi, dan pencegahan kekerasan, ditambah uang saku. Peserta perlu memeriksa apakah setiap bentuk pelindungan tertulis sebagai klausul tersendiri beserta pihak yang menanggung biayanya dan cara melapor bila terjadi masalah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah perjanjian magang wajib tertulis menurut UU Ketenagakerjaan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Pasal 22 UU Nomor 13 Tahun 2003 mensyaratkan pemagangan dilaksanakan berdasarkan perjanjian pemagangan tertulis antara peserta dan pengusaha. Untuk magang mahasiswa yang bersifat akademik, Permendikbudristek 63/2024 menjadi rujukan utama, dan perjanjian tertulis tetap diperlukan sebagai dasar hak serta kewajiban."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana penyelesaian sengketa jika terjadi ketidaksesuaian selama magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Penyelesaian sengketa adalah salah satu dari tujuh elemen perjanjian magang. Langkah umumnya dimulai dari musyawarah dengan pembimbing lapangan, lalu pelaporan ke dosen pembimbing atau bagian kerja sama kampus. Simpan bukti tertulis seperti perjanjian, logbook, dan percakapan resmi agar kronologi mudah dibuktikan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah siswa SMK juga perlu mengecek perjanjian PKL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya. Siswa SMK yang menjalani PKL perlu memastikan ruang lingkup tugas, jangka waktu, jam kerja, perlindungan, dan prosedur pengaduan tertulis, dengan guru pembimbing ikut mengetahui dokumen. Ketentuan rinci PKL mengikuti aturan sekolah dan dinas pendidikan, sehingga konfirmasi ke sekolah sebelum tanda tangan tetap penting."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/perjanjian-kerja-sama-magang.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="perjanjian kerja sama magang, isi perjanjian magang, kontrak magang mahasiswa, hak peserta magang, uang saku magang tertulis, Permendikbudristek 63/2024 magang, perjanjian pemagangan UU 13/2003, perlindungan peserta magang" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Aturan & Kontrak
+            </span>
+            <span class="text-tc-muted font-mono">24 Nov 2026 • 08:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Yolanda Deva Apriliana Putri (YUL)</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Perjanjian Kerja Sama Magang dan Isi yang Wajib Dicek
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Perjanjian kerja sama magang adalah dokumen tertulis yang mengatur ruang lingkup, jangka waktu, perlindungan, hak, uang saku, pembiayaan, dan penyelesaian sengketa antara peserta dan mitra.
+          </p>
+        </header>
+
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/perjanjian-kerja-sama-magang.webp" 
+            alt="Mahasiswa membaca perjanjian kerja sama magang sebelum tanda tangan di Malang" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Mahasiswa membaca perjanjian kerja sama magang sebelum tanda tangan di Malang
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#fungsi-perjanjian" class="hover:text-tc-accent transition-colors">1. Apa Fungsi Perjanjian Kerja Sama Magang bagi Mahasiswa dan Mitra?</a></li>
+            <li><a href="#isi-minimal" class="hover:text-tc-accent transition-colors">2. Apa Isi Minimal Perjanjian Magang Menurut Permendikbudristek 63/2024?</a></li>
+            <li><a href="#uang-saku-perlindungan" class="hover:text-tc-accent transition-colors">3. Uang Saku, Hak dan Perlindungan Peserta Magang yang Wajib Dicek</a></li>
+            <li><a href="#pertanyaan-checklist" class="hover:text-tc-accent transition-colors">4. Pertanyaan Sebelum Tanda Tangan & Checklist Pengecekan Dokumen</a></li>
+            <li><a href="#program-gemilang" class="hover:text-tc-accent transition-colors">5. Program Magang dengan Perjanjian yang Jelas dan Transparan di Malang</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">6. FAQ Perjanjian Kerja Sama Magang</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">7. Kesimpulan, Disclaimer & Referensi</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          
+          <div class="space-y-4">
+            <p>Perjanjian kerja sama magang menjadi pegangan utama mahasiswa dan siswa SMK selama praktik di perusahaan atau lembaga mitra.</p>
+            <p>Sebelum menandatangani, peserta perlu memastikan tujuh unsur inti sudah tertulis jelas, terutama uang saku dan perlindungan. Panduan ini menyediakan uji tujuh elemen, checklist dokumen, dan jawaban untuk pertanyaan yang paling sering diajukan peserta magang di Malang.</p>
+          </div>
+
+          <section id="fungsi-perjanjian" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Fungsi Perjanjian Kerja Sama Magang bagi Mahasiswa dan Mitra?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Perjanjian kerja sama magang berfungsi sebagai bukti tertulis hak dan kewajiban kedua pihak, sehingga peserta terlindungi dan mitra memiliki batas tanggung jawab yang jelas.
+            </p>
+            <p>Bagi mahasiswa, dokumen ini menjadi rujukan ketika jam magang, jenis tugas, atau uang saku berbeda dari janji lisan. Bagi mitra, yaitu perusahaan atau lembaga tempat praktik berlangsung, dokumen yang sama membatasi ruang lingkup pekerjaan dan menetapkan kewajiban pembimbing lapangan. Bagi kampus atau sekolah, dokumen ini menjadi dasar penilaian, konversi SKS, dan monitoring.</p>
+            <p>Dua kelompok aturan berlaku di Indonesia. Magang mahasiswa yang menjadi bagian pembelajaran diatur Permendikbudristek Nomor 63 Tahun 2024 tentang Penyelenggaraan Magang Mahasiswa. Pemagangan di sisi ketenagakerjaan diatur UU Nomor 13 Tahun 2003.</p>
+            <p>Ulasan Hukumonline menyebut ketentuan pemagangan dalam UU Ketenagakerjaan kurang menjangkau magang akademik mahasiswa, sehingga mahasiswa perlu merujuk Permendikbudristek 63/2024 lebih dahulu. Siswa SMK yang menjalani Praktik Kerja Lapangan (PKL) mengikuti ketentuan sekolah dan dinas pendidikan masing-masing.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Apakah Perjanjian Magang Wajib Tertulis Menurut UU 13/2003 Pasal 22?</h3>
+            <p>Ya, Pasal 22 UU Nomor 13 Tahun 2003 mensyaratkan pemagangan dilaksanakan berdasarkan perjanjian pemagangan yang dibuat secara tertulis antara peserta dan pengusaha. Aturan yang lebih baru, yaitu Permenaker Nomor 8 Tahun 2025, juga menyatakan program pemagangan diselenggarakan berdasarkan perjanjian pemagangan antara penyelenggara dan peserta.</p>
+            <p>Perjanjian lisan sulit dijadikan bukti. Peserta yang hanya memegang janji melalui pesan singkat akan kesulitan menuntut hak ketika terjadi perbedaan.</p>
+          </section>
+
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/syarat-mahasiswa-boleh-magang" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Syarat Mahasiswa Boleh Magang Menurut Aturan Resmi &rarr;
+            </a>
+          </div>
+
+          <section id="isi-minimal" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Isi Minimal Perjanjian Magang Menurut Permendikbudristek 63/2024?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Perjanjian magang menurut Permendikbudristek 63/2024 Pasal 15 ayat (2) memuat tujuh elemen: ruang lingkup, jangka waktu, pelindungan, hak dan kewajiban, uang saku, pembiayaan, penyelesaian sengketa.
+            </p>
+            <p>Pasal 15 ayat (2) Permendikbudristek 63/2024 menetapkan tujuh elemen wajib pada perjanjian magang. Hukumonline mencatat bahwa perjanjian kerja sama magang mahasiswa antara kampus dan mitra memuat butir yang lebih panjang, termasuk pemutusan kerja sama. Tabel berikut mengubah tujuh elemen tersebut menjadi alat uji yang bisa dipakai langsung.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Elemen</th>
+                    <th class="p-3 font-bold">Pertanyaan uji</th>
+                    <th class="p-3 font-bold">Tanda bahaya</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">1. Ruang lingkup</td>
+                    <td class="p-3">Apakah bidang dan jenis tugas disebut spesifik?</td>
+                    <td class="p-3">Hanya tertulis "membantu pekerjaan kantor"</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">2. Jangka waktu dan beban jam</td>
+                    <td class="p-3">Apakah tanggal mulai, tanggal selesai, dan jam per minggu tercantum?</td>
+                    <td class="p-3">Jam kerja "menyesuaikan kebutuhan"</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">3. Pelindungan</td>
+                    <td class="p-3">Apakah K3, asuransi, dan pencegahan kekerasan disebut?</td>
+                    <td class="p-3">Tidak ada klausul pelindungan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">4. Hak dan kewajiban</td>
+                    <td class="p-3">Apakah hak peserta dan kewajiban mitra dirinci?</td>
+                    <td class="p-3">Hanya kewajiban peserta yang ditulis</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">5. Uang saku</td>
+                    <td class="p-3">Apakah besaran dan jadwal pembayaran tertulis?</td>
+                    <td class="p-3">Nominal "menyusul"</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">6. Pembiayaan</td>
+                    <td class="p-3">Apakah jelas pihak yang menanggung biaya?</td>
+                    <td class="p-3">Biaya alat kerja dibebankan ke peserta tanpa dasar</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">7. Penyelesaian sengketa</td>
+                    <td class="p-3">Apakah tahapan dan kontak penyelesaian tertulis?</td>
+                    <td class="p-3">Tidak ada prosedur sama sekali</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/isi-perjanjian-magang.webp" 
+                alt="Tabel uji 7 elemen perjanjian kerja sama magang menurut Permendikbudristek 63/2024" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Diskusi dan pengecekan isi perjanjian kerja sama magang beserta elemen hak dan kewajibannya
+              </figcaption>
+            </figure>
+
+            <p>Cara membaca skor Uji 7 Elemen. Hitung jumlah elemen yang tertulis jelas. Tujuh elemen jelas berarti dokumen siap dibahas untuk ditandatangani. Lima sampai enam berarti minta revisi pada elemen yang samar. Empat atau kurang berarti tunda tanda tangan dan konsultasikan dengan dosen pembimbing atau bagian kerja sama kampus.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Ruang Lingkup, Jangka Waktu, dan Beban Jam Magang</h3>
+            <p>Ruang lingkup adalah bidang dan jenis tugas yang dikerjakan peserta. Jangka waktu adalah rentang tanggal mulai hingga selesai. Beban jam adalah jumlah jam kerja per hari atau per minggu. Ketiganya sebaiknya tertulis dengan angka, misalnya "pengembangan website, 24 jam per minggu, 1 Februari sampai 31 Juli 2027" (contoh ilustrasi).</p>
+            <p>Sebagai pembanding, Gemilang Training menetapkan durasi magang dan PKL antara 3 sampai 6 bulan sesuai kalender kampus atau sekolah, dengan sistem pelaksanaan WFH, hybrid, atau onsite di Malang. Rincian jalur tersedia di halaman <a href="/program" class="text-tc-accent underline hover:text-white">Program Magang Gemilang Training</a>.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Hak, Kewajiban, Pembiayaan, dan Penyelesaian Sengketa</h3>
+            <p>Hak peserta mencakup bimbingan, fasilitas kerja, dan pelindungan. Kewajiban peserta mencakup disiplin, kerahasiaan data mitra, dan pengisian logbook. Pembiayaan menjelaskan pihak yang menanggung biaya transportasi, alat kerja, dan asuransi.</p>
+            <p>Penyelesaian sengketa adalah mekanisme jika terjadi perbedaan selama magang. Klausul yang baik menyebut tahapan, misalnya musyawarah dengan pembimbing lapangan, lalu mediasi oleh dosen pembimbing atau bagian kerja sama kampus, disertai batas waktu penyelesaian.</p>
+          </section>
+
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/magang-jurusan-pariwisata-menulis-blog-niche-wisata" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Magang Jurusan Pariwisata Seru Menulis Blog Wisata &rarr;
+            </a>
+          </div>
+
+          <section id="uang-saku-perlindungan" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apakah Uang Saku Harus Tertulis dan Apa Hak Perlindungan Peserta?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Ya, besaran uang saku termasuk tujuh elemen wajib, dan Pasal 28–29 Permendikbudristek 63/2024 menjamin pelindungan K3, asuransi, pencegahan kekerasan, serta uang saku.
+            </p>
+            <p>Peraturan tidak menetapkan nominal minimum. Kajian hukum dari Universitas Islam Malang dan Universitas Islam Indonesia menyimpulkan belum ada standar besaran uang saku, sehingga nominal ditentukan melalui kesepakatan. Jika mitra tidak menyediakan uang saku, minta pernyataan tertulis beserta alasannya lalu konsultasikan dengan kampus sebelum tanda tangan.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Jaminan K3, Asuransi, dan Pencegahan Kekerasan</h3>
+            <p>K3 (Keselamatan dan Kesehatan Kerja) adalah upaya menjaga peserta dari kecelakaan dan penyakit akibat kerja. Asuransi atau jaminan sosial umumnya mencakup risiko kecelakaan, kesehatan, dan kematian, sedangkan pencegahan kekerasan mencakup perundungan dan pelecehan lengkap dengan kanal pengaduan.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Komponen Uang Saku Transportasi, Makan, dan Insentif</h3>
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Komponen</th>
+                    <th class="p-3 font-bold">Hal yang dicek di perjanjian</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Transportasi</td>
+                    <td class="p-3">Bentuknya uang atau fasilitas antar jemput, serta jumlah per hari atau per bulan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Uang makan</td>
+                    <td class="p-3">Nominal, frekuensi pembayaran, dan apakah berlaku pada hari kerja saja</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Insentif magang</td>
+                    <td class="p-3">Nominal, tanggal pembayaran, dan syarat pencairan seperti kehadiran atau penilaian</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="pertanyaan-checklist" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pertanyaan Sebelum Tanda Tangan & Checklist Dokumen</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Sebelum tanda tangan, tanyakan tujuh hal: tugas utama, jam kerja, nominal uang saku, asuransi, pembimbing, jalur pengaduan, dan syarat pemutusan kerja sama.
+            </p>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Apa tugas utama dan bidang kerja yang akan dikerjakan?</li>
+              <li>Berapa jam kerja per hari dan per minggu, serta apakah ada lembur?</li>
+              <li>Berapa uang saku, kapan dibayarkan, dan apa rinciannya?</li>
+              <li>Asuransi atau jaminan sosial apa yang didaftarkan, dan siapa yang membayar?</li>
+              <li>Siapa pembimbing lapangan, dan siapa kontak pengaduan jika terjadi masalah?</li>
+              <li>Bagaimana tahapan penyelesaian jika terjadi ketidaksesuaian?</li>
+              <li>Apa syarat dan prosedur jika kerja sama harus berakhir lebih awal?</li>
+            </ol>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Cek</th>
+                    <th class="p-3 font-bold">Bagian dokumen</th>
+                    <th class="p-3 font-bold">Dinyatakan aman bila</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">Identitas para pihak</td>
+                    <td class="p-3">Nama peserta, kampus atau sekolah, dan mitra tertulis lengkap</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">Bidang tugas</td>
+                    <td class="p-3">Jenis pekerjaan spesifik dan sesuai jurusan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">Tanggal dan jam</td>
+                    <td class="p-3">Tanggal mulai, tanggal selesai, dan jam per minggu tercantum</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">Uang saku</td>
+                    <td class="p-3">Nominal, rincian tiga komponen, dan jadwal pembayaran tertulis</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">K3 dan asuransi</td>
+                    <td class="p-3">Jenis jaminan dan pihak yang membayar disebut jelas</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">Kanal pengaduan</td>
+                    <td class="p-3">Nama kontak atau unit pengaduan kekerasan tersedia</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">Penyelesaian sengketa</td>
+                    <td class="p-3">Tahapan dan pihak penengah tertulis</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-mono text-tc-accent">☐</td>
+                    <td class="p-3 font-semibold text-white">Tanda tangan</td>
+                    <td class="p-3">Kampus atau sekolah ikut mengetahui; siswa SMK menyertakan guru pembimbing</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="program-gemilang" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Program Magang dengan Perjanjian yang Jelas dan Transparan di Malang</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Gemilang Training menyediakan magang mahasiswa Informatika dan PKL siswa SMK di Malang berbasis proyek nyata, berdurasi 3 sampai 6 bulan, dengan sertifikat resmi.
+            </p>
+            <p>Calon peserta dapat meminta penjelasan melalui <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20mengenai%20program%20magang%20dan%20perjanjian%20kerja%20sama%20magang." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">konsultasi via WhatsApp Gemilang Training</a>, atau datang ke <a href="/kontak" class="text-tc-accent underline hover:text-white">Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</a> pada Senin sampai Sabtu pukul 08.00 sampai 17.00 WIB.</p>
+          </section>
+
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">FAQ Perjanjian Kerja Sama Magang</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa saja isi perjanjian kerja sama magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Perjanjian magang mahasiswa menurut Pasal 15 ayat (2) Permendikbudristek 63/2024 memuat tujuh elemen: ruang lingkup, jangka waktu dan beban jam, pelindungan, hak dan kewajiban, besaran uang saku, pembiayaan, serta penyelesaian sengketa. Peserta sebaiknya memastikan setiap elemen tertulis spesifik sebelum menandatangani dokumen.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah uang saku magang harus tertulis dalam perjanjian?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Ya. Besaran uang saku termasuk tujuh elemen wajib dalam perjanjian magang mahasiswa menurut Pasal 15 ayat (2) Permendikbudristek 63/2024. Peraturan tidak menetapkan nominal minimum, sehingga jumlah, rincian transportasi, makan, dan insentif, serta jadwal pembayaran perlu dicantumkan agar dapat ditagih jika terjadi keterlambatan atau perbedaan dari kesepakatan awal.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa yang dilindungi dalam perjanjian magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Pasal 28 dan 29 Permendikbudristek 63/2024 merinci pelindungan peserta magang berupa keselamatan dan kesehatan kerja (K3), asuransi, dan pencegahan kekerasan, ditambah uang saku. Peserta perlu memeriksa apakah setiap bentuk pelindungan tertulis sebagai klausul tersendiri beserta pihak yang menanggung biayanya dan cara melapor bila terjadi masalah.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah perjanjian magang wajib tertulis menurut UU Ketenagakerjaan?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Ya. Pasal 22 UU Nomor 13 Tahun 2003 mensyaratkan pemagangan dilaksanakan berdasarkan perjanjian pemagangan tertulis antara peserta dan pengusaha. Untuk magang mahasiswa yang bersifat akademik, Permendikbudristek 63/2024 menjadi rujukan utama, dan perjanjian tertulis tetap diperlukan sebagai dasar hak serta kewajiban.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bagaimana penyelesaian sengketa jika terjadi ketidaksesuaian selama magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Penyelesaian sengketa adalah salah satu dari tujuh elemen perjanjian magang. Langkah umumnya dimulai dari musyawarah dengan pembimbing lapangan, lalu pelaporan ke dosen pembimbing atau bagian kerja sama kampus. Simpan bukti tertulis seperti perjanjian, logbook, dan percakapan resmi agar kronologi mudah dibuktikan.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah siswa SMK juga perlu mengecek perjanjian PKL?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Ya. Siswa SMK yang menjalani PKL perlu memastikan ruang lingkup tugas, jangka waktu, jam kerja, perlindungan, dan prosedur pengaduan tertulis, dengan guru pembimbing ikut mengetahui dokumen. Ketentuan rinci PKL mengikuti aturan sekolah dan dinas pendidikan, sehingga konfirmasi ke sekolah sebelum tanda tangan tetap penting.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent">
+              Pastikan tujuh elemen perjanjian kerja sama magang tertulis jelas, lalu pilih program magang yang bersedia menjawab semua pertanyaanmu secara terbuka sebelum tanda tangan.
+            </p>
+            <p>Gunakan Uji 7 Elemen sebagai langkah pertama, lalu lengkapi dengan checklist dokumen sebelum menandatangani. Cek <a href="/program" class="text-tc-accent underline hover:text-white">Program Magang</a>, <a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent underline hover:text-white">alur pendaftaran Jalur Mahasiswa</a>, atau <a href="/alur-pendaftaran?jalur=smk" class="text-tc-accent underline hover:text-white">alur pendaftaran Jalur SMK</a>.</p>
+          </section>
+
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Yolanda Deva Apriliana Putri (YUL)</p>
+              <p class="text-tc-muted mt-1">
+                Tim yang mendampingi magang mahasiswa dan PKL siswa SMK di Malang berbasis proyek nyata, mencakup pengembangan website, optimasi SEO, dan penulisan konten.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 space-y-1 text-xs text-tc-muted">
+              <div class="flex flex-wrap gap-4">
+                <span>Tanggal Publish: <strong class="text-white">24 November 2026</strong></span>
+                <span>Terakhir Diupdate: <strong class="text-white">24 November 2026</strong></span>
+              </div>
+              <p class="pt-1">Sumber Acuan: Permendikbudristek No. 63 Tahun 2024 (Pasal 15 ayat 2, 28, 29); UU No. 13 Tahun 2003 (Pasal 22); Permenaker No. 8 Tahun 2025; Hukumonline; Jurnal UII & Unisma.</p>
+              <p class="pt-1 italic">Disclaimer: Artikel ini bertujuan sebagai informasi umum dan bukan merupakan nasihat hukum.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            Hak & Perlindungan Peserta
+          </span>
+          <h3 class="text-lg font-bold text-white">Uji 7 Elemen Perjanjian Magang</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Pastikan ruang lingkup, durasi, K3, asuransi, uang saku, pembiayaan, dan penyelesaian sengketa tertulis jelas sebelum tanda tangan.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20mengenai%20program%20magang%20dan%20perjanjian%20kerja%20sama%20magang." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Tanya Detail Program via WA
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL LAINNYA YANG SALING BERHUBUNGAN) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-3.5">
+            <a href="/blog/magang-jurusan-pariwisata-menulis-blog-niche-wisata" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/magang-jurusan-pariwisata-menulis-blog-wisata.webp" 
+                alt="Mahasiswa magang jurusan pariwisata menulis blog niche wisata di laptop" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 18:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Jurusan Pariwisata Seru Menulis Blog Wisata
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/magang-content-creator-pariwisata" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/magang-content-creator-pariwisata-1.webp" 
+                alt="Peserta magang content creator pariwisata menyusun naskah video pendek wisata" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 15:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang SMK Mahasiswa Jurusan Pariwisata di Malang
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/syarat-mahasiswa-boleh-magang" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/Mahasiswa-menyiapkan-berkas-KHS.webp" 
+                alt="Syarat mahasiswa boleh magang menyiapkan berkas KHS dan dokumen pendaftaran" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 10:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Syarat Mahasiswa Boleh Magang Menurut Aturan Resmi
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>

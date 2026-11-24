@@ -1,0 +1,460 @@
+---
+// src/pages/blog/syarat-mahasiswa-boleh-magang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Syarat Mahasiswa Boleh Magang Menurut Aturan Resmi";
+const pageDesc = "Syarat mahasiswa boleh magang menurut Permendikbudristek 63/2024 yaitu status aktif, izin dosen dan orang tua. Cek program magang mahasiswa di Malang.";
+const pageUrl = "https://infomagangmalang.web.id/blog/syarat-mahasiswa-boleh-magang";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/Mahasiswa-menyiapkan-berkas-KHS.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/syarat-mahasiswa-boleh-magang#article",
+      "headline": "Syarat Mahasiswa Boleh Magang Menurut Aturan Resmi",
+      "description": "Syarat mahasiswa boleh magang menurut Permendikbudristek 63/2024 yaitu status aktif, izin dosen dan orang tua. Cek program magang mahasiswa di Malang.",
+      "inLanguage": "id",
+      "datePublished": "2026-11-24T10:00:00+07:00",
+      "dateModified": "2026-11-24T10:00:00+07:00",
+      "image": "https://infomagangmalang.web.id/assets/img/Mahasiswa-menyiapkan-berkas-KHS.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Yolanda Deva Apriliana Putri (YUL)"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/syarat-mahasiswa-boleh-magang",
+      "keywords": "syarat mahasiswa boleh magang, syarat magang mahasiswa, aturan magang mahasiswa Permendikbudristek 63/2024, apakah mahasiswa cuti boleh magang, surat izin orang tua magang mahasiswa, persetujuan dosen pembimbing akademik magang, syarat daftar magang di Malang, mahasiswa semester akhir boleh magang"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Siapa yang boleh magang menurut aturan terbaru?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Menurut Pasal 3 Permendikbudristek 63/2024, mahasiswa boleh magang jika berstatus aktif dan terdaftar di PDDikti, mendapat persetujuan orang tua atau wali serta dosen pembimbing akademik, dan tidak sedang cuti. Syarat teknis seperti SKS dan IPK mengikuti pedoman akademik masing-masing kampus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah wajib melampirkan izin orang tua dan dosen untuk magang mandiri?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pasal 3 huruf b mewajibkan persetujuan orang tua atau wali dan dosen pembimbing akademik bagi peserta magang mahasiswa. Untuk magang mandiri, aturan lampiran mengikuti panduan kampus, tetapi menyiapkan kedua persetujuan tetap disarankan agar kampus dapat menerbitkan surat pengantar dan memproses pengakuan SKS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah mahasiswa cuti bisa tetap magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak bisa. Pasal 3 huruf c Permendikbudristek 63/2024 mensyaratkan peserta tidak sedang dalam masa cuti. Mahasiswa cuti perlu mengaktifkan kembali status kuliah lewat bagian akademik kampus, lalu mendaftar magang setelah status di PDDikti kembali aktif secara resmi pada semester berjalan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara mengecek status mahasiswa aktif di PDDikti?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Buka laman resmi PDDikti, ketik nama atau NIM pada kolom pencarian, lalu pilih data mahasiswa yang sesuai. Periksa status pada semester berjalan. Jika status belum aktif atau tidak sesuai, hubungi bagian akademik kampus agar data diperbarui sebelum mendaftar magang di tempat tujuan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bolehkah mahasiswa semester akhir atau yang sedang skripsi mendaftar magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boleh, selama berstatus aktif dan memenuhi kebijakan program studi. Pasal 4 ayat (3) menetapkan magang harus selesai sebelum masa studi berakhir, sehingga mahasiswa skripsi perlu menyusun jadwal bersama dosen pembimbing dan menanyakan konversi SKS magang di program studi masing-masing kampus."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/Mahasiswa-menyiapkan-berkas-KHS.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="syarat mahasiswa boleh magang, syarat magang mahasiswa, aturan magang mahasiswa Permendikbudristek 63/2024, apakah mahasiswa cuti boleh magang, surat izin orang tua magang mahasiswa, persetujuan dosen pembimbing akademik magang, syarat daftar magang di Malang, mahasiswa semester akhir boleh magang" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Panduan Akademik
+            </span>
+            <span class="text-tc-muted font-mono">24 Nov 2026 • 10:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Yolanda Deva Apriliana Putri (YUL)</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Syarat Mahasiswa Boleh Magang Menurut Aturan Resmi
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Syarat mahasiswa boleh magang ada tiga: aktif di PDDikti, disetujui orang tua dan dosen pembimbing akademik, serta tidak sedang cuti.
+          </p>
+        </header>
+
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/Mahasiswa-menyiapkan-berkas-KHS.webp" 
+            alt="Syarat mahasiswa boleh magang menyiapkan berkas KHS dan dokumen pendaftaran" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Syarat mahasiswa boleh magang menyiapkan berkas KHS dan dokumen pendaftaran
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#syarat-pasal-3" class="hover:text-tc-accent transition-colors">1. Apa Saja Syarat Mahasiswa Boleh Magang?</a></li>
+            <li><a href="#dokumen-disiapkan" class="hover:text-tc-accent transition-colors">2. Dokumen Apa Saja yang Perlu Disiapkan Sebelum Mendaftar Magang?</a></li>
+            <li><a href="#cuti-semester-akhir" class="hover:text-tc-accent transition-colors">3. Bolehkah Mahasiswa Cuti atau Semester Akhir Ikut Magang?</a></li>
+            <li><a href="#persetujuan-dosen-ortu" class="hover:text-tc-accent transition-colors">4. Bagaimana Cara Meminta Persetujuan Magang ke Dosen dan Orang Tua?</a></li>
+            <li><a href="#langkah-daftar" class="hover:text-tc-accent transition-colors">5. Sudah Memenuhi Syarat? Ini Langkah Daftar Magang Selanjutnya</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">6. FAQ tentang Syarat Mahasiswa Boleh Magang</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">7. Kesimpulan</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          
+          <div class="space-y-4">
+            <p>Pasal 3 Permendikbudristek Nomor 63 Tahun 2024 tentang Penyelenggaraan Magang Mahasiswa, yang ditetapkan pada 10 Oktober 2024, memuat ketiga ketentuan itu.</p>
+            <p>Batas SKS, IPK, dan semester ditentukan masing-masing kampus. Panduan ini untuk mahasiswa D3, D4, dan S1 pencari info magang Malang.</p>
+          </div>
+
+          <section id="syarat-pasal-3" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Syarat Mahasiswa Boleh Magang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Pasal 3 Permendikbudristek 63/2024 mengatur tiga syarat peserta magang: mahasiswa aktif di PDDikti, izin orang tua dan dosen pembimbing akademik, serta tidak cuti.
+            </p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Syarat</th>
+                    <th class="p-3 font-bold">Dasar aturan</th>
+                    <th class="p-3 font-bold">Bukti yang disiapkan</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Aktif dan terdaftar di PDDikti</td>
+                    <td class="p-3">Pasal 3 huruf a</td>
+                    <td class="p-3">Tangkapan layar PDDikti, KHS</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Izin orang tua dan DPA</td>
+                    <td class="p-3">Pasal 3 huruf b</td>
+                    <td class="p-3">Surat izin bertanda tangan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Tidak sedang cuti</td>
+                    <td class="p-3">Pasal 3 huruf c</td>
+                    <td class="p-3">Surat keterangan aktif kuliah</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Berstatus Mahasiswa Aktif dan Terdaftar di PDDikti</h3>
+            <p>PDDikti (Pangkalan Data Pendidikan Tinggi) adalah basis data nasional seluruh perguruan tinggi di Indonesia. Cari nama atau NIM di laman resmi PDDikti dan pastikan status semester terbaru aktif. Kampus memverifikasi dokumen ini saat seleksi (Pasal 17).</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Memperoleh Persetujuan Orang Tua atau Wali</h3>
+            <p>Pasal 3 huruf b mewajibkan persetujuan orang tua atau wali, dituangkan dalam surat izin bertanda tangan sesuai format kampus.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Mendapatkan Persetujuan Dosen Pembimbing Akademik (DPA)</h3>
+            <p>DPA adalah dosen yang membimbing rencana studi mahasiswa. Persetujuannya membantu memastikan jadwal magang tidak bertabrakan dengan rencana studi.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Syarat Tambahan dari Kebijakan Internal Kampus</h3>
+            <p>Pasal 12 ayat (1) huruf c meminta kampus menyusun kriteria mahasiswa sendiri, misalnya batas SKS, IPK, dan semester. Magang wajib bagi mahasiswa diploma dan D4, serta opsional bagi S1 (Pasal 2).</p>
+          </section>
+
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/perjanjian-kerja-sama-magang" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Perjanjian Kerja Sama Magang dan Isi yang Wajib Dicek &rarr;
+            </a>
+          </div>
+
+          <section id="dokumen-disiapkan" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Dokumen Apa Saja yang Perlu Disiapkan Sebelum Mendaftar Magang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Dokumen inti pendaftar magang adalah bukti status aktif, KHS, surat izin orang tua, persetujuan DPA, surat pengantar kampus, CV, dan portofolio.
+            </p>
+
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/Mahasiswa-mengecek-data-diri.webp" 
+                alt="Mahasiswa mengecek data diri dan kelengkapan berkas syarat mahasiswa boleh magang" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Mahasiswa mengecek data diri dan kelengkapan berkas syarat mahasiswa boleh magang
+              </figcaption>
+            </figure>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bukti Status Aktif dan Kartu Hasil Studi (KHS)</h3>
+            <p>KHS (Kartu Hasil Studi) memuat nilai dan SKS semester berjalan. Lampirkan KHS terbaru bersama tangkapan layar status PDDikti.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Surat Izin Orang Tua dan Persetujuan DPA</h3>
+            <p>Siapkan surat izin orang tua bertanda tangan dan lembar persetujuan DPA sesuai aturan program studi.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Surat Pengantar Kampus, CV, dan Portofolio</h3>
+            <p>Surat pengantar diterbitkan fakultas atau prodi. Tambahkan CV dan portofolio proyek kuliah, lalu cocokkan dengan <a href="/program/magang-mahasiswa" class="text-tc-accent underline hover:text-white">pilihan program magang mahasiswa</a> yang sesuai jurusan. Checklist lengkapnya ada di <a href="/blog/syarat-pendaftaran-magang-dan-pkl" class="text-tc-accent underline hover:text-white">panduan syarat dan berkas magang</a>.</p>
+          </section>
+
+          <section id="cuti-semester-akhir" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bolehkah Mahasiswa Cuti atau Semester Akhir Ikut Magang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Mahasiswa cuti akademik tidak boleh magang berdasarkan Pasal 3 huruf c, sedangkan mahasiswa semester akhir boleh selama berstatus aktif dan magang selesai sebelum lulus.
+            </p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Mahasiswa yang Sedang Cuti Akademik</h3>
+            <p>Mahasiswa cuti tidak memenuhi syarat status aktif, sehingga pendaftaran magang tidak dapat diproses. Ajukan pengaktifan kembali ke bagian akademik, lalu daftar magang saat status aktif.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Mahasiswa Semester Akhir atau Sedang Skripsi</h3>
+            <p>Pasal 4 ayat (3) mewajibkan peserta menyelesaikan magang sebelum masa studi berakhir. Mahasiswa skripsi sebaiknya menyusun jadwal bersama prodi agar bimbingan tidak terganggu, serta menanyakan konversi SKS magang (Pasal 25). Waktu terbaik mulai magang dibahas di <a href="/blog/magang-informatika-semester-berapa" class="text-tc-accent underline hover:text-white">panduan magang informatika semester berapa</a>.</p>
+          </section>
+
+          <section id="persetujuan-dosen-ortu" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Cara Meminta Persetujuan Magang ke Dosen dan Orang Tua?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Mintalah persetujuan DPA lewat pesan sopan berisi identitas, lokasi, dan durasi magang, lalu jelaskan program kepada orang tua dengan dokumen tertulis.
+            </p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Langkah Menghubungi Dosen Pembimbing Akademik (DPA)</h3>
+            <p>Kirim pesan singkat sebelum bertemu langsung. Contohnya: “Selamat siang, Bapak/Ibu. Saya [nama], NIM [NIM], mahasiswa aktif semester [semester]. Mohon izin dan persetujuan Bapak/Ibu sebagai DPA untuk magang di [lembaga] selama [durasi]. Rincian program saya lampirkan.”</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Cara Menjelaskan Program Magang kepada Orang Tua atau Wali</h3>
+            <p>Jelaskan tujuan magang, alamat lokasi, jam kegiatan, durasi, dan manfaatnya untuk SKS atau portofolio. Dokumen program tertulis membantu orang tua menilai kegiatan magang.</p>
+          </section>
+
+          <section id="langkah-daftar" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Sudah Memenuhi Syarat? Ini Langkah Daftar Magang Selanjutnya</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Mahasiswa yang memenuhi syarat dapat memilih program, mengikuti alur pendaftaran jalur mahasiswa, lalu mengirim berkas lengkap ke tempat magang yang dituju.
+            </p>
+            <p>Gemilang Training, pengelola <a href="/" class="text-tc-accent underline hover:text-white">Info Magang Malang</a>, membuka program <a href="/program/magang-mahasiswa" class="text-tc-accent underline hover:text-white">Magang Mahasiswa</a> dengan proyek website nyata (Astro, Bootstrap, Blogspot), optimasi SEO, dan penulisan artikel. Durasinya fleksibel tiga sampai enam bulan, dengan logbook harian, sertifikat, dan lembar penilaian kampus.</p>
+            <p>Ragu soal berkas atau kasus khusus? Hubungi tim kami di <a href="/kontak" class="text-tc-accent underline hover:text-white">Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</a>, atau <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20konsultasi%20syarat%20dan%20pendaftaran%20Magang%20Mahasiswa%20di%20Malang." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">konsultasi persyaratan magang lewat WhatsApp</a>.</p>
+          </section>
+
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">FAQ tentang Syarat Mahasiswa Boleh Magang</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Siapa yang boleh magang menurut aturan terbaru?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Menurut Pasal 3 Permendikbudristek 63/2024, mahasiswa boleh magang jika berstatus aktif dan terdaftar di PDDikti, mendapat persetujuan orang tua atau wali serta dosen pembimbing akademik, dan tidak sedang cuti. Syarat teknis seperti SKS dan IPK mengikuti pedoman akademik masing-masing kampus.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah wajib melampirkan izin orang tua dan dosen untuk magang mandiri?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Pasal 3 huruf b mewajibkan persetujuan orang tua atau wali dan dosen pembimbing akademik bagi peserta magang mahasiswa. Untuk magang mandiri, aturan lampiran mengikuti panduan kampus, tetapi menyiapkan kedua persetujuan tetap disarankan agar kampus dapat menerbitkan surat pengantar dan memproses pengakuan SKS.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah mahasiswa cuti bisa tetap magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Tidak bisa. Pasal 3 huruf c Permendikbudristek 63/2024 mensyaratkan peserta tidak sedang dalam masa cuti. Mahasiswa cuti perlu mengaktifkan kembali status kuliah lewat bagian akademik kampus, lalu mendaftar magang setelah status di PDDikti kembali aktif secara resmi pada semester berjalan.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bagaimana cara mengecek status mahasiswa aktif di PDDikti?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Buka laman resmi PDDikti, ketik nama atau NIM pada kolom pencarian, lalu pilih data mahasiswa yang sesuai. Periksa status pada semester berjalan. Jika status belum aktif atau tidak sesuai, hubungi bagian akademik kampus agar data diperbarui sebelum mendaftar magang di tempat tujuan.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bolehkah mahasiswa semester akhir atau yang sedang skripsi mendaftar magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Boleh, selama berstatus aktif dan memenuhi kebijakan program studi. Pasal 4 ayat (3) menetapkan magang harus selesai sebelum masa studi berakhir, sehingga mahasiswa skripsi perlu menyusun jadwal bersama dosen pembimbing dan menanyakan konversi SKS magang di program studi masing-masing kampus.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent">
+              Mahasiswa boleh magang bila aktif di PDDikti, disetujui orang tua dan DPA, serta tidak cuti. Lengkapi berkas, lalu daftar lewat Info Magang Malang.
+            </p>
+            <p>Pastikan tiga syarat Pasal 3 terpenuhi dan konfirmasi ketentuan teknis ke kampus. Lihat <a href="/program/magang-mahasiswa" class="text-tc-accent underline hover:text-white">pilihan program magang mahasiswa di Malang</a>, lalu ikuti <a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent underline hover:text-white">alur pendaftaran magang jalur mahasiswa</a>.</p>
+          </section>
+
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Yolanda Deva Apriliana Putri (YUL)</p>
+              <p class="text-tc-muted mt-1">
+                Tim editorial menyusun panduan magang dan PKL berdasarkan regulasi pendidikan tinggi serta pengalaman pendampingan peserta di Malang. Setiap panduan diperiksa terhadap salinan resmi peraturan sebelum tayang.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 space-y-1 text-xs text-tc-muted">
+              <div class="flex flex-wrap gap-4">
+                <span>Tanggal Publish: <strong class="text-white">24 November 2026</strong></span>
+                <span>Terakhir Diupdate: <strong class="text-white">24 November 2026</strong></span>
+              </div>
+              <p class="pt-1">Sumber Acuan: Permendikbudristek Nomor 63 Tahun 2024 (Berita Negara Tahun 2024 Nomor 677, JDIH Kemendikbudristek).</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            Permendikbudristek 63/2024
+          </span>
+          <h3 class="text-lg font-bold text-white">Cek Syarat & Program Magang</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Pastikan status PDDikti aktif, izin DPA dan orang tua lengkap, lalu pilih program magang mahasiswa di Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Info%20Magang%20Malang%2C%20saya%20ingin%20konsultasi%20syarat%20dan%20pendaftaran%20Magang%20Mahasiswa%20di%20Malang." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Konsultasi Syarat via WA
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL LAINNYA YANG SALING BERHUBUNGAN) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-3.5">
+            <a href="/blog/magang-jurusan-pariwisata-menulis-blog-niche-wisata" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/magang-jurusan-pariwisata-menulis-blog-wisata.webp" 
+                alt="Mahasiswa magang jurusan pariwisata menulis blog niche wisata di laptop" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 18:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Jurusan Pariwisata Seru Menulis Blog Wisata
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/magang-content-creator-pariwisata" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/magang-content-creator-pariwisata-1.webp" 
+                alt="Peserta magang content creator pariwisata menyusun naskah video pendek wisata" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 15:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang SMK Mahasiswa Jurusan Pariwisata di Malang
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/perjanjian-kerja-sama-magang" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/perjanjian-kerja-sama-magang.webp" 
+                alt="Mahasiswa membaca perjanjian kerja sama magang sebelum tanda tangan di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 08:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Perjanjian Kerja Sama Magang dan Isi yang Wajib Dicek
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>

@@ -1,0 +1,485 @@
+---
+// src/pages/blog/magang-content-creator-pariwisata.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Content Creator Pariwisata di Malang";
+const pageDesc = "Pelajari alur magang content creator pariwisata: produksi video pendek, artikel blog wisata, review mentor, hingga portofolio. Konsultasi pendaftaran sekarang.";
+const pageUrl = "https://infomagangmalang.web.id/blog/magang-content-creator-pariwisata";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/magang-content-creator-pariwisata-1.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/magang-content-creator-pariwisata#article",
+      "headline": "Magang Content Creator Pariwisata di Malang",
+      "description": "Pelajari alur magang content creator pariwisata: produksi video pendek, artikel blog wisata, review mentor, hingga portofolio. Konsultasi pendaftaran sekarang.",
+      "inLanguage": "id",
+      "datePublished": "2026-11-24T15:00:00+07:00",
+      "dateModified": "2026-11-24T15:00:00+07:00",
+      "image": "https://infomagangmalang.web.id/assets/img/magang-content-creator-pariwisata-1.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id/"
+      },
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/magang-content-creator-pariwisata",
+      "keywords": "magang content creator pariwisata, magang pariwisata malang, pkl pariwisata smk malang, video pendek wisata, artikel blog wisata, portofolio konten pariwisata"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah magang content creator pariwisata cocok untuk siswa SMK?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Magang content creator pariwisata cocok bagi siswa SMK jurusan Pariwisata atau bidang terkait yang tertarik pada media digital. Peserta tidak perlu mahir sejak awal karena mentor membimbing prosesnya."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah peserta wajib bisa mengedit video sebelum mulai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peserta tidak wajib mahir mengedit video sebelum mulai magang. Kemampuan dasar dilatih bertahap lewat tugas dan review mingguan, sehingga kemauan belajar lebih penting daripada pengalaman awal."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi magang di Gemilang Training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Durasi magang di Gemilang Training berkisar antara 3 sampai 6 bulan. Durasi yang tepat disesuaikan dengan kebutuhan sekolah atau kampus dan dikonfirmasi saat konsultasi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada kunjungan lokasi wisata dalam magang pariwisata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kunjungan lokasi wisata dapat menjadi bagian dari praktik jurusan Pariwisata, tetapi jadwal dan bentuknya belum dapat dipastikan di artikel ini. Calon peserta perlu menanyakan konfirmasi terbaru kepada tim Gemilang Training."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang dihasilkan peserta setelah magang selesai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peserta menghasilkan portofolio berisi konten wisata, misalnya video pendek, artikel blog, dan rencana pemasaran digital. Isi portofolio bergantung pada tugas yang diselesaikan selama program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah magang bisa dilakukan dari rumah?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Magang dapat dilakukan dari rumah melalui skema WFH, selain skema Hybrid dan Onsite. Ketersediaan skema dikonfirmasi saat konsultasi pendaftaran."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/magang-content-creator-pariwisata-1.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="magang content creator pariwisata, magang pariwisata malang, pkl pariwisata smk malang, video pendek wisata, artikel blog wisata, portofolio konten pariwisata" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Pariwisata & Konten
+            </span>
+            <span class="text-tc-muted font-mono">24 Nov 2026 • 15:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Sholikhatun Nikmah</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Magang SMK Mahasiswa Jurusan Pariwisata di Malang
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Magang content creator pariwisata adalah program praktik membuat video pendek dan artikel blog wisata di bawah bimbingan mentor, dengan hasil akhir berupa portofolio konten.
+          </p>
+        </header>
+
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/magang-content-creator-pariwisata-1.webp" 
+            alt="Peserta magang content creator pariwisata menyusun naskah video pendek wisata" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Peserta magang content creator pariwisata menyusun naskah video pendek wisata
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#ringkasan-inti" class="hover:text-tc-accent transition-colors">1. Ringkasan Inti Program</a></li>
+            <li><a href="#pengertian-program" class="hover:text-tc-accent transition-colors">2. Apa itu magang content creator pariwisata di Gemilang Training?</a></li>
+            <li><a href="#pentingnya-konten" class="hover:text-tc-accent transition-colors">3. Mengapa konten digital penting bagi bisnis pariwisata?</a></li>
+            <li><a href="#kegiatan-praktik" class="hover:text-tc-accent transition-colors">4. Apa saja kegiatan praktik dalam magang content creator pariwisata?</a></li>
+            <li><a href="#alur-video-artikel" class="hover:text-tc-accent transition-colors">5. Alur Produksi Video Pendek, Artikel Blog & Pemasaran Digital</a></li>
+            <li><a href="#kunjungan-agile-hasil" class="hover:text-tc-accent transition-colors">6. Kunjungan Lokasi, Simulasi Agile & Hasil Akhir Peserta</a></li>
+            <li><a href="#skema-kesalahan-daftar" class="hover:text-tc-accent transition-colors">7. Skema WFH/Hybrid/Onsite, Kesalahan Umum & Cara Mendaftar</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">8. FAQ & Kesimpulan</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          
+          <section id="ringkasan-inti" class="space-y-3 scroll-mt-24 bg-tc-card/60 border border-tc-border rounded-2xl p-5">
+            <h2 class="text-lg md:text-xl font-bold text-white">Ringkasan Inti</h2>
+            <p>Magang content creator pariwisata di Gemilang Training berfokus pada produksi video pendek, artikel blog wisata, dan pemasaran digital destinasi.</p>
+            <p>Peserta berlatih dalam simulasi kerja Agile lintas jurusan dan mendapat review mingguan dari mentor.</p>
+            <p>Program berlangsung 3 sampai 6 bulan dengan skema WFH, Hybrid, atau Onsite, berlokasi di Mojolangu, Lowokwaru, Kota Malang.</p>
+            <p>Hasil akhirnya adalah portofolio konten wisata yang bisa ditunjukkan kepada kampus, sekolah, atau calon pemberi kerja.</p>
+            <p>Rincian kegiatan lapangan dan kunjungan lokasi mengikuti konfirmasi tim Gemilang Training.</p>
+          </section>
+
+          <section id="pengertian-program" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa itu magang content creator pariwisata di Gemilang Training?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Magang content creator pariwisata di Gemilang Training adalah program praktik bagi pelajar SMK dan mahasiswa untuk memproduksi konten wisata dengan bimbingan mentor dan review mingguan.
+            </p>
+            <p>Gemilang Training berlokasi di Mojolangu, Lowokwaru, Kota Malang. Magang atau PKL di sana tersedia dengan skema WFH, Hybrid, maupun Onsite selama 3 sampai 6 bulan.</p>
+            <p>Untuk jurusan Pariwisata, pembahasan diarahkan ke sisi bisnis dan kewirausahaan wisata. Contohnya pemasaran digital destinasi, strategi membangun brand usaha tour dan travel, serta pengelolaan konten digital wisata.</p>
+            <p>Peserta tidak hanya mendengar teori. Peserta mengerjakan tugas nyata, seperti menyusun naskah video pendek, menulis artikel blog niche wisata, dan merancang promosi. Setiap tugas masuk ke simulasi kerja Agile bersama peserta jurusan lain, lalu dinilai dalam review mingguan.</p>
+          </section>
+
+          <section id="pentingnya-konten" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Mengapa konten digital penting bagi bisnis pariwisata?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Konten digital penting bagi bisnis pariwisata karena calon wisatawan umumnya mencari destinasi dan paket wisata secara online sebelum memutuskan berangkat, sehingga konten menjadi etalase usaha.
+            </p>
+            <p>Menurut Badan Pusat Statistik (BPS), Indonesia mencatat sekitar 15,38 juta kunjungan wisatawan mancanegara sepanjang 2025, naik 10,80 persen dibandingkan 2024. Kementerian Pariwisata memperkirakan kontribusi pariwisata terhadap PDB pada 2025 sekitar 3,97 persen.</p>
+            <p>Angka tersebut menunjukkan pasar wisata yang besar sekaligus ramai pelaku usaha. Dalam pasar seperti itu, usaha tour dan travel yang mampu menjelaskan produknya lewat video, artikel, dan media sosial lebih mudah ditemukan calon pelanggan.</p>
+            <p>Karena itu, kemampuan membuat konten wisata menjadi bekal penting bagi lulusan pariwisata yang ingin bekerja di industri atau merintis usaha sendiri. Data selengkapnya dapat dibaca di publikasi Statistik Kunjungan Wisatawan Mancanegara 2025 dari BPS.</p>
+          </section>
+
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/magang-jurusan-pariwisata-menulis-blog-niche-wisata" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Magang Jurusan Pariwisata Seru Menulis Blog Wisata &rarr;
+            </a>
+          </div>
+
+          <section id="kegiatan-praktik" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa saja kegiatan praktik dalam magang content creator pariwisata?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Kegiatan praktik magang content creator pariwisata umumnya mencakup perencanaan konten, produksi video pendek, penulisan artikel blog wisata, pemasaran digital, dan kunjungan lokasi.
+            </p>
+            <p>Gambaran kegiatan yang biasa dilatih adalah sebagai berikut:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Perencanaan konten: menentukan topik, target pembaca, dan jadwal unggah.</li>
+              <li>Produksi video pendek: riset destinasi, naskah, pengambilan gambar, dan penyuntingan.</li>
+              <li>Penulisan artikel blog wisata: ulasan destinasi, panduan perjalanan, dan perbandingan paket wisata.</li>
+              <li>Pemasaran digital: caption, kampanye sederhana, dan pembacaan respons audiens.</li>
+              <li>Kunjungan lokasi: pengamatan langsung destinasi untuk bahan konten.</li>
+            </ul>
+            <p>Daftar final kegiatan per jurusan dapat disesuaikan. Tim Gemilang Training mengonfirmasinya saat konsultasi pendaftaran.</p>
+          </section>
+
+          <section id="alur-video-artikel" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana alur produksi video pendek wisata dalam program magang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Alur produksi video pendek wisata dalam magang dimulai dari riset destinasi, penulisan naskah, pengambilan gambar, penyuntingan, lalu review mentor sebelum konten masuk portofolio.
+            </p>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Riset destinasi dan target penonton.</li>
+              <li>Penentuan pesan utama dan pembuka video yang menarik perhatian.</li>
+              <li>Penulisan naskah atau storyboard singkat.</li>
+              <li>Pengambilan gambar dan suara sesuai daftar adegan.</li>
+              <li>Penyuntingan, pemilihan musik, dan teks layar.</li>
+              <li>Review mentor, lalu revisi berdasarkan masukan.</li>
+            </ol>
+            <p>Setiap langkah menghasilkan catatan kecil. Catatan itu membantu peserta menjelaskan proses kerja ketika mempresentasikan portofolio.</p>
+
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/magang-content-creator-pariwisata-2.webp" 
+                alt="Review mingguan mentor atas artikel blog wisata peserta magang" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Review mingguan mentor atas artikel blog wisata peserta magang
+              </figcaption>
+            </figure>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bagaimana peserta menulis artikel blog wisata yang informatif?</h3>
+            <p>Peserta menulis artikel blog wisata dengan menentukan kata kunci, mengumpulkan informasi destinasi, menyusun jawaban langsung di awal, lalu merevisi tulisan berdasarkan masukan mentor setiap minggu.</p>
+            <p>Artikel blog wisata yang baik menjawab pertanyaan pembaca dengan cepat. Pembaca ingin tahu lokasi, daya tarik, waktu kunjungan yang sesuai, dan hal yang perlu disiapkan.</p>
+            <p>Dalam magang, peserta berlatih memisahkan fakta yang sudah dicek dari opini pribadi. Informasi yang belum pasti, misalnya harga atau jam buka, ditandai untuk dikonfirmasi ulang sebelum dipublikasikan.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bagaimana simulasi pemasaran digital melatih jiwa wirausaha wisata?</h3>
+            <p>Simulasi pemasaran digital melatih jiwa wirausaha wisata dengan meminta peserta merancang promosi, menentukan target pasar, dan mengukur respons untuk produk wisata lokal secara terstruktur.</p>
+            <p>Dalam simulasi, peserta berperan seperti pengelola usaha wisata kecil. Peserta memilih produk, misalnya paket wisata edukasi atau paket perjalanan akhir pekan, lalu menyusun pesan promosi dan memilih kanal yang sesuai.</p>
+            <p>Hasil simulasi dibahas bersama mentor. Peserta belajar bahwa promosi bukan sekadar unggahan, melainkan proses memahami pelanggan, menguji ide, dan memperbaiki pendekatan. Pembahasan lebih dalam tersedia di <a href="/kompetensi/digital-marketing-seo" class="text-tc-accent underline hover:text-white">artikel simulasi pemasaran digital produk wisata lokal</a>.</p>
+          </section>
+
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/perjanjian-kerja-sama-magang" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Perjanjian Kerja Sama Magang dan Isi yang Wajib Dicek &rarr;
+            </a>
+          </div>
+
+          <section id="kunjungan-agile-hasil" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana kunjungan lokasi wisata mendukung praktik magang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Kunjungan lokasi wisata mendukung praktik magang karena peserta dapat mengamati destinasi langsung, mengumpulkan bahan konten orisinal, dan mencatat detail yang tidak tersedia di internet.
+            </p>
+            <p>Pengamatan langsung membuat konten lebih jujur dan spesifik. Peserta dapat mencatat suasana, akses, fasilitas, dan alur kunjungan wisatawan. Jadwal, lokasi, dan bentuk kunjungan untuk jurusan Pariwisata mengikuti konfirmasi internal Gemilang Training.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bagaimana simulasi kerja Agile dan review mingguan berjalan?</h3>
+            <p>Simulasi kerja Agile di Gemilang Training mempertemukan peserta lintas jurusan dalam siklus kerja pendek, dengan review mingguan mentor untuk menilai kemajuan dan memberi arahan perbaikan.</p>
+            <p>Dalam siklus pendek, peserta membagi tugas, mengerjakan, lalu menunjukkan hasil. Mentor menilai kualitas konten, ketepatan informasi, dan kedisiplinan peserta menyelesaikan target.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Apa hasil akhir yang diperoleh peserta?</h3>
+            <p>Hasil akhir magang content creator pariwisata berupa portofolio yang dapat memuat video pendek, artikel blog wisata, rencana kampanye digital, dan catatan proses kerja selama program.</p>
+            <p>Portofolio berguna untuk laporan PKL, seleksi kerja, atau pengembangan usaha wisata sendiri. Peserta disarankan menyimpan versi awal dan versi revisi setiap konten untuk memperlihatkan perkembangan kemampuan.</p>
+          </section>
+
+          <section id="skema-kesalahan-daftar" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Siapa yang cocok mengikuti dan bagaimana skema WFH, Hybrid, atau Onsite?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Magang content creator pariwisata cocok bagi siswa SMK dan mahasiswa, dengan skema WFH, Hybrid, atau Onsite dan durasi 3 sampai 6 bulan di Gemilang Training.
+            </p>
+            <p>Program ini relevan bagi peserta jurusan Pariwisata, Bisnis Pariwisata, atau bidang terkait yang ingin belajar konten dan pemasaran wisata. Skema WFH cocok untuk luar Malang, Onsite untuk kerja langsung di Mojolangu, dan Hybrid menggabungkan keduanya.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Apa kesalahan umum peserta magang content creator pariwisata?</h3>
+            <p>Kesalahan umum peserta magang content creator pariwisata meliputi konten tanpa tujuan, informasi destinasi belum dicek ulang, visual tanpa narasi, dan kurang disiplin mengikuti masukan mentor.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Apa contoh referensi dari ekosistem wisata Malang dan Batu untuk bahan konten?</h3>
+            <p>Ekosistem wisata Malang dan Batu menyediakan referensi konten, mulai dari wisata alam, desa wisata, hingga kegiatan outbound dan team building. Sebagai contoh, Batu Outbound dapat dijadikan bahan studi kasus ketika peserta mempelajari cara kegiatan team building wisata dikemas dalam konten digital.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Bagaimana cara mendaftar magang content creator pariwisata?</h3>
+            <p>Pendaftaran dimulai dengan konsultasi ke Gemilang Training untuk menanyakan skema, durasi, dan kesesuaian jurusan. Siapkan asal sekolah atau kampus, jurusan, skema yang diinginkan, dan rencana durasi, lalu lihat informasi program di <a href="/program/pariwisata" class="text-tc-accent underline hover:text-white">halaman program magang Gemilang Training</a>.</p>
+          </section>
+
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">FAQ</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah magang content creator pariwisata cocok untuk siswa SMK?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Magang content creator pariwisata cocok bagi siswa SMK jurusan Pariwisata atau bidang terkait yang tertarik pada media digital. Peserta tidak perlu mahir sejak awal karena mentor membimbing prosesnya.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah peserta wajib bisa mengedit video sebelum mulai?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Peserta tidak wajib mahir mengedit video sebelum mulai magang. Kemampuan dasar dilatih bertahap lewat tugas dan review mingguan, sehingga kemauan belajar lebih penting daripada pengalaman awal.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Berapa lama durasi magang di Gemilang Training?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Durasi magang di Gemilang Training berkisar antara 3 sampai 6 bulan. Durasi yang tepat disesuaikan dengan kebutuhan sekolah atau kampus dan dikonfirmasi saat konsultasi.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah ada kunjungan lokasi wisata dalam magang pariwisata?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Kunjungan lokasi wisata dapat menjadi bagian dari praktik jurusan Pariwisata, tetapi jadwal dan bentuknya belum dapat dipastikan di artikel ini. Calon peserta perlu menanyakan konfirmasi terbaru kepada tim Gemilang Training.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa yang dihasilkan peserta setelah magang selesai?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Peserta menghasilkan portofolio berisi konten wisata, misalnya video pendek, artikel blog, dan rencana pemasaran digital. Isi portofolio bergantung pada tugas yang diselesaikan selama program.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah magang bisa dilakukan dari rumah?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Magang dapat dilakukan dari rumah melalui skema WFH, selain skema Hybrid dan Onsite. Ketersediaan skema dikonfirmasi saat konsultasi pendaftaran.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 bg-tc-card border border-tc-border rounded-2xl p-6">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent">
+              Magang content creator pariwisata melatih peserta membuat video pendek, menulis artikel blog wisata, dan merancang pemasaran digital dengan bimbingan mentor.
+            </p>
+            <p>Hasil akhirnya adalah portofolio yang dapat dipakai untuk kampus, sekolah, atau karier. Langkah terbaik adalah menentukan skema yang sesuai, menyiapkan informasi jurusan, lalu berkonsultasi via <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20pendaftaran%20Magang%20%2F%20PKL%20Content%20Creator%20Pariwisata%20di%20Malang." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">WhatsApp</a>.</p>
+          </section>
+
+          <div class="bg-tc-card/60 border border-tc-border rounded-2xl p-5 space-y-3 text-xs md:text-sm">
+            <div>
+              <p class="text-tc-muted uppercase tracking-wider text-[11px] font-bold">Penulis</p>
+              <p class="font-bold text-white text-base">Sholikhatun Nikmah</p>
+              <p class="text-tc-muted mt-1">
+                Artikel panduan program magang dan PKL content creator pariwisata di Gemilang Training Kota Malang.
+              </p>
+            </div>
+            <div class="pt-2 border-t border-tc-border/60 space-y-1 text-xs text-tc-muted">
+              <div class="flex flex-wrap gap-4">
+                <span>Tanggal Publish: <strong class="text-white">24 November 2026</strong></span>
+                <span>Terakhir Diupdate: <strong class="text-white">24 November 2026</strong></span>
+              </div>
+              <p class="pt-1">Sumber Acuan: Badan Pusat Statistik (BPS) Statistik Kunjungan Wisatawan Mancanegara 2025 & Kementerian Pariwisata.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-tc-accent bg-tc-bg px-3 py-1 rounded-full border border-tc-border inline-block">
+            Video Pendek & Blog Wisata
+          </span>
+          <h3 class="text-lg font-bold text-white">Magang Content Creator Pariwisata</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Produksi video pendek, artikel blog wisata, dan simulasi Agile dengan review mentor mingguan di Mojolangu, Kota Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20pendaftaran%20Magang%20%2F%20PKL%20Content%20Creator%20Pariwisata%20di%20Malang." 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="block w-full text-center bg-tc-accent text-slate-950 font-bold text-xs py-3 rounded-xl hover:opacity-90 transition-opacity"
+          >
+            Konsultasi via WhatsApp
+          </a>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI (3 ARTIKEL LAINNYA YANG SALING BERHUBUNGAN) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-base font-bold text-white border-b border-tc-border pb-3">Artikel Rekomendasi</h3>
+          <div class="space-y-3.5">
+            <a href="/blog/magang-jurusan-pariwisata-menulis-blog-niche-wisata" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/magang-jurusan-pariwisata-menulis-blog-wisata.webp" 
+                alt="Mahasiswa magang jurusan pariwisata menulis blog niche wisata di laptop" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 18:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Jurusan Pariwisata Seru Menulis Blog Wisata
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/syarat-mahasiswa-boleh-magang" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/Mahasiswa-menyiapkan-berkas-KHS.webp" 
+                alt="Syarat mahasiswa boleh magang menyiapkan berkas KHS dan dokumen pendaftaran" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 10:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Syarat Mahasiswa Boleh Magang Menurut Aturan Resmi
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/perjanjian-kerja-sama-magang" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/perjanjian-kerja-sama-magang.webp" 
+                alt="Mahasiswa membaca perjanjian kerja sama magang sebelum tanda tangan di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 08:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Perjanjian Kerja Sama Magang dan Isi yang Wajib Dicek
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>
