@@ -1,0 +1,593 @@
+---
+// src/pages/blog/magang-seo-malang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang SEO Malang, Materi, Output, dan Cara Daftar";
+const pageDesc = "Magang SEO Malang untuk mahasiswa dan siswa SMK: riset keyword, schema, Google Search Console, portofolio dan sertifikat. Daftar di Gemilang Training.";
+const pageUrl = "https://infomagangmalang.web.id/blog/magang-seo-malang";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/mentor-review-draf-magang-content-writer-seo.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://infomagangmalang.web.id/blog/magang-seo-malang#article",
+      "headline": "Magang SEO Malang, Materi, Output, dan Cara Daftar",
+      "description": "Magang SEO Malang untuk mahasiswa dan siswa SMK: riset keyword, schema, Google Search Console, portofolio dan sertifikat. Daftar di Gemilang Training.",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/magang-seo-malang",
+      "image": "https://infomagangmalang.web.id/assets/img/mentor-review-draf-magang-content-writer-seo.webp",
+      "datePublished": "2026-11-18T08:33:00+07:00",
+      "dateModified": "2026-11-18T08:33:00+07:00",
+      "keywords": "magang seo malang, magang digital marketing malang, pkl seo malang, belajar seo dari nol malang, tempat magang seo mahasiswa malang, pkl smk digital marketing malang, riset keyword, google search console, seo on-page",
+      "author": {
+        "@type": "Person",
+        "name": "Yolanda Deva Apriliana Putri (YUL)"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/logo.webp"
+        }
+      },
+      "about": {
+        "@id": "https://infomagangmalang.web.id/blog/magang-seo-malang#program"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/magang-seo-malang#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Magang SEO belajar apa saja?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Magang SEO di Gemilang Training Malang mencakup 5 pilar praktik: riset keyword dan pemetaan search intent, SEO on-page (meta tag, heading, internal link), Open Graph, schema markup, serta pemantauan performa di Google Search Console. Semua pilar diterapkan pada website proyek nyata dengan bimbingan mentor praktisi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah magang SEO di Malang cocok untuk pemula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cocok. Mentor praktisi di Gemilang Training Malang membimbing peserta langkah demi langkah, dan jalur PKL dirancang dari dasar sampai siswa bisa membuat website dan artikel SEO. Mahasiswa Informatika maupun siswa SMK yang belum pernah memegang tools SEO tetap bisa mengikuti program ini."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Output apa yang didapat setelah magang SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peserta mendapat portofolio website live, sertifikat resmi kelulusan, lembar penilaian, dan bukti karya nyata seperti hasil riset keyword serta laporan Google Search Console yang bisa ditunjukkan ke calon pemberi kerja. Mahasiswa memakai lembar penilaian untuk konversi SKS, sedangkan siswa SMK melengkapi jurnal PKL dengan monitoring guru."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi magang SEO di Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Durasi standar adalah 3 sampai 6 bulan, fleksibel mengikuti kalender kampus atau PKL sekolah. Mahasiswa mengisi logbook harian, sedangkan siswa SMK mengisi jurnal PKL. Pelaksanaan bisa onsite Malang, hybrid, atau WFH sesuai ketentuan institusi pendidikan dan kebutuhan proyek yang dikerjakan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah siswa SMK bisa PKL SEO di Gemilang Training Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bisa. PKL SEO terbuka untuk siswa SMK jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia. Siswa dibimbing dari dasar, berkolaborasi dengan tim lintas jurusan, dan mengisi jurnal PKL dengan pendampingan monitoring guru selama 3 sampai 6 bulan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara daftar magang SEO di Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pilih jalur mahasiswa atau jalur SMK di halaman Alur Pendaftaran Gemilang Training Malang. Tahapannya meliputi pengajuan berkas sampai penerbitan surat balasan. Calon peserta juga bisa berkonsultasi soal kuota dengan admin lewat halaman Kontak atau WhatsApp. Durasi dan ketentuan menyesuaikan kalender kampus atau sekolah."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Di mana lokasi dan jam operasional Gemilang Training Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gemilang Training Malang berlokasi di Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, dengan jam operasional Senin sampai Sabtu pukul 08.00 sampai 17.00 WIB. Peserta juga dapat memilih sistem hybrid atau WFH sesuai ketentuan kampus atau sekolah. Detail lokasi tersedia di halaman Kontak."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://infomagangmalang.web.id/blog/magang-seo-malang#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Magang SEO Malang, Materi, Output, dan Cara Daftar",
+          "item": "https://infomagangmalang.web.id/blog/magang-seo-malang"
+        }
+      ]
+    },
+    {
+      "@type": "EducationalOccupationalProgram",
+      "@id": "https://infomagangmalang.web.id/blog/magang-seo-malang#program",
+      "name": "Magang dan PKL SEO Malang",
+      "description": "Program magang mahasiswa dan PKL siswa SMK berbasis proyek nyata dengan 5 pilar praktik SEO: riset keyword, meta tag, Open Graph, schema markup, dan Google Search Console. Durasi standar 3 sampai 6 bulan.",
+      "url": "https://infomagangmalang.web.id/program/optimasi-seo",
+      "inLanguage": "id-ID",
+      "educationalProgramMode": "onsite, hybrid, atau WFH",
+      "occupationalCredentialAwarded": "Sertifikat resmi kelulusan",
+      "provider": {
+        "@type": "Organization",
+        "name": "Gemilang Training Malang",
+        "url": "https://infomagangmalang.web.id/",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. Simpang Candi Panggung No.37, Mojolangu",
+          "addressLocality": "Kota Malang",
+          "addressRegion": "Jawa Timur",
+          "postalCode": "65141",
+          "addressCountry": "ID"
+        }
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/mentor-review-draf-magang-content-writer-seo.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="magang seo malang, magang digital marketing malang, pkl seo malang, belajar seo dari nol malang, tempat magang seo mahasiswa malang, pkl smk digital marketing malang, riset keyword, google search console, seo on-page" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              SEO &amp; Digital Marketing
+            </span>
+            <span class="text-tc-muted font-mono">18 Nov 2026 • 08:33 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">Yolanda Deva Apriliana Putri (YUL)</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Magang SEO di Malang Pahami Materi, Output, dan Cara Daftar
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Magang SEO Malang di Gemilang Training mengajarkan riset keyword, SEO on-page, Open Graph, schema, dan Google Search Console untuk pemula, dengan hasil portofolio dan sertifikat.
+          </p>
+        </header>
+
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/mentor-review-draf-magang-content-writer-seo.webp" 
+            alt="Peserta magang SEO Malang riset keyword bersama mentor di Gemilang Training" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Peserta magang SEO Malang riset keyword bersama mentor di Gemilang Training
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#belajar-apa-saja" class="hover:text-tc-accent transition-colors">1. Magang SEO Malang Belajar Apa Saja?</a></li>
+            <li><a href="#alur-kerja-harian" class="hover:text-tc-accent transition-colors">2. Bagaimana Alur Kerja Harian Magang SEO di Gemilang Training Malang?</a></li>
+            <li><a href="#output-magang" class="hover:text-tc-accent transition-colors">3. Output Apa yang Didapat Setelah Selesai Magang dan PKL SEO?</a></li>
+            <li><a href="#cara-daftar" class="hover:text-tc-accent transition-colors">4. Bagaimana Cara Daftar Magang SEO di Malang untuk Mahasiswa dan SMK?</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">5. Pertanyaan Umum (FAQ) Seputar Magang SEO di Malang</a></li>
+            <li><a href="#kesimpulan" class="hover:text-tc-accent transition-colors">6. Kesimpulan &amp; Konsultasi Kuota</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          
+          <div class="space-y-4">
+            <p>Magang SEO di Malang yaitu <a href="/" class="text-tc-accent underline hover:text-white">Gemilang Training Malang</a> membuat peserta mengerjakan optimasi website nyata selama 3 sampai 6 bulan dengan bimbingan mentor praktisi.</p>
+            <p>Program <a href="/program/optimasi-seo" class="text-tc-accent underline hover:text-white">Optimasi SEO dan Riset Kata Kunci</a> terbuka untuk mahasiswa Informatika (D3, D4, S1) dan siswa SMK dari 7 rumpun jurusan, termasuk pemula yang belum pernah memakai tools SEO.</p>
+          </div>
+
+          <section id="belajar-apa-saja" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Magang SEO Malang Belajar Apa Saja?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Peserta magang SEO mempelajari 5 pilar praktik: riset keyword, SEO on-page, Open Graph, schema markup, dan pemantauan performa di Google Search Console.
+            </p>
+            <p>SEO (Search Engine Optimization) adalah proses menyesuaikan website agar lebih mudah ditemukan dan dipahami mesin pencari seperti Google. Program magang SEO di Gemilang Training Malang membagi proses ini menjadi 5 pilar praktik, dan setiap pilar dikerjakan pada website proyek nyata, bukan sekadar tugas administratif.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Pilar praktik</th>
+                    <th class="p-3 font-bold">Yang dikerjakan peserta</th>
+                    <th class="p-3 font-bold">Hasil yang bisa ditunjukkan</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Riset keyword dan search intent</td>
+                    <td class="p-3">Mencari kata kunci yang diketik calon pengguna dan memetakan tujuan pencariannya</td>
+                    <td class="p-3">Daftar keyword dan peta halaman</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">SEO on-page</td>
+                    <td class="p-3">Menulis title tag, meta description, struktur heading, dan internal link</td>
+                    <td class="p-3">Halaman dengan struktur rapi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Open Graph</td>
+                    <td class="p-3">Mengatur judul, deskripsi, dan gambar pratinjau saat tautan dibagikan</td>
+                    <td class="p-3">Pratinjau tautan di WhatsApp dan media sosial</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Schema markup</td>
+                    <td class="p-3">Memasang data terstruktur JSON-LD seperti Article, FAQPage, dan BreadcrumbList</td>
+                    <td class="p-3">Kode schema yang tervalidasi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Google Search Console</td>
+                    <td class="p-3">Membaca klik, impresi, CTR, posisi rata-rata, dan status indeks halaman</td>
+                    <td class="p-3">Laporan performa dan catatan revisi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Riset Keyword dan Pemetaan Search Intent</h3>
+            <p>Keyword adalah kata atau frasa yang diketik pengguna ke kolom pencarian Google. Search intent adalah tujuan di balik pencarian, yaitu mencari informasi, membandingkan pilihan, atau siap mendaftar. Peserta magang menyusun daftar keyword, mengelompokkannya berdasarkan intent, lalu menetapkan satu keyword utama untuk setiap halaman website.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Optimasi SEO On-Page (Meta Tag, Struktur Heading, dan Internal Linking)</h3>
+            <p>SEO on-page adalah pengaturan elemen di dalam halaman website yang memengaruhi cara Google membaca dan menampilkan halaman. Peserta menulis title tag, meta description, struktur heading H1 sampai H3, dan internal link, yaitu tautan antarhalaman dalam satu website. Panduan resmi <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">Google Search Central</a> menjadi rujukan teknis untuk elemen-elemen ini.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Pengaturan Open Graph dan Penerapan Schema Markup</h3>
+            <p>Open Graph adalah kumpulan tag HTML yang menentukan judul, deskripsi, dan gambar pratinjau saat tautan halaman dibagikan di WhatsApp atau media sosial. Schema markup adalah kode terstruktur berformat JSON-LD yang menjelaskan jenis konten halaman kepada mesin pencari. Peserta menerapkan schema Article, FAQPage, dan BreadcrumbList, lalu memvalidasinya mengikuti <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data" target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">dokumentasi structured data Google</a>.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Pemantauan Performa Website di Google Search Console</h3>
+            <p>Google Search Console adalah layanan gratis dari Google untuk memantau performa website di hasil pencarian. Peserta membaca data klik, impresi, rasio klik (CTR), dan posisi rata-rata, lalu memeriksa apakah halaman baru sudah terindeks. Hasil pembacaan menjadi dasar revisi title, meta description, atau isi artikel pada siklus kerja berikutnya.</p>
+          </section>
+
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/magang-content-writer-seo" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Magang Content Writer SEO Malang Tugas serta Skill &rarr;
+            </a>
+          </div>
+
+          <section id="alur-kerja-harian" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Alur Kerja Harian Magang SEO di Gemilang Training Malang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Alur kerja dimulai dari riset keyword, berlanjut ke optimasi on-page, schema, dan publikasi, lalu ditutup evaluasi di Google Search Console bersama mentor praktisi.
+            </p>
+            <p>Peserta onsite bekerja pada hari kerja, Senin sampai Jumat. Mahasiswa mengisi logbook harian, sedangkan siswa SMK mengisi jurnal PKL. Satu proyek SEO berjalan dalam 6 tahap berurutan, dan jadwal harian setiap peserta menyesuaikan tahap proyek yang sedang dikerjakan:</p>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li><strong class="text-white">Riset keyword:</strong> menentukan keyword utama dan keyword pendukung untuk satu halaman.</li>
+              <li><strong class="text-white">Pemetaan intent:</strong> mencocokkan keyword dengan jenis halaman, misalnya artikel panduan atau halaman program.</li>
+              <li><strong class="text-white">Optimasi on-page:</strong> menulis title tag, meta description, heading, dan internal link.</li>
+              <li><strong class="text-white">Open Graph dan schema:</strong> memasang pratinjau tautan dan data terstruktur.</li>
+              <li><strong class="text-white">Publikasi dan pengecekan indeks:</strong> menayangkan halaman, lalu memeriksa status indeks di Google Search Console.</li>
+              <li><strong class="text-white">Evaluasi performa:</strong> membaca klik, impresi, dan posisi rata-rata bersama mentor, lalu merevisi halaman.</li>
+            </ol>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Pendampingan Langsung dari Mentor Praktisi (Cocok untuk Pemula dari Nol)</h3>
+            <p>Mentor praktisi di Gemilang Training Malang membimbing peserta langkah demi langkah, sehingga pemula tidak memerlukan pengalaman SEO sebelumnya. Jalur PKL membimbing siswa SMK dari dasar sampai siswa bisa membuat website dan artikel SEO. Syarat utama pendaftaran adalah jurusan yang termasuk dalam cakupan program, bukan pengalaman memakai tools SEO.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Skema Kolaborasi Lintas Jurusan (Tech dan Digital Marketing)</h3>
+            <p>Gemilang Training Malang menerapkan skema silang 70:30 antara rumpun Tech (Web Dev) dan rumpun Digital Business dan Creative Media. Pada proyek SEO, peserta rumpun Tech menyiapkan sisi teknis website seperti struktur halaman dan schema, sedangkan peserta rumpun Digital Business dan Creative Media mengerjakan riset keyword, artikel, dan materi visual. Skema ini melatih kerja tim lintas keahlian seperti di industri digital.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Sistem Pelaksanaan Fleksibel (Onsite Malang, Hybrid, atau WFH)</h3>
+            <p>Magang dan PKL di Gemilang Training Malang bisa dilaksanakan onsite di Malang, hybrid, atau WFH, menyesuaikan ketentuan kampus atau sekolah dan kebutuhan proyek. Kantor operasional berada di <a href="/kontak" class="text-tc-accent underline hover:text-white">Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</a> dan buka Senin sampai Sabtu pukul 08.00 sampai 17.00 WIB.</p>
+          </section>
+
+          <section id="output-magang" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Output Apa yang Didapat Setelah Selesai Magang dan PKL SEO?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Lulusan magang SEO di Gemilang Training Malang membawa portofolio website live, sertifikat resmi kelulusan, serta lembar penilaian untuk konversi SKS atau nilai PKL.
+            </p>
+            <p>Output program magang dan PKL SEO di Gemilang Training Malang berupa karya yang bisa diverifikasi, bukan sekadar laporan kegiatan. Empat output utama yang dibawa peserta:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong class="text-white">Portofolio website live:</strong> website proyek yang dibangun dengan Astro, Bootstrap, atau Blogspot dan dioptimasi dengan 5 pilar SEO.</li>
+              <li><strong class="text-white">Sertifikat resmi kelulusan:</strong> bukti penyelesaian program dari Gemilang Training Malang.</li>
+              <li><strong class="text-white">Lembar penilaian:</strong> dokumen penilaian untuk konversi SKS kampus atau kelengkapan PKL sekolah.</li>
+              <li><strong class="text-white">Bukti karya nyata:</strong> hasil riset keyword, artikel SEO, dan laporan Google Search Console yang bisa ditunjukkan ke calon pemberi kerja.</li>
+            </ul>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Portofolio Website Live dan Proyek Optimasi Nyata</h3>
+            <p>Setiap peserta membawa portofolio berupa website live yang bisa dibuka calon pemberi kerja. Siti Nurhaliza, alumni PKL Bisnis Digital dan Pemasaran, menyebut riset keyword dan pembuatan artikel SEO dipakai pada kasus nyata sehingga portofolionya lebih berbobot. Halaman <a href="/portofolio" class="text-tc-accent underline hover:text-white">Portofolio Gemilang Training</a> memuat contoh proyek yang sudah selesai, termasuk sistem registrasi event QRIS Run di Kota Malang.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Sertifikat Resmi Kelulusan dan Lembar Penilaian untuk Konversi SKS</h3>
+            <p>Peserta yang menyelesaikan program dengan baik menerima sertifikat resmi kelulusan, lembar penilaian, dan bukti portofolio karya. Mahasiswa memakai lembar penilaian untuk konversi nilai SKS kampus, sedangkan siswa SMK mendapat monitoring guru dan pengisian jurnal PKL selama program berjalan.</p>
+          </section>
+
+          <section id="cara-daftar" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Cara Daftar Magang SEO di Malang untuk Mahasiswa dan SMK?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Pendaftaran magang SEO di Malang dilakukan lewat halaman Alur Pendaftaran Gemilang Training, dengan jalur terpisah untuk mahasiswa D3, D4, S1 dan siswa SMK.
+            </p>
+            <p>Gemilang Training Malang menyediakan 2 jalur pendaftaran dengan ketentuan berbeda. Pilih jalur sesuai jenjang pendidikan, atau lihat <a href="/program" class="text-tc-accent underline hover:text-white">semua program magang dan PKL di Malang</a> untuk membandingkan bidang lain.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Aspek</th>
+                    <th class="p-3 font-bold">Jalur mahasiswa (D3, D4, S1)</th>
+                    <th class="p-3 font-bold">Jalur PKL siswa SMK</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Jurusan</td>
+                    <td class="p-3">Informatika</td>
+                    <td class="p-3">RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, Multimedia</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Durasi</td>
+                    <td class="p-3">3 sampai 6 bulan, mengikuti kalender kampus</td>
+                    <td class="p-3">3 sampai 6 bulan, mengikuti kalender PKL sekolah</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Pencatatan</td>
+                    <td class="p-3">Logbook harian</td>
+                    <td class="p-3">Jurnal PKL dengan monitoring guru</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Penilaian</td>
+                    <td class="p-3">Lembar penilaian kampus dan konversi SKS</td>
+                    <td class="p-3">Penilaian dan sertifikat kelulusan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Halaman daftar</td>
+                    <td class="p-3"><a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent underline hover:text-white">Alur pendaftaran magang mahasiswa</a></td>
+                    <td class="p-3"><a href="/alur-pendaftaran?jalur=smk" class="text-tc-accent underline hover:text-white">Alur pendaftaran PKL siswa SMK</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Alur Pendaftaran Jalur Magang Mahasiswa (D3, D4, S1)</h3>
+            <p>Mahasiswa Informatika jenjang D3, D4, dan S1 mendaftar lewat halaman <a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent underline hover:text-white">alur pendaftaran magang mahasiswa</a>. Tahapannya mencakup pengajuan berkas hingga penerbitan surat balasan, dengan durasi 3 sampai 6 bulan yang disesuaikan kalender kampus. Rincian materi dan konversi SKS tersedia di halaman <a href="/program/magang-mahasiswa" class="text-tc-accent underline hover:text-white">Magang Mahasiswa</a>.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Alur Pendaftaran Jalur PKL Siswa SMK</h3>
+            <p>Siswa SMK dari 7 rumpun jurusan mendaftar lewat halaman <a href="/alur-pendaftaran?jalur=smk" class="text-tc-accent underline hover:text-white">alur pendaftaran PKL siswa SMK</a>. Sekolah dapat mengonfirmasi kuota dan ketentuan PKL melalui <a href="/kontak" class="text-tc-accent underline hover:text-white">admin Gemilang Training Malang</a>, sedangkan rincian program ada di halaman <a href="/program/pkl-smk" class="text-tc-accent underline hover:text-white">PKL Siswa SMK</a>.</p>
+            <p>Sebelum mendaftar ke tempat magang mana pun, baca <a href="/blog/tempat-magang-malang" class="text-tc-accent underline hover:text-white">checklist memilih tempat magang di Malang</a> dan <a href="/blog/ciri-tawaran-magang-perlu-diwaspadai" class="text-tc-accent underline hover:text-white">ciri tawaran magang yang mencurigakan</a> agar data pribadi tetap aman.</p>
+          </section>
+
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pertanyaan Umum (FAQ) Seputar Magang SEO di Malang</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Magang SEO belajar apa saja?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Magang SEO di Gemilang Training Malang mencakup 5 pilar praktik: riset keyword dan pemetaan search intent, SEO on-page (meta tag, heading, internal link), Open Graph, schema markup, serta pemantauan performa di Google Search Console. Semua pilar diterapkan pada website proyek nyata dengan bimbingan mentor praktisi.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah magang SEO di Malang cocok untuk pemula?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Cocok. Mentor praktisi di Gemilang Training Malang membimbing peserta langkah demi langkah, dan jalur PKL dirancang dari dasar sampai siswa bisa membuat website dan artikel SEO. Mahasiswa Informatika maupun siswa SMK yang belum pernah memegang tools SEO tetap bisa mengikuti program ini.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Output apa yang didapat setelah magang SEO?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Peserta mendapat portofolio website live, sertifikat resmi kelulusan, lembar penilaian, dan bukti karya nyata seperti hasil riset keyword serta laporan Google Search Console yang bisa ditunjukkan ke calon pemberi kerja. Mahasiswa memakai lembar penilaian untuk konversi SKS, sedangkan siswa SMK melengkapi jurnal PKL dengan monitoring guru.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Berapa lama durasi magang SEO di Malang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Durasi standar adalah 3 sampai 6 bulan, fleksibel mengikuti kalender kampus atau PKL sekolah. Mahasiswa mengisi logbook harian, sedangkan siswa SMK mengisi jurnal PKL. Pelaksanaan bisa onsite Malang, hybrid, atau WFH sesuai ketentuan institusi pendidikan dan kebutuhan proyek yang dikerjakan.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah siswa SMK bisa PKL SEO di Gemilang Training Malang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Bisa. PKL SEO terbuka untuk siswa SMK jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia. Siswa dibimbing dari dasar, berkolaborasi dengan tim lintas jurusan, dan mengisi jurnal PKL dengan pendampingan monitoring guru selama 3 sampai 6 bulan.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bagaimana cara daftar magang SEO di Malang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Pilih jalur mahasiswa atau jalur SMK di halaman <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">Alur Pendaftaran</a> Gemilang Training Malang. Tahapannya meliputi pengajuan berkas sampai penerbitan surat balasan. Calon peserta juga bisa berkonsultasi soal kuota dengan admin lewat halaman <a href="/kontak" class="text-tc-accent underline hover:text-white">Kontak</a> atau WhatsApp. Durasi dan ketentuan menyesuaikan kalender kampus atau sekolah.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Di mana lokasi dan jam operasional Gemilang Training Malang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Gemilang Training Malang berlokasi di Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141, dengan jam operasional Senin sampai Sabtu pukul 08.00 sampai 17.00 WIB.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <section id="kesimpulan" class="space-y-4 scroll-mt-24 pt-4 border-t border-tc-border">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesimpulan</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Magang SEO Malang di Gemilang Training memberi pengalaman optimasi website nyata, portofolio, dan sertifikat. Pilih jalur mahasiswa atau SMK, lalu daftar sekarang.
+            </p>
+            <p>Program magang SEO di Gemilang Training Malang menggabungkan 5 pilar praktik, mentor praktisi, dan proyek website nyata selama 3 sampai 6 bulan. Pemula tetap bisa mengikuti karena bimbingan dimulai dari dasar. Pilih jalur yang sesuai, lalu ajukan pendaftaran.</p>
+            <p>Daftar sekarang lewat <a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent underline hover:text-white">alur pendaftaran magang mahasiswa</a> atau <a href="/alur-pendaftaran?jalur=smk" class="text-tc-accent underline hover:text-white">alur pendaftaran PKL siswa SMK</a>. Ingin memastikan kuota lebih dulu? <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20kuota%20Magang%20SEO%20Malang." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">Konsultasi kuota lewat WhatsApp admin</a> atau <a href="/kontak" class="text-tc-accent underline hover:text-white">hubungi admin Gemilang Training Malang</a>.</p>
+            <p>Alamat kantor: <a href="/kontak" class="text-tc-accent underline hover:text-white">Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</a>.</p>
+
+            <div class="bg-tc-card/50 border border-tc-border rounded-xl p-4 text-xs text-tc-muted space-y-2 mt-6">
+              <p><strong class="text-white">Author Bio — Yolanda Deva Apriliana Putri (YUL):</strong> Tim penulis Gemilang Training Malang menyusun panduan magang dan PKL berbasis praktik proyek nyata di bidang pembuatan website, optimasi SEO, dan konten digital. Isi artikel ini mengacu pada data program resmi di halaman Gemilang Training Malang dan dokumentasi Google Search Central.</p>
+              <p><strong class="text-white">Referensi:</strong> Google Search Central SEO Starter Guide, Google Structured Data Documentation, dan kurikulum resmi Gemilang Training Malang.</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-tc-accent">Praktik 5 Pilar SEO Nyata</span>
+          <h3 class="text-lg font-extrabold text-white">Magang &amp; PKL SEO Malang</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Kuasai riset keyword, SEO on-page, Open Graph, JSON-LD schema, dan Google Search Console pada proyek website live.
+          </p>
+          <div class="space-y-2.5 pt-2">
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20kuota%20Magang%20SEO%20Malang." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full bg-tc-accent hover:bg-tc-accent-hover text-slate-950 font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all"
+            >
+              Konsultasi Kuota via WhatsApp
+            </a>
+            <a 
+              href="/program/optimasi-seo" 
+              class="w-full bg-tc-bg hover:border-tc-accent text-white border border-tc-border font-semibold text-xs py-3 px-4 rounded-xl flex items-center justify-center transition-all"
+            >
+              Detail Kurikulum Optimasi SEO
+            </a>
+          </div>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-sm font-extrabold text-white uppercase tracking-wider border-b border-tc-border/60 pb-3">
+            Artikel Rekomendasi
+          </h3>
+          <div class="space-y-4">
+            <a href="/blog/git-dan-github-untuk-pemula" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/fokus-mengetik-perintah-Git.webp" 
+                alt="Ilustrasi git dan github untuk pemula, siswa SMK belajar version control sebelum magang web developer di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">24 Nov 2026 • 21:00 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Git dan GitHub untuk Pemula, Siap Magang Web Developer
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/magang-content-writer-seo" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/peserta-magang-content-writer-seo-struktur-heading.webp" 
+                alt="Peserta magang content writer SEO menyusun struktur heading artikel di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">18 Nov 2026 • 15:09 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Content Writer SEO Malang Tugas serta Skill
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/magang-mandiri-informatika-konversi-sks" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/Mahasiswa-mengisi-Formulir-di-Ruang-Prodi.webp" 
+                alt="Mahasiswa mengisi formulir magang mandiri informatika konversi SKS di ruang prodi" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">18 Nov 2026 • 11:24 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Mandiri Informatika Konversi SKS, Apa Bisa?
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>

@@ -1,0 +1,665 @@
+---
+// src/pages/blog/git-dan-github-untuk-pemula.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Git dan GitHub untuk Pemula, Siap Magang Web Developer";
+const pageDesc = "Git dan GitHub untuk pemula lengkap dengan repository, commit, branch, dan pull request. Siap magang web developer? Daftar kini di Info Magang Malang.";
+const pageUrl = "https://infomagangmalang.web.id/blog/git-dan-github-untuk-pemula";
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/fokus-mengetik-perintah-Git.webp";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://infomagangmalang.web.id/blog/git-dan-github-untuk-pemula#article",
+      "headline": "Git dan GitHub untuk Pemula, Siap Magang Web Developer",
+      "description": "Git dan GitHub untuk pemula lengkap dengan repository, commit, branch, dan pull request. Siap magang web developer? Daftar kini di Info Magang Malang.",
+      "inLanguage": "id-ID",
+      "datePublished": "2026-11-24T21:00:00+07:00",
+      "dateModified": "2026-11-24T21:00:00+07:00",
+      "image": "https://infomagangmalang.web.id/assets/img/fokus-mengetik-perintah-Git.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Yolanda Deva Apriliana Putri (YOL)"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Gemilang Training (Info Magang Malang)",
+        "url": "https://infomagangmalang.web.id/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/logo.webp"
+        }
+      },
+      "mainEntityOfPage": "https://infomagangmalang.web.id/blog/git-dan-github-untuk-pemula",
+      "keywords": "git dan github untuk pemula, belajar git dasar, perbedaan git dan github, version control system, repository github, fungsi pull request, commit dan branch git, persiapan magang web developer, magang web developer malang"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa itu Git dan GitHub?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Git adalah version control system yang berjalan di komputer lokal untuk mencatat riwayat perubahan kode. GitHub adalah platform cloud yang menyimpan repository Git dan menyediakan fitur kolaborasi seperti pull request, fork, dan code review. Git bisa dipakai tanpa GitHub, tetapi GitHub membutuhkan Git untuk mengelola riwayat kodenya."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kenapa Git dan GitHub dipakai saat magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Git dan GitHub dipakai saat magang karena tim web developer perlu mengerjakan proyek yang sama secara bersamaan tanpa saling menimpa kode. Git menyimpan riwayat perubahan, sedangkan GitHub menyediakan pull request agar mentor bisa mereview kode sebelum digabung ke proyek utama. Alur ini berlaku bagi frontend maupun backend developer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa yang perlu dikuasai dulu sebelum mulai magang web developer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kuasai lima hal: instalasi Git dan akun GitHub, repository dengan README, commit berpesan jelas, branch yang dibuat lalu digabung, serta pull request. Dasar HTML, CSS, dan JavaScript tetap menjadi fondasi utama, sedangkan Git memastikan kode tersebut bisa dikerjakan bersama tim magang."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah pemula harus hafal semua perintah Git sebelum magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pemula tidak perlu menghafal semua perintah Git. Cukup kuasai perintah inti seperti git clone, git add, git commit, git switch, git push, dan git pull, lalu pahami alur dari branch sampai pull request. Konvensi penamaan branch dan pesan commit berbeda di setiap tim, sehingga alur dasar lebih penting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bagaimana cara mendaftar magang web developer di Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mahasiswa Informatika dan siswa SMK mendaftar lewat halaman alur pendaftaran Info Magang Malang sesuai jalur masing-masing, lalu berkoordinasi dengan admin melalui WhatsApp. Durasi program berkisar 3 sampai 6 bulan dengan sistem WFH, hybrid, atau onsite di Malang, mengikuti ketentuan sekolah atau kampus."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "Cara Latihan Mandiri Git dan GitHub untuk Pemula Sebelum Magang Web Developer",
+      "description": "Tiga tahap latihan mandiri Git dan GitHub untuk pemula: instalasi, repository pertama, dan simulasi pull request.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Instalasi Git dan membuat akun GitHub",
+          "text": "Unduh Git dari git-scm.com, cek versi dengan git --version, atur user.name dan user.email, lalu buat akun GitHub."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Membuat repository pertama dan push proyek sederhana",
+          "text": "Buat repository dengan README, lisensi MIT, dan .gitignore, clone ke komputer, tambahkan proyek HTML dan CSS, lalu commit dan push ke branch main."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Simulasi branching dan pull request mandiri",
+          "text": "Buat branch fitur, commit perubahan, push branch, buka pull request ke main, tulis deskripsi, lalu merge dan hapus branch."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda",
+          "item": "https://infomagangmalang.web.id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://infomagangmalang.web.id/blog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Git dan GitHub untuk Pemula, Siap Magang Web Developer",
+          "item": "https://infomagangmalang.web.id/blog/git-dan-github-untuk-pemula"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  image="/assets/img/fokus-mengetik-perintah-Git.webp"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta name="keywords" content="git dan github untuk pemula, belajar git dasar, perbedaan git dan github, version control system, repository github, fungsi pull request, commit dan branch git, persiapan magang web developer, magang web developer malang" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:type" content="article" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  </head>
+
+  <article class="py-10 md:py-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      
+      <!-- KOLOM UTAMA ARTIKEL -->
+      <div class="lg:col-span-8 space-y-8">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs">
+            <span class="bg-tc-card border border-tc-border text-tc-accent font-semibold px-3 py-1 rounded-full">
+              Panduan Teknis
+            </span>
+            <span class="text-tc-muted font-mono">24 Nov 2026 • 21:00 WIB</span>
+            <span class="text-tc-muted">• Oleh <strong class="text-white">YOL (Tim Konten Info Magang Malang)</strong></span>
+          </div>
+
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight">
+            Git dan GitHub untuk Pemula, Siap Magang Web Developer
+          </h1>
+
+          <p class="text-tc-muted text-base md:text-lg leading-relaxed border-l-4 border-tc-accent pl-4 bg-tc-card/40 py-3 pr-4 rounded-r-xl">
+            Git dan GitHub untuk pemula adalah dasar mengelola versi kode (Git) dan berkolaborasi online (GitHub), dua skill yang dipakai tim web developer saat magang.
+          </p>
+        </header>
+
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-xl">
+          <img 
+            src="/assets/img/fokus-mengetik-perintah-Git.webp" 
+            alt="Ilustrasi git dan github untuk pemula, siswa SMK belajar version control sebelum magang web developer di Malang" 
+            class="w-full h-auto object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+            Ilustrasi git dan github untuk pemula, peserta belajar version control sebelum magang web developer di Malang
+          </figcaption>
+        </figure>
+
+        <!-- DAFTAR ISI (TOC) -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-5">
+          <button 
+            type="button" 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between text-left font-bold text-white text-sm md:text-base cursor-pointer"
+          >
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-tc-accent text-lg font-mono">−</span>
+          </button>
+          <ul id="toc-content" class="mt-4 space-y-2 text-xs md:text-sm text-tc-muted border-t border-tc-border/60 pt-3">
+            <li><a href="#apa-itu-vcs" class="hover:text-tc-accent transition-colors">1. Apa Itu Version Control dan Kenapa Dipakai Saat Magang?</a></li>
+            <li><a href="#perbedaan-git-github" class="hover:text-tc-accent transition-colors">2. Apa Perbedaan Git dan GitHub yang Wajib Dipahami Pemula?</a></li>
+            <li><a href="#istilah-dasar" class="hover:text-tc-accent transition-colors">3. Apa Saja Istilah Dasar Git dan GitHub yang Perlu Dikuasai Dulu?</a></li>
+            <li><a href="#alur-kerja-tim" class="hover:text-tc-accent transition-colors">4. Bagaimana Alur Kerja Tim Web Developer Saat Magang?</a></li>
+            <li><a href="#latihan-mandiri" class="hover:text-tc-accent transition-colors">5. Panduan Latihan Mandiri Git dan GitHub untuk Pemula</a></li>
+            <li><a href="#faq" class="hover:text-tc-accent transition-colors">6. Pertanyaan Umum tentang Git dan GitHub untuk Pemula</a></li>
+            <li><a href="#mulai-magang" class="hover:text-tc-accent transition-colors">7. Siap Praktik Langsung? Mulai Perjalanan Magang Web Developer Kamu</a></li>
+          </ul>
+        </div>
+
+        <!-- KONTEN ARTIKEL -->
+        <div class="space-y-8 text-slate-200 text-sm md:text-base leading-relaxed">
+          
+          <div class="space-y-4">
+            <p>Git adalah version control system yang mencatat setiap perubahan kode di komputer, sedangkan GitHub adalah platform cloud tempat repository Git disimpan, direview, dan dikerjakan bersama.</p>
+            <p>Siswa SMK jurusan RPL, PPLG, dan TKJ serta mahasiswa IT yang menguasai Git dan GitHub lebih siap saat mendaftar magang web developer di Malang. Panduan ini merangkum istilah dasar, alur kerja tim, dan latihan mandiri sebagai persiapan magang web developer.</p>
+          </div>
+
+          <section id="apa-itu-vcs" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu Version Control dan Kenapa Dipakai Saat Magang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Version control adalah sistem yang merekam setiap perubahan kode beserta waktu dan penulisnya, sehingga tim web developer bisa bekerja bersamaan dan kembali ke versi lama.
+            </p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Pengertian Version Control System (VCS)</h3>
+            <p>Version control system (VCS) bekerja seperti fitur riwayat versi di Google Docs, tetapi untuk ratusan file kode sekaligus. Setiap perubahan tersimpan sebagai catatan berisi isi perubahan, waktu, dan nama penulisnya. Jika sebuah pembaruan merusak tampilan website, developer cukup kembali ke versi yang masih berfungsi.</p>
+            <p>Git adalah VCS yang paling banyak dipakai developer. Git bersifat distributed, artinya setiap developer menyimpan salinan lengkap riwayat proyek di komputernya sendiri, sehingga pekerjaan tetap bisa berjalan tanpa koneksi internet.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Alasan Perusahaan Magang Mengutamakan Skill Git (Termasuk Frontend Developer)</h3>
+            <p>Tim web developer di tempat magang mengerjakan banyak fitur pada waktu yang sama, misalnya navbar, formulir kontak, dan halaman produk. Tanpa version control, dua orang yang mengedit file yang sama bisa saling menimpa pekerjaan. Tiga alasan utama Git dipakai di tempat magang:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li><strong class="text-white">Riwayat perubahan:</strong> mentor bisa melihat siapa mengubah apa, kapan, dan mengapa.</li>
+              <li><strong class="text-white">Kerja paralel:</strong> setiap peserta mengerjakan tugas di branch sendiri tanpa mengganggu kode utama.</li>
+              <li><strong class="text-white">Review sebelum digabung:</strong> kode dibaca dulu lewat pull request sebelum masuk ke proyek utama.</li>
+            </ul>
+            <p>Ulasan <a href="https://www.idntimes.com/life/career/jobdesk-frontend-developer-c1c2-01-5p5zc-bpwn7l" target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">IDN Times tentang jobdesk frontend developer</a> menyebut pemahaman version control seperti Git sebagai bekal yang sangat membantu, sehingga skill ini relevan juga bagi frontend developer yang fokus pada tampilan. Peserta <a href="/" class="text-tc-accent underline hover:text-white">Info Magang Malang</a> mengerjakan proyek website nyata dengan Astro, Bootstrap, dan Blogspot, sehingga kebiasaan merapikan versi kode langsung terpakai.</p>
+          </section>
+
+          <div class="bg-tc-card/80 border-l-4 border-tc-accent p-4 rounded-r-xl">
+            <p class="text-xs font-bold uppercase tracking-wider text-tc-accent mb-1">Baca Juga</p>
+            <a href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula" class="text-sm md:text-base font-bold text-white hover:text-tc-accent transition-colors">
+              Siap Magang Jadi Web Developer Walau Masih Pemula &rarr;
+            </a>
+          </div>
+
+          <section id="perbedaan-git-github" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Perbedaan Git dan GitHub yang Wajib Dipahami Pemula?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Git adalah tool version control yang berjalan di komputer lokal, sedangkan GitHub adalah platform cloud untuk menyimpan repository Git dan berkolaborasi dengan tim.
+            </p>
+            <p>Perbedaan Git dan GitHub paling mudah dipahami lewat analogi. Git adalah buku catatan pribadi dengan riwayat revisi di meja kerja, sedangkan GitHub adalah lemari arsip bersama di kantor tempat seluruh anggota tim menyimpan dan membaca catatan tersebut.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Aspek</th>
+                    <th class="p-3 font-bold">Git</th>
+                    <th class="p-3 font-bold">GitHub</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Jenis</td>
+                    <td class="p-3">Software version control</td>
+                    <td class="p-3">Platform hosting dan kolaborasi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Tempat kerja</td>
+                    <td class="p-3">Komputer lokal</td>
+                    <td class="p-3">Cloud (website)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Perlu internet</td>
+                    <td class="p-3">Tidak untuk commit dan branch lokal</td>
+                    <td class="p-3">Ya</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Fungsi utama</td>
+                    <td class="p-3">Mencatat commit, membuat branch, menggabungkan kode</td>
+                    <td class="p-3">Menyimpan repository online, pull request, fork, code review</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-card shadow-lg">
+              <img 
+                src="/assets/img/Perbedaan-Git-Lokal-dan-GitHub-Cloud.webp" 
+                alt="Diagram perbedaan Git sebagai tool lokal dan GitHub sebagai platform cloud, materi git dan github untuk pemula" 
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <figcaption class="text-xs text-tc-muted px-4 py-3 border-t border-tc-border/60">
+                Perbandingan alur kerja Git sebagai tool lokal dan GitHub sebagai platform cloud dalam proyek tim
+              </figcaption>
+            </figure>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Fungsi Git sebagai Tool Lokal</h3>
+            <p>Git dipasang di komputer dan dijalankan lewat terminal atau editor seperti VS Code. Perintah dasarnya meliputi <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git init</code> untuk memulai pelacakan, <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git add</code> dan <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git commit</code> untuk menyimpan perubahan, serta <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git branch</code> untuk membuat jalur kerja baru. Git bisa dipakai penuh tanpa GitHub.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Fungsi GitHub sebagai Platform Kolaborasi Cloud</h3>
+            <p>GitHub menyimpan repository Git secara online sehingga bisa diakses dari perangkat mana pun dan dikerjakan beberapa orang. Fitur kolaborasinya meliputi pull request, fork, issue, dan GitHub Pages untuk hosting website statis.</p>
+            <p>GitHub bukan satu-satunya pilihan, karena GitLab dan Bitbucket juga menyediakan hosting repository Git. Profil GitHub yang aktif juga berfungsi sebagai portofolio kode yang bisa dicek mentor.</p>
+          </section>
+
+          <section id="istilah-dasar" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Istilah Dasar Git dan GitHub yang Perlu Dikuasai Dulu?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Empat istilah dasar yang wajib dikuasai pemula adalah repository, commit, branch, dan pull request, karena keempatnya muncul dalam setiap alur kerja tim web developer.
+            </p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Repository dan Komponen Dasarnya (README, Lisensi, dan .gitignore)</h3>
+            <p>Repository adalah ruang penyimpanan file proyek yang menyimpan seluruh riwayat perubahannya. <a href="https://github.blog/developer-skills/github/beginners-guide-to-github-repositories-how-to-create-your-first-repo/" target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">GitHub Blog (2024)</a> menjelaskan bahwa repository GitHub yang baik memiliki tiga komponen dasar berikut.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">File</th>
+                    <th class="p-3 font-bold">Fungsi</th>
+                    <th class="p-3 font-bold">Contoh isi</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">README</td>
+                    <td class="p-3">Menjelaskan tujuan proyek, cara memakai, dan tempat bertanya</td>
+                    <td class="p-3">Judul proyek, cara menjalankan website</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Lisensi</td>
+                    <td class="p-3">Menentukan hak orang lain dalam memakai kode</td>
+                    <td class="p-3">MIT License (permissive)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">.gitignore</td>
+                    <td class="p-3">Daftar file yang tidak dilacak Git</td>
+                    <td class="p-3">node_modules, .env berisi kunci API</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>Ketiga file ini membuat repository GitHub terbaca, legal, dan aman. README membantu mentor memahami proyek dalam hitungan menit, lisensi mencegah kebingungan hak pakai, dan <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">.gitignore</code> mencegah file rahasia seperti <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">.env</code> ikut terunggah ke GitHub.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Commit dan Branch Git (Berdasarkan Dokumentasi Resmi Git)</h3>
+            <p>Menurut <a href="https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell" target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">Pro Git di git-scm.com</a>, commit adalah objek yang menyimpan penunjuk ke snapshot file yang sudah di-stage, nama dan email penulis, pesan commit, serta penunjuk ke commit sebelumnya. Setiap commit menjadi titik simpan yang bisa dikunjungi kembali.</p>
+            <p>Branch adalah penunjuk ringan yang bergerak dan mengarah ke satu commit. Pro Git menggambarkan branching sebagai cara menyimpang dari jalur utama pengembangan tanpa mengganggu jalur tersebut. Karena sebuah branch hanyalah file berisi checksum SHA-1 sepanjang 40 karakter, membuat dan menghapus branch sangat cepat. Pesan commit yang jelas membuat riwayat mudah dibaca:</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Pesan commit kurang baik</th>
+                    <th class="p-3 font-bold">Pesan commit baik</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 text-rose-300 font-mono">update</td>
+                    <td class="p-3 text-emerald-300">Tambah navbar responsif pada halaman beranda</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 text-rose-300 font-mono">fix bug</td>
+                    <td class="p-3 text-emerald-300">Perbaiki validasi email pada formulir kontak</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 text-rose-300 font-mono">revisi lagi</td>
+                    <td class="p-3 text-emerald-300">Ubah warna tombol daftar sesuai desain tampilan</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Pull Request dan Fork</h3>
+            <p>Pull request adalah usulan untuk menggabungkan sekumpulan perubahan dari satu branch ke branch lain, lengkap dengan ruang diskusi bagi rekan tim untuk mereview. Fungsi pull request yang paling penting adalah menahan kode agar tidak langsung masuk ke branch utama sebelum dibaca anggota tim.</p>
+            <p>Pull request juga bisa berasal dari fork, yaitu salinan repository milik orang lain di akun GitHub sendiri. <a href="https://github.blog/developer-skills/github/github-for-beginners-your-roadmap-to-mastering-the-github-essentials/" target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">GitHub Blog</a> menyarankan pull request berukuran kecil karena lebih cepat direview dan lebih kecil peluang bug-nya.</p>
+          </section>
+
+          <section id="alur-kerja-tim" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Alur Kerja Tim Web Developer Saat Magang?</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Alur kerja tim web developer mengikuti GitHub flow dengan enam langkah: clone, buat branch, ubah kode, commit, push, lalu buka pull request untuk di-review.
+            </p>
+            <p>GitHub flow adalah pola berulang untuk menambahkan pekerjaan ke proyek bersama. Aturan penamaan branch dan format pesan commit berbeda di setiap tim, tetapi kerangka enam langkah ini berlaku di hampir semua proyek web.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Membuat Branch Fitur Baru</h3>
+            <p>Developer memulai dari branch utama yang sudah diperbarui, lalu membuat branch baru untuk satu tugas. Nama branch menjelaskan isi tugas, misalnya <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">fitur/navbar-responsif</code>.</p>
+            <pre class="bg-slate-950 border border-tc-border rounded-xl p-4 text-xs md:text-sm font-mono text-emerald-300 overflow-x-auto"><code>git switch main
+git pull origin main
+git switch -c fitur/navbar-responsif</code></pre>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Melakukan Commit Perubahan Kode</h3>
+            <p>Setiap potongan pekerjaan yang selesai dicatat sebagai satu commit dengan pesan yang menjelaskan hasilnya. Commit kecil dan fokus memudahkan mentor menelusuri perubahan.</p>
+            <pre class="bg-slate-950 border border-tc-border rounded-xl p-4 text-xs md:text-sm font-mono text-emerald-300 overflow-x-auto"><code>git add .
+git commit -m "Tambah navbar responsif pada halaman beranda"</code></pre>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Mengajukan Pull Request untuk Code Review</h3>
+            <p>Branch dikirim ke GitHub dengan <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git push -u origin fitur/navbar-responsif</code>. Di GitHub, developer membuka pull request, menulis deskripsi perubahan, lalu menunggu komentar reviewer. Setelah revisi disetujui, pull request di-merge ke branch utama. Menulis kata kunci seperti <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">Closes #42</code> pada deskripsi otomatis menutup issue terkait saat pull request digabung.</p>
+            <p>Jika dua branch mengubah baris yang sama, GitHub menandai merge conflict. Developer memilih isi yang dipertahankan, menandainya selesai, lalu melanjutkan merge.</p>
+          </section>
+
+          <section id="latihan-mandiri" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Panduan Latihan Mandiri Git dan GitHub untuk Pemula Sebelum Mendaftar Magang</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Latihan mandiri Git dan GitHub untuk pemula terdiri dari tiga tahap: instal Git dan buat akun, push repository pertama, lalu simulasikan branch dan pull request.
+            </p>
+            <p>Belajar Git dasar paling efektif lewat praktik langsung pada proyek kecil, misalnya halaman portofolio HTML dan CSS. Tiga tahap berikut bisa diselesaikan dalam beberapa sesi singkat.</p>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Instalasi Git dan Membuat Akun GitHub</h3>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Unduh Git dari situs resmi <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">git-scm.com</a>, lalu jalankan <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git --version</code> untuk memastikan instalasi berhasil.</li>
+              <li>Atur identitas penulis commit dengan perintah berikut:</li>
+            </ol>
+            <pre class="bg-slate-950 border border-tc-border rounded-xl p-4 text-xs md:text-sm font-mono text-emerald-300 overflow-x-auto"><code>git --version
+git config --global user.name "Nama Kamu"
+git config --global user.email "emailkamu@contoh.com"</code></pre>
+            <ol start="3" class="list-decimal pl-6 space-y-2">
+              <li>Buat akun GitHub dengan username yang profesional, karena nama tersebut tampil di profil dan di setiap repository.</li>
+            </ol>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Membuat Repository Pertama dan Push Proyek Sederhana</h3>
+            <p>Buat repository baru di GitHub bernama <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">portofolio-html</code> dengan README, lisensi MIT, dan <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">.gitignore</code>. Lalu salin ke komputer dan unggah proyek sederhana:</p>
+            <pre class="bg-slate-950 border border-tc-border rounded-xl p-4 text-xs md:text-sm font-mono text-emerald-300 overflow-x-auto"><code>git clone https://github.com/username-kamu/portofolio-html.git
+cd portofolio-html
+# buat file index.html dan style.css di folder ini
+git add .
+git commit -m "Tambah halaman beranda portofolio"
+git push origin main</code></pre>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Simulasi Branching dan Pull Request Mandiri</h3>
+            <p>Latih alur tim dengan menjadi pembuat sekaligus reviewer sendiri:</p>
+            <ol class="list-decimal pl-6 space-y-2">
+              <li>Buat branch baru dengan <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git switch -c fitur/ubah-footer</code>, ubah isi footer, lalu commit.</li>
+              <li>Kirim branch dengan <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">git push -u origin fitur/ubah-footer</code>, kemudian buka pull request ke <code class="text-tc-accent bg-tc-card px-1.5 py-0.5 rounded">main</code> di GitHub.</li>
+              <li>Tulis deskripsi perubahan, baca hasil perbandingan kode, lalu merge dan hapus branch.</li>
+              <li>Ulangi dengan mengubah baris yang sama di dua branch untuk melatih penyelesaian merge conflict.</li>
+            </ol>
+
+            <h3 class="text-lg md:text-xl font-bold text-white pt-2">Checklist Kesiapan Git Sebelum Mendaftar Magang</h3>
+            <p>Skala Git-Ready 5 Level adalah kerangka kesiapan yang disusun tim konten Info Magang Malang untuk mengukur persiapan Git sebelum magang web developer. Kerangka ini panduan praktis berbasis GitHub flow, bukan standar industri.</p>
+
+            <div class="overflow-x-auto rounded-xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm">
+                <thead>
+                  <tr class="bg-tc-card text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Level</th>
+                    <th class="p-3 font-bold">Target latihan</th>
+                    <th class="p-3 font-bold">Tanda siap</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60 bg-tc-bg/40">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Level 1 Setup</td>
+                    <td class="p-3">Git terpasang dan akun GitHub aktif</td>
+                    <td class="p-3"><code class="text-tc-accent">git --version</code> menampilkan versi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Level 2 Repository</td>
+                    <td class="p-3">Satu repository dengan README, lisensi, dan .gitignore</td>
+                    <td class="p-3">Repository publik bisa dibuka mentor</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Level 3 Commit</td>
+                    <td class="p-3">Minimal lima commit dengan pesan jelas</td>
+                    <td class="p-3"><code class="text-tc-accent">git log</code> menampilkan riwayat rapi</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Level 4 Branch</td>
+                    <td class="p-3">Satu branch fitur dibuat dan digabung</td>
+                    <td class="p-3">Riwayat branch tampil di GitHub</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">Level 5 Pull request</td>
+                    <td class="p-3">Satu pull request dengan deskripsi dibuka dan di-merge</td>
+                    <td class="p-3">Tercatat di tab Pull requests</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Level 3 menjadi batas minimal yang disarankan sebelum mendaftar, sedangkan Level 5 membuat alur kerja tim terasa familiar sejak hari pertama magang.</p>
+          </section>
+
+          <section id="faq" class="space-y-4 scroll-mt-24">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Pertanyaan Umum tentang Git dan GitHub untuk Pemula</h2>
+            <div class="space-y-3">
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group" open>
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa itu Git dan GitHub?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Git adalah version control system yang berjalan di komputer lokal untuk mencatat riwayat perubahan kode. GitHub adalah platform cloud yang menyimpan repository Git dan menyediakan fitur kolaborasi seperti pull request, fork, dan code review. Git bisa dipakai tanpa GitHub, tetapi GitHub membutuhkan Git untuk mengelola riwayat kodenya.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Kenapa Git dan GitHub dipakai saat magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Git dan GitHub dipakai saat magang karena tim web developer perlu mengerjakan proyek yang sama secara bersamaan tanpa saling menimpa kode. Git menyimpan riwayat perubahan, sedangkan GitHub menyediakan pull request agar mentor bisa mereview kode sebelum digabung ke proyek utama. Alur ini berlaku bagi frontend maupun backend developer.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apa yang perlu dikuasai dulu sebelum mulai magang web developer?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Kuasai lima hal: instalasi Git dan akun GitHub, repository dengan README, commit berpesan jelas, branch yang dibuat lalu digabung, serta pull request. Dasar HTML, CSS, dan JavaScript tetap menjadi fondasi utama, sedangkan Git memastikan kode tersebut bisa dikerjakan bersama tim magang.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Apakah pemula harus hafal semua perintah Git sebelum magang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Pemula tidak perlu menghafal semua perintah Git. Cukup kuasai perintah inti seperti git clone, git add, git commit, git switch, git push, dan git pull, lalu pahami alur dari branch sampai pull request. Konvensi penamaan branch dan pesan commit berbeda di setiap tim, sehingga alur dasar lebih penting.
+                </p>
+              </details>
+              <details class="bg-tc-card border border-tc-border rounded-xl p-4 group">
+                <summary class="font-bold text-white cursor-pointer flex justify-between items-center">
+                  <span>Bagaimana cara mendaftar magang web developer di Malang?</span>
+                  <span class="text-tc-accent">+</span>
+                </summary>
+                <p class="mt-3 text-tc-muted text-sm">
+                  Mahasiswa Informatika dan siswa SMK mendaftar lewat halaman <a href="/alur-pendaftaran" class="text-tc-accent underline hover:text-white">alur pendaftaran Info Magang Malang</a> sesuai jalur masing-masing, lalu berkoordinasi dengan admin melalui WhatsApp. Durasi program berkisar 3 sampai 6 bulan dengan sistem WFH, hybrid, atau onsite di Malang, mengikuti ketentuan sekolah atau kampus.
+                </p>
+              </details>
+            </div>
+          </section>
+
+          <section id="mulai-magang" class="space-y-4 scroll-mt-24 pt-4 border-t border-tc-border">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Siap Praktik Langsung? Mulai Perjalanan Magang Web Developer Kamu</h2>
+            <p class="font-medium text-tc-accent bg-tc-card/60 border border-tc-border p-4 rounded-xl">
+              Info Magang Malang membuka magang mahasiswa Informatika dan PKL siswa SMK berbasis proyek nyata di Mojolangu, Kota Malang, dengan mentor praktisi dan sertifikat resmi.
+            </p>
+            <p>Setelah Level 3 pada Skala Git-Ready tercapai, langkah berikutnya adalah menguji skill di proyek nyata. <a href="/" class="text-tc-accent underline hover:text-white">Info Magang Malang</a> di bawah naungan Gemilang Training menyediakan Magang Mahasiswa untuk jurusan Informatika dengan durasi 3 sampai 6 bulan dan konversi nilai SKS, serta PKL Siswa SMK untuk jurusan RPL, TKJ, Digital Marketing, dan bidang lain.</p>
+            <p>Peserta dibimbing mentor praktisi, mengisi logbook atau jurnal PKL, dan membawa pulang portofolio website live. <a href="/portofolio" class="text-tc-accent underline hover:text-white">Portofolio karya</a> kami memuat proyek seperti sistem registrasi digital untuk event QRIS Run di Kota Malang.</p>
+            <p>Belum yakin memilih tempat? Pelajari <a href="/blog/tempat-magang-malang" class="text-tc-accent underline hover:text-white">tempat magang di Malang dan cara memilihnya</a>. Langkah mendaftar yang bisa dilakukan sekarang:</p>
+            <ul class="list-disc pl-6 space-y-2">
+              <li>Cek daftar program dan materinya di halaman <a href="/program" class="text-tc-accent underline hover:text-white">program magang Web Developer</a>.</li>
+              <li>Mahasiswa: pelajari <a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent underline hover:text-white">alur pendaftaran magang mahasiswa</a>.</li>
+              <li>Siswa SMK: pelajari <a href="/alur-pendaftaran?jalur=smk" class="text-tc-accent underline hover:text-white">alur pendaftaran PKL/magang SMK</a>.</li>
+              <li>Ingin bertanya dulu? <a href="/kontak" class="text-tc-accent underline hover:text-white">Hubungi tim kami</a> atau <a href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20magang%20web%20developer." target="_blank" rel="noopener noreferrer" class="text-tc-accent underline hover:text-white">konsultasi pendaftaran magang via WhatsApp</a>.</li>
+            </ul>
+            <p>Kunjungi kantor kami di <a href="/kontak" class="text-tc-accent underline hover:text-white">Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141</a>.</p>
+
+            <div class="bg-tc-card/50 border border-tc-border rounded-xl p-4 text-xs text-tc-muted space-y-2 mt-6">
+              <p><strong class="text-white">Tentang Penulis — YOL (Tim Konten Info Magang Malang):</strong> Menulis panduan SEO untuk siswa SMK dan mahasiswa yang menyiapkan magang dan PKL di Malang. Setiap penjelasan teknis dirujuk ke dokumentasi resmi seperti git-scm.com dan GitHub Blog.</p>
+              <p><strong class="text-white">Referensi:</strong> Pro Git (git-scm.com), GitHub Blog (Beginners Guide to GitHub Repositories & GitHub Flow), serta ulasan jobdesk frontend developer IDN Times.</p>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- SIDEBAR STICKY -->
+      <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
+        
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <span class="text-xs font-bold uppercase tracking-wider text-tc-accent">Siap Praktik Git & Web Dev?</span>
+          <h3 class="text-lg font-extrabold text-white">Gabung Magang Web Developer di Malang</h3>
+          <p class="text-xs text-tc-muted leading-relaxed">
+            Latih kolaborasi Git, Astro, Bootstrap 5, dan SEO pada proyek nyata bersama mentor praktisi di Gemilang Training.
+          </p>
+          <div class="space-y-2.5 pt-2">
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20magang%20web%20developer." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="w-full bg-tc-accent hover:bg-tc-accent-hover text-slate-950 font-bold text-xs py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-all"
+            >
+              Konsultasi Kuota via WhatsApp
+            </a>
+            <a 
+              href="/program" 
+              class="w-full bg-tc-bg hover:border-tc-accent text-white border border-tc-border font-semibold text-xs py-3 px-4 rounded-xl flex items-center justify-center transition-all"
+            >
+              Lihat Daftar Program Magang
+            </a>
+          </div>
+        </div>
+
+        <!-- ARTIKEL REKOMENDASI -->
+        <div class="bg-tc-card border border-tc-border rounded-2xl p-6 space-y-4 shadow-xl">
+          <h3 class="text-sm font-extrabold text-white uppercase tracking-wider border-b border-tc-border/60 pb-3">
+            Artikel Rekomendasi
+          </h3>
+          <div class="space-y-4">
+            <a href="/blog/magang-content-writer-seo" class="flex items-start gap-3 group">
+              <img 
+                src="/assets/img/peserta-magang-content-writer-seo-struktur-heading.webp" 
+                alt="Peserta magang content writer SEO menyusun struktur heading artikel di Malang" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">18 Nov 2026 • 15:09 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Content Writer SEO Malang Tugas serta Skill
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/magang-mandiri-informatika-konversi-sks" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/Mahasiswa-mengisi-Formulir-di-Ruang-Prodi.webp" 
+                alt="Mahasiswa mengisi formulir magang mandiri informatika konversi SKS di ruang prodi" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">18 Nov 2026 • 11:24 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang Mandiri Informatika Konversi SKS, Apa Bisa?
+                </h4>
+              </div>
+            </a>
+            <a href="/blog/magang-seo-malang" class="flex items-start gap-3 group border-t border-tc-border/60 pt-3.5">
+              <img 
+                src="/assets/img/mentor-review-draf-magang-content-writer-seo.webp" 
+                alt="Peserta magang SEO Malang riset keyword bersama mentor di Gemilang Training" 
+                class="w-20 h-14 object-cover rounded-lg border border-tc-border/80 shrink-0 group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="min-w-0">
+                <span class="text-[11px] text-tc-accent font-mono block">18 Nov 2026 • 08:33 WIB</span>
+                <h4 class="text-xs sm:text-sm font-bold text-white group-hover:text-tc-accent transition-colors leading-snug mt-0.5 line-clamp-2">
+                  Magang SEO Malang, Materi, Output, dan Cara Daftar
+                </h4>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </aside>
+
+    </div>
+  </article>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  function setupTocToggle() {
+    const toggleBtn = document.getElementById('toc-toggle');
+    const content = document.getElementById('toc-content');
+    const icon = document.getElementById('toc-icon');
+
+    if (toggleBtn && content && icon) {
+      toggleBtn.addEventListener('click', () => {
+        const isHidden = content.classList.toggle('hidden');
+        icon.textContent = isHidden ? '+' : '−';
+      });
+    }
+  }
+  setupTocToggle();
+  document.addEventListener('astro:page-load', setupTocToggle);
+</script>
