@@ -4,30 +4,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
+const waPariwisataUrl = "https://wa.me/6281943431484?text=Halo%20Admin%2C%20saya%20tertarik%20mendaftar%20program%20Magang%20%2F%20PKL%20Jurusan%20Pariwisata%20(penempatan%20Katun%20Outbound%20Malang).%20Mohon%20info%20kuota%20dan%20syaratnya.";
+
 const jalurProgram = [
   {
     badge: "Jalur Perguruan Tinggi (D3 / D4 / S1)",
     title: "Magang Mahasiswa",
+    lokasi: "Penempatan: Gemilang Training Malang",
     desc: "Program praktik kuliah untuk mahasiswa jurusan Informatika dengan proyek website nyata, optimasi SEO, pendampingan logbook harian, serta konversi nilai SKS kampus.",
     poin: [
       "Durasi fleksibel 3 – 6 bulan sesuai kalender kampus",
       "Membangun portofolio website live (Astro, Bootstrap, Blogspot)",
       "Sertifikat resmi kelulusan & lembar penilaian kampus"
     ],
+    skills: ["Astro & Bootstrap", "SEO On-Page", "Git & Vercel"],
     detailLink: "/program/magang-mahasiswa",
-    daftarLink: "/pendaftaran?jalur=mahasiswa"
+    daftarLink: "/pendaftaran?jalur=mahasiswa",
+    daftarLabel: "Daftar Program",
+    isExternal: false
   },
   {
     badge: "Jalur Sekolah Menengah Kejuruan",
     title: "PKL Siswa SMK",
+    lokasi: "Penempatan: Gemilang Training Malang",
     desc: "Praktik Kerja Lapangan dibimbing bertahap dari dasar untuk siswa SMK jurusan RPL, TKJ, Digital Marketing, Bisnis Digital, Pemasaran, DKV, dan Multimedia.",
     poin: [
       "Dibimbing dari nol sampai bisa membuat website & artikel SEO",
       "Kolaborasi tim lintas jurusan teknis & kreatif/marketing",
       "Pendampingan monitoring guru & pengisian jurnal PKL"
     ],
+    skills: ["HTML & CSS", "Artikel SEO", "Digital Marketing"],
     detailLink: "/program/pkl-smk",
-    daftarLink: "/pendaftaran?jalur=smk"
+    daftarLink: "/pendaftaran?jalur=smk",
+    daftarLabel: "Daftar Program",
+    isExternal: false
+  },
+  {
+    badge: "Jalur Mahasiswa & SMK • Katun Outbound Malang",
+    title: "Mahasiswa Pariwisata",
+    lokasi: "Penempatan: Katun Outbound Malang",
+    desc: "Program magang & PKL jurusan MBP, DEP, Pariwisata, dan SMK jurusan Pariwisata dengan praktik langsung di Katun Outbound Malang.",
+    poin: [
+      "Waktu program: 3 – 6 bulan",
+      "Bidang: Bisnis Event Organizer (EO), LO, PIC Kegiatan Outbound, Tour Guide & Tour Leader",
+      "Skill dibutuhkan: Grooming, Greeting, Komunikasi & Public Speaking"
+    ],
+    skills: ["Grooming", "Greeting", "Komunikasi", "Public Speaking"],
+    detailLink: "/program/pariwisata",
+    daftarLink: waPariwisataUrl,
+    daftarLabel: "Daftar via WhatsApp",
+    isExternal: true
   }
 ];
 
@@ -40,7 +66,9 @@ const programs = [
     title: "Pembuatan Website Modern dengan Astro",
     desc: "Praktik membangun website multi-halaman berkecepatan tinggi menggunakan Astro JS, struktur Clean URL tanpa .html, hingga proses deploy online.",
     techs: ["Astro Framework", "Clean URL", "Optimasi PageSpeed", "Deploy Vercel"],
-    img: "/assets/img/informatika.webp"
+    img: "/assets/img/informatika.webp",
+    daftarUrl: `/pendaftaran?program=${encodeURIComponent("Pembuatan Website Modern dengan Astro")}`,
+    isExternal: false
   },
   {
     slug: "website-bootstrap",
@@ -50,7 +78,9 @@ const programs = [
     title: "Desain & Koding Website dengan Bootstrap",
     desc: "Belajar menyusun tampilan website yang rapi, responsif di HP maupun laptop, menggunakan komponen Bootstrap 5, HTML, CSS, dan aset gambar .webp ringan.",
     techs: ["Bootstrap 5", "HTML & CSS", "Desain Responsif", "Kompresi WebP"],
-    img: "/assets/img/rpl.webp"
+    img: "/assets/img/rpl.webp",
+    daftarUrl: `/pendaftaran?program=${encodeURIComponent("Desain & Koding Website dengan Bootstrap")}`,
+    isExternal: false
   },
   {
     slug: "website-blogspot",
@@ -60,7 +90,9 @@ const programs = [
     title: "Pembuatan Website & Pengelolaan Blogspot",
     desc: "Praktik membuat website profil usaha dan portal informasi menggunakan Blogspot, mulai dari pengaturan tata letak, navigasi menu, hingga hubungkan domain kustom.",
     techs: ["Blogspot CMS", "Custom Domain", "Setting Navigasi", "Kelola Halaman"],
-    img: "/assets/img/tkj.webp"
+    img: "/assets/img/tkj.webp",
+    daftarUrl: `/pendaftaran?program=${encodeURIComponent("Pembuatan Website & Pengelolaan Blogspot")}`,
+    isExternal: false
   },
   {
     slug: "optimasi-seo",
@@ -70,7 +102,9 @@ const programs = [
     title: "Optimasi SEO & Riset Kata Kunci",
     desc: "Praktik agar website mudah ditemukan di halaman atas Google melalui riset keyword, pengaturan meta tag, Open Graph, serta pemantauan di Google Search Console.",
     techs: ["Riset Keyword", "SEO On-Page", "Google Search Console", "Open Graph & Schema"],
-    img: "/assets/img/digitalmarketing.webp"
+    img: "/assets/img/digitalmarketing.webp",
+    daftarUrl: `/pendaftaran?program=${encodeURIComponent("Optimasi SEO & Riset Kata Kunci")}`,
+    isExternal: false
   },
   {
     slug: "pembuatan-artikel",
@@ -80,7 +114,9 @@ const programs = [
     title: "Penulisan Artikel SEO & Konten Website",
     desc: "Belajar menyusun artikel informatif dan promosi yang enak dibaca sekaligus ramah mesin pencari, lengkap dengan struktur heading, internal link, dan gambar pendukung.",
     techs: ["Artikel SEO", "Copywriting", "Struktur Heading", "Internal Linking"],
-    img: "/assets/img/bisnisdigital.webp"
+    img: "/assets/img/bisnisdigital.webp",
+    daftarUrl: `/pendaftaran?program=${encodeURIComponent("Penulisan Artikel SEO & Konten Website")}`,
+    isExternal: false
   },
   {
     slug: "digital-marketing",
@@ -90,14 +126,40 @@ const programs = [
     title: "Digital Marketing & Promosi Online",
     desc: "Praktik memasarkan produk dan jasa secara digital menggunakan halaman landing page, optimasi lokasi lokal, serta pembuatan materi promosi visual untuk menarik calon pelanggan.",
     techs: ["Strategi Promosi", "Landing Page", "Local GEO Tagging", "Konten Promosi"],
-    img: "/assets/img/pemasaran.webp"
+    img: "/assets/img/pemasaran.webp",
+    daftarUrl: `/pendaftaran?program=${encodeURIComponent("Digital Marketing & Promosi Online")}`,
+    isExternal: false
+  },
+  {
+    slug: "event-organizer-outbound",
+    category: "pariwisata",
+    categoryLabel: "Pariwisata • Katun Outbound Malang",
+    jurusanTarget: "MBP, DEP, Pariwisata & SMK Pariwisata (3–6 Bulan)",
+    title: "Bisnis Event Organizer (EO), LO & PIC Outbound",
+    desc: "Praktik lapangan di Katun Outbound Malang: mengelola bisnis Event Organizer, menjadi Leader Organizer (LO), dan PIC kegiatan outbound.",
+    techs: ["Bisnis EO", "LO", "PIC Outbound", "Grooming & Greeting"],
+    img: "/assets/img/beranda1.webp",
+    daftarUrl: waPariwisataUrl,
+    isExternal: true
+  },
+  {
+    slug: "tour-guide-tour-leader",
+    category: "pariwisata",
+    categoryLabel: "Pariwisata • Katun Outbound Malang",
+    jurusanTarget: "MBP, DEP, Pariwisata & SMK Pariwisata (3–6 Bulan)",
+    title: "Operasional Tour Guide & Tour Leader",
+    desc: "Praktik pemanduan wisata dan perjalanan rombongan di Katun Outbound Malang sebagai Tour Guide dan Tour Leader.",
+    techs: ["Tour Guide", "Tour Leader", "Komunikasi", "Public Speaking"],
+    img: "/assets/img/beranda1.webp",
+    daftarUrl: waPariwisataUrl,
+    isExternal: true
   }
 ];
 ---
 
 <BaseLayout 
   title="Semua Program Magang Mahasiswa & PKL Siswa SMK - Gemilang Training Malang" 
-  description="Daftar lengkap jalur Magang Mahasiswa Informatika dan PKL Siswa SMK di Gemilang Training Malang beserta kurikulum praktik pembuatan website Astro, Bootstrap, Blogspot, SEO, Artikel, dan Digital Marketing."
+  description="Daftar lengkap jalur Magang Mahasiswa Informatika, PKL Siswa SMK di Gemilang Training Malang, serta Mahasiswa Pariwisata (MBP, DEP, Pariwisata & SMK Pariwisata) di Katun Outbound Malang."
   isHome={false}
 >
   <Navbar slot="header" />
@@ -115,7 +177,7 @@ const programs = [
         Program Magang & PKL <span class="text-tc-accent">Gemilang Training</span>
       </h1>
       <p class="text-tc-muted text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
-        Pilih jalur program sesuai jenjang pendidikanmu dan eksplorasi seluruh bidang keahlian website, SEO, hingga digital marketing yang dipraktikkan langsung bersama mentor.
+        Pilih jalur program sesuai jenjang pendidikan dan jurusanmu—mulai dari bidang teknologi & digital marketing di Gemilang Training hingga bidang pariwisata & outbound di Katun Outbound Malang.
       </p>
     </div>
   </section>
@@ -125,7 +187,7 @@ const programs = [
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
       <div>
         <span class="text-xs font-semibold text-tc-accent uppercase tracking-wider block mb-2">
-          Jalur Pendidikan Peserta
+          Jalur Pendidikan & Jurusan Peserta
         </span>
         <h2 class="text-2xl md:text-4xl font-extrabold text-white">
           Pilih Kategori Programmu
@@ -140,21 +202,22 @@ const programs = [
       </a>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       {jalurProgram.map((item) => (
         <div class="bg-tc-card rounded-3xl border border-tc-border hover:border-tc-accent transition-all duration-300 p-7 md:p-8 flex flex-col justify-between shadow-xl">
           <div>
-            <span class="inline-block text-[11px] font-semibold text-tc-accent uppercase tracking-wider bg-tc-bg border border-tc-border px-3 py-1 rounded-full mb-4">
+            <span class="inline-block text-[11px] font-semibold text-tc-accent uppercase tracking-wider bg-tc-bg border border-tc-border px-3 py-1 rounded-full mb-3">
               {item.badge}
             </span>
-            <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-3">
+            <p class="text-xs font-mono text-tc-muted mb-2">{item.lokasi}</p>
+            <h3 class="text-2xl font-extrabold text-white mb-3 leading-snug">
               {item.title}
             </h3>
-            <p class="text-tc-muted text-sm leading-relaxed mb-6">
+            <p class="text-tc-muted text-sm leading-relaxed mb-5">
               {item.desc}
             </p>
 
-            <ul class="space-y-2.5 mb-8">
+            <ul class="space-y-2.5 mb-5">
               {item.poin.map((p) => (
                 <li class="flex items-start gap-2.5 text-xs md:text-sm text-white/90">
                   <span class="text-tc-accent font-bold mt-0.5">✓</span>
@@ -162,20 +225,35 @@ const programs = [
                 </li>
               ))}
             </ul>
+
+            <div class="mb-7">
+              <span class="text-[11px] font-semibold uppercase tracking-wider text-tc-muted block mb-2">
+                Skill & Fokus Kompetensi:
+              </span>
+              <div class="flex flex-wrap gap-1.5">
+                {item.skills.map((skill) => (
+                  <span class="text-[11px] bg-tc-bg px-2.5 py-1 rounded-md text-tc-accent border border-tc-border">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div class="pt-5 border-t border-tc-border/60 flex flex-col sm:flex-row gap-3">
             <a 
               href={item.detailLink} 
-              class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white hover:text-tc-accent font-semibold text-xs md:text-sm py-3 px-4 rounded-xl transition-all"
+              class="flex-1 text-center bg-tc-bg hover:border-tc-accent border border-tc-border text-white hover:text-tc-accent font-semibold text-xs py-3 px-3 rounded-xl transition-all"
             >
               Detail {item.title} &rarr;
             </a>
             <a 
-              href={item.daftarLink} 
-              class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-xs md:text-sm py-3 px-4 rounded-xl transition-all shadow-md"
+              href={item.daftarLink}
+              target={item.isExternal ? "_blank" : undefined}
+              rel={item.isExternal ? "noopener noreferrer" : undefined}
+              class="flex-1 text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold text-xs py-3 px-3 rounded-xl transition-all shadow-md"
             >
-              Daftar Program
+              {item.daftarLabel}
             </a>
           </div>
         </div>
@@ -184,16 +262,16 @@ const programs = [
   </section>
 
   <!-- 3. DAFTAR MATERI PRAKTIK MAGANG & PKL -->
-  <section class="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="materi-praktik" class="py-12 md:py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
     <div class="text-center max-w-3xl mx-auto mb-10">
       <span class="text-xs font-semibold text-tc-accent uppercase tracking-widest bg-tc-card px-4 py-2 rounded-full border border-tc-border inline-block mb-4">
-        Kurikulum Praktik Proyek Nyata
+        Kurikulum Praktik Proyek & Lapangan
       </span>
       <h2 class="text-2xl md:text-4xl font-extrabold text-white mb-4 leading-tight">
         Apa Saja yang Dipelajari Saat <span class="text-tc-accent">Magang & PKL?</span>
       </h2>
       <p class="text-tc-muted text-sm md:text-base leading-relaxed">
-        Selama mengikuti Magang Mahasiswa atau PKL Siswa SMK di Gemilang Training Malang, kamu akan langsung mempraktikkan pembuatan website (<strong class="text-white">Astro, Bootstrap, dan Blogspot</strong>), <strong class="text-white">Optimasi SEO</strong>, <strong class="text-white">Penulisan Artikel</strong>, hingga <strong class="text-white">Digital Marketing</strong>.
+        Peserta praktik langsung sesuai bidangnya: pembuatan website (<strong class="text-white">Astro, Bootstrap, Blogspot</strong>), <strong class="text-white">SEO & Digital Marketing</strong> di Gemilang Training, maupun operasional <strong class="text-white">Event Organizer, LO, PIC Outbound, Tour Guide & Tour Leader</strong> di Katun Outbound Malang.
       </p>
     </div>
 
@@ -204,7 +282,7 @@ const programs = [
         class="filter-btn active-filter px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-accent bg-tc-card text-tc-accent inline-flex items-center gap-2 cursor-pointer"
       >
         <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
-        <span>Semua Materi (6)</span>
+        <span>Semua Materi (8)</span>
       </button>
 
       <button 
@@ -221,6 +299,14 @@ const programs = [
       >
         <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
         <span>Optimasi SEO, Artikel & Digital Marketing</span>
+      </button>
+
+      <button 
+        data-filter="pariwisata" 
+        class="filter-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all border border-tc-border text-tc-muted hover:text-white inline-flex items-center gap-2 cursor-pointer"
+      >
+        <svg class="w-4 h-4 text-tc-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Pariwisata (Katun Outbound Malang)</span>
       </button>
     </div>
 
@@ -261,13 +347,15 @@ const programs = [
             </div>
           </div>
 
-          <!-- Satu Tombol Daftar Program (Terhubung ke /pendaftaran) -->
+          <!-- Tombol Daftar Program -->
           <div class="px-6 pb-6 pt-3 border-t border-tc-border/60">
             <a 
-              href={`/pendaftaran?program=${encodeURIComponent(item.title)}`} 
+              href={item.daftarUrl}
+              target={item.isExternal ? "_blank" : undefined}
+              rel={item.isExternal ? "noopener noreferrer" : undefined}
               class="block w-full text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 text-xs sm:text-sm font-bold py-3 rounded-xl transition-all shadow-md"
             >
-              Daftar Program &rarr;
+              {item.isExternal ? "Daftar via WhatsApp (Katun Outbound) →" : "Daftar Program →"}
             </a>
           </div>
         </div>
@@ -283,7 +371,7 @@ const programs = [
           Siap Mengajukan Pendaftaran Magang atau PKL?
         </h2>
         <p class="text-tc-muted text-sm md:text-base">
-          Pelajari tahapan administrasi di halaman Alur Pendaftaran atau langsung isi formulir registrasi mandiri sekarang juga.
+          Pelajari tahapan administrasi di halaman Alur Pendaftaran, isi formulir registrasi, atau konsultasi langsung untuk penempatan Gemilang Training & Katun Outbound Malang.
         </p>
       </div>
       <div class="flex flex-wrap justify-center gap-3 shrink-0">

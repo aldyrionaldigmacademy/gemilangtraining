@@ -106,6 +106,20 @@ const currentPath = pathname.replace(/\/$/, "");
           <div class="my-1 border-t border-tc-border/50"></div>
 
           <a 
+            href="/program/pariwisata" 
+            class={`block px-4 py-3 rounded-xl hover:bg-tc-bg transition-colors group/item ${currentPath === "/program/pariwisata" ? "bg-tc-bg/80" : ""}`}
+          >
+            <div class={`text-sm font-bold transition-colors ${currentPath === "/program/pariwisata" ? "text-tc-accent" : "text-white group-hover/item:text-tc-accent"}`}>
+              Mahasiswa Pariwisata
+            </div>
+            <p class="text-xs text-tc-muted mt-0.5 line-clamp-1">
+              Bimbingan Pariwisata (MBP, DEP, Pariwisata & SMK) di Katun Outbound Malang
+            </p>
+          </a>
+
+          <div class="my-1 border-t border-tc-border/50"></div>
+
+          <a 
             href="/alur-pendaftaran" 
             class="block px-4 py-3 rounded-xl bg-tc-bg/60 hover:bg-tc-bg transition-colors group/item"
           >
@@ -224,6 +238,11 @@ const currentPath = pathname.replace(/\/$/, "");
         <a href="/program/pkl-smk" class="block px-3 py-2.5 rounded-lg hover:bg-tc-bg transition-colors">
           <div class={`text-sm font-bold ${currentPath === "/program/pkl-smk" ? "text-tc-accent" : "text-white"}`}>PKL Siswa SMK</div>
           <p class="text-[11px] text-tc-muted">Bimbingan dari dasar untuk RPL, TKJ, Marketing & DKV</p>
+        </a>
+
+        <a href="/program/pariwisata" class="block px-3 py-2.5 rounded-lg hover:bg-tc-bg transition-colors">
+          <div class={`text-sm font-bold ${currentPath === "/program/pariwisata" ? "text-tc-accent" : "text-white"}`}>Mahasiswa Pariwisata</div>
+          <p class="text-[11px] text-tc-muted">Bimbingan Pariwisata (MBP, DEP, Pariwisata & SMK) di Katun Outbound Malang</p>
         </a>
 
         <div class="my-1 border-t border-tc-border/60"></div>
