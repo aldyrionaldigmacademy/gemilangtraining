@@ -7,7 +7,7 @@ import Footer from '../components/Footer.astro';
 
 <BaseLayout 
   title="Formulir Pendaftaran Online Magang & PKL - Gemilang Training Malang" 
-  description="Isi formulir pendaftaran mandiri untuk program Magang Mahasiswa Informatika dan PKL Siswa SMK di Gemilang Training Malang. Terhubung langsung ke WhatsApp resmi panitia."
+  description="Isi formulir pendaftaran mandiri untuk program Magang Mahasiswa Informatika, PKL Siswa SMK, dan Magang/PKL Pariwisata di Gemilang Training Malang. Terhubung langsung ke WhatsApp resmi panitia."
   isHome={false}
 >
   <Navbar slot="header" />
@@ -35,7 +35,7 @@ import Footer from '../components/Footer.astro';
         Registrasi Mandiri <span class="text-tc-accent">Magang & PKL</span>
       </h1>
       <p class="text-tc-muted text-sm md:text-lg max-w-2xl mx-auto leading-relaxed">
-        Lengkapi profil akademik dan pilih fokus bidang proyek yang kamu minati. Setelah dikirim, rekap pendaftaranmu akan langsung diteruskan ke WhatsApp resmi tim mentor Gemilang Training.
+        Lengkapi profil akademik dan pilih fokus bidang proyek atau penempatan yang kamu minati. Setelah dikirim, rekap pendaftaranmu akan langsung diteruskan ke WhatsApp resmi tim mentor Gemilang Training.
       </p>
     </div>
   </section>
@@ -63,9 +63,9 @@ import Footer from '../components/Footer.astro';
           <!-- 1. PILIH JALUR PENDIDIKAN -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-white mb-3">
-              1. Kategori Jalur Pendidikan <span class="text-tc-accent">*</span>
+              1. Kategori Jalur Pendidikan / Program <span class="text-tc-accent">*</span>
             </label>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               
               <!-- Pilihan SMK -->
               <label class="jalur-option relative flex items-start gap-3.5 p-4 rounded-2xl border border-tc-border bg-tc-bg/70 hover:border-tc-accent cursor-pointer transition-all">
@@ -93,6 +93,20 @@ import Footer from '../components/Footer.astro';
                 <div>
                   <div class="text-sm font-bold text-white">Magang Mahasiswa</div>
                   <p class="text-xs text-tc-muted mt-0.5">Jenjang D3 / D4 / S1 Aktif</p>
+                </div>
+              </label>
+
+              <!-- Pilihan Pariwisata -->
+              <label class="jalur-option relative flex items-start gap-3.5 p-4 rounded-2xl border border-tc-border bg-tc-bg/70 hover:border-tc-accent cursor-pointer transition-all">
+                <input 
+                  type="radio" 
+                  name="jalur" 
+                  value="Magang & PKL Pariwisata (Katun Outbound Malang)" 
+                  class="mt-1 accent-amber-400 w-4 h-4 cursor-pointer" 
+                />
+                <div>
+                  <div class="text-sm font-bold text-white">Pariwisata</div>
+                  <p class="text-xs text-tc-muted mt-0.5">MBP, DEP & SMK Pariwisata</p>
                 </div>
               </label>
 
@@ -127,7 +141,7 @@ import Footer from '../components/Footer.astro';
                 placeholder="0812xxxxxxxx" 
                 class="w-full bg-tc-bg border border-tc-border focus:border-tc-accent focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-tc-muted/50 transition-colors"
               />
-              <p class="text-[11px] text-tc-muted mt-1.5">Digunakan admin untuk konfirmasi jadwal & surat balasan.</p>
+              <p class="text-[11px] text-tc-muted mt-1.5">Digunakan admin untuk konfirmasi jadwal & surat balasan kampus/sekolah.</p>
             </div>
           </div>
 
@@ -172,7 +186,7 @@ import Footer from '../components/Footer.astro';
                 id="jurusan" 
                 name="jurusan" 
                 required 
-                placeholder="Contoh: RPL / Teknik Informatika / Bisnis Digital" 
+                placeholder="Contoh: RPL / MBP / DEP / Pariwisata" 
                 class="w-full bg-tc-bg border border-tc-border focus:border-tc-accent focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-tc-muted/50 transition-colors"
               />
             </div>
@@ -200,7 +214,7 @@ import Footer from '../components/Footer.astro';
           <!-- 5. FOKUS BIDANG / PROGRAM PRAKTIK -->
           <div>
             <label for="program" class="block text-xs font-bold uppercase tracking-wider text-white mb-2">
-              Fokus Bidang Proyek yang Diminati <span class="text-tc-accent">*</span>
+              Fokus Bidang Proyek / Penempatan yang Diminati <span class="text-tc-accent">*</span>
             </label>
             <select 
               id="program" 
@@ -209,15 +223,25 @@ import Footer from '../components/Footer.astro';
               class="w-full bg-tc-bg border border-tc-border focus:border-tc-accent focus:outline-none rounded-xl px-4 py-3 text-sm text-white transition-colors"
             >
               <option value="">-- Pilih Fokus Bidang Praktik --</option>
-              <option value="Pembuatan Website Modern dengan Astro">Pembuatan Website Modern dengan Astro</option>
-              <option value="Desain & Koding Website dengan Bootstrap">Desain & Koding Website dengan Bootstrap</option>
-              <option value="Pembuatan Website & Pengelolaan Blogspot">Pembuatan Website & Pengelolaan Blogspot</option>
-              <option value="Optimasi SEO & Riset Kata Kunci">Optimasi SEO & Riset Kata Kunci</option>
-              <option value="Penulisan Artikel SEO & Konten Website">Penulisan Artikel SEO & Konten Website</option>
-              <option value="Digital Marketing & Promosi Online">Digital Marketing & Promosi Online</option>
+              <optgroup label="Pengembangan Web & Digital Marketing">
+                <option value="Pembuatan Website Modern dengan Astro">Pembuatan Website Modern dengan Astro</option>
+                <option value="Desain & Koding Website dengan Bootstrap">Desain & Koding Website dengan Bootstrap</option>
+                <option value="Pembuatan Website & Pengelolaan Blogspot">Pembuatan Website & Pengelolaan Blogspot</option>
+                <option value="Optimasi SEO & Riset Kata Kunci">Optimasi SEO & Riset Kata Kunci</option>
+                <option value="Penulisan Artikel SEO & Konten Website">Penulisan Artikel SEO & Konten Website</option>
+                <option value="Digital Marketing & Promosi Online">Digital Marketing & Promosi Online</option>
+              </optgroup>
+              <optgroup label="Magang & PKL Pariwisata (Katun Outbound Malang)">
+                <option value="Bisnis EO (Event Organizer) - Katun Outbound Malang">Bisnis EO (Event Organizer) - Katun Outbound Malang</option>
+                <option value="LO (Leader Organizer) - Katun Outbound Malang">LO (Leader Organizer) - Katun Outbound Malang</option>
+                <option value="PIC (Person In Charge) Kegiatan Outbound - Katun Outbound Malang">PIC (Person In Charge) Kegiatan Outbound - Katun Outbound Malang</option>
+                <option value="Tour Guide (Pemandu Wisata) - Katun Outbound Malang">Tour Guide (Pemandu Wisata) - Katun Outbound Malang</option>
+                <option value="Tour Leader (Pemimpin Rombongan Wisata) - Katun Outbound Malang">Tour Leader (Pemimpin Rombongan Wisata) - Katun Outbound Malang</option>
+                <option value="Rotasi 5 Bidang Pariwisata - Katun Outbound Malang">Rotasi 5 Bidang Pariwisata - Katun Outbound Malang</option>
+              </optgroup>
               <option value="Konsultasi Penempatan Sesuai Jurusan">Belum Yakin (Sesuaikan dengan Jurusan Saya)</option>
             </select>
-            <p class="text-[11px] text-tc-muted mt-1.5">Penempatan tim proyek tetap dapat disesuaikan kembali saat sesi pengarahan awal.</p>
+            <p class="text-[11px] text-tc-muted mt-1.5">Penempatan tim proyek maupun bidang lapangan tetap dapat disesuaikan kembali saat sesi pengarahan awal.</p>
           </div>
 
           <!-- 6. RENCANA DURASI & SISTEM PELAKSANAAN -->
@@ -244,8 +268,8 @@ import Footer from '../components/Footer.astro';
               </label>
               <div class="grid grid-cols-1 gap-2.5">
                 <label class="flex items-center gap-3 p-3.5 rounded-xl border border-tc-border bg-tc-bg/70 hover:border-tc-accent cursor-pointer transition-all">
-                  <input type="radio" name="metode" value="Onsite (Kantor Malang)" checked class="accent-amber-400 w-4 h-4 cursor-pointer" />
-                  <span class="text-xs sm:text-sm text-white font-medium">Onsite <span class="text-tc-muted">(Hadir di Kantor Malang)</span></span>
+                  <input type="radio" name="metode" value="Onsite (Malang / Katun Outbound Malang)" checked class="accent-amber-400 w-4 h-4 cursor-pointer" />
+                  <span class="text-xs sm:text-sm text-white font-medium">Onsite <span class="text-tc-muted">(Praktik Langsung di Malang)</span></span>
                 </label>
                 <label class="flex items-center gap-3 p-3.5 rounded-xl border border-tc-border bg-tc-bg/70 hover:border-tc-accent cursor-pointer transition-all">
                   <input type="radio" name="metode" value="Hybrid / WFH" class="accent-amber-400 w-4 h-4 cursor-pointer" />
@@ -264,7 +288,7 @@ import Footer from '../components/Footer.astro';
               id="catatan" 
               name="catatan" 
               rows="3" 
-              placeholder="Contoh: Link Google Drive CV / Surat Pengantar, rencana tanggal mulai magang, atau jumlah anggota kelompok jika mendaftar bersama tim..." 
+              placeholder="Contoh: Butuh surat balasan kampus/sekolah, link Google Drive CV / Surat Pengantar, rencana tanggal mulai, atau jumlah anggota kelompok..." 
               class="w-full bg-tc-bg border border-tc-border focus:border-tc-accent focus:outline-none rounded-xl px-4 py-3 text-sm text-white placeholder:text-tc-muted/50 transition-colors"
             ></textarea>
             <p class="text-[11px] text-tc-muted mt-1.5">Jika melampirkan tautan Google Drive, pastikan akses berbagi diatur ke "Siapa saja yang memiliki link dapat melihat".</p>
@@ -280,7 +304,7 @@ import Footer from '../components/Footer.astro';
                 class="mt-1 accent-amber-400 w-4 h-4 rounded cursor-pointer" 
               />
               <span class="text-xs text-tc-muted leading-relaxed">
-                Saya menyatakan bahwa data yang diisikan di atas adalah benar dan siap mengikuti arahan serta tata tertib program Magang / PKL di Gemilang Training Malang.
+                Saya menyatakan bahwa data yang diisikan di atas adalah benar dan siap mengikuti arahan serta tata tertib program Magang / PKL di Gemilang Training / Katun Outbound Malang.
               </span>
             </label>
           </div>
@@ -348,15 +372,15 @@ import Footer from '../components/Footer.astro';
             </li>
             <li class="flex items-start gap-2.5">
               <span class="text-tc-accent font-bold mt-0.5">✓</span>
-              <span><strong class="text-white">Proyek Website & SEO Riil:</strong> Langsung mengelola website aktif berbasis Astro, Bootstrap, dan Blogspot.</span>
+              <span><strong class="text-white">Proyek & Praktik Riil:</strong> Proyek website & SEO (Astro, Bootstrap, Blogspot) atau praktik lapangan pariwisata di Katun Outbound Malang.</span>
             </li>
             <li class="flex items-start gap-2.5">
               <span class="text-tc-accent font-bold mt-0.5">✓</span>
-              <span><strong class="text-white">Pendampingan Mentor Praktisi:</strong> Evaluasi rutin harian dan pengarahan teknis bertahap.</span>
+              <span><strong class="text-white">Pendampingan Mentor Praktisi:</strong> Evaluasi rutin dan pengarahan bertahap sesuai bidang.</span>
             </li>
             <li class="flex items-start gap-2.5">
               <span class="text-tc-accent font-bold mt-0.5">✓</span>
-              <span><strong class="text-white">Administrasi Lengkap:</strong> Surat balasan resmi, tanda tangan jurnal/logbook, nilai akhir, dan sertifikat kelulusan.</span>
+              <span><strong class="text-white">Administrasi Lengkap:</strong> Surat balasan resmi kampus/sekolah, tanda tangan jurnal/logbook, nilai akhir, dan sertifikat kelulusan.</span>
             </li>
           </ul>
         </div>
@@ -367,10 +391,10 @@ import Footer from '../components/Footer.astro';
             Bantuan Admin
           </span>
           <h3 class="text-lg font-bold text-white mb-2">
-            Butuh Surat Balasan Cepat atau Konsultasi?
+            Butuh Surat Balasan Kampus Cepat atau Konsultasi?
           </h3>
           <p class="text-xs text-tc-muted leading-relaxed mb-5">
-            Jika pihak sekolah atau kampus membutuhkan konfirmasi kuota terlebih dahulu sebelum mengirim surat pengantar, silakan hubungi koordinator kami.
+            Jika pihak sekolah atau kampus membutuhkan konfirmasi kuota terlebih dahulu sebelum mengirim surat pengantar atau pengajuan surat balasan, silakan hubungi admin kami.
           </p>
           <a 
             href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20berkonsultasi%20sebelum%20mengisi%20formulir%20pendaftaran%20Magang%20%26%20PKL." 
@@ -399,28 +423,32 @@ import Footer from '../components/Footer.astro';
     const jalurParam = urlParams.get('jalur');
     const programParam = urlParams.get('program');
 
-    // Auto-select Jalur Pendidikan dari URL (?jalur=mahasiswa atau ?jalur=smk)
+    const selectProgram = document.getElementById('program') as HTMLSelectElement | null;
+    const selectTingkat = document.getElementById('tingkat') as HTMLSelectElement | null;
+
+    // Auto-select Jalur Pendidikan dari URL (?jalur=mahasiswa, ?jalur=smk, atau ?jalur=pariwisata)
     if (jalurParam === 'mahasiswa') {
       const radioMhs = form.querySelector('input[name="jalur"][value="Magang Mahasiswa (D3/D4/S1)"]') as HTMLInputElement | null;
-      const selectTingkat = document.getElementById('tingkat') as HTMLSelectElement | null;
       if (radioMhs) radioMhs.checked = true;
       if (selectTingkat) selectTingkat.value = 'Mahasiswa Semester 5';
+    } else if (jalurParam === 'pariwisata') {
+      const radioPar = form.querySelector('input[name="jalur"][value="Magang & PKL Pariwisata (Katun Outbound Malang)"]') as HTMLInputElement | null;
+      if (radioPar) radioPar.checked = true;
+      if (selectProgram && !programParam) {
+        selectProgram.value = 'Rotasi 5 Bidang Pariwisata - Katun Outbound Malang';
+      }
     } else if (jalurParam === 'smk') {
       const radioSmk = form.querySelector('input[name="jalur"][value="PKL Siswa SMK"]') as HTMLInputElement | null;
-      const selectTingkat = document.getElementById('tingkat') as HTMLSelectElement | null;
       if (radioSmk) radioSmk.checked = true;
       if (selectTingkat) selectTingkat.value = 'Kelas XI SMK';
     }
 
     // Auto-select Fokus Bidang Praktik dari URL (?program=...)
-    if (programParam) {
-      const selectProgram = document.getElementById('program') as HTMLSelectElement | null;
-      if (selectProgram) {
-        const options = Array.from(selectProgram.options);
-        const matched = options.find(opt => opt.value.toLowerCase() === programParam.toLowerCase());
-        if (matched) {
-          selectProgram.value = matched.value;
-        }
+    if (programParam && selectProgram) {
+      const options = Array.from(selectProgram.options);
+      const matched = options.find(opt => opt.value.toLowerCase() === programParam.toLowerCase());
+      if (matched) {
+        selectProgram.value = matched.value;
       }
     }
 
@@ -460,7 +488,7 @@ import Footer from '../components/Footer.astro';
         `*3. TAUTAN BERKAS / CATATAN*`,
         `${catatan}`,
         ``,
-        `Mohon informasi langkah selanjutnya untuk proses konfirmasi dan pengajuan berkas. Terima kasih.`
+        `Mohon informasi langkah selanjutnya untuk proses konfirmasi, surat balasan kampus/sekolah, dan pengajuan berkas. Terima kasih.`
       ].join('\n');
 
       const waUrl = `https://wa.me/6281943431484?text=${encodeURIComponent(pesan)}`;
