@@ -1,0 +1,432 @@
+---
+// src/pages/blog/magang-wordpress-developer.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang WordPress Developer Tugas dan Skill Pemula";
+const pageDesc = "Pelajari tugas, skill, dan output magang WordPress developer untuk pemula, serta cara daftar. Mulai bangun portofolio website bersama mentor.";
+const publishDate = "2026-11-25";
+const publishIsoDate = "2026-11-25T15:00:00+07:00";
+const pageSlug = "/blog/magang-wordpress-developer";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/magang-wordpress-developer-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/magang-wordpress-developer-2.webp";
+const authorName = "Sholikhatun Nikmah";
+const keywordsList = "magang wordpress developer, tugas magang wordpress, skill magang wordpress pemula, perbedaan wordpress developer dan web developer, cara daftar magang wordpress";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://infomagangmalang.web.id/blog/magang-wordpress-developer#article",
+      "isPartOf": {
+        "@id": "https://infomagangmalang.web.id/blog/magang-wordpress-developer"
+      },
+      "headline": "Magang WordPress Developer Tugas dan Skill Pemula",
+      "description": "Pelajari tugas, skill, dan output magang WordPress developer untuk pemula, serta cara daftar. Mulai bangun portofolio website bersama mentor.",
+      "keywords": "magang wordpress developer, tugas magang wordpress, skill magang wordpress pemula, perbedaan wordpress developer dan web developer, cara daftar magang wordpress",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://infomagangmalang.web.id/blog/magang-wordpress-developer"
+      },
+      "datePublished": "2026-11-25T15:00:00+07:00",
+      "dateModified": "2026-11-25T15:00:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        "https://infomagangmalang.web.id/assets/img/magang-wordpress-developer-1.webp",
+        "https://infomagangmalang.web.id/assets/img/magang-wordpress-developer-2.webp"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/magang-wordpress-developer#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa tugas magang WordPress?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tugas umumnya meliputi memasang dan mengatur tema, memilih plugin, mengelola halaman dan artikel, serta merapikan tampilan website. Detail tugas dikonfirmasi bersama mentor di tempat magang."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah magang WordPress perlu bisa coding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak wajib untuk pemula. Penggunaan dasar WordPress dapat dipelajari lebih dulu, tetapi HTML dan CSS membantu saat tampilan perlu disesuaikan secara khusus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa bedanya magang WordPress dengan magang web developer biasa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Magang WordPress berfokus pada platform manajemen konten siap pakai, sedangkan magang web developer biasa lebih banyak menulis kode HTML, CSS, dan JavaScript dari awal."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/magang-wordpress-developer-1.webp"
+  imageAlt="Developer mengelola dashboard WordPress"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Developer mengelola dashboard WordPress" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Cluster 3 • Web Development" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Cluster 3 • Web Development</span>
+            <time datetime={publishIsoDate}>25 November 2026 • 15:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            Magang WordPress Developer, Apa yang Bisa Dipelajari Pemula
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/magang-wordpress-developer-1.webp" 
+            alt="Developer mengelola dashboard WordPress" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Peserta magang mengelola tema, plugin, dan halaman pada dashboard WordPress.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#tugas-wordpress-developer" class="hover:text-tc-accent transition-colors">1. Apa Saja Tugas Magang WordPress Developer?</a></li>
+              <li><a href="#perlu-bisa-coding" class="hover:text-tc-accent transition-colors">2. Apakah Magang WordPress Developer Perlu Bisa Coding?</a></li>
+              <li><a href="#skill-wordpress" class="hover:text-tc-accent transition-colors">3. Skill Apa yang Dibutuhkan untuk Magang WordPress?</a></li>
+              <li><a href="#beda-web-developer-biasa" class="hover:text-tc-accent transition-colors">4. Apa Bedanya dengan Magang Web Developer Biasa?</a></li>
+              <li><a href="#output-dan-cara-daftar" class="hover:text-tc-accent transition-colors">5. Output Portofolio & Cara Mendaftar Magang WordPress</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">6. FAQ Magang WordPress Developer</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Magang WordPress developer</strong> adalah praktik membangun dan mengelola website berbasis WordPress, mulai dari tema, plugin, hingga konten, dengan bimbingan mentor.
+          </p>
+          <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-2">
+            <h2 class="text-base md:text-lg font-bold text-white">Ringkasan Inti</h2>
+            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm">
+              <li>Magang WordPress developer berfokus pada pembuatan dan pengelolaan website dengan sistem manajemen konten WordPress.</li>
+              <li>Tugas umumnya meliputi mengatur tema, memasang plugin, mengelola konten, dan merapikan tampilan.</li>
+              <li>Kemampuan coding membantu, tetapi pemula dapat memulai dari penggunaan dasar WordPress.</li>
+              <li>Berbeda dari magang web developer biasa, fokusnya pada platform siap pakai, bukan membangun dari nol.</li>
+              <li>Di Gemilang Training, WordPress termasuk materi praktik pada program Informatika.</li>
+            </ul>
+          </div>
+
+          <section id="tugas-wordpress-developer" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Tugas Magang WordPress Developer?</h2>
+                        <p>
+              Tugas magang WordPress developer umumnya meliputi memasang dan mengatur tema, memilih plugin, mengelola halaman dan artikel, serta merapikan tampilan website agar sesuai kebutuhan proyek.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Memasang dan menyesuaikan tema sesuai identitas merek atau kebutuhan proyek.</li>
+              <li>Memasang plugin untuk fungsi tertentu, seperti formulir kontak atau pengaturan dasar SEO.</li>
+              <li>Membuat dan menata halaman, menu navigasi, serta artikel.</li>
+              <li>Mengelola gambar dan media agar halaman tetap ringan saat dimuat.</li>
+              <li>Menguji tampilan website di ponsel dan laptop agar tetap responsif.</li>
+            </ul>
+            <p>
+              Karena tugas nyata berbeda antar tempat magang, verifikasi daftar pekerjaan dengan mentor sebelum mulai.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/magang-wordpress-developer-2.webp" 
+              alt="Contoh website WordPress hasil proyek peserta magang" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Contoh website WordPress responsif hasil proyek peserta magang.
+            </figcaption>
+          </figure>
+
+          <section id="perlu-bisa-coding" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apakah Magang WordPress Developer Perlu Bisa Coding?</h2>
+                        <p>
+              Pemula tidak harus mahir coding untuk memulai magang WordPress developer, tetapi pemahaman HTML, CSS, dan sedikit JavaScript membuat penyesuaian tampilan jauh lebih leluasa.
+            </p>
+            <p>
+              WordPress dirancang agar pengguna dapat membangun website tanpa menulis kode dari nol karena tema dan plugin menyediakan banyak fungsi siap pakai. Meski begitu, ketika klien menginginkan tampilan khusus, pengetahuan kode sangat berguna. Strategi realistis adalah memulai dari penggunaan dasar WordPress, lalu memperdalam HTML dan CSS selama magang atau lewat panduan <a href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula" class="text-tc-accent hover:underline">bekal magang web developer pemula</a>.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA PANDUAN WEB DEVELOPER PEMULA</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Siap Magang Jadi Web Developer Walau Masih Pemula &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="skill-wordpress" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Skill Apa yang Dibutuhkan untuk Magang WordPress?</h2>
+                        <p>
+              Skill yang dibutuhkan untuk magang WordPress adalah penggunaan dashboard WordPress, pemahaman tema dan plugin, dasar HTML dan CSS, serta ketelitian dalam mengelola konten.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Skill dasar:</strong> Mengoperasikan dashboard WordPress (halaman, artikel, menu, media), memahami fungsi tema dan plugin, serta menata konten agar rapi dan mudah dibaca.</li>
+              <li><strong>Skill penunjang:</strong> HTML dan CSS untuk penyesuaian tampilan, pemahaman dasar performa seperti kompresi gambar, serta kebiasaan menyimpan cadangan sebelum mengubah pengaturan penting.</li>
+              <li><strong>Sikap kerja:</strong> Teliti, mau membaca dokumentasi resmi WordPress, dan terbuka terhadap masukan mentor.</li>
+            </ul>
+          </section>
+
+          <section id="beda-web-developer-biasa" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Bedanya dengan Magang Web Developer Biasa?</h2>
+                        <p>
+              Magang WordPress developer berfokus pada platform manajemen konten siap pakai, sedangkan magang web developer biasa lebih sering menulis kode tampilan dan fungsi dari awal.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Pendekatan:</strong> WordPress memakai tema dan plugin sebagai fondasi, sedangkan web developer biasa lebih sering membangun halaman dengan kode langsung seperti Astro atau Bootstrap.</li>
+              <li><strong>Kecepatan:</strong> Website WordPress dasar dapat disusun lebih cepat, namun fleksibilitas bergantung pada tema dan plugin.</li>
+              <li><strong>Kedalaman kode:</strong> Magang web developer biasa umumnya menuntut HTML, CSS, dan JavaScript lebih intens.</li>
+              <li><strong>Pengelolaan konten:</strong> WordPress memudahkan pengelolaan artikel dan halaman oleh orang non-teknis.</li>
+            </ul>
+          </section>
+
+          <section id="output-dan-cara-daftar" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Output Portofolio dan Cara Mendaftar Magang WordPress Developer</h2>
+                        <p>
+              Output magang WordPress umumnya berupa website profil atau company profile sederhana, blog dengan struktur kategori rapi, landing page kegiatan/usaha, serta dokumentasi tangkapan layar yang dapat dijadikan portofolio.
+            </p>
+            <p>
+              Menurut informasi program Gemilang Training tahun 2026, WordPress dan Blogspot termasuk dalam materi praktik pada <a href="/program" class="text-tc-accent hover:underline">program magang mahasiswa Informatika</a>. Langkah mendaftarnya:
+            </p>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li>Siapkan CV, surat pengantar kampus atau sekolah, dan contoh website sederhana.</li>
+              <li>Konfirmasi tugas WordPress yang akan dikerjakan beserta durasinya.</li>
+              <li>Ikuti tahapan pada <a href="/alur-pendaftaran" class="text-tc-accent hover:underline">halaman alur pendaftaran magang Gemilang Training</a> sampai surat balasan diterbitkan.</li>
+              <li>Pastikan jadwal, sistem WFH, hybrid, atau onsite di Mojolangu Malang, serta penilaian disepakati sejak awal.</li>
+            </ol>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Kesimpulan Magang WordPress Developer</p>
+              <p class="text-tc-muted text-xs italic">Magang WordPress developer cocok bagi pemula yang ingin cepat menghasilkan website tayang sambil memperdalam dasar HTML dan CSS bersama mentor praktisi.</p>
+            </blockquote>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            SN
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Penulis konten edukasi karier digital dan panduan magang pengembangan web di Gemilang Training Malang.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Mulai Bangun Website WordPress Bersama Mentor Praktisi</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Daftar magang di Gemilang Training Malang dan susun portofolio website pertamamu dari dasar.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20tertarik%20mendaftar%20magang%20WordPress%20developer." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Daftar Magang WordPress via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Magang WordPress Developer</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa tugas magang WordPress?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tugas umumnya meliputi memasang dan mengatur tema, memilih plugin, mengelola halaman dan artikel, serta merapikan tampilan website. Detail tugas dikonfirmasi bersama mentor di tempat magang.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah magang WordPress perlu bisa coding?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak wajib untuk pemula. Penggunaan dasar WordPress dapat dipelajari lebih dulu, tetapi HTML dan CSS membantu saat tampilan perlu disesuaikan secara khusus.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa bedanya magang WordPress dengan magang web developer biasa?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Magang WordPress berfokus pada platform manajemen konten siap pakai, sedangkan magang web developer biasa lebih banyak menulis kode HTML, CSS, dan JavaScript dari awal.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Program Web & CMS Malang</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Praktik WordPress, Blogspot, Astro, Bootstrap 5, dan optimasi SEO on-page dengan bimbingan mentor di Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20program%20magang%20WordPress." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/bekal-dan-rencana-tugas-magang-web-developer-pemula-1.webp" alt="Peserta magang pemula menulis kode HTML dan CSS di laptop saat praktik web developer" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Panduan Pemula • 23 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/bekal-dan-rencana-tugas-magang-web-developer-pemula">
+                    Siap Magang Jadi Web Developer Walau Masih Pemula
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/Mahasiswa-Mentor-Membahas-Rencana-Durasi-Proyek.webp" alt="Infografis berapa lama magang informatika yang ideal untuk mahasiswa semester 5 sampai 7" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Magang Informatika • 25 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/berapa-lama-magang-informatika-yang-ideal">
+                    Berapa Lama Magang Informatika yang Ideal di Malang?
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>

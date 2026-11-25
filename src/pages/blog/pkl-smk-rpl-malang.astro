@@ -1,0 +1,466 @@
+---
+// src/pages/blog/pkl-smk-rpl-malang.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "PKL SMK RPL di Malang Tugas Tools dan Cara Daftar";
+const pageDesc = "Cari tempat PKL SMK RPL di Malang? Pelajari tugas, tools, output portofolio, syarat, dan cara daftar PKL berbasis proyek nyata. Tanya admin via WhatsApp.";
+const publishDate = "2026-11-25";
+const publishIsoDate = "2026-11-25T08:00:00+07:00";
+const pageSlug = "/blog/pkl-smk-rpl-malang";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/pkl-smk-rpl-malang-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/pkl-smk-rpl-malang-2.webp";
+const authorName = "Sholikhatun Nikmah";
+const keywordsList = "pkl smk rpl di malang, tempat pkl smk rpl malang, tugas anak rpl saat pkl, tools pkl rpl, cara daftar pkl rpl malang";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://infomagangmalang.web.id/blog/pkl-smk-rpl-malang#article",
+      "isPartOf": {
+        "@id": "https://infomagangmalang.web.id/blog/pkl-smk-rpl-malang"
+      },
+      "headline": "PKL SMK RPL di Malang Tugas Tools dan Cara Daftar",
+      "description": "Cari tempat PKL SMK RPL di Malang? Pelajari tugas, tools, output portofolio, syarat, dan cara daftar PKL berbasis proyek nyata. Tanya admin via WhatsApp.",
+      "keywords": "pkl smk rpl di malang, tempat pkl smk rpl malang, tugas anak rpl saat pkl, tools pkl rpl, cara daftar pkl rpl malang",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://infomagangmalang.web.id/blog/pkl-smk-rpl-malang"
+      },
+      "datePublished": "2026-11-25T08:00:00+07:00",
+      "dateModified": "2026-11-25T08:00:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        "https://infomagangmalang.web.id/assets/img/pkl-smk-rpl-malang-1.webp",
+        "https://infomagangmalang.web.id/assets/img/pkl-smk-rpl-malang-2.webp"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/pkl-smk-rpl-malang#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Anak RPL PKL mengerjakan apa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Anak RPL yang PKL di Gemilang Training umumnya mengerjakan pembuatan website responsif dengan Astro, Bootstrap 5, WordPress, atau Blogspot, mengelola konten, dan menerapkan SEO dasar. Mentor praktisi membimbing, sedangkan jurnal PKL menjadi catatan harian."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Perlu bisa apa sebelum PKL RPL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Siswa RPL sebaiknya mengenal dasar HTML dan CSS serta mau belajar. Penguasaan framework seperti Astro tidak wajib sejak awal karena program dibimbing bertahap dari dasar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah PKL RPL mendapat portofolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, peserta PKL di Gemilang Training membawa karya website nyata sebagai bukti portofolio, bersama sertifikat kelulusan. Kualitas portofolio tetap bergantung pada proyek yang diselesaikan dan dokumentasinya."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Berapa lama durasi PKL RPL di Malang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Di Gemilang Training, durasi standar berkisar 3 sampai 6 bulan mengikuti kalender PKL sekolah. Tempat PKL lain dapat memiliki durasi berbeda, sehingga siswa perlu mengonfirmasinya kepada guru pembimbing."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/pkl-smk-rpl-malang-1.webp"
+  imageAlt="Siswa SMK RPL mengerjakan website saat PKL"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Siswa SMK RPL mengerjakan website saat PKL" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Artikel Pilar" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Artikel Pilar</span>
+            <time datetime={publishIsoDate}>25 November 2026 • 08:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            Tempat PKL SMK RPL di Malang Beserta Tugas dan Cara Daftarnya
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/pkl-smk-rpl-malang-1.webp" 
+            alt="Siswa SMK RPL mengerjakan website saat PKL" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Siswa SMK RPL mengerjakan website nyata saat PKL di Malang.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#apa-itu-pkl-rpl" class="hover:text-tc-accent transition-colors">1. Apa Itu PKL SMK RPL di Malang?</a></li>
+              <li><a href="#gambaran-program" class="hover:text-tc-accent transition-colors">2. Bagaimana Gambaran Program PKL RPL di Gemilang Training?</a></li>
+              <li><a href="#tugas-dan-tools" class="hover:text-tc-accent transition-colors">3. Apa Saja Tugas Anak RPL dan Tools yang Dipakai?</a></li>
+              <li><a href="#output-syarat-daftar" class="hover:text-tc-accent transition-colors">4. Output, Syarat, dan Cara Daftar PKL RPL di Malang</a></li>
+              <li><a href="#kesalahan-perbandingan-tips" class="hover:text-tc-accent transition-colors">5. Kesalahan Memilih Tempat, Perbandingan Proyek, dan Tips</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">6. FAQ PKL SMK RPL di Malang</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>PKL SMK RPL</strong> adalah program praktik kerja lapangan bagi siswa Rekayasa Perangkat Lunak untuk menerapkan ilmu pemrograman dan web di Malang pada proyek nyata.
+          </p>
+          <p>
+            Rekayasa Perangkat Lunak atau RPL adalah jurusan SMK yang melatih siswa membuat aplikasi dan website. Praktik Kerja Lapangan atau PKL memberi kesempatan menerapkan materi kelas pada pekerjaan nyata di luar sekolah.
+          </p>
+          <p>
+            PKL RPL ditujukan bagi siswa yang ingin memahami alur pengembangan web, mulai dari merancang tampilan sampai mempublikasikan hasil. Waktu pelaksanaannya mengikuti kalender PKL masing-masing sekolah.
+          </p>
+          <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-2">
+            <h2 class="text-base md:text-lg font-bold text-white">Ringkasan Inti</h2>
+            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm">
+              <li>Siswa RPL mengerjakan website nyata, bukan sekadar tugas administratif.</li>
+              <li>Praktik mencakup antarmuka responsif dengan Astro, Bootstrap 5, WordPress, dan Blogspot, ditambah SEO.</li>
+              <li>Durasi standar di Gemilang Training berkisar 3 sampai 6 bulan mengikuti kalender PKL sekolah.</li>
+              <li>Hasil akhir berupa karya portofolio, jurnal PKL, dan sertifikat kelulusan.</li>
+              <li>Pendaftaran dimulai dari pengecekan syarat sekolah, lalu menghubungi admin tempat PKL.</li>
+            </ul>
+          </div>
+
+          <section id="apa-itu-pkl-rpl" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu PKL SMK RPL di Malang?</h2>
+                        <p>
+              PKL SMK RPL adalah program praktik kerja lapangan bagi siswa Rekayasa Perangkat Lunak untuk menerapkan ilmu pemrograman dan web di Malang pada proyek nyata.
+            </p>
+            <p>
+              Manfaat utamanya adalah pengalaman proyek, bimbingan mentor, dan bahan portofolio. Batasannya, hasil belajar tetap bergantung pada kesungguhan siswa dan kecocokan tempat PKL dengan kompetensi RPL.
+            </p>
+            <p>
+              Malang dikenal sebagai kota pendidikan dengan banyak SMK. Karena itu, pilihan tempat PKL perlu diseleksi berdasarkan kegiatan nyata yang akan dikerjakan, bukan hanya berdasarkan jarak dari rumah atau sekolah.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/pkl-smk-rpl-malang-2.webp" 
+              alt="Tampilan website responsif hasil praktik PKL siswa RPL" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Tampilan website responsif hasil praktik PKL siswa RPL.
+            </figcaption>
+          </figure>
+
+          <section id="gambaran-program" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Gambaran Program PKL RPL di Gemilang Training?</h2>
+                        <p>
+              Program PKL RPL di Gemilang Training Malang berlangsung 3 sampai 6 bulan dengan praktik berbasis proyek nyata, dibimbing mentor praktisi, dan dipantau guru sekolah.
+            </p>
+            <p>
+              Menurut beranda Gemilang Training per November 2026, durasi standar program berkisar 3 hingga 6 bulan sesuai kalender PKL sekolah. Sistem pelaksanaan bersifat fleksibel, yaitu WFH, hybrid, atau onsite di Malang, menyesuaikan ketentuan sekolah dan kebutuhan proyek.
+            </p>
+            <p>
+              Fokus jalur RPL adalah Frontend dan Fullstack Web Development. Berdasarkan rancangan program per November 2026, praktik terbagi sekitar 70 persen pembuatan antarmuka website responsif dengan Astro, Bootstrap 5, WordPress, dan Blogspot, serta sekitar 30 persen optimasi SEO.
+            </p>
+            <p>
+              Gemilang Training berlokasi di Mojolangu, Lowokwaru, Kota Malang, dengan layanan admin pada Senin sampai Jumat pukul 08.00 sampai 17.00 WIB. Rincian jalur ini dapat dibaca pada halaman <a href="/program" class="text-tc-accent hover:underline">program PKL Siswa SMK Gemilang Training</a>, termasuk pendampingan monitoring guru dan pengisian jurnal PKL.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/anak-rpl-pkl-ngapain-aja" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA PANDUAN TUGAS MINGGUAN</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Begini Gambaran Kerja Anak SMK RPL Saat Menjalani PKL di Perusahaan &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="tugas-dan-tools" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja Tugas Anak RPL Saat PKL dan Tools Apa yang Dipakai?</h2>
+                        <p>
+              Tugas anak RPL saat PKL umumnya meliputi menyusun tampilan website, menulis kode HTML dan CSS, mengelola konten di WordPress atau Blogspot, serta melakukan optimasi SEO.
+            </p>
+            <p>
+              Pada minggu awal, siswa biasanya mempelajari alur kerja dan dasar yang dibutuhkan. Setelah itu, siswa mulai mengerjakan halaman website nyata, misalnya profil usaha atau portal informasi. Mentor memberi revisi, lalu siswa memperbaiki hasilnya sampai layak dipublikasikan.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Menata navigasi menu dan struktur halaman responsif menggunakan Bootstrap 5 dan Astro.</li>
+              <li>Mengelola website berbasis CMS seperti WordPress dan Blogspot termasuk halaman, menu, dan artikel.</li>
+              <li>Mengompres gambar agar ringan, mengatur meta tag, dan memantau halaman melalui Google Search Console.</li>
+              <li>Mencatat kegiatan harian pada jurnal PKL. Uraian pekerjaan per minggu dibahas lebih rinci pada panduan <a href="/blog/anak-rpl-pkl-ngapain-aja" class="text-tc-accent hover:underline">anak RPL PKL ngapain aja</a>.</li>
+            </ul>
+            <p>
+              Siswa tidak perlu menguasai semua tools sejak hari pertama. Tools diperkenalkan bertahap sesuai proyek yang sedang dikerjakan.
+            </p>
+          </section>
+
+          <section id="output-syarat-daftar" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Output, Syarat, dan Cara Daftar PKL RPL di Malang</h2>
+                        <p>
+              Output PKL RPL berupa karya website yang dapat ditampilkan sebagai portofolio, jurnal PKL, penilaian, dan sertifikat kelulusan dari tempat praktik. Contoh proyek nyata yang pernah dikerjakan peserta dapat dilihat pada halaman <a href="/portofolio" class="text-tc-accent hover:underline">portofolio karya peserta Gemilang Training</a>.
+            </p>
+            <p>
+              Syarat PKL RPL umumnya berupa surat pengantar sekolah, status siswa aktif jurusan RPL, dan kesiapan dasar HTML, CSS, serta kemauan belajar langsung dari mentor. Daftar persiapan lengkap tersedia pada panduan <a href="/blog/persiapan-pkl-rpl" class="text-tc-accent hover:underline">persiapan PKL RPL skill dasar dan dokumen</a>.
+            </p>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li>Konfirmasi jadwal dan ketentuan PKL kepada guru pembimbing di sekolah.</li>
+              <li>Siapkan berkas yang diminta sekolah, termasuk surat pengantar.</li>
+              <li>Hubungi admin tempat PKL untuk menanyakan jalur RPL dan kuota.</li>
+              <li>Ajukan surat dan berkas sesuai alur yang berlaku pada halaman <a href="/alur-pendaftaran" class="text-tc-accent hover:underline">alur pendaftaran Gemilang Training</a>.</li>
+              <li>Tunggu surat balasan penerimaan, lalu laporkan ke sekolah.</li>
+            </ol>
+          </section>
+
+          <section id="kesalahan-perbandingan-tips" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Kesalahan Umum, Perbandingan PKL Proyek vs Administratif, dan Tips Lancar</h2>
+                        <p>
+              Kesalahan umum saat memilih tempat PKL RPL adalah tidak mengecek kegiatan nyata, hanya melihat lokasi dekat, ikut teman tanpa memeriksa kecocokan kompetensi, dan tidak memastikan adanya mentor yang membimbing.
+            </p>
+            <p>
+              PKL berbasis proyek melatih keterampilan RPL lewat pembuatan produk nyata seperti website yang bisa dibuka online, sedangkan PKL administratif cenderung berisi tugas pendukung kantor yang kurang menyentuh kompetensi pemrograman. Lihat juga <a href="/blog/ide-project-pkl-rpl-portofolio" class="text-tc-accent hover:underline">daftar ide project PKL RPL yang layak masuk portofolio</a>.
+            </p>
+            <p>
+              Agar PKL RPL berjalan lancar, isi jurnal setiap hari kerja, simpan setiap versi hasil kerja dan tangkapan layar, tanyakan hal yang belum jelas sedini mungkin, serta pahami bentuk penilaian instruktur, laporan, dan presentasi sesuai panduan Kementerian Pendidikan Dasar dan Menengah.
+            </p>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Kesimpulan Utama PKL SMK RPL</p>
+              <p class="text-tc-muted text-xs italic">Cek kegiatan nyata, mentor, tools, dan output sebelum memilih tempat PKL; siapkan dasar HTML dan CSS; serta dokumentasikan setiap proyek sejak awal.</p>
+            </blockquote>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            SN
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Penulis konten edukasi karier digital dan panduan PKL SMK RPL di Gemilang Training Malang.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Daftar PKL SMK RPL Berbasis Proyek Nyata di Malang</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Tanyakan jalur, kuota, dan jadwal PKL RPL yang tersedia kepada admin Gemilang Training melalui WhatsApp.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20menanyakan%20jalur%20dan%20jadwal%20PKL%20SMK%20RPL." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Tanya Jadwal PKL via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ PKL SMK RPL di Malang</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Anak RPL PKL mengerjakan apa?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Anak RPL yang PKL di Gemilang Training umumnya mengerjakan pembuatan website responsif dengan Astro, Bootstrap 5, WordPress, atau Blogspot, mengelola konten, dan menerapkan SEO dasar. Mentor praktisi membimbing, sedangkan jurnal PKL menjadi catatan harian.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Perlu bisa apa sebelum PKL RPL?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Siswa RPL sebaiknya mengenal dasar HTML dan CSS serta mau belajar. Penguasaan framework seperti Astro tidak wajib sejak awal karena program dibimbing bertahap dari dasar.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah PKL RPL mendapat portofolio?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Ya, peserta PKL di Gemilang Training membawa karya website nyata sebagai bukti portofolio, bersama sertifikat kelulusan. Kualitas portofolio tetap bergantung pada proyek yang diselesaikan dan dokumentasinya.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa lama durasi PKL RPL di Malang?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Di Gemilang Training, durasi standar berkisar 3 sampai 6 bulan mengikuti kalender PKL sekolah. Tempat PKL lain dapat memiliki durasi berbeda, sehingga siswa perlu mengonfirmasinya kepada guru pembimbing.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Jalur PKL Siswa SMK RPL</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              70% pembuatan antarmuka website responsif (Astro, Bootstrap 5, WordPress, Blogspot) & 30% optimasi SEO di Mojolangu, Kota Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20PKL%20SMK%20RPL." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/anak-rpl-pkl-ngapain-aja-1.webp" alt="Siswa RPL berdiskusi tentang tugas PKL" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Cluster 1 • 25 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/anak-rpl-pkl-ngapain-aja">
+                    Begini Gambaran Kerja Anak SMK RPL Saat Menjalani PKL di Perusahaan
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/persiapan-pkl-rpl-1.webp" alt="Siswa RPL menyiapkan dokumen dan laptop sebelum PKL" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Cluster 3 • 25 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/persiapan-pkl-rpl">
+                    Persiapan PKL RPL Skill Dasar dan Dokumen yang Perlu Disiapkan
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>

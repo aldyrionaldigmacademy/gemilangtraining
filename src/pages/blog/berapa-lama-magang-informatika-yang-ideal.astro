@@ -1,0 +1,509 @@
+---
+// src/pages/blog/berapa-lama-magang-informatika-yang-ideal.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Berapa Lama Magang Informatika yang Ideal di Malang?";
+const pageDesc = "Berapa lama magang informatika yang ideal? Bandingkan 1,5 bulan, 3 bulan, dan 1 semester, lalu pilih program magang informatika terstruktur di Malang.";
+const publishDate = "2026-11-25";
+const publishIsoDate = "2026-11-25T18:00:00+07:00";
+const pageSlug = "/blog/berapa-lama-magang-informatika-yang-ideal";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/Mahasiswa-Mentor-Membahas-Rencana-Durasi-Proyek.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/Mahasiswa-Mengerjakan-Proyek-Web-dan-Code-Review.webp";
+const authorName = "Yolanda Deva Apriliana Putri";
+const keywordsList = "berapa lama magang informatika yang ideal, durasi magang teknik informatika, lama kerja praktik informatika, perbedaan KP dan magang informatika, magang informatika 1 semester, minimal bulan magang mahasiswa IT, perjanjian magang mahasiswa informatika";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://infomagangmalang.web.id/blog/berapa-lama-magang-informatika-yang-ideal#article",
+      "isPartOf": {
+        "@id": "https://infomagangmalang.web.id/blog/berapa-lama-magang-informatika-yang-ideal"
+      },
+      "headline": "Berapa Lama Magang Informatika yang Ideal di Malang?",
+      "description": "Berapa lama magang informatika yang ideal? Bandingkan 1,5 bulan, 3 bulan, dan 1 semester, lalu pilih program magang informatika terstruktur di Malang.",
+      "keywords": "berapa lama magang informatika yang ideal, durasi magang teknik informatika, lama kerja praktik informatika, perbedaan KP dan magang informatika, magang informatika 1 semester, minimal bulan magang mahasiswa IT, perjanjian magang mahasiswa informatika",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://infomagangmalang.web.id/blog/berapa-lama-magang-informatika-yang-ideal"
+      },
+      "datePublished": "2026-11-25T18:00:00+07:00",
+      "dateModified": "2026-11-25T18:00:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Yolanda Deva Apriliana Putri"
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        "https://infomagangmalang.web.id/assets/img/Mahasiswa-Mentor-Membahas-Rencana-Durasi-Proyek.webp",
+        "https://infomagangmalang.web.id/assets/img/Mahasiswa-Mengerjakan-Proyek-Web-dan-Code-Review.webp"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/berapa-lama-magang-informatika-yang-ideal#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Berapa lama magang informatika yang ideal untuk mahasiswa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Magang informatika yang ideal berlangsung 3 sampai 6 bulan atau satu semester. Universitas Ma’soem menyebut rentang ideal 4 sampai 6 bulan dengan batas minimal umum 2 sampai 3 bulan. Rentang tersebut memberi waktu untuk onboarding, pengembangan fitur, pengujian, dan dokumentasi proyek IT yang layak masuk portofolio."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah magang informatika 1,5 sampai 2 bulan cukup untuk membuat portofolio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Magang 1,5 sampai 2 bulan cukup untuk menyelesaikan satu modul atau fitur kecil, tetapi kurang untuk aplikasi utuh dari perancangan sampai deployment. Durasi ini sesuai skema KP Lapangan ITS. Mahasiswa yang menargetkan portofolio lengkap sebaiknya memilih magang minimal 3 bulan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa perbedaan KP dan magang informatika?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kerja Praktik (KP) umumnya berlangsung 1 sampai 2 bulan sebagai syarat kurikulum dengan laporan akhir. Magang industri berkisar 3 bulan hingga 1 tahun dan menekankan pengalaman kerja nyata, menurut Universitas Ma’soem. Magang konversi SKS memerlukan persetujuan program studi sebelum dimulai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ada aturan durasi baku nasional untuk magang mahasiswa informatika?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Belum ada aturan durasi baku nasional yang seragam untuk magang mahasiswa, menurut Pintarly. Lama magang mengikuti kebijakan masing-masing perguruan tinggi dan mitra industri. Mahasiswa perlu memeriksa buku pedoman KP atau magang program studi sebelum menandatangani perjanjian dengan perusahaan atau penyelenggara magang."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah uang saku magang harus tertulis dalam perjanjian?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ya, besaran uang saku wajib tercantum dalam perjanjian pemagangan tertulis menurut Pasal 10 Permenaker Nomor 6 Tahun 2020. Uang saku mencakup biaya transportasi, uang makan, dan insentif peserta. Pemagangan tanpa perjanjian tertulis dianggap tidak sah, sehingga mahasiswa sebaiknya meminta kejelasan sebelum hari pertama."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa saja yang dilindungi dalam perjanjian magang?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Perjanjian magang melindungi hak memperoleh bimbingan, fasilitas keselamatan dan kesehatan kerja, uang saku, jaminan sosial, serta sertifikat atau surat keterangan magang. Permenaker Nomor 6 Tahun 2020 mewajibkan penyelenggara mendaftarkan peserta ke jaminan kecelakaan kerja dan jaminan kematian selama program berjalan. Mahasiswa dapat memeriksa poin ini dalam draf perjanjian."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/Mahasiswa-Mentor-Membahas-Rencana-Durasi-Proyek.webp"
+  imageAlt="Infografis berapa lama magang informatika yang ideal untuk mahasiswa semester 5 sampai 7"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Infografis berapa lama magang informatika yang ideal untuk mahasiswa semester 5 sampai 7" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Magang Informatika" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Magang Informatika</span>
+            <time datetime={publishIsoDate}>25 November 2026 • 18:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            Berapa Lama Magang Informatika yang Ideal di Malang?
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/Mahasiswa-Mentor-Membahas-Rencana-Durasi-Proyek.webp" 
+            alt="Infografis berapa lama magang informatika yang ideal untuk mahasiswa semester 5 sampai 7" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Mahasiswa dan mentor membahas perencanaan durasi proyek magang informatika.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#menurut-kampus-industri" class="hover:text-tc-accent transition-colors">1. Berapa Lama Magang Informatika Menurut Kampus dan Industri?</a></li>
+              <li><a href="#perbandingan-durasi" class="hover:text-tc-accent transition-colors">2. Perbandingan Durasi 1,5 Bulan, 3 Bulan, dan Satu Semester</a></li>
+              <li><a href="#faktor-penentu-durasi" class="hover:text-tc-accent transition-colors">3. Faktor Penentu Lama Magang & Cara Memilih Durasi Tepat</a></li>
+              <li><a href="#perjanjian-magang" class="hover:text-tc-accent transition-colors">4. Apa Saja yang Wajib Ada dalam Perjanjian Magang?</a></li>
+              <li><a href="#rekomendasi-program" class="hover:text-tc-accent transition-colors">5. Rekomendasi Program Magang Informatika Terstruktur di Malang</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">6. FAQ Berapa Lama Magang Informatika yang Ideal</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Durasi magang informatika yang ideal</strong> adalah 3 sampai 6 bulan atau satu semester, cukup untuk menyelesaikan proyek IT dan membangun portofolio.
+          </p>
+          <p>
+            Berapa lama magang informatika yang ideal bergantung pada tujuan mahasiswa: 1,5 sampai 2 bulan memenuhi Kerja Praktik (KP), sedangkan 3 sampai 6 bulan memberi waktu cukup untuk satu siklus proyek IT lengkap.
+          </p>
+          <p>
+            Panduan ini membandingkan tiga skema durasi, menjelaskan isi perjanjian magang, dan menunjukkan cara memilih durasi yang sesuai dengan <a href="/" class="text-tc-accent hover:underline">informasi magang di Malang</a> untuk mahasiswa Teknik Informatika, Ilmu Komputer, Sistem Informasi, dan Rekayasa Perangkat Lunak.
+          </p>
+          <p class="text-xs bg-tc-bg p-3.5 rounded-xl border border-tc-border/80">
+            Catatan: siswa SMK yang mencari tempat PKL dapat langsung membuka <a href="/alur-pendaftaran?jalur=smk" class="text-tc-accent hover:underline">alur pendaftaran PKL jalur SMK</a>. Artikel ini khusus membahas magang mahasiswa.
+          </p>
+
+          <section id="menurut-kampus-industri" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Berapa Lama Magang Informatika yang Ideal Menurut Kampus dan Industri?</h2>
+                        <p>
+              Rentang ideal magang informatika adalah 4 sampai 6 bulan dengan batas minimal umum 2 sampai 3 bulan, sedangkan durasi baku nasional belum ada. Magang informatika adalah program praktik kerja mahasiswa di perusahaan atau lembaga teknologi untuk mengerjakan tugas IT nyata di bawah bimbingan mentor.
+            </p>
+            <p>
+              Pintarly mencatat bahwa belum ada aturan durasi baku nasional yang seragam untuk magang mahasiswa; lama magang ditetapkan oleh kebijakan masing-masing perguruan tinggi bersama mitra industri sehingga buku pedoman KP atau magang program studi menjadi rujukan pertama.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Universitas Ma’soem:</strong> durasi magang ideal berada di rentang 4 sampai 6 bulan, dengan 2 sampai 3 bulan sebagai batas minimal umum; KP umumnya 1 sampai 2 bulan dan magang industri berkisar 3 bulan hingga 1 tahun.</li>
+              <li><strong>Institut Teknologi Sepuluh Nopember (ITS):</strong> skema KP Lapangan berlangsung 1,5 sampai 2 bulan, sedangkan skema Kapita Selekta berlangsung satu semester penuh.</li>
+              <li><strong>Gemilang Training (Info Magang Malang):</strong> standar durasi magang yang umum diterapkan di dunia kerja berada pada rentang 3 sampai 6 bulan.</li>
+            </ul>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/Mahasiswa-Mengerjakan-Proyek-Web-dan-Code-Review.webp" 
+              alt="Mahasiswa informatika mengerjakan proyek web untuk menentukan berapa lama magang informatika yang ideal di Malang" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Mahasiswa informatika mengerjakan proyek web dan code review selama magang di Malang.
+            </figcaption>
+          </figure>
+
+          <section id="perbandingan-durasi" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Perbandingan Durasi Magang Informatika 1,5 Bulan, 3 Bulan, dan Satu Semester</h2>
+                        <p>
+              Magang 1,5 sampai 2 bulan cocok untuk KP, 3 bulan menjadi batas minimal efektif industri, dan 4 sampai 6 bulan memungkinkan proyek IT dikerjakan penuh (estimasi minggu merupakan perhitungan redaksi Info Magang Malang berdasarkan siklus onboarding, pengembangan fitur, serta pengujian dan dokumentasi).
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Skema 1,5 hingga 2 bulan:</strong> dari 6 sampai 8 minggu, onboarding memakai 1 sampai 2 minggu sehingga waktu produktif tersisa 4 sampai 6 minggu—cukup untuk satu modul atau fitur, namun belum cukup untuk aplikasi utuh sampai deployment.</li>
+              <li><strong>Skema 3 bulan:</strong> setara 12 sampai 13 minggu (alokasi realistis 2 minggu onboarding, 8 minggu pengembangan, dan 2 sampai 3 minggu pengujian serta dokumentasi) untuk menyelesaikan satu proyek berjalan di server dengan riwayat commit.</li>
+              <li><strong>Skema 4 hingga 6 bulan atau satu semester:</strong> memungkinkan memegang proyek dari kebutuhan awal sampai rilis, iterasi umpan balik pengguna, serta cocok untuk magang konversi SKS dan portofolio yang matang.</li>
+            </ul>
+            <div class="overflow-x-auto rounded-2xl border border-tc-border">
+              <table class="w-full text-left border-collapse text-xs md:text-sm" aria-label="Tabel berapa lama magang informatika yang ideal berdasarkan kedalaman proyek dan target karier">
+                <thead>
+                  <tr class="bg-tc-bg text-white border-b border-tc-border">
+                    <th class="p-3 font-bold">Skema durasi</th>
+                    <th class="p-3 font-bold">Waktu produktif (estimasi)</th>
+                    <th class="p-3 font-bold">Kedalaman proyek</th>
+                    <th class="p-3 font-bold">Cocok untuk</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-tc-border/60">
+                  <tr>
+                    <td class="p-3 font-semibold text-white">1,5 sampai 2 bulan (KP Lapangan)</td>
+                    <td class="p-3">4 sampai 6 minggu</td>
+                    <td class="p-3">Satu modul, satu fitur, atau perbaikan sistem</td>
+                    <td class="p-3">Mahasiswa yang hanya perlu memenuhi syarat KP dan laporan</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">3 bulan (batas minimal efektif)</td>
+                    <td class="p-3">8 sampai 9 minggu</td>
+                    <td class="p-3">Satu proyek kecil sampai menengah yang dideploy</td>
+                    <td class="p-3">Mahasiswa yang ingin portofolio pertama dan pengalaman kerja nyata</td>
+                  </tr>
+                  <tr>
+                    <td class="p-3 font-semibold text-white">4 sampai 6 bulan atau satu semester</td>
+                    <td class="p-3">14 sampai 22 minggu</td>
+                    <td class="p-3">Proyek penuh dengan iterasi dan dokumentasi</td>
+                    <td class="p-3">Mahasiswa dengan target rekrutmen kerja atau konversi SKS</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/magang-mandiri-informatika-konversi-sks" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA PANDUAN KONVERSI SKS</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Magang Mandiri Informatika Konversi SKS, Apa Bisa? &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="faktor-penentu-durasi" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Faktor Penentu Lama Magang Informatika dan Cara Memilih Durasi Tepat</h2>
+                        <p>
+              Lama magang informatika ditentukan tiga faktor: kebijakan KP reguler (1–2 bulan) atau magang konversi SKS (setara satu semester dengan persetujuan prodi), kompleksitas tech stack (database, autentikasi, dan deployment butuh lebih dari 8 minggu), serta kesiapan jadwal kuliah mahasiswa semester 5 sampai 7.
+            </p>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li><strong>Cek silabus dan ketentuan prodi terlebih dahulu:</strong> baca buku pedoman KP/magang dan konfirmasi ke dosen pembimbing akademik sebelum mendaftar.</li>
+              <li><strong>Sesuaikan dengan tujuan eksplorasi atau rekrutmen kerja:</strong> pilih 1,5–3 bulan untuk eksplorasi, atau 4–6 bulan untuk portofolio kuat dan peluang rekrutmen.</li>
+              <li><strong>Pastikan struktur mentoring di tempat magang:</strong> tanyakan siapa mentor, frekuensi review kode, dan target mingguan, lalu pelajari <a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent hover:underline">alur pendaftaran magang jalur mahasiswa</a>.</li>
+            </ol>
+          </section>
+
+          <section id="perjanjian-magang" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja yang Wajib Ada dalam Perjanjian Magang Sebelum Magang Dimulai?</h2>
+                        <p>
+              Perjanjian magang tertulis memuat hak dan kewajiban, program magang, jangka waktu, dan besaran uang saku sesuai Pasal 10 Permenaker Nomor 6 Tahun 2020 tentang Penyelenggaraan Pemagangan di Dalam Negeri serta selaras dengan Permendikbudristek Nomor 63 Tahun 2024 tentang Penyelenggaraan Magang Mahasiswa.
+            </p>
+            <p>
+              Pasal 13 ayat (2) Permenaker Nomor 6 Tahun 2020 menyebut uang saku meliputi biaya transportasi, uang makan, dan insentif peserta. Perlindungan peserta mencakup enam hal pokok: bimbingan pembimbing pemagangan, pemenuhan hak sesuai perjanjian, fasilitas keselamatan dan kesehatan kerja, uang saku, kepesertaan program jaminan sosial (jaminan kecelakaan kerja dan jaminan kematian), serta sertifikat atau surat keterangan pemagangan.
+            </p>
+            <p class="text-xs italic">
+              Catatan: penjelasan ini merupakan ringkasan informasi umum dan bukan nasihat hukum. Mahasiswa perlu mengonfirmasi format perjanjian dengan kampus dan penyelenggara magang.
+            </p>
+          </section>
+
+          <section id="rekomendasi-program" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Rekomendasi Program Magang Informatika Terstruktur di Malang</h2>
+                        <p>
+              Info Magang Malang menyediakan program magang informatika berbasis proyek nyata yang dapat disesuaikan dengan durasi 3 sampai 6 bulan dan surat pengantar dari dosen pembimbing kampus.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Bandingkan pilihan <a href="/program" class="text-tc-accent hover:underline">program magang informatika</a> dengan durasi 3 sampai 6 bulan yang sesuai target konversi SKS.</li>
+              <li>Pelajari <a href="/alur-pendaftaran?jalur=mahasiswa" class="text-tc-accent hover:underline">alur pendaftaran magang jalur mahasiswa</a> mulai dari pengajuan berkas sampai surat balasan.</li>
+              <li>Konsultasikan penyesuaian durasi dan surat kampus melalui <a href="/kontak" class="text-tc-accent hover:underline">halaman kontak Info Magang Malang</a> (Jl. Simpang Candi Panggung No.37, Mojolangu, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141).</li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            YD
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Penulis konten SEO yang menangani artikel edukasi dan komersial untuk klien di Malang dan Jawa Timur, berfokus pada struktur artikel yang mudah dikutip dengan data terverifikasi.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Sesuaikan Durasi & Surat Kampus Magang Informatika</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Tentukan durasi 3 hingga 6 bulan yang sesuai pedoman prodi, lalu konsultasikan jadwal dan surat pengantar kampus bersama tim Info Magang Malang.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20durasi%20dan%20surat%20magang%20informatika." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi Magang Informatika via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Berapa Lama Magang Informatika yang Ideal dan Isi Perjanjiannya</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Berapa lama magang informatika yang ideal untuk mahasiswa?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Magang informatika yang ideal berlangsung 3 sampai 6 bulan atau satu semester. Universitas Ma’soem menyebut rentang ideal 4 sampai 6 bulan dengan batas minimal umum 2 sampai 3 bulan. Rentang tersebut memberi waktu untuk onboarding, pengembangan fitur, pengujian, dan dokumentasi proyek IT yang layak masuk portofolio.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah magang informatika 1,5 sampai 2 bulan cukup untuk membuat portofolio?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Magang 1,5 sampai 2 bulan cukup untuk menyelesaikan satu modul atau fitur kecil, tetapi kurang untuk aplikasi utuh dari perancangan sampai deployment. Durasi ini sesuai skema KP Lapangan ITS. Mahasiswa yang menargetkan portofolio lengkap sebaiknya memilih magang minimal 3 bulan.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa perbedaan KP dan magang informatika?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Kerja Praktik (KP) umumnya berlangsung 1 sampai 2 bulan sebagai syarat kurikulum dengan laporan akhir. Magang industri berkisar 3 bulan hingga 1 tahun dan menekankan pengalaman kerja nyata, menurut Universitas Ma’soem. Magang konversi SKS memerlukan persetujuan program studi sebelum dimulai.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah ada aturan durasi baku nasional untuk magang mahasiswa informatika?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Belum ada aturan durasi baku nasional yang seragam untuk magang mahasiswa, menurut Pintarly. Lama magang mengikuti kebijakan masing-masing perguruan tinggi dan mitra industri. Mahasiswa perlu memeriksa buku pedoman KP atau magang program studi sebelum menandatangani perjanjian dengan perusahaan atau penyelenggara magang.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah uang saku magang harus tertulis dalam perjanjian?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Ya, besaran uang saku wajib tercantum dalam perjanjian pemagangan tertulis menurut Pasal 10 Permenaker Nomor 6 Tahun 2020. Uang saku mencakup biaya transportasi, uang makan, dan insentif peserta. Pemagangan tanpa perjanjian tertulis dianggap tidak sah, sehingga mahasiswa sebaiknya meminta kejelasan sebelum hari pertama.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa saja yang dilindungi dalam perjanjian magang?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Perjanjian magang melindungi hak memperoleh bimbingan, fasilitas keselamatan dan kesehatan kerja, uang saku, jaminan sosial, serta sertifikat atau surat keterangan magang. Permenaker Nomor 6 Tahun 2020 mewajibkan penyelenggara mendaftarkan peserta ke jaminan kecelakaan kerja dan jaminan kematian selama program berjalan. Mahasiswa dapat memeriksa poin ini dalam draf perjanjian.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Program Magang Informatika</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Magang berbasis proyek nyata berdurasi 3–6 bulan di Mojolangu, Kota Malang dengan surat balasan resmi dan bimbingan mentor praktisi.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20mahasiswa%20Informatika%20ingin%20bertanya%20program%20magang." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/Mahasiswa-mengisi-Formulir-di-Ruang-Prodi.webp" alt="Mahasiswa mengisi formulir magang mandiri informatika konversi SKS di ruang prodi" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Akademik & SKS • 18 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-mandiri-informatika-konversi-sks">
+                    Magang Mandiri Informatika Konversi SKS, Apa Bisa?
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/magang-wordpress-developer-1.webp" alt="Developer mengelola dashboard WordPress" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Cluster 3 • 25 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-wordpress-developer">
+                    Magang WordPress Developer, Apa yang Bisa Dipelajari Pemula
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>
