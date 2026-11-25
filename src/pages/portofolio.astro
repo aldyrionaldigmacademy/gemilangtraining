@@ -5,37 +5,19 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { portofolios } from '../data/portofolioData';
 
-const formattedPortofolios = portofolios.map((item) => {
-  const rawImg = String(item.img || '');
-  const updatedImg = rawImg.toLowerCase().includes('yudharta.webp')
-    ? rawImg.replace(/yudharta\.webp/gi, 'poliwangi1.webp')
-    : rawImg;
+const replaceSkariga = (text: unknown): string =>
+  typeof text === 'string'
+    ? text.replace(/SMK PGRI 1 Malang/gi, 'SMK PGRI 3 Malang')
+    : String(text ?? '');
 
-  const isYudharta =
-    item.title.toLowerCase().includes('yudharta') ||
-    item.mitra.toLowerCase().includes('yudharta') ||
-    rawImg.toLowerCase().includes('yudharta');
-
-  if (!isYudharta) {
-    return {
-      ...item,
-      img: updatedImg,
-    };
-  }
-
-  return {
-    ...item,
-    slug: 'kemitraan-industri-magang-mahasiswa-poliwangi',
-    mitra: 'Politeknik Negeri Banyuwangi (Poliwangi)',
-    lokasi: 'Banyuwangi, Jawa Timur',
-    title: 'Kemitraan Industri & Magang Mahasiswa Poliwangi',
-    desc: 'Kolaborasi program magang mahasiswa Politeknik Negeri Banyuwangi (Poliwangi) dalam pengembangan website modern, optimasi SEO, dan proyek digital terapan bersama mentor industri.',
-    img: updatedImg || '/assets/img/poliwangi1.webp',
-    tags: item.tags.map((t) =>
-      t.toLowerCase().includes('yudharta') ? 'Poliwangi' : t
-    ),
-  };
-});
+const formattedPortofolios = portofolios.map((item) => ({
+  ...item,
+  mitra: replaceSkariga(item.mitra),
+  lokasi: replaceSkariga(item.lokasi),
+  title: replaceSkariga(item.title),
+  desc: replaceSkariga(item.desc),
+  tags: Array.isArray(item.tags) ? item.tags.map((t) => replaceSkariga(t)) : item.tags,
+}));
 ---
 
 <BaseLayout title="Portofolio Dokumentasi Karya & Studi Kasus - Gemilang Training" isHome={false}>
@@ -227,4 +209,3 @@ const formattedPortofolios = portofolios.map((item) => {
   initPortofolioFilter();
   document.addEventListener('astro:page-load', initPortofolioFilter);
 </script>
-```[cite: 25]
