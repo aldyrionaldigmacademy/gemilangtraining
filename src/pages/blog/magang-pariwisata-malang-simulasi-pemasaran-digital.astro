@@ -1,0 +1,469 @@
+---
+// src/pages/blog/magang-pariwisata-malang-simulasi-pemasaran-digital.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Pariwisata Malang: Simulasi Pemasaran Digital Wisata";
+const pageDesc = "Pelajari simulasi pemasaran digital produk wisata lokal dalam magang pariwisata di Malang: alur, bimbingan mentor, skema, durasi. Konsultasikan pendaftaran.";
+const publishDate = "2026-11-27";
+const publishIsoDate = "2026-11-27T10:30:00+07:00";
+const pageSlug = "/blog/magang-pariwisata-malang-simulasi-pemasaran-digital";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-2.webp";
+const authorName = "Sholikhatun Nikmah";
+const keywordsList = "magang pariwisata malang, simulasi pemasaran digital wisata, wirausaha wisata lokal, strategi promosi wisata malang, portofolio magang pariwisata";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-simulasi-pemasaran-digital#article",
+      "isPartOf": {
+        "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-simulasi-pemasaran-digital"
+      },
+      "headline": "Magang Pariwisata Malang: Simulasi Pemasaran Digital Wisata",
+      "description": "Pelajari simulasi pemasaran digital produk wisata lokal dalam magang pariwisata di Malang: alur, bimbingan mentor, skema, durasi. Konsultasikan pendaftaran.",
+      "keywords": "magang pariwisata malang, simulasi pemasaran digital wisata, wirausaha wisata lokal, strategi promosi wisata malang, portofolio magang pariwisata",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-simulasi-pemasaran-digital"
+      },
+      "datePublished": "2026-11-27T10:30:00+07:00",
+      "dateModified": "2026-11-27T10:30:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-1.webp",
+        "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-2.webp"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-simulasi-pemasaran-digital#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah simulasi pemasaran digital memerlukan modal usaha?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tidak, karena kegiatan ini berupa praktik terarah. Peserta merancang dan mengevaluasi promosi dalam lingkungan belajar, sehingga risiko usaha yang sesungguhnya tidak ditanggung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah peserta jurusan lain bisa ikut simulasi bersama peserta pariwisata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peserta jurusan lain dapat berkolaborasi dalam simulasi kerja Agile lintas jurusan di Gemilang Training. Kolaborasi itu membantu peserta pariwisata mendapat sudut pandang desain, teknologi, atau pemasaran."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa manfaat simulasi ini bagi calon wirausaha wisata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Peserta terbiasa meriset pasar, menyusun pesan promosi, mengukur hasil, dan memperbaiki strategi. Kebiasaan tersebut menjadi bekal ketika kelak mengelola usaha wisata."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah simulasi ini pasti ada di setiap program magang pariwisata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Rincian kegiatan jurusan Pariwisata, termasuk simulasi pemasaran digital, dikonfirmasi tim Gemilang Training saat konsultasi pendaftaran."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-1.webp"
+  imageAlt="Peserta magang pariwisata merancang kampanye digital untuk wisata lokal"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Peserta magang pariwisata merancang kampanye digital untuk wisata lokal" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Cluster 2 • Pariwisata" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Cluster 2 • Pariwisata</span>
+            <time datetime={publishIsoDate}>27 November 2026 • 10:30 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            Magang Pariwisata di Malang, Simulasi Pemasaran Digital Produk Wisata Lokal untuk Calon Wirausaha
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-1.webp" 
+            alt="Peserta magang pariwisata merancang kampanye digital untuk wisata lokal" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Peserta magang pariwisata merancang strategi kampanye digital untuk produk wisata lokal.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#apa-itu-simulasi-pemasaran" class="hover:text-tc-accent transition-colors">1. Apa Itu Simulasi Pemasaran Digital dalam Magang Pariwisata?</a></li>
+              <li><a href="#mengapa-relevan" class="hover:text-tc-accent transition-colors">2. Mengapa Kegiatan Ini Relevan Bagi Peserta Magang Pariwisata?</a></li>
+              <li><a href="#tahapan-simulasi" class="hover:text-tc-accent transition-colors">3. Bagaimana Tahapan Simulasi Pemasaran Digital Berjalan?</a></li>
+              <li><a href="#target-pasar-positioning" class="hover:text-tc-accent transition-colors">4. Bagaimana Peserta Menentukan Target Pasar dan Positioning Produk?</a></li>
+              <li><a href="#penilaian-dan-review" class="hover:text-tc-accent transition-colors">5. Penilaian Hasil Simulasi, Review Mentor & Kerja Lintas Jurusan</a></li>
+              <li><a href="#studi-kasus-pertimbangan" class="hover:text-tc-accent transition-colors">6. Contoh Studi Kasus Batu & Pertimbangan Memilih Program Magang</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">7. FAQ Simulasi Pemasaran Digital Wisata</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            <strong>Magang pariwisata di Gemilang Training</strong> dapat mencakup simulasi pemasaran digital produk wisata lokal, di mana peserta berperan sebagai pengelola usaha wisata kecil: merancang promosi, menentukan target pasar, dan mengevaluasi hasil bersama mentor.
+          </p>
+          <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-2">
+            <h2 class="text-base md:text-lg font-bold text-white">Ringkasan Inti</h2>
+            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm">
+              <li>Simulasi pemasaran digital menempatkan peserta magang pariwisata sebagai pengelola usaha wisata kecil.</li>
+              <li>Peserta mengerjakan riset pasar, penyusunan pesan, pemilihan kanal, dan evaluasi hasil.</li>
+              <li>Review mingguan mentor dan kerja lintas jurusan memperkaya sudut pandang peserta.</li>
+              <li>Calon peserta perlu menilai kejelasan alur, bimbingan, skema, dan hasil akhir sebelum memilih program magang.</li>
+            </ul>
+          </div>
+
+          <section id="apa-itu-simulasi-pemasaran" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu Simulasi Pemasaran Digital dalam Magang Pariwisata?</h2>
+                        <p>
+              Simulasi pemasaran digital dalam magang pariwisata adalah kegiatan praktik terarah merancang dan menilai promosi online untuk produk wisata daerah, tanpa risiko usaha yang sesungguhnya.
+            </p>
+            <p>
+              Produk wisata lokal bisa berupa paket perjalanan singkat, wisata edukasi, desa wisata, atau kegiatan lapangan di Malang dan Batu. Peserta memilih satu produk sebagai bahan simulasi.
+            </p>
+            <p>
+              Di Gemilang Training, simulasi ini menjadi bagian dari pembelajaran berbasis praktik. Peserta bekerja dalam siklus Agile, menunjukkan hasil setiap minggu, dan menerima review mentor. Pendekatan ini dibahas juga pada artikel pilar <a href="/blog/magang-content-creator-pariwisata" class="text-tc-accent hover:underline">magang content creator pariwisata</a>.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-2.webp" 
+              alt="Mentor mengevaluasi hasil simulasi pemasaran digital peserta magang pariwisata" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Mentor memberikan evaluasi dan review mingguan terhadap hasil simulasi pemasaran digital.
+            </figcaption>
+          </figure>
+
+          <section id="mengapa-relevan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Mengapa Kegiatan Ini Relevan Bagi Peserta Magang Pariwisata?</h2>
+                        <p>
+              Kegiatan ini relevan karena pasar wisata berubah dari tahun ke tahun, sehingga peserta perlu terbiasa membaca peluang, menguji ide, dan menyesuaikan strategi promosi.
+            </p>
+            <p>
+              Data Dinas Pariwisata Kota Batu menunjukkan perubahan itu. Kota Batu tercatat menerima 11.005.189 kunjungan wisatawan pada 2024, lalu data final 2025 mencatat 9.794.603 kunjungan.
+            </p>
+            <p>
+              Angka tersebut memperlihatkan bahwa jumlah pengunjung dapat naik dan turun. Peserta yang terbiasa mengamati pasar dan menyusun promosi lewat simulasi lebih siap memahami dinamika tersebut, terutama bagi yang ingin merintis atau mengelola usaha wisata kelak.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/magang-pariwisata-malang-ulasan-destinasi-wisata" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA TUGAS ULASAN DESTINASI</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Magang Jurusan Pariwisata di Malang Apa Saja yang Dikerjakan? &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="tahapan-simulasi" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Tahapan Simulasi Pemasaran Digital Berjalan?</h2>
+                        <p>
+              Tahapan simulasi berjalan dari memilih produk, meriset pasar, menyusun pesan, memilih kanal, membuat konten, menjalankan uji coba, lalu mengevaluasi hasil bersama mentor.
+            </p>
+            <ol class="list-decimal pl-5 space-y-2">
+              <li>Memilih produk wisata lokal sebagai bahan simulasi.</li>
+              <li>Meriset calon pelanggan dan kompetitor sejenis.</li>
+              <li>Menyusun pesan utama dan keunggulan produk.</li>
+              <li>Memilih kanal, misalnya media sosial, blog, atau pesan singkat.</li>
+              <li>Membuat konten promosi, seperti video pendek dan artikel.</li>
+              <li>Menjalankan uji coba dalam lingkup simulasi.</li>
+              <li>Mengevaluasi respons dan menyusun perbaikan.</li>
+            </ol>
+            <p>
+              Setiap tahap menghasilkan dokumen kecil yang kemudian masuk ke portofolio peserta.
+            </p>
+          </section>
+
+          <section id="target-pasar-positioning" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Peserta Menentukan Target Pasar dan Positioning Produk?</h2>
+                        <p>
+              Peserta menentukan target pasar dengan mengenali siapa yang paling membutuhkan produk, lalu menyusun positioning yang menjelaskan alasan produk dipilih dibandingkan alternatif lain secara jujur dan spesifik.
+            </p>
+            <p>
+              Peserta mulai dengan pertanyaan sederhana. Siapa calon pelanggannya, apa kebutuhannya, dan apa yang membuat produk ini cocok untuk mereka?
+            </p>
+            <p>
+              Misalnya, paket wisata edukasi cocok untuk sekolah, sedangkan paket akhir pekan cocok untuk keluarga atau komunitas. Positioning ditulis dalam satu kalimat dan diuji kepada mentor serta rekan satu tim. Klaim berlebihan seperti nomor satu atau terbaik mutlak dihindari, karena positioning yang jujur lebih mudah dipercaya.
+            </p>
+          </section>
+
+          <section id="penilaian-dan-review" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Hasil Simulasi Dinilai serta Bagaimana Review Mentor Berjalan?</h2>
+                        <p>
+              Hasil simulasi dinilai dengan indikator sederhana, seperti jangkauan konten, interaksi audiens, pertanyaan masuk, dan kualitas masukan dari mentor, lalu dibandingkan dengan target awal. Dalam simulasi, angka bukan satu-satunya ukuran—peserta juga menilai apakah pesan mudah dipahami dan apakah alur promosi logis, lalu menulis catatan singkat mengenai apa yang berhasil, apa yang kurang, dan apa yang diubah pada putaran berikutnya.
+            </p>
+            <p>
+              Peserta menerima review mentor secara berkala dan bekerja bersama peserta jurusan lain, sehingga produk wisata dilihat dari sudut pandang desain, teknologi, dan pemasaran. Review mingguan membantu mengenali kelemahan lebih awal, sedangkan kerja lintas jurusan melatih komunikasi yang penting bagi calon pengelola usaha tour dan travel.
+            </p>
+          </section>
+
+          <section id="studi-kasus-pertimbangan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Contoh Bahan Studi Kasus dan Pertimbangan Sebelum Memilih Program Magang Wisata</h2>
+                        <p>
+              Paket petualangan di Batu dapat menjadi bahan studi kasus karena memiliki segmen pasar jelas, aktivitas mudah divisualisasikan, dan nilai jual yang bisa dijelaskan lewat konten digital. Sebagai contoh, Batu Offroad Adventure dapat dipakai peserta untuk mempelajari cara paket petualangan wisata Batu dikomunikasikan—menyusun urutan cerita aktivitas, pertanyaan yang sering muncul dari calon peserta, dan hal yang perlu diinformasikan soal kesiapan perjalanan tanpa nada memaksa.
+            </p>
+            <p>
+              Sebelum memilih program magang pemasaran wisata, ajukan pertanyaan berikut saat konsultasi:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Bagaimana alur praktik dan jadwal review mentor?</li>
+              <li>Skema apa yang tersedia, yaitu WFH, Hybrid, atau Onsite?</li>
+              <li>Berapa durasi program dan bagaimana penyesuaiannya dengan kebutuhan sekolah atau kampus?</li>
+              <li>Hasil apa yang akan masuk portofolio?</li>
+            </ul>
+            <p>
+              Di Gemilang Training, durasi magang berkisar 3 sampai 6 bulan dan lokasi Onsite berada di Mojolangu, Lowokwaru, Kota Malang. Detail kegiatan jurusan Pariwisata dikonfirmasi tim saat konsultasi melalui halaman <a href="/program" class="text-tc-accent hover:underline">program magang Gemilang Training</a>.
+            </p>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Kesimpulan Simulasi Pemasaran Digital Wisata</p>
+              <p class="text-tc-muted text-xs italic">Simulasi pemasaran digital produk wisata lokal membuat peserta magang pariwisata berpikir seperti pengelola usaha wisata, mulai dari riset pasar sampai evaluasi hasil dengan review mingguan mentor.</p>
+            </blockquote>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            SN
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Penulis konten edukasi karier digital dan panduan PKL serta magang jurusan Pariwisata di Gemilang Training Malang.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Siap Latihan Pemasaran Digital Produk Wisata Lokal di Malang?</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Konsultasikan jadwal, skema WFH/Hybrid/Onsite, dan rincian praktik jurusan Pariwisata bersama admin Gemilang Training.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20program%20magang%20Pariwisata%20dan%20simulasi%20pemasaran%20digital." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Tanya Program Magang Pariwisata via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Simulasi Pemasaran Digital dalam Magang Pariwisata</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah simulasi pemasaran digital memerlukan modal usaha?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tidak, karena kegiatan ini berupa praktik terarah. Peserta merancang dan mengevaluasi promosi dalam lingkungan belajar, sehingga risiko usaha yang sesungguhnya tidak ditanggung.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah peserta jurusan lain bisa ikut simulasi bersama peserta pariwisata?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Peserta jurusan lain dapat berkolaborasi dalam simulasi kerja Agile lintas jurusan di Gemilang Training. Kolaborasi itu membantu peserta pariwisata mendapat sudut pandang desain, teknologi, atau pemasaran.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa manfaat simulasi ini bagi calon wirausaha wisata?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Peserta terbiasa meriset pasar, menyusun pesan promosi, mengukur hasil, dan memperbaiki strategi. Kebiasaan tersebut menjadi bekal ketika kelak mengelola usaha wisata.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah simulasi ini pasti ada di setiap program magang pariwisata?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Rincian kegiatan jurusan Pariwisata, termasuk simulasi pemasaran digital, dikonfirmasi tim Gemilang Training saat konsultasi pendaftaran.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Magang Pariwisata & Wirausaha</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Belajar riset pasar wisata, positioning produk lokal, dan produksi konten dalam siklus Agile lintas jurusan di Kota Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20kuota%20magang%20jurusan%20Pariwisata." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-1.webp" alt="Peserta magang pariwisata menyusun blog ulasan destinasi wisata di laptop" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Cluster 1 • 27 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-pariwisata-malang-ulasan-destinasi-wisata">
+                    Magang Jurusan Pariwisata di Malang Apa Saja yang Dikerjakan?
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/anak-rpl-pkl-ngapain-aja-1.webp" alt="Siswa RPL berdiskusi tentang tugas PKL" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Cluster 1 • 26 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/anak-rpl-pkl-ngapain-aja">
+                    Begini Gambaran Kerja Anak SMK RPL Saat Menjalani PKL di Perusahaan
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>

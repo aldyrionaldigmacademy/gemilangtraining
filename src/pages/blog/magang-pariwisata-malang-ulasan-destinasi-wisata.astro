@@ -1,0 +1,471 @@
+---
+// src/pages/blog/magang-pariwisata-malang-ulasan-destinasi-wisata.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const pageTitle = "Magang Jurusan Pariwisata di Malang Apa Saja yang Dikerjakan?";
+const pageDesc = "Kenali tugas menulis ulasan destinasi dan paket wisata dalam magang pariwisata di Malang: alur kerja, review mentor, portofolio. Konsultasikan pendaftaran.";
+const publishDate = "2026-11-27";
+const publishIsoDate = "2026-11-27T08:00:00+07:00";
+const pageSlug = "/blog/magang-pariwisata-malang-ulasan-destinasi-wisata";
+const pageUrl = `https://infomagangmalang.web.id${pageSlug}`;
+const ogImageUrl = "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-1.webp";
+const secondImageUrl = "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-2.webp";
+const authorName = "Sholikhatun Nikmah";
+const keywordsList = "magang jurusan pariwisata di malang, tugas magang pariwisata, ulasan destinasi wisata, menulis blog wisata, portofolio magang pariwisata";
+
+const schemaArticle = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-ulasan-destinasi-wisata#article",
+      "isPartOf": {
+        "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-ulasan-destinasi-wisata"
+      },
+      "headline": "Magang Jurusan Pariwisata di Malang Apa Saja yang Dikerjakan?",
+      "description": "Kenali tugas menulis ulasan destinasi dan paket wisata dalam magang pariwisata di Malang: alur kerja, review mentor, portofolio. Konsultasikan pendaftaran.",
+      "keywords": "magang jurusan pariwisata di malang, tugas magang pariwisata, ulasan destinasi wisata, menulis blog wisata, portofolio magang pariwisata",
+      "inLanguage": "id-ID",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-ulasan-destinasi-wisata"
+      },
+      "datePublished": "2026-11-27T08:00:00+07:00",
+      "dateModified": "2026-11-27T08:00:00+07:00",
+      "author": {
+        "@type": "Person",
+        "name": "Sholikhatun Nikmah"
+      },
+      "publisher": {
+        "@type": "EducationalOrganization",
+        "name": "Gemilang Training",
+        "url": "https://infomagangmalang.web.id",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://infomagangmalang.web.id/assets/img/beranda1.webp"
+        }
+      },
+      "image": [
+        "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-1.webp",
+        "https://infomagangmalang.web.id/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-2.webp"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://infomagangmalang.web.id/blog/magang-pariwisata-malang-ulasan-destinasi-wisata#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apakah magang pariwisata di Gemilang Training hanya menulis ulasan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Menulis ulasan adalah salah satu bentuk tugas. Rincian kegiatan jurusan Pariwisata, termasuk tugas lain yang tersedia, dikonfirmasi tim saat konsultasi pendaftaran."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah calon peserta harus sudah mahir menulis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kemampuan menulis dilatih bertahap lewat tugas dan review mingguan mentor, sehingga calon peserta tidak harus sudah mahir. Persyaratan pendaftaran dapat dikonfirmasi ke tim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa hasil akhir yang didapat dari tugas ulasan wisata?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tulisan akhir yang sudah direvisi disimpan sebagai bagian dari portofolio konten wisata peserta. Bentuk portofolio dikonfirmasi tim saat konsultasi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apakah ulasan peserta boleh memuat kekurangan destinasi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Boleh dan sebaiknya, selama ditulis secara sopan dan faktual. Penjelasan batasan membuat pembaca lebih percaya dan membantu mereka menyiapkan ekspektasi."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout 
+  title={pageTitle} 
+  description={pageDesc} 
+  keywords={keywordsList}
+  image="/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-1.webp"
+  imageAlt="Peserta magang pariwisata menyusun blog ulasan destinasi wisata di laptop"
+  type="article"
+  isHome={false}
+>
+  <Navbar slot="header" />
+
+  <head slot="head">
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDesc} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:secure_url" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Peserta magang pariwisata menyusun blog ulasan destinasi wisata di laptop" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={publishIsoDate} />
+    <meta property="article:modified_time" content={publishIsoDate} />
+    <meta property="article:section" content="Cluster 1 • Pariwisata" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaArticle)} />
+  </head>
+
+  <section class="py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- KONTEN UTAMA (KIRI) -->
+      <article class="lg:col-span-8 bg-tc-card p-6 md:p-10 rounded-3xl border border-tc-border space-y-8 shadow-xl">
+        
+        <header class="space-y-4">
+          <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-tc-muted">
+            <span class="bg-tc-accent text-slate-950 font-bold px-3 py-1 rounded-full uppercase">Cluster 1 • Pariwisata</span>
+            <time datetime={publishIsoDate}>27 November 2026 • 08:00 WIB</time>
+            <span>•</span>
+            <span>Oleh {authorName}</span>
+          </div>
+          <h1 class="text-2xl md:text-4xl font-extrabold text-white leading-tight">
+            Magang Jurusan Pariwisata di Malang Apa Saja yang Dikerjakan?
+          </h1>
+          <p class="text-tc-muted text-sm md:text-base leading-relaxed">
+            {pageDesc}
+          </p>
+        </header>
+
+        <!-- Gambar 1 -->
+        <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+          <img 
+            src="/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-1.webp" 
+            alt="Peserta magang pariwisata menyusun blog ulasan destinasi wisata di laptop" 
+            class="w-full h-auto max-h-[420px] object-cover"
+            loading="eager"
+          />
+          <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+            Peserta magang pariwisata menyusun kerangka dan draf blog ulasan destinasi wisata.
+          </figcaption>
+        </figure>
+
+        <!-- TOC -->
+        <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-3">
+          <button type="button" id="toc-toggle" class="w-full flex justify-between items-center text-tc-accent font-bold text-sm cursor-pointer">
+            <span>Daftar Isi Panduan</span>
+            <span id="toc-icon" class="text-xs font-bold" style="color: #eab308; font-variant-emoji: text;">▼</span>
+          </button>
+          <div id="toc-content" class="text-xs text-tc-muted space-y-2 pt-2 border-t border-tc-border/60">
+            <ul class="space-y-1.5 list-disc list-inside">
+              <li><a href="#apa-itu-ulasan-destinasi" class="hover:text-tc-accent transition-colors">1. Apa Itu Magang Pariwisata dengan Tugas Menulis Ulasan Destinasi?</a></li>
+              <li><a href="#yang-dikerjakan-ulasan" class="hover:text-tc-accent transition-colors">2. Apa Saja yang Dikerjakan Peserta dalam Tugas Ulasan Destinasi?</a></li>
+              <li><a href="#mengumpulkan-data-lapangan" class="hover:text-tc-accent transition-colors">3. Bagaimana Peserta Mengumpulkan Data untuk Ulasan Destinasi?</a></li>
+              <li><a href="#menulis-ulasan-paket" class="hover:text-tc-accent transition-colors">4. Bagaimana Peserta Menulis Ulasan Paket Wisata?</a></li>
+              <li><a href="#standar-kejujuran-etika" class="hover:text-tc-accent transition-colors">5. Standar Apa yang Dijaga Peserta Agar Ulasan Tetap Jujur?</a></li>
+              <li><a href="#alur-kerja-studi-kasus-syarat" class="hover:text-tc-accent transition-colors">6. Alur Review Mentor, Studi Kasus Outbound & Syarat Pendaftaran</a></li>
+              <li><a href="#faq-section" class="hover:text-tc-accent transition-colors">7. FAQ Magang Jurusan Pariwisata di Malang</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="space-y-8 text-tc-muted text-sm md:text-base leading-relaxed">
+          <p>
+            Dalam <strong>magang pariwisata di Gemilang Training</strong>, salah satu tugas peserta adalah menulis ulasan destinasi dan paket wisata untuk blog, dengan data lapangan yang dicek ulang, review mingguan mentor, dan hasil akhir yang disimpan ke portofolio.
+          </p>
+          <div class="bg-tc-bg p-5 rounded-2xl border border-tc-border space-y-2">
+            <h2 class="text-base md:text-lg font-bold text-white">Ringkasan Inti</h2>
+            <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm">
+              <li>Menulis ulasan destinasi dan paket wisata adalah salah satu bentuk tugas dalam magang pariwisata di Gemilang Training.</li>
+              <li>Alur kerjanya tetap: peserta menyusun kerangka, menulis draf, menerima review mingguan mentor, merevisi, lalu menyimpan hasil akhir ke portofolio.</li>
+              <li>Tugas ini melatih ketelitian data, bahasa netral, dan etika penulisan yang dibutuhkan di dunia pariwisata.</li>
+              <li>Skema magang (WFH, Hybrid, atau Onsite) dan durasi 3 sampai 6 bulan dikonfirmasi tim saat konsultasi pendaftaran.</li>
+            </ul>
+          </div>
+
+          <section id="apa-itu-ulasan-destinasi" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Itu Magang Pariwisata dengan Tugas Menulis Ulasan Destinasi?</h2>
+                        <p>
+              Magang pariwisata dengan tugas menulis ulasan destinasi adalah program praktik di mana peserta mengerjakan ulasan destinasi dan paket wisata untuk blog, dibimbing mentor, sehingga belajar langsung bagaimana informasi wisata disusun untuk wisatawan.
+            </p>
+            <p>
+              Menurut BPS, jumlah perjalanan wisatawan nusantara pada periode Januari sampai Juli 2025 mencapai 713,98 juta perjalanan, naik 19,25 persen dibandingkan periode yang sama tahun sebelumnya. Jumlah perjalanan sebesar itu menunjukkan banyak orang membutuhkan informasi perjalanan yang rapi sebelum berangkat, sehingga kemampuan menyusun informasi destinasi menjadi bekal yang relevan bagi peserta magang pariwisata.
+            </p>
+            <p>
+              Di Gemilang Training, tugas ini dikerjakan sebagai latihan kerja yang nyata, bukan sekadar teori. Peserta memilih satu destinasi atau paket wisata, lalu mengolahnya menjadi tulisan yang bisa dibaca dan dicek oleh pembaca.
+            </p>
+          </section>
+
+          <!-- Gambar 2 -->
+          <figure class="rounded-2xl overflow-hidden border border-tc-border bg-tc-bg">
+            <img 
+              src="/assets/img/magang-pariwisata-malang-ulasan-destinasi-wisata-2.webp" 
+              alt="Peserta magang mencatat tugas ulasan paket wisata di Malang" 
+              class="w-full h-auto max-h-[380px] object-cover"
+              loading="lazy"
+            />
+            <figcaption class="text-center text-tc-muted text-xs p-2.5 bg-tc-bg/80 border-t border-tc-border">
+              Peserta magang jurusan pariwisata melakukan pengecekan data ulasan paket wisata.
+            </figcaption>
+          </figure>
+
+          <section id="yang-dikerjakan-ulasan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Apa Saja yang Dikerjakan Peserta dalam Tugas Ulasan Destinasi?</h2>
+                        <p>
+              Peserta memilih destinasi atau paket wisata, mengumpulkan data, menyusun kerangka, menulis draf, lalu merevisinya berdasarkan masukan mentor sampai tulisan siap masuk portofolio.
+            </p>
+            <p>
+              Kerangka ulasan yang dikerjakan peserta terdiri dari enam bagian:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Jawaban singkat:</strong> destinasi cocok untuk siapa dan apa daya tarik utamanya.</li>
+              <li><strong>Gambaran umum:</strong> lokasi, karakter tempat, dan suasana.</li>
+              <li><strong>Daya tarik utama:</strong> aktivitas atau pemandangan yang menonjol.</li>
+              <li><strong>Akses dan fasilitas:</strong> cara menuju lokasi dan sarana yang tersedia.</li>
+              <li><strong>Informasi kunjungan:</strong> waktu yang sesuai dan hal yang perlu disiapkan.</li>
+              <li><strong>Kesimpulan:</strong> ringkasan untuk pembaca yang terburu-buru.</li>
+            </ul>
+            <p>
+              Kerangka yang konsisten ini membuat peserta terbiasa menulis dengan urutan yang jelas, dan juga memudahkan mesin pencari serta asisten AI memahami isi tulisan.
+            </p>
+          </section>
+
+          <!-- BACA JUGA BOX SISIPAN -->
+          <div class="my-6">
+            <a 
+              href="/blog/magang-pariwisata-malang-simulasi-pemasaran-digital" 
+              class="block bg-tc-bg hover:bg-tc-card border-l-4 border-tc-accent p-5 rounded-2xl border border-tc-border transition-all shadow-lg group"
+            >
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="text-xs font-bold text-tc-accent uppercase tracking-wider block mb-1">BACA JUGA SIMULASI PEMASARAN WISATA</span>
+                  <h4 class="text-white font-bold text-sm md:text-base group-hover:text-tc-accent transition-colors">
+                    Magang Pariwisata di Malang, Simulasi Pemasaran Digital Produk Wisata Lokal untuk Calon Wirausaha &rarr;
+                  </h4>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <section id="mengumpulkan-data-lapangan" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Peserta Mengumpulkan Data untuk Ulasan Destinasi?</h2>
+                        <p>
+              Peserta mengumpulkan data lewat pengamatan langsung, catatan singkat, foto, serta pengecekan ulang informasi dari sumber resmi pengelola atau instansi terkait.
+            </p>
+            <p>
+              Saat mengamati, peserta mencatat hal yang sering ditanyakan pembaca, yaitu kondisi akses, kebersihan, ketersediaan fasilitas dasar, dan suasana pada jam tertentu. Catatan ditulis saat itu juga agar tidak bergantung pada ingatan.
+            </p>
+            <p>
+              Informasi yang mudah berubah, misalnya harga tiket dan jam buka, dicek ulang sebelum tulisan diserahkan ke mentor. Jika belum bisa dipastikan, peserta menuliskannya dengan kalimat aman seperti &ldquo;dapat berubah sewaktu-waktu&rdquo; dan menganjurkan pembaca memeriksa kanal resmi pengelola.
+            </p>
+          </section>
+
+          <section id="menulis-ulasan-paket" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Bagaimana Peserta Menulis Ulasan Paket Wisata?</h2>
+                        <p>
+              Dalam ulasan paket wisata, peserta menjelaskan isi paket, parameter penilaian, kesesuaian untuk kelompok tertentu, serta batasan paket, tanpa klaim berlebihan seperti terbaik mutlak atau dijamin memuaskan.
+            </p>
+            <p>
+              Parameter penilaian yang dilatihkan antara lain kejelasan rencana perjalanan, kesesuaian durasi, kelengkapan informasi dari penyedia, dan kecocokan dengan kebutuhan pelanggan, misalnya keluarga, pelajar, atau rombongan kantor.
+            </p>
+            <p>
+              Peserta juga belajar menulis keterbatasan paket, misalnya aktivitas yang bergantung cuaca atau jumlah peserta minimal. Kebiasaan ini membuat pembaca percaya pada penulis, dan kepercayaan adalah modal utama dalam komunikasi pariwisata.
+            </p>
+          </section>
+
+          <section id="standar-kejujuran-etika" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Standar Apa yang Dijaga Peserta Agar Ulasan Tetap Jujur?</h2>
+                        <p>
+              Peserta menjaga ulasan tetap jujur dengan hanya menyebut hal yang diamati atau terverifikasi, memakai bahasa netral, dan tidak mengarang testimoni, angka, atau klaim yang tidak punya sumber.
+            </p>
+            <p>
+              Peserta menghindari kalimat dramatis dan superlatif, karena kalimat sederhana yang menjelaskan apa yang terlihat biasanya lebih meyakinkan.
+            </p>
+            <p>
+              Identitas pribadi orang lain, seperti nama, nomor kontak, atau wajah yang dapat dikenali, tidak ditampilkan tanpa izin yang jelas. Untuk peserta di bawah umur, privasi dijaga lebih ketat. Jika ulasan memuat kerja sama atau undangan dari pengelola, hal itu ditulis secara terbuka agar pembaca dapat menilai sendiri.
+            </p>
+          </section>
+
+          <section id="alur-kerja-studi-kasus-syarat" class="space-y-3">
+            <h2 class="text-xl md:text-2xl font-bold text-white">Alur Review Mentor, Studi Kasus Aktivitas Outbound, dan Persiapan Pendaftaran</h2>
+                        <p>
+              Alur kerja dalam magang ini berjalan lewat tugas menulis draf, review mingguan mentor, revisi, dan penyimpanan hasil akhir ke dalam portofolio konten wisata. Mentor memberi masukan tentang kejelasan jawaban awal, ketepatan informasi, dan gaya bahasa. Dalam simulasi kerja Agile, peserta pariwisata dapat bekerja bersama peserta jurusan lain, misalnya bidang desain membantu tampilan visual sementara peserta pariwisata mengurus isi dan ketepatan informasi.
+            </p>
+            <p>
+              Aktivitas outbound dapat menjadi bahan studi kasus karena memiliki alur kegiatan, tujuan peserta, dan manfaat yang jelas untuk dijelaskan secara terstruktur kepada pembaca blog. Sebagai contoh referensi, Katun Outbound Adventure bisa dijadikan studi kasus ketika peserta belajar membahas aktivitas outbound—menguraikan jenis aktivitas, kelompok yang cocok, dan hal yang perlu disiapkan dengan bahasa netral.
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Durasi magang di Gemilang Training berkisar 3 sampai 6 bulan.</li>
+              <li>Skema yang ditawarkan adalah WFH, Hybrid, atau Onsite.</li>
+              <li>Lokasi Onsite berada di Mojolangu, Lowokwaru, Kota Malang.</li>
+              <li>Program dapat diikuti pelajar SMK untuk PKL dan mahasiswa untuk magang (lihat juga panduan <a href="/blog/magang-content-creator-pariwisata" class="text-tc-accent hover:underline">magang SMK dan mahasiswa jurusan pariwisata di Malang</a>).</li>
+            </ul>
+            <blockquote class="bg-tc-bg p-4 rounded-xl border-l-4 border-tc-accent space-y-1">
+              <p class="text-white font-semibold text-sm">Kesimpulan Tugas Magang Pariwisata</p>
+              <p class="text-tc-muted text-xs italic">Magang pariwisata di Gemilang Training memberi ruang bagi peserta untuk berlatih menulis ulasan destinasi dan paket wisata dengan data yang dicek ulang, struktur yang konsisten, dan bahasa yang jujur.</p>
+            </blockquote>
+          </section>
+        </div>
+
+        <!-- KOTAK AUTHOR (PENULIS) -->
+        <div class="my-8 p-6 bg-tc-bg border border-tc-border rounded-2xl flex flex-col sm:flex-row items-center gap-5">
+          <div class="w-16 h-16 rounded-full bg-tc-accent/20 border border-tc-accent flex items-center justify-center text-tc-accent font-bold text-xl shrink-0">
+            SN
+          </div>
+          <div class="space-y-1 text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-2">
+              <h4 class="text-white font-bold text-base">{authorName}</h4>
+              <span class="bg-tc-accent/20 text-tc-accent text-[10px] font-semibold px-2 py-0.5 rounded-full border border-tc-accent/40">Verified Author</span>
+            </div>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Penulis konten edukasi karier digital dan panduan PKL serta magang jurusan Pariwisata di Gemilang Training Malang.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA PROMO WHATSAPP -->
+        <div class="bg-gradient-to-r from-tc-bg to-tc-card border border-tc-accent/50 rounded-3xl p-6 md:p-8 text-center space-y-4 shadow-2xl">
+          <h3 class="text-xl font-bold text-white">Konsultasikan PKL & Magang Jurusan Pariwisata di Malang</h3>
+          <p class="text-tc-muted text-xs md:text-sm max-w-lg mx-auto">
+            Tanyakan ketersediaan skema WFH, Hybrid, atau Onsite serta rincian tugas jurusan Pariwisata bersama admin Gemilang Training melalui WhatsApp.
+          </p>
+          <a 
+            href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20konsultasi%20pendaftaran%20PKL%20atau%20magang%20jurusan%20Pariwisata." 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-2 bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold px-6 py-3 rounded-xl transition-all shadow-lg text-xs md:text-sm"
+          >
+            <span>Konsultasi Magang Pariwisata via WA</span>
+          </a>
+        </div>
+
+        <!-- FAQ ACCORDION SECTION -->
+        <section id="faq-section" class="border-t border-tc-border pt-8 space-y-4">
+          <h3 class="text-xl font-bold text-white">FAQ Magang Jurusan Pariwisata di Malang</h3>
+          <div class="space-y-3">
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah magang pariwisata di Gemilang Training hanya menulis ulasan?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Menulis ulasan adalah salah satu bentuk tugas. Rincian kegiatan jurusan Pariwisata, termasuk tugas lain yang tersedia, dikonfirmasi tim saat konsultasi pendaftaran.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah calon peserta harus sudah mahir menulis?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Kemampuan menulis dilatih bertahap lewat tugas dan review mingguan mentor, sehingga calon peserta tidak harus sudah mahir. Persyaratan pendaftaran dapat dikonfirmasi ke tim.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apa hasil akhir yang didapat dari tugas ulasan wisata?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Tulisan akhir yang sudah direvisi disimpan sebagai bagian dari portofolio konten wisata peserta. Bentuk portofolio dikonfirmasi tim saat konsultasi.
+              </p>
+            </details>
+
+            <details class="bg-tc-bg p-4 rounded-xl border border-tc-border group cursor-pointer">
+              <summary class="text-xs md:text-sm font-semibold text-white flex justify-between items-center list-none select-none">
+                <span>Apakah ulasan peserta boleh memuat kekurangan destinasi?</span>
+                <span class="text-tc-accent text-xs group-open:rotate-180 transition-transform">▼</span>
+              </summary>
+              <p class="text-tc-muted text-xs mt-2 border-t border-tc-border/40 pt-2 leading-relaxed">
+                Boleh dan sebaiknya, selama ditulis secara sopan dan faktual. Penjelasan batasan membuat pembaca lebih percaya dan membantu mereka menyiapkan ekspektasi.
+              </p>
+            </details>
+          </div>
+        </section>
+
+      </article>
+
+      <!-- SIDEBAR (KANAN) -->
+      <aside class="lg:col-span-4 space-y-6">
+        <div class="sticky top-24 space-y-6">
+          
+          <!-- Box Fast Contact -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base">Program Magang Pariwisata</h4>
+            <p class="text-tc-muted text-xs leading-relaxed">
+              Praktik penulisan ulasan destinasi, simulasi pemasaran digital wisata lokal, dan kolaborasi Agile lintas jurusan di Mojolangu, Kota Malang.
+            </p>
+            <a 
+              href="https://wa.me/6281943431484?text=Halo%20Admin%20Gemilang%20Training%2C%20saya%20ingin%20bertanya%20mengenai%20program%20magang%20Pariwisata." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="block text-center bg-tc-accent hover:bg-tc-accentHover text-slate-950 font-bold py-2.5 rounded-xl text-xs transition-all"
+            >
+              Chat WA: +62 819-4343-1484
+            </a>
+          </div>
+
+          <!-- Card Artikel Rekomendasi -->
+          <div class="bg-tc-card p-6 rounded-3xl border border-tc-border space-y-4 shadow-xl">
+            <h4 class="text-white font-bold text-base border-b border-tc-border pb-3">Artikel Rekomendasi</h4>
+            
+            <div class="space-y-4">
+              <div class="space-y-2 group">
+                <img src="/assets/img/magang-pariwisata-malang-simulasi-pemasaran-digital-1.webp" alt="Peserta magang pariwisata merancang kampanye digital untuk wisata lokal" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Cluster 2 • 27 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/magang-pariwisata-malang-simulasi-pemasaran-digital">
+                    Magang Pariwisata di Malang, Simulasi Pemasaran Digital Produk Wisata Lokal untuk Calon Wirausaha
+                  </a>
+                </h5>
+              </div>
+
+              <div class="space-y-2 group">
+                <img src="/assets/img/anak-rpl-pkl-ngapain-aja-1.webp" alt="Siswa RPL berdiskusi tentang tugas PKL" class="w-full h-28 object-cover rounded-xl border border-tc-border" />
+                <span class="text-[10px] font-mono text-tc-accent uppercase">Cluster 1 • 26 Nov 2026</span>
+                <h5 class="text-xs font-bold text-white group-hover:text-tc-accent transition-colors leading-snug">
+                  <a href="/blog/anak-rpl-pkl-ngapain-aja">
+                    Begini Gambaran Kerja Anak SMK RPL Saat Menjalani PKL di Perusahaan
+                  </a>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</BaseLayout>
+
+<script>
+  const tocToggle = document.getElementById('toc-toggle');
+  const tocContent = document.getElementById('toc-content');
+  const tocIcon = document.getElementById('toc-icon');
+
+  if (tocToggle && tocContent) {
+    tocToggle.addEventListener('click', () => {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        if (tocIcon) {
+          tocIcon.textContent = '▼';
+          tocIcon.style.color = '#eab308';
+        }
+      } else {
+        tocContent.style.display = 'none';
+        if (tocIcon) {
+          tocIcon.textContent = '▸';
+          tocIcon.style.color = '#eab308';
+        }
+      }
+    });
+  }
+</script>
